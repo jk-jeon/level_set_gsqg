@@ -283,10 +283,11 @@ the standard layer cake representation.
 In addition to merely having a decomposition \eqref{1.3},
 we impose a regularity condition
 \begin{equation}\label{1.4}
-    L(\Omega)\coloneqq \sup_{x\in\bbR^{2}}\int_{\mathcal{L}}
+    L_{\tht}(\Omega)\coloneqq \sup_{x\in\bbR^{2}}\int_{\mathcal{L}}
     \frac{d|\theta|(\lambda)}{d(x,\partial\Omega^{\lambda})^{2\alpha}} < \infty
 \end{equation}
-where $\abs{\theta}$ is the variation of $\theta$.
+where $\abs{\theta}$ is the total variation of $\theta$. 
+%(This quantity also depends on $\mathcal L$ and $\tht$, but since these will be time-independent for any solution to \eqref{1.1}, we will suppress them in the notation.)
 Note that a standard measure theory argument shows joint measurability of
 \[
     d(x,\partial\Omega^{\lambda}) = \max\{
@@ -330,7 +331,7 @@ the following notion of solutions to \eqref{1.1}--\eqref{1.2}.
 
 \begin{definition}
     Let $\omega^{0}\in L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$.
-    A \emph{(transport?) solution}
+    A \emph{Lagrangian solution}
     to \eqref{1.1}--\eqref{1.2} on a time interval $I\owns 0$ with
     the initial data $\omega^{0}$ is a function
     $\omega\colon I\to L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$ given as
@@ -339,12 +340,12 @@ the following notion of solutions to \eqref{1.1}--\eqref{1.2}.
     (with respect to the extended metric $d(F,G) \coloneqq \norm{F - G}_{L^{\infty}}$)
     satisfies the initial value problem
     \begin{equation}\label{1.6}
-    \left\{
+%    \left\{
         \begin{aligned}
-           \partial_{t}\Phi^{t}(x) &= u(\omega^{t}; \Phi^{t}(x)), \\
-            \Phi^{0}(x) &= x 
+           \partial_{t}\Phi^{t} &= u(\omega^{t}) \circ \Phi^{t}, \\
+            \Phi^{0} &= {\rm Id} .
         \end{aligned}
-    \right.
+%    \right.
     \end{equation}
     for all $x\in\bbR^{2}$ where the time derivative is one-sided at any end-point of $I$,
     and each $\Phi^{t}$ is a measure-preserving homeomorphism.
@@ -388,15 +389,15 @@ Now we state our first main result.
 \begin{theorem}\label{T1.2}
     Let $\omega^{0}\in L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$ admit
     a generalized layer cake representation $(\mathcal{L},\theta,\Omega)$ such that
-    $L(\Omega)<\infty$. Then there is a unique maximal (transport?) solution
+    $L(\Omega)<\infty$. Then there is a unique maximal Lagrangian solution
     $\omega\colon I\to L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$ to
-    \eqref{1.1}--\eqref{1.2} with the initial data $\omega^{0}$
-    and the associated flow map $\Phi\in C\left(I;C(\bbR^{2};\bbR^{2})\right)$ such that
-    $\sup_{t\in J}L(\Phi_{*}^{t}\Omega) < \infty$ for all compact subinterval $J\subseteq I$.
+    \eqref{1.1}--\eqref{1.2} with initial data $\omega^{0}$ on some open interval $I\ni 0$, 
+    and the associated flow map $\Phi\in C\left(I;C(\bbR^{2};\bbR^{2})\right)$ satisfies
+    $\sup_{t\in J}L(\Phi_{*}^{t}\Omega) < \infty$ for any compact interval $J\subseteq I$.
     Also, $\sup_{t\in J}\max\set{\norm{\Phi^{t}}_{\dot{C}^{0,1}},
     \norm{(\Phi^{t})^{-1}}_{\dot{C}^{0,1}}}<\infty$
-    holds for all compact subinterval $J\subseteq I$.
-    Furthermore, $I$ is open and if $T$ is an endpoint of $I$, then either $T$ is infinite or
+    holds for all compact interval $J\subseteq I$.
+    Furthermore, if $T$ is an endpoint of $I$, then either $T$ is infinite or
     $\lim_{t\to T}L(\Phi_{*}^{t}\Omega) = \infty$.
 \end{theorem}
 
@@ -458,16 +459,17 @@ Next we state our second main result.
     generalized layer cake representation $(\mathcal{L},\theta,\Omega)$
     composed of simple closed curves such that $L(\Omega), Q(\Omega), R(\Omega) < \infty$.
     Let $\omega\colon I\to L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$ be
-    the (transport?) solution to \eqref{1.1}--\eqref{1.2}
-    with the initial data $\omega^{0}$ and the associated flow map
-    $\Phi\in C\left(I;C(\bbR^{2};\bbR^{2})\right)$ provided by Theorem~\ref{T1.2}.
+    the Lagrangian solution to \eqref{1.1}--\eqref{1.2}
+%    with the initial data $\omega^{0}$ and the associated flow map
+%    $\Phi\in C\left(I;C(\bbR^{2};\bbR^{2})\right)$ provided by 
+from Theorem~\ref{T1.2}.
     Then $\Phi_{*}^{t}\Omega$ is composed of simple closed curves for each $t\in I$,
-    $\sup_{t\in J}R(\Phi_{*}^{t}\Omega) < \infty$ for each compact subinterval
+    $\sup_{t\in J}R(\Phi_{*}^{t}\Omega) < \infty$ for each compact interval
     $J\subseteq I$, and the set
     \[
         \set{t\in I \colon Q(\Phi_{*}^{t}\Omega) < \infty}
     \]
-    is nonempty and open.
+    is  open.
 \end{theorem}
 
 Consider some smooth even $\chi\colon\bbR\to\bbR$
@@ -477,7 +479,7 @@ $K_{\eps}(x) \coloneqq \chi\left(\frac{\abs{x}}{\eps}\right)K(x)$.
 Note that for any $n\in\bbZ_{\geq 0}$ and $\beta\geq 0$ there is $C_{\alpha,n,\beta}$
 that only depends on $\alpha,n,\beta$ such that the norm of the $n$-linear form
 $D^{n}K_{\eps}(x)$ is bounded by
-$\frac{C_{\alpha,n,\beta}}{\eps^{\beta}\abs{x}^{n-\beta+2\alpha}}$.
+$\frac{C_{\alpha,n,\beta}}{\max\{\abs{x},\eps\}^{n+2\alpha}}$.
 For any finite signed Borel measure $\omega$ on $\bbR^{2}$
 we now define the mollified velocity field
 \[
@@ -499,40 +501,40 @@ for all $k\in\bbZ_{\geq 0}$.
 We start with some estimates on the velocity field $u(\omega)$
 in terms of $L(\Omega)$, where $(\mathcal{L},\theta,\Omega)$ is
 a generalized layer cake representation of $\omega$.
-Unless specified otherwise, all constants $C_{\alpha}$ in the proofs
-can change from one inequality to another and depend only on $\alpha$.
+%Unless specified otherwise, 
+All constants $C_{\alpha}$ below
+can change from one inequality to another, but they always only depend  on $\alpha$.
 
 \begin{lemma}\label{L2.1}
     There is $C_{\alpha}$ such that for any
     $\omega\in L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$
-    with a generalized layer cake representation $(\mathcal{L},\theta,\Omega)$,
-    $\eps>0$ and $x\in\bbR^{2}$,
+    with a generalized layer cake representation $(\mathcal{L},\theta,\Omega)$, and for any
+    $\eps>0$ and $x\in\bbR^{2}$, we have
     \[
         \abs{D(u_{\eps}(\omega))(x)} \leq
         C_{\alpha}\int_{\mathcal{L}}\frac{d|\theta|(\lambda)}
         {d(x,\partial\Omega^{\lambda})^{2\alpha}}.
     \]
-    Therefore, with this $C_{\alpha}$,
+    Therefore,
     \[
-        \norm{u(\omega)}_{\dot{C}^{0,1}} \leq C_{\alpha}L(\Omega)
+        \norm{u_\eps(\omega)}_{\dot{C}^{0,1}} \leq C_{\alpha}L(\Omega) \qquad\text{and} \qquad \norm{u(\omega)}_{\dot{C}^{0,1}} \leq C_{\alpha}L(\Omega).
     \]
-    holds for any such $\omega$.
 \end{lemma}
 
 \begin{proof}
-    For each $\eps>0$ and $x,h\in\bbR^{2}$, oddness of $\nabla^{\perp}K_{\eps}$ shows
+    For each $\eps>0$ and $x,h\in\bbR^{2}$, oddness of $\nabla^{\perp}K_{\eps}$ shows that
     \begin{align*}
         u_{\eps}(\omega;x+h) - u_{\eps}(\omega;x)
         = \int_{\bbR^{2}}\left(
             \nabla^{\perp}K_{\eps}(x + h - y) - \nabla^{\perp}K_{\eps}(x - y)
         \right)
-        (\omega(y) - \omega(x))\,dy,
+        (\omega(y) - \omega(x))\,dy.
     \end{align*}
-    so
+    Replacing $h$ by $sh$ with $s\in\bbR$, and then taking $s\to 0$ yields
     \begin{align*}
         D(u_{\eps}(\omega))(x)h
         &= \int_{\bbR^{2}}
-        D(\nabla^{\perp}K_{\eps})(x-y)h
+        D(\nabla^{\perp}K_{\eps})(x-y)h \,
         (\omega(y) - \omega(x))\,dy \\
         &= \int_{\bbR^{2}}\int_{\mathcal{L}}
         D(\nabla^{\perp}K_{\eps})(x-y)h
@@ -540,44 +542,44 @@ can change from one inequality to another and depend only on $\alpha$.
             \mathbbm{1}_{\Omega^{\lambda}}(y)
             - \mathbbm{1}_{\Omega^{\lambda}}(x)
         \right)
-        d\theta(\lambda)\,dy
+        d\theta(\lambda)\,dy.
     \end{align*}
-    follows, because the difference between $u_{\eps}(\omega;x+h) - u_{\eps}(\omega;x)$
-    and the right-hand side of the first equality of the above is $O\left(\abs{h}^{2}\right)$.
-    Note that whenever $\mathbbm{1}_{\Omega^{\lambda}}(y)
-    - \mathbbm{1}_{\Omega^{\lambda}}(x) \neq 0$,
-    $\abs{x - y} \geq d(x,\partial\Omega^{\lambda})$ must hold, which shows
+%    follows, because the difference between $u_{\eps}(\omega;x+h) - u_{\eps}(\omega;x)$
+%    and the right-hand side of the first equality of the above is $O\left(\abs{h}^{2}\right)$.
+    Note that $\mathbbm{1}_{\Omega^{\lambda}}(y)
+    - \mathbbm{1}_{\Omega^{\lambda}}(x) \neq 0$ implies
+    $\abs{x - y} \geq d(x,\partial\Omega^{\lambda})$, so
     \begin{align*}
         \abs{D(u_{\eps}(\omega))(x)}
         &\leq \int_{\mathcal{L}}\int_{\abs{x-y} \geq d(x,\partial\Omega^{\lambda})}
         \frac{C_{\alpha}}{\abs{x - y}^{2+2\alpha}}\,dy\,d|\theta|(\lambda)
         \leq \int_{\mathcal{L}}\frac{C_{\alpha}}
-        {d(x,\partial\Omega^{\lambda})^{2\alpha}}d|\theta|(\lambda),
+        {d(x,\partial\Omega^{\lambda})^{2\alpha}}d|\theta|(\lambda).
     \end{align*}
-    thus the first claim is shown. Then the second claim follows by
-    taking the supremum over $x\in\bbR^{2}$ and letting $\eps\to 0^{+}$.
+   This proves the first claim, and the second follows by
+    taking 
+    %the supremum over $x\in\bbR^{2}$ and letting 
+    $\eps\to 0^{+}$.
 \end{proof}
 
 \begin{lemma}\label{L2.2}
     There is $C_{\alpha}$ such that for any
     $\omega\in L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$
-    with a generalized layer cake representation $(\mathcal{L},\theta,\Omega)$ and
+    with a generalized layer cake representation $(\mathcal{L},\theta,\Omega)$ and any
     measure-preserving homeomorphisms\ $\Phi_{1},\Phi_{2}\colon\bbR^{2}\to\bbR^{2}$,
     \[
         \norm{u(\Phi_{1*}\omega) - u(\Phi_{2*}\omega)}_{L^{\infty}} \leq
-        C_{\alpha}(L(\Phi_{1*}\Omega) + L(\Phi_{2*}\Omega))
+        C_{\alpha} \left(L(\Phi_{1*}\Omega) + L(\Phi_{2*}\Omega)\right)
         \norm{\Phi_{1} - \Phi_{2}}_{L^{\infty}}.
     \]
 \end{lemma}
 
 \begin{proof}
     Let $d\coloneqq\norm{\Phi_{1} - \Phi_{2}}_{L^{\infty}}$ and
-    $\omega_{i}\coloneqq \omega\circ\Phi_{i}^{-1}$ for $i=1,2$.
-    Then for given $x\in\bbR^{2}$, $u(\Phi_{1*}\omega;x) - u(\Phi_{2*}\omega;x)$
-    is equal to the sum of the following two:
+    $\omega_{i}\coloneqq \omega\circ\Phi_{i}^{-1}$ for $i=1,2$, and fix any $x\in\bbR^{2}$.  Then $u(\Phi_{1*}\omega;x) - u(\Phi_{2*}\omega;x)$ is the sum of the integrals
     \begin{align*}
         I_{1} &\coloneqq \int_{\abs{x - y}\leq 2d}
-        \nabla^{\perp}K(x - y)(\omega_{1}(y) - \omega_{2}(y))\,dy \\
+        \nabla^{\perp}K(x - y)(\omega_{1}(y) - \omega_{2}(y))\,dy, \\
         I_{2} &\coloneqq \int_{\abs{x - y} > 2d}
         \nabla^{\perp}K(x - y)(\omega_{1}(y) - \omega_{2}(y))\,dy.
     \end{align*}
@@ -587,38 +589,39 @@ can change from one inequality to another and depend only on $\alpha$.
         I_{1} = \int_{\abs{x - y}\leq 2d}\nabla^{\perp}K(x - y)
         (\omega_{1}(y) - \omega_{1}(x))\,dy
         - \int_{\abs{x - y}\leq 2d}\nabla^{\perp}K(x - y)
-        (\omega_{2}(y) - \omega_{2}(x))\,dy,
+        (\omega_{2}(y) - \omega_{2}(x))\,dy.
     \]
-    and by symmetry, it is enough to estimate
+Since
+%    and by symmetry, it is enough to estimate
     \[
         I_{3} \coloneqq \int_{\abs{x - y} \leq 2d}
         \frac{\abs{\omega_{1}(y) - \omega_{1}(x)}}{\abs{x - y}^{1 + 2\alpha}}\,dy
         \leq \int_{\mathcal{L}}\int_{\abs{x - y}\leq 2d}
         \frac{\abs{\mathbbm{1}_{\Phi_{1}(\Omega^{\lambda})}(y)
         - \mathbbm{1}_{\Phi_{1}(\Omega^{\lambda})}(x)}}
-        {\abs{x - y}^{1+2\alpha}}\,dy\,d\lambda.
+        {\abs{x - y}^{1+2\alpha}}\,dy\,d|\theta|(\lambda)
     \]
-    In the same way as in the proof of Lemma~\ref{L2.1},
-    $\abs{x - y} \geq d(x,\partial\Phi_{1}(\Omega^{\lambda}))$
-    must hold whenever the numerator of the integrand in the right-hand side is nonzero,
-    which shows
+    and (as in the proof of Lemma~\ref{L2.1})
+    we have $\abs{x - y} \geq d(x,\partial\Phi_{1}(\Omega^{\lambda}))$
+    whenever the  last integrand  is nonzero,
+    we see that
     \begin{align*}
         I_{3} &\leq \int_{\mathcal{L}}\int_{\abs{x - y}\leq 2d}
-        \frac{1}{\abs{x - y}\cdot d(x,\partial\Phi_{1}(\Omega^{\lambda}))^{2\alpha}}
+        \frac{1}{\abs{x - y}\, d(x,\partial\Phi_{1}(\Omega^{\lambda}))^{2\alpha}}
         \,dy\,d|\theta|(\lambda)
         \leq 4\pi L(\Phi_{1*}\Omega)d.
     \end{align*}
-    Then repeating the same argument for $\omega_{2}$ yields
-    \[
-        \abs{I_{1}}\leq C_{\alpha}(L(\Phi_{1*}\Omega) + L(\Phi_{2*}\Omega))d.
-    \]
+    The same argument for $\omega_{2}$ in place of $\omega_{1}$ now yields
+    \begin{equation} \label{2.100}
+        \abs{I_{1}}\leq C_{\alpha}(L(\Phi_{1*}\Omega) + L(\Phi_{2*}\Omega))\, d.
+    \end{equation}
 
-    \textbf{Estimate for $I_{2}$.} For each $R>2d$, let
+    \textbf{Estimate for $I_{2}$.} For each $R>2d$ let
     \[
         I_{2}^{R}\coloneqq \int_{2d<\abs{x-y}\leq R}
         \nabla^{\perp}K(x-y)(\omega_{1}(y) - \omega_{2}(y))\,dy,
     \]
-    then $I_{2} = \lim_{R\to\infty}I_{2}^{R}$. Fix $R>2d$, then
+    so that $I_{2} = \lim_{R\to\infty}I_{2}^{R}$. Fix $R>2d$, and then $\Phi_i$ being measure-preserving yields
     \begin{align*}
         I_{2}^{R} &= \int_{2d< \abs{x - y} \leq R}
         \nabla^{\perp}K(x - y)(\omega_{1}(y) - \omega_{1}(x))\,dy
@@ -631,9 +634,9 @@ can change from one inequality to another and depend only on $\alpha$.
         - \int_{2d < \abs{x - \Phi_{2}(y)} \leq R}\nabla^{\perp}K(x - \Phi_{2}(y))
         (\omega(y) - \omega_{1}(x))\,dy \\
         &= \int_{\abs{x - \Phi_{1}(y)},\abs{x - \Phi_{2}(y)}\in (2d,R]}
-        \left(
+        \left[
             \nabla^{\perp}K(x - \Phi_{1}(y)) - \nabla^{\perp}K(x - \Phi_{2}(y))
-        \right)
+        \right]
         (\omega(y) - \omega_{1}(x))\,dy
         \\&\quad\quad\quad\quad\quad
         + \int_{\abs{x - \Phi_{2}(y)} \leq 2d < \abs{x - \Phi_{1}(y)} \leq R}
@@ -648,21 +651,22 @@ can change from one inequality to another and depend only on $\alpha$.
         - \int_{2d < \abs{x - \Phi_{2}(y)} \leq R < \abs{x - \Phi_{1}(y)}}
         \nabla^{\perp}K(x - \Phi_{2}(y))(\omega(y) - \omega_{1}(x))\,dy.
     \end{align*}
-    Let us call the terms in the right-hand side as $I_{n}$ for $n=4,5,6,7,8$, respectively.
+    Let us denote the integrals on the right-hand side  $I_{4},I_{5},I_{6},I_{7},I_{8}$
+     (in the order of appearance).
 
-    To estimate $I_{4}$, note that for any $y$ in the domain of integration,
+    To estimate $I_{4}$, note that for any $y$ in the domain of integration we have
     \[
         \min_{\eta\in[0,1]}
         \abs{x - (1-\eta)\Phi_{1}(y) - \eta\Phi_{2}(y)}
         \geq \abs{x - \Phi_{1}(y)} - d
-        \geq \frac{1}{2}\abs{x - \Phi_{1}(y)}
+        \geq \frac{\abs{x - \Phi_{1}(y)}}{2},
     \]
-    holds, so the mean value theorem shows
+     so the mean value theorem shows that
     \[
         \abs{\nabla^{\perp}K(x - \Phi_{1}(y)) - \nabla^{\perp}K(x - \Phi_{2}(y))}
-        \leq \frac{C_{\alpha}d}{\abs{x - \Phi_{1}(y)}^{2 + 2\alpha}},
+        \leq \frac{C_{\alpha}d}{\abs{x - \Phi_{1}(y)}^{2 + 2\alpha}}.
     \]
-    thus applying the change of variables formula yields
+    The change of variables formula now yields
     \[
         \abs{I_{4}} \leq \int_{\abs{x - y} > 2d}
         \frac{C_{\alpha}d\abs{\omega_{1}(y) - \omega_{1}(x)}}
@@ -673,8 +677,7 @@ can change from one inequality to another and depend only on $\alpha$.
         {\abs{x - y}^{2 + 2\alpha}}\,dy\,d|\theta|(\lambda).
     \]
     Again, $\abs{x - y} \geq d(x,\partial\Phi_{1}(\Omega^{\lambda}))$
-    must hold whenever the numerator of the integrand in the right-hand side is nonzero,
-    which shows
+    holds whenever the last integrand  is nonzero, so
     \begin{align*}
         \abs{I_{4}} &\leq \int_{\mathcal{L}}
         \int_{\abs{x - y}\geq d(x,\partial\Phi_{1}(\Omega^{\lambda}))}
@@ -682,30 +685,29 @@ can change from one inequality to another and depend only on $\alpha$.
         \leq C_{\alpha}L(\Phi_{1*}\Omega)d.
     \end{align*}
 
-    For $I_{5}$, note that for any $y$ in the domain of integration,
+    For $I_{5}$, note that for any $y$ in the domain of integration we have
     \[
-        \abs{x - \Phi_{1}(y)} \leq \abs{x - \Phi_{2}(y)} + d \leq 3d
+        \abs{x - \Phi_{1}(y)} \leq \abs{x - \Phi_{2}(y)} + d \leq 3d.
     \]
-    holds, so applying the change of variables formula yields
+    By applying again  change of variables we obtain
     \[
         \abs{I_{5}} \leq \int_{\abs{x - y} \leq 3d}
         \frac{C_{\alpha}\abs{\omega_{1}(y) - \omega_{1}(x)}}{\abs{x - y}^{1 + 2\alpha}}\,dy,
     \]
     so the same argument as in the estimate for $I_{3}$
     shows $\abs{I_{5}} \leq C_{\alpha}L(\Phi_{1*}\Omega)d$.
-
-    Similarly, for $I_{6}$, again the change of variables formula shows
+And clearly
     \[
         \abs{I_{6}} \leq \int_{\abs{x - \Phi_{1}(y)} \leq 2d}
         \frac{C_{\alpha}\abs{\omega(y) - \omega_{1}(x)}}
         {\abs{x - \Phi_{1}(y)}^{1+2\alpha}}\,dy
-        \leq \int_{\abs{x - y}\leq 2d}\frac{C_{\alpha}\abs{\omega_{1}(y) - \omega_{1}(x)}}
+        = \int_{\abs{x - y}\leq 2d}\frac{C_{\alpha}\abs{\omega_{1}(y) - \omega_{1}(x)}}
         {\abs{x - y}^{1+2\alpha}}\,dy,
     \]
-    so we obtain $\abs{I_{6}} \leq C_{\alpha}L(\Phi_{1*}\Omega)d$ in the same way
-    as in the estimate of $I_{3}$.
+    so again $\abs{I_{6}} \leq C_{\alpha}L(\Phi_{1*}\Omega)d$.
+    % in the same way    as in the estimate of $I_{3}$.
 
-    To estimate $I_{7}$, note that for any $y$ in the domain of integration,
+    To estimate $I_{7}$, note that for any $y$ in the domain of integration we have
     \begin{align*}
         \abs{x - \Phi_{1}(y)} \geq \abs{x - \Phi_{2}(y)} - d > R - d,
     \end{align*}
@@ -714,24 +716,21 @@ can change from one inequality to another and depend only on $\alpha$.
         \abs{I_{7}} \leq \int_{R - d < \abs{x - y} \leq R}
         \frac{C_{\alpha}\norm{\omega}_{L^{\infty}}}
         {\abs{x - y}^{1 + 2\alpha}}\,dy
-        = 2\pi C_{\alpha}\norm{\omega}_{L^{\infty}}
-        R^{1-2\alpha}\int_{1 - \frac{d}{R}}^{1}\frac{dr}{r^{2\alpha}}
-        \leq \frac{2^{1+2\alpha}\pi C_{\alpha}\norm{\omega}_{L^{\infty}}d}{R^{2\alpha}},
+       % = 2\pi C_{\alpha}\norm{\omega}_{L^{\infty}}
+       % R^{1-2\alpha}\int_{1 - \frac{d}{R}}^{1}\frac{dr}{r^{2\alpha}}
+        \leq \frac{ C_{\alpha}\norm{\omega}_{L^{\infty}}d}{R^{2\alpha}}
     \end{align*}
-    where the last inequality is because $\frac{d}{R} < \frac{1}{2}$.
-    In the same way, $I_{8}$ can be estimated by
-    $\frac{C_{\alpha}\norm{\omega}_{L^{\infty}}d}{R^{2\alpha}}$.
+    %where the last inequality is 
+    because ${R} >2d$.
+    In the same way we also obtain $|I_{8}|\le \frac{C_{\alpha}\norm{\omega}_{L^{\infty}}d}{R^{2\alpha}}$.
     
-    Therefore, collecting the estimates for
-    $I_{4}$ through $I_{8}$ and letting $R\to\infty$ shows
-    $\abs{I_{2}} \leq C_{\alpha}L(\Phi_{1*}\Omega)d$.
-    Then since $x\in\bbR^{2}$ is arbitrary, collecting
-    the estimates for $I_{1}$ and $I_{2}$ shows the desired conclusion.
+    Collecting the above estimates and letting $R\to\infty$, we see that
+    $\abs{I_{2}} \leq C_{\alpha}L(\Phi_{1*}\Omega)d$.  This and \eqref{2.100} now hold uniformly in $x\in\bbR^{2}$, finishing the proof.
 \end{proof}
 
 \begin{lemma}\label{L2.3}
     There is $C_{\alpha}$ such that for any
-    $\omega\in L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$ and $\eps>0$,
+    $\omega\in L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$ and $\eps>0$ we have
     \[
         \norm{u(\omega) - u_{\eps}(\omega)}_{L^{\infty}}
         \leq C_{\alpha}\norm{\omega}_{L^{\infty}}\eps^{1-2\alpha}.
@@ -739,8 +738,8 @@ can change from one inequality to another and depend only on $\alpha$.
 \end{lemma}
 
 \begin{proof}
-    By definition of $K_{\eps}$, we have $\nabla^{\perp}K_{\eps}(x) = \nabla^{\perp}K(x)$
-    if $\abs{x}\geq\eps$, so for any $x\in\bbR^{2}$,
+    Since $\nabla^{\perp}K_{\eps}(x) = \nabla^{\perp}K(x)$
+    when $\abs{x}\geq\eps$, for any $x\in\bbR^{2}$ we have
     \begin{align*}
         \abs{u(\omega;x) - u_{\eps}(\omega;x)}
         &\leq \int_{\abs{x - y}\leq \eps}
@@ -752,54 +751,49 @@ can change from one inequality to another and depend only on $\alpha$.
     \end{align*}
 \end{proof}
 
-Now, let initial data $\omega^{0}\in L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$
+Now, fix any initial data $\omega^{0}\in L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$
 admitting a generalized layer cake representation
-$(\mathcal{L},\theta,\Omega)$ with $L(\Omega) < \infty$ be given.
-
-Fix $\eps>0$ and consider the ODE
+$(\mathcal{L},\theta,\Omega)$ with $L(\Omega) < \infty$.
+Fix any $\eps>0$ and consider the ODE
 \begin{equation}\label{2.1}
-    \left\{
+ %   \left\{
         \begin{aligned}
-            \partial_{t}\Psi_{\eps}^{t}(x)
-            &= u_{\eps}((\mathrm{Id} + \Psi_{\eps}^{t})_{*}\omega^{0};x + \Psi_{\eps}^{t}(x)), \\
-            \Psi_{\eps}^{0}(x) &= 0.
+            \partial_{t}\Psi_{\eps}^{t}
+            &= u_{\eps}((\mathrm{Id} + \Psi_{\eps}^{t})_{*}\omega^{0}) \circ ({\rm Id} + \Psi_{\eps}^{t}), \\
+            \Psi_{\eps}^{0} &= 0
         \end{aligned}
-    \right.
+%    \right
 \end{equation}
+with $\Psi_\eps^t \in BC(\bbR^{2};\bbR^{2})$ (the space of bounded continuous functions from $\bbR^{2}$ to $\bbR^{2}$).
 That is, $\Phi_{\eps}^{t}\coloneqq \mathrm{Id} + \Psi_{\eps}^{t}$
 is the flow map generated by the vector field
-$u_{\eps}$ which in turn is generated by the measure $\omega^{0}$
-transported by $\Phi_{\eps}^{t}$. We show that this ODE is globally well-posed in
-the Banach space $C_{b}(\bbR^{2};\bbR^{2})$
-of bounded continuous functions $\bbR^{2}\to\bbR^{2}$.
+$u_{\eps}$ that is in turn generated by the measure $\Phi_{\eps *}^{t}\omega^{0}$. We will next show that \eqref{2.1} is globally well-posed in $BC(\bbR^{2};\bbR^{2})$.
 
 \begin{lemma}\label{L2.4}
-    For each $F\in C_{b}(\bbR^{2};\bbR^{2})$, define
+    For each $F\in BC(\bbR^{2};\bbR^{2})$, let
     \[
-        \mathcal{F}(F)(x) \coloneqq u_{\eps}((\mathrm{Id} + F)_{*}\omega^{0}; x + F(x))
+        \mathcal{F}(F) \coloneqq u_{\eps}((\mathrm{Id} + F)_{*}\omega^{0})\circ ({\rm Id} + F).
     \]
-    for each $x\in\bbR^{2}$, then $\mathcal{F}\colon
-    C_{b}(\bbR^{2};\bbR^{2})\to C_{b}(\bbR^{2};\bbR^{2})$
-    is well-defined and is Lipschitz continuous.
+    Then $\mathcal{F}\colon    BC(\bbR^{2};\bbR^{2})\to BC(\bbR^{2};\bbR^{2})$
+    is well-defined and  Lipschitz continuous.
 \end{lemma}
 
 \begin{proof}
-    Clearly, $\mathcal{F}(F)$ is a continuous function $\bbR^{2}\to\bbR^{2}$
-    for any $F\in C_{b}(\bbR^{2};\bbR^{2})$.
-    Given $F_{1},F_{2}\in C_{b}(\bbR^{2};\bbR^{2})$ and $x\in\bbR^{2}$,
+    Clearly $\mathcal{F}(F)\in C(\bbR^{2}; \bbR^{2})$
+    for any $F\in BC(\bbR^{2};\bbR^{2})$.
+    For any $F_{1},F_{2}\in BC(\bbR^{2};\bbR^{2})$ and $x\in\bbR^{2}$ we see that $(\mathcal{F}(F_{1}) - \mathcal{F}(F_{2}))(x)$ equals
     \begin{equation*}
         \begin{aligned}
-            &(\mathcal{F}(F_{1}) - \mathcal{F}(F_{2}))(x)
-            \\&\ 
-            = \int_{\bbR^{2}} \nabla^{\perp}K_{\eps}(x + F_{1}(x) - y)
+&\             \int_{\bbR^{2}} \nabla^{\perp}K_{\eps}(x + F_{1}(x) - y)
             \,d(\mathrm{Id} + F_{1})_{*}\omega^{0}(y)
             - \int_{\bbR^{2}} \nabla^{\perp}K_{\eps}(x + F_{2}(x) - y)
             \,d(\mathrm{Id} + F_{2})_{*}\omega^{0}(y)
             \\&\ 
-            = \int_{\bbR^{2}}\left(
+            = \int_{\bbR^{2}}
+            \left[
                 \nabla^{\perp}K_{\eps}(x - y + F_{1}(x) - F_{1}(y))
                 - \nabla^{\perp}K_{\eps}(x - y + F_{2}(x) - F_{2}(y))
-            \right)
+            \right]
             \omega^{0}(y)\,dy,
         \end{aligned}
     \end{equation*}
@@ -810,69 +804,63 @@ of bounded continuous functions $\bbR^{2}\to\bbR^{2}$.
         \norm{F_{1} - F_{2}}_{L^{\infty}}.
     \]
     Since $\mathcal{F}(0) = u_{\eps}(\omega^{0})$ is bounded,
-    all claims follow.
+    both claims follow from this.
 \end{proof}
 
-Therefore, \eqref{2.1} is globally well-posed.
-Then with $\Phi_{\eps}^{t}\coloneqq \mathrm{Id} + \Psi_{\eps}^{t}$ and
-$\omega_{\eps}^{t}\coloneqq\Phi_{\eps*}^{t}\omega^{0}$ (which for now we only regard
-as a finite signed Borel measure rather than an $L^{1}$ function),
-we can now easily see that the ODE
+Therefore \eqref{2.1} is globally well-posed, and we  let
+$\Phi_{\eps}^{t}\coloneqq \mathrm{Id} + \Psi_{\eps}^{t}$ and
+$\omega_{\eps}^{t}\coloneqq\Phi_{\eps*}^{t}\omega^{0}$, with the latter being for now only a finite signed Borel measure.
+We will next show that $\Phi_{\eps}^{t}$ is in fact a measure-preserving homeomorphism, which will mean that $\omega_{\eps}^{t}$ is an $L^{1}\cap L^\infty$ function.
+
+Clearly the ODE
 \begin{equation}\label{2.2}
-    \partial_{t}G^{t}(x) = u_{\eps}(\omega_{\eps}^{t};x + G^{t}(x))
+    \partial_{t}G^{t} = u_{\eps}(\omega_{\eps}^{t})\circ ({\rm Id} + G^{t})
 \end{equation}
-is globally well-posed in $C_{b}(\bbR^{2};\bbR^{2})$ for any initial data at any initial time.
-For each $t_{0}\in\bbR$, let $\Theta_{\eps}^{t_{0},t}$ be the unique solution to \eqref{2.2}
-with the initial data $\Theta_{\eps}^{t_{0},t_{0}} = 0$, and consider
+is globally well-posed in $BC(\bbR^{2};\bbR^{2})$ for any initial data at any initial time.
+For each $t_{0},t_1\in\bbR$, let $\Theta_{\eps}^{t_{0},t}$ be the unique solution to \eqref{2.2}
+with initial data $\Theta_{\eps}^{t_{0},t_{0}}: = 0$ at time $t=t_0$, and consider
 $G^{t} \coloneqq \Theta_{\eps}^{t_{0},t_{1}} +
-\Theta_{\eps}^{t_{1},t}\circ(\mathrm{Id} + \Theta_{\eps}^{t_{0},t_{1}})$, then
-it can be easily seen that $G$ solves \eqref{2.2} and it satisfies
-$G^{t_{1}} = \Theta_{\eps}^{t_{0},t_{1}}$, so the uniqueness of the solution
-with the initial data $\Theta_{\eps}^{t_{0},t_{1}}$ at $t=t_{1}$ shows that
+\Theta_{\eps}^{t_{1},t}\circ(\mathrm{Id} + \Theta_{\eps}^{t_{0},t_{1}})$.  Then
+ $G^t$ solves \eqref{2.2} and 
+$G^{t_{1}} = \Theta_{\eps}^{t_{0},t_{1}}$, so uniqueness of the solution
+with the initial data $\Theta_{\eps}^{t_{0},t_{1}}$ at time $t=t_{1}$ shows that
 \[
     \mathrm{Id} + \Theta_{\eps}^{t_{0},t}
     = \mathrm{Id} + G^{t}
     = (\mathrm{Id} + \Theta_{\eps}^{t_{1},t})
     \circ(\mathrm{Id} + \Theta_{\eps}^{t_{0},t_{1}})
 \]
-holds for all $t\in\bbR$. Hence, letting $t=t_{0}$ shows
+ for all $t\in\bbR$. Letting $t:=t_{0}$ shows that
 $(\mathrm{Id} + \Theta_{\eps}^{t_{1},t_{0}})
 \circ(\mathrm{Id} + \Theta_{\eps}^{t_{0},t_{1}}) = \mathrm{Id}$,
-so we conclude that each $\mathrm{Id} + \Theta_{\eps}^{t_{0},t}$,
-and in particular $\Phi_{\eps}^{t} = \mathrm{Id} + \Theta_{\eps}^{0,t}$,
-is a homeomorphism.
+so we conclude that each $\mathrm{Id} + \Theta_{\eps}^{t_{0},t}$
+is a homeomorphism.  Then so is  $\Phi_{\eps}^{t} = \mathrm{Id} + \Theta_{\eps}^{0,t}$, and so $\omega_{\eps}^{t}\in L^1(\bbR^2)$.
 
-On the other hand, let $C_{b}^{1}(\bbR^{2};\bbR^{2})$ be the Banach space of
-bounded $C^{1}$-functions $\bbR^{2}\to\bbR^{2}$ with bounded derivatives, then
-for $F\in C_{b}^{1}(\bbR^{2};\bbR^{2})$ and $x,h\in\bbR^{2}$,
+Letting $BC^{1}(\bbR^{2};\bbR^{2})$ be the space of bounded $C^{1}$ functions from $\bbR^{2}$ to $\bbR^{2}$ with bounded first derivatives, we see that for any $F\in BC^{1}(\bbR^{2};\bbR^{2})$ and $x,h\in\bbR^{2}$ we have
 \begin{align*}
     D(u_{\eps}(\omega_{\eps}^{t})\circ(\mathrm{Id} + F))(x)h
     = \int_{\bbR^{2}}D(\nabla^{\perp}K_{\eps})(x + F(x) - y)(h + DF(x)h)
-    \,d\omega_{\eps}^{t}(y).
+    \,\omega_{\eps}^{t}(y)\, dy.
 \end{align*}
-Then it can be easily seen that
+Therefore
 $F\mapsto u_{\eps}(\omega_{\eps}^{t})\circ(\mathrm{Id} + F)$
-is locally Lipschitz on $C_{b}^{1}(\bbR^{2};\bbR^{2})$, so
-\eqref{2.2} is locally well-posed in $C_{b}^{1}(\bbR^{2};\bbR^{2})$.
-In fact it is globally well-posed in that space, because
+is locally Lipschitz on $BC^{1}(\bbR^{2};\bbR^{2})$, so
+\eqref{2.2} is locally well-posed there.
+But since for any $F\in BC^{1}(\bbR^{2};\bbR^{2})$ we have
 \[
     \norm{D(u_{\eps}(\omega_{\eps}^{t})\circ(\mathrm{Id} + F))}_{L^{\infty}}
     \leq \norm{D(\nabla^{\perp}K_{\eps})}_{L^{\infty}}\norm{\omega^{0}}_{L^{1}}
-    \norm{\mathrm{Id} + DF}_{L^{\infty}}
+    \norm{\mathrm{Id} + DF}_{L^{\infty}},
 \]
-for any $F\in C_{b}^{1}(\bbR^{2};\bbR^{2})$, which together with
-a Gr\"{o}nwall-type argument shows that the $C^{1}$ norm of the solution to \eqref{2.2}
-can grow only at most exponentially.
-Hence, $\Theta_{\eps}^{t_{0},t}$ is in $C_{b}^{1}(\bbR^{2};\bbR^{2})$
-for all $t\in\bbR$, and since the vector field $u_{\eps}(\omega_{\eps}^{t})$
-is divergence-free, it follows that each $\mathrm{Id} + \Theta_{\eps}^{t_{0},t}$
-is measure-preserving. Therefore, the measure $\omega_{\eps}^{t}$ corresponds to
-the $L^{1}$ function $\omega^{0}\circ(\Phi_{\eps}^{t})^{-1}$, of which
-$\Phi_{\eps*}^{t}\Omega$ is a generalized layer cake representation.\smallskip
+a Gr\"{o}nwall-type argument shows that the $C^{1}$ norm of any solution to \eqref{2.2}
+can grow no faster than exponentially.  Therefore \eqref{2.2} is even globally well-posed in $BC^{1}(\bbR^{2};\bbR^{2})$, and so $\Theta_{\eps}^{t_{0},t}\in BC^{1}(\bbR^{2};\bbR^{2})$
+for all $t\in\bbR$.  This and $\nabla \cdot u_{\eps}(\omega_{\eps}^{t}) \equiv 0$ now show that the map  $\mathrm{Id} + \Theta_{\eps}^{t_{0},t}$ is measure-preserving. Then $\omega_{\eps}^{t}=\omega^{0}\circ(\Phi_{\eps}^{t})^{-1}\in L^1(\bbR^2)\cap L^\infty(\bbR^2)$ and  $(\mathcal{L},\theta,\Phi_{\eps*}^{t}\Omega)$ is its generalized layer cake representation.
+%\smallskip
 
-\textit{Remark}. Similarly, let $C_{b}^{2}(\bbR^{2};\bbR^{2})$ be the Banach space of
-bounded $C^{2}$-functions $\bbR^{2}\to\bbR^{2}$ with bounded first and second derivatives,
-then for $F\in C_{b}^{2}(\bbR^{2};\bbR^{2})$ and $x,h_{1},h_{2}\in\bbR^{2}$,
+%\textit{Remark}. 
+Similarly, with $BC^{2}(\bbR^{2};\bbR^{2})$ the space of
+bounded $C^{2}$ functions from $\bbR^{2}$ to $\bbR^{2}$ with bounded first and second derivatives,
+for each $F\in BC^{2}(\bbR^{2};\bbR^{2})$ and $x,h_{1},h_{2}\in\bbR^{2}$ we have
 \begin{align*}
     &D^{2}(u_{\eps}(\omega_{\eps}^{t})\circ(\mathrm{Id} + F))(x)(h_{1},h_{2})
     \\&\quad\quad = \int_{\bbR^{2}}D^{2}(\nabla^{\perp}K_{\eps})
@@ -884,75 +872,80 @@ then for $F\in C_{b}^{2}(\bbR^{2};\bbR^{2})$ and $x,h_{1},h_{2}\in\bbR^{2}$,
 and
 \begin{align*}
     \norm{D^{2}(u_{\eps}(\omega_{\eps}^{t})\circ(\mathrm{Id} + F))}_{L^{\infty}}
-    &\leq \norm{D^{2}(\nabla^{\perp}K_{\eps})}_{L^{\infty}}\norm{\omega^{0}}_{L^{1}}
+    &\leq \norm{D^{2}(\nabla^{\perp}K_{\eps})}_{L^{\infty}} \norm{\omega^{0}}_{L^{1}}
     \norm{\mathrm{Id} + DF}_{L^{\infty}}^{2}
     \\&\quad\quad\quad
-    + \norm{D(\nabla^{\perp}K_{\eps})}_{L^{\infty}}\norm{D^{2}F}_{L^{\infty}}
+    + \norm{D(\nabla^{\perp}K_{\eps})}_{L^{\infty}} \norm{\omega^{0}}_{L^{1}} \norm{D^{2}F}_{L^{\infty}}.
 \end{align*}
-hold. Therefore, at most exponential growth of the $C^{1}$ norm with
-another Gr\"{o}nwall-type argument show that \eqref{2.2} is globally well-posed
-in $C_{b}^{2}(\bbR^{2};\bbR^{2})$. This fact will be used in Section~\ref{S3}.
-Repeating a similar argument inductively for higher derivatives shows that
-\eqref{2.2} is globally well-posed in every $C_{b}^{k}(\bbR^{2};\bbR^{2})$
-so each $\Phi_{\eps}^{t}$ is a diffeomorphism, but we do not need that fact.\smallskip
+Another Gr\"{o}nwall-type argument and the time-exponential bound on the $C^{1}$ norms of solutions to \eqref{2.2} 
+now shows that \eqref{2.2} is globally well-posed in $BC^{2}(\bbR^{2};\bbR^{2})$, which we will use  in Section~\ref{S3}.
+One can continue and inductively show that
+\eqref{2.2} is globally well-posed in $BC^{k}(\bbR^{2};\bbR^{2})$ for all $k\in\bbN$ (then each $\Phi_{\eps}^{t}$ is a diffeomorphism), but we will not need this here.
+%\smallskip
 
-Now, we derive an $\eps$-independent estimate on the growth of
+Next we derive an $\eps$-independent estimate on the growth of
 $L(\Phi_{\eps*}^{t}\Omega)$.
 
 \begin{lemma}\label{L2.5}
     $\norm{D^{k}(u_{\eps}(\omega_{\eps}^{t}))}_{L^{\infty}}$ is continuous in $t$
-    for all $k\in\bbZ_{\geq 0}$ and
-    \begin{align*}
+    for all $k\in\bbZ_{\geq 0}$, and
+    \begin{align}
         &\abs{\Theta_{\eps}^{t_{0},t_{1}}(x) - \Theta_{\eps}^{t_{0},t_{1}}(y)
-        - \Theta_{\eps}^{t_{0},t_{2}}(x) + \Theta_{\eps}^{t_{0},t_{2}}(y)}
+        - \Theta_{\eps}^{t_{0},t_{2}}(x) + \Theta_{\eps}^{t_{0},t_{2}}(y)}  \notag
         \\&\qquad\qquad
         \leq \left(\exp\left(\abs{
             \int_{t_{2}}^{t_{1}}\norm{u_{\eps}(\omega_{\eps}^{\tau})}_{\dot{C}^{0,1}}d\tau
         }\right) - 1\right)
-        \abs{x + \Theta_{\eps}^{t_{0},t_{2}}(x) - y - \Theta_{\eps}^{t_{0},t_{2}}(y)}
-    \end{align*}
+        \abs{x + \Theta_{\eps}^{t_{0},t_{2}}(x) - y - \Theta_{\eps}^{t_{0},t_{2}}(y)}  \lb{2.101}
+    \end{align}
     holds for all $x,y\in\bbR^{2}$ and $t_{0},t_{1},t_{2}\in\bbR$.
 \end{lemma}
 
 \begin{proof}
-    We first note that the change of variables formula yields
-    \[
-        \norm{D^{k}(u_{\eps}(\omega_{\eps}^{t_{1}}))
-        - D^{k}(u_{\eps}(\omega_{\eps}^{t_{2}}))}_{L^{\infty}}
-        \leq \norm{D^{k+1}(\nabla^{\perp}K_{\eps})}_{L^{\infty}}
-        \norm{\omega^{0}}_{L^{1}}
-        \norm{\Phi_{\eps}^{t_{1}} - \Phi_{\eps}^{t_{2}}}_{L^{\infty}}
-    \]
-    for any $(k,t_{1},t_{2})\in\bbZ_{\geq 0}\times\bbR^{2}$, which shows
-    the first claim and in particular that $\norm{u_{\eps}(\omega_{\eps}^{t})}_{\dot{C}^{0,1}}$
-    is continuous in $t$. Then for any $x,y\in\bbR^{2}$ and $t_{0},t_{1},t_{2}\in\bbR$, we have
-    \begin{equation}\label{2.3}
-        \begin{aligned}
-            &\abs{\abs{x + \Theta_{\eps}^{t_{0},t_{1}}(x) - y - \Theta_{\eps}^{t_{0},t_{1}}(y)}
-            - \abs{x + \Theta_{\eps}^{t_{0},t_{2}}(x) - y - \Theta_{\eps}^{t_{0},t_{2}}(y)}}
-            \\&\qquad\qquad
-            \leq \abs{\Theta_{\eps}^{t_{0},t_{1}}(x) - \Theta_{\eps}^{t_{0},t_{1}}(y)
-            - \Theta_{\eps}^{t_{0},t_{2}}(x) + \Theta_{\eps}^{t_{0},t_{2}}(y)}
-            \\&\qquad\qquad
-            \leq \abs{\int_{t_{2}}^{t_{1}}
-            \abs{u_{\eps}(\omega_{\eps}^{\tau};\mathrm{Id} + \Theta_{\eps}^{t_{0},\tau}(x))
-            - u_{\eps}(\omega_{\eps}^{\tau};\mathrm{Id} + \Theta_{\eps}^{t_{0},\tau}(y))}\,d\tau}
-            \\&\qquad\qquad
-            \leq \abs{\int_{t_{2}}^{t_{1}}\norm{u_{\eps}(\omega_{\eps}^{\tau})}_{\dot{C}^{0,1}}
-            \abs{x + \Theta_{\eps}^{t_{0},\tau}(x) - y - \Theta_{\eps}^{t_{0},\tau}(y)}\,d\tau},
-        \end{aligned}
-    \end{equation}
-    so dividing by $\abs{t_{1} - t_{2}}$, letting $t_{1} \to t_{2}$
-    and then applying a Gr\"{o}nwall-type argument shows
-    \[
-        \abs{x + \Theta_{\eps}^{t_{0},t_{1}}(x) - y - \Theta_{\eps}^{t_{0},t_{1}}(y)}
-        \leq \exp\left(\abs{
-            \int_{t_{2}}^{t_{1}}\norm{u_{\eps}(\omega_{\eps}^{\tau})}_{\dot{C}^{0,1}}\,d\tau
-        }\right)
-        \abs{x + \Theta_{\eps}^{t_{0},t_{2}}(x) - y - \Theta_{\eps}^{t_{0},t_{2}}(y)}.
-    \]
-    Then replacing $(\tau,t_{1})$ by $(\tau',\tau)$ in the above inequality
-    and applying it to \eqref{2.3} shows the claim.
+Letting $x':=x + \Theta_{\eps}^{t_{0},t_{2}}(x)$, we see that 
+\[
+\Theta_{\eps}^{t_{0},t_{1}}(x) = x' + \Theta_{\eps}^{t_{2},t_{1}}(x')-x=\Theta_{\eps}^{t_{2},t_{1}}(x') + \Theta_{\eps}^{t_{0},t_{2}}(x).
+\]
+So with $y':=y + \Theta_{\eps}^{t_{0},t_{2}}(y)$, the left-hand side of \eqref{2.101} is just $|\Theta_{\eps}^{t_{2},t_{1}}(x')-\Theta_{\eps}^{t_{2},t_{1}}(y')|$, while the last factor is $|x'-y'|$.  The result now follows from the definition of $\Theta_{\eps}^{t_{2},t}$.
+%
+%    We first note that the change of variables formula yields
+%    \[
+%        \norm{D^{k}(u_{\eps}(\omega_{\eps}^{t_{1}}))
+%        - D^{k}(u_{\eps}(\omega_{\eps}^{t_{2}}))}_{L^{\infty}}
+%        \leq \norm{D^{k+1}(\nabla^{\perp}K_{\eps})}_{L^{\infty}}
+%        \norm{\omega^{0}}_{L^{1}}
+%        \norm{\Phi_{\eps}^{t_{1}} - \Phi_{\eps}^{t_{2}}}_{L^{\infty}}
+%    \]
+%    for any $(k,t_{1},t_{2})\in\bbZ_{\geq 0}\times\bbR^{2}$, which shows
+%    the first claim and in particular that $\norm{u_{\eps}(\omega_{\eps}^{t})}_{\dot{C}^{0,1}}$
+%    is continuous in $t$. Then for any $x,y\in\bbR^{2}$ and $t_{0},t_{1},t_{2}\in\bbR$, we have
+%    \begin{equation}\label{2.3}
+%        \begin{aligned}
+%            &\abs{\abs{x + \Theta_{\eps}^{t_{0},t_{1}}(x) - y - \Theta_{\eps}^{t_{0},t_{1}}(y)}
+%            - \abs{x + \Theta_{\eps}^{t_{0},t_{2}}(x) - y - \Theta_{\eps}^{t_{0},t_{2}}(y)}}
+%            \\&\qquad\qquad
+%            \leq \abs{\Theta_{\eps}^{t_{0},t_{1}}(x) - \Theta_{\eps}^{t_{0},t_{1}}(y)
+%            - \Theta_{\eps}^{t_{0},t_{2}}(x) + \Theta_{\eps}^{t_{0},t_{2}}(y)}
+%            \\&\qquad\qquad
+%            \leq \abs{\int_{t_{2}}^{t_{1}}
+%            \abs{u_{\eps}(\omega_{\eps}^{\tau};\mathrm{Id} + \Theta_{\eps}^{t_{0},\tau}(x))
+%            - u_{\eps}(\omega_{\eps}^{\tau};\mathrm{Id} + \Theta_{\eps}^{t_{0},\tau}(y))}\,d\tau}
+%            \\&\qquad\qquad
+%            \leq \abs{\int_{t_{2}}^{t_{1}}\norm{u_{\eps}(\omega_{\eps}^{\tau})}_{\dot{C}^{0,1}}
+%            \abs{x + \Theta_{\eps}^{t_{0},\tau}(x) - y - \Theta_{\eps}^{t_{0},\tau}(y)}\,d\tau},
+%        \end{aligned}
+%    \end{equation}
+%    so dividing by $\abs{t_{1} - t_{2}}$, letting $t_{1} \to t_{2}$
+%    and then applying a Gr\"{o}nwall-type argument shows
+%    \[
+%        \abs{x + \Theta_{\eps}^{t_{0},t_{1}}(x) - y - \Theta_{\eps}^{t_{0},t_{1}}(y)}
+%        \leq \exp\left(\abs{
+%            \int_{t_{2}}^{t_{1}}\norm{u_{\eps}(\omega_{\eps}^{\tau})}_{\dot{C}^{0,1}}\,d\tau
+%        }\right)
+%        \abs{x + \Theta_{\eps}^{t_{0},t_{2}}(x) - y - \Theta_{\eps}^{t_{0},t_{2}}(y)}.
+%    \]
+%    Then replacing $(\tau,t_{1})$ by $(\tau',\tau)$ in the above inequality
+%    and applying it to \eqref{2.3} shows the claim.
 \end{proof}
 
 \begin{proposition}\label{P2.6}
@@ -963,21 +956,20 @@ $L(\Phi_{\eps*}^{t}\Omega)$.
             -\partial_{t-}L(\Phi_{\eps*}^{t}\Omega)
         }
         \leq \norm{u_{\eps}(\omega_{\eps}^{t})}_{\dot{C}^{0,1}}
-        L(\Phi_{\eps*}^{t}\Omega)
+        L(\Phi_{\eps*}^{t}\Omega).
     \]
-    holds.
 \end{proposition}
 
 \begin{proof}
-    Fix $t_{1},t_{2}\in\bbR$, $x\in\bbR^{2}$, $\lambda\in\mathcal{L}$ and $\eta>0$.
-    Then there exists $y\in\partial\Omega^{\lambda}$ such that
+    Fix any $t_{1},t_{2}\in\bbR$, $x\in\bbR^{2}$, $\lambda\in\mathcal{L}$, and $\eta>0$.
+    Pick $y\in\partial\Omega^{\lambda}$ such that
     \[
-        d(\Phi_{\eps}^{t_{1}}(x), \partial\Phi_{\eps}^{t_{1}}(\Omega^{\lambda})) + \eta
-        \geq \abs{\Phi_{\eps}^{t_{1}}(x) - \Phi_{\eps}^{t_{1}}(y)}.
+      \abs{\Phi_{\eps}^{t_{1}}(x) - \Phi_{\eps}^{t_{1}}(y)} \le   
+      d(\Phi_{\eps}^{t_{1}}(x), \partial\Phi_{\eps}^{t_{1}}(\Omega^{\lambda})) + \eta.
     \]
     Then Lemma~\ref{L2.5} and
     the inequality $\abs{\frac{1}{a^{2\alpha}} - \frac{1}{b^{2\alpha}}}
-    \leq \frac{\abs{a - b}}{ab^{2\alpha}}$ for $a,b>0$ show
+    \leq \frac{\abs{a - b}}{ab^{2\alpha}}$ for $a,b>0$ show that
     \begin{equation}\label{2.4}
         \begin{aligned}
             &\frac{1}{\left(
@@ -1010,7 +1002,7 @@ $L(\Phi_{\eps*}^{t}\Omega)$.
         \end{aligned}
     \end{equation}
     so letting $\eta\to 0^{+}$, integrating over $\lambda$,
-    and then taking supremum over $x$ shows
+    and then taking supremum over $x\in\bbR^2$ shows
     \[
         L(\Phi_{\eps*}^{t_{1}}\Omega)
         \leq \exp\left(\abs{
@@ -1018,42 +1010,39 @@ $L(\Phi_{\eps*}^{t}\Omega)$.
             \norm{u_{\eps}(\omega_{\eps}^{\tau})}_{\dot{C}^{0,1}}\,d\tau
         }\right)L(\Phi_{\eps*}^{t_{2}}\Omega).
     \]
-    Since $t_{1},t_{2}\in\bbR$ are arbitrary, all claims follow immediately.
+    Since $t_{1},t_{2}\in\bbR$ were arbitrary, both claims follow from this.
 \end{proof}
 
+From Lemma~\ref{L2.1}, Proposition~\ref{P2.6}, and  a Gr\"{o}nwall-type argument we now obtain the following result.
 
 \begin{corollary}\label{C2.7}
-    With $C_{\alpha}$ from Lemma~\ref{L2.1},
+    With $C_{\alpha}$ from Lemma~\ref{L2.1}, for all $t\in\bbR$ we have
     \[
         \max\set{
             \partial_{t}^{+}L(\Phi_{\eps*}^{t}\Omega),
             -\partial_{t-}L(\Phi_{\eps*}^{t}\Omega)
         }
-        \leq C_{\alpha}L(\Phi_{\eps*}^{t}\Omega)^{2}
+        \leq C_{\alpha}L(\Phi_{\eps*}^{t}\Omega)^{2}.
     \]
-    holds for any $t\in\bbR$. Also, whenever $\abs{t} < \frac{1}{C_{\alpha}L(\Omega)}$,
+    In particular, for all  $t\in(- \frac{1}{C_{\alpha}L(\Omega)},  \frac{1}{C_{\alpha}L(\Omega)})$ we have
     \[
         L(\Phi_{\eps*}^{t}\Omega)
-        \leq \frac{L(\Omega)}{1 - C_{\alpha}L(\Omega)\abs{t}}
+        \leq \frac{L(\Omega)}{1 - C_{\alpha}L(\Omega)\abs{t}}.
     \]
-    holds.
 \end{corollary}
 
-\begin{proof}
-    Since the second claim of Lemma~\ref{L2.1} also holds with $u_{\eps}$ in place of $u$,
-    Proposition~\ref{P2.6} shows the first claim, and the second claim
-    follows from the first claim and a Gr\"{o}nwall-type argument.
-\end{proof}
+%\begin{proof}
+%    The first claim follows from Lemma~\ref{L2.1} and     Proposition~\ref{P2.6}, and the second
+%    follows from the first claim and a Gr\"{o}nwall-type argument.
+%\end{proof}
 
 Let $T_{0}\coloneqq \frac{1}{2C_{\alpha}L(\Omega)}$ with $C_{\alpha}$ from Lemma~\ref{L2.1}.
 
 \begin{proposition}\label{P2.8}
-    When $\eps\to 0^{+}$,
-    $\Psi_{\eps}\in C\left([-T_{0},T_{0}];C_{b}(\bbR^{2};\bbR^{2})\right)$
-    converges uniformly to some $\Psi\in C\left([-T_{0},T_{0}];C_{b}(\bbR^{2};\bbR^{2})\right)$.
-    Also, $\Phi^{t}\coloneqq\mathrm{Id} + \Psi^{t}$
-    is a measure-preserving homeomorphism for each $t\in[-T_{0},T_{0}]$ and
-    $\Phi$ solves \eqref{1.6}. Furthermore,
+    There is $\Psi:=\lim_{\eps\to 0} \Psi_{\eps}\in C\left([-T_{0},T_{0}];BC(\bbR^{2};\bbR^{2})\right)$,
+%    converges uniformly to some $\Psi\in C\left([-T_{0},T_{0}];C_{b}(\bbR^{2};\bbR^{2})\right)$.
+    and $\Phi^{t}\coloneqq\mathrm{Id} + \Psi^{t}$
+    is a measure-preserving homeomorphism for each $t\in[-T_{0},T_{0}]$ that solves \eqref{1.6}. Moreover, for each $t\in[-T_{0},T_{0}]$ we have 
     \[
         L(\Phi_{*}^{t}\Omega) \leq
         \sup_{\eps>0}L(\Phi_{\eps*}^{t}\Omega) \leq 2L(\Omega)
@@ -1065,21 +1054,20 @@ Let $T_{0}\coloneqq \frac{1}{2C_{\alpha}L(\Omega)}$ with $C_{\alpha}$ from Lemma
             \norm{\Phi_{\eps}^{t}}_{\dot{C}^{0,1}},
             \norm{(\Phi_{\eps}^{t})^{-1}}_{\dot{C}^{0,1}}
         }
-        \leq e^{2C_{\alpha}L(\Omega)\abs{t}}
+        \leq e^{2C_{\alpha}L(\Omega)\abs{t}}.
     \]
-    hold for each $t\in[-T_{0},T_{0}]$.
 \end{proposition}
 
 \begin{proof}
-    Corollary~\ref{C2.7} shows
+    Corollary~\ref{C2.7} shows that
     \[
         M\coloneqq \sup_{\eps>0}\sup_{t\in[-T_{0},T_{0}]}L(\Phi_{\eps*}^{t}\Omega)
-        \in [L(\Omega), 2L(\Omega)] \subseteq [0,\infty).
+        \in [L(\Omega), 2L(\Omega)] .
     \]
-    We may assume $L(\Omega) > 0$ because otherwise $\omega^{0} \equiv 0$
-    so the conclusion follows trivially.
-    Fix $t_{0}\in[-T_{0},T_{0}]$, then for any $t\in[-T_{0},T_{0}]$, $\eps>0$ and
-    $\eps'\in(0,\eps)$, Lemmas \ref{L2.1}, \ref{L2.2} and \ref{L2.3} show
+    We may assume that $L(\Omega) > 0$ because otherwise $\omega^{0} \equiv 0$
+    and the result follows trivially.
+    Fix any $t_{0}\in[-T_{0},T_{0}]$ and pick any $t\in[-T_{0},T_{0}]$, $\eps>0$, and
+    $\eps'\in(0,\eps)$.  Then Lemmas \ref{L2.1}, \ref{L2.2}, and \ref{L2.3} show that
     \begin{equation}\label{2.5}
         \begin{aligned}
             &\norm{u_{\eps}(\omega_{\eps}^{t})\circ
@@ -1089,11 +1077,11 @@ Let $T_{0}\coloneqq \frac{1}{2C_{\alpha}L(\Omega)}$ with $C_{\alpha}$ from Lemma
             \\&\quad\quad\quad
             \leq \norm{u_{\eps}(\omega_{\eps}^{t})}_{\dot{C}^{0,1}}
             \norm{\Theta_{\eps}^{t_{0},t} - \Theta_{\eps'}^{t_{0},t}}_{L^{\infty}}
-            + \norm{u(\omega_{\eps}^{t})
-            - u(\omega_{\eps'}^{t})}_{L^{\infty}}
+             + \norm{u_{\eps}(\omega_{\eps}^{t})
+            - u(\omega_{\eps}^{t})}_{L^{\infty}}
             \\&\quad\quad\quad\quad\quad\quad\quad\quad\quad
-            + \norm{u(\omega_{\eps}^{t})
-            - u_{\eps}(\omega_{\eps}^{t})}_{L^{\infty}}
+           + \norm{u(\omega_{\eps}^{t})
+            - u(\omega_{\eps'}^{t})}_{L^{\infty}}
             + \norm{u(\omega_{\eps'}^{t})
             - u_{\eps'}(\omega_{\eps'}^{t})}_{L^{\infty}}
             \\&\quad\quad\quad
@@ -1105,9 +1093,8 @@ Let $T_{0}\coloneqq \frac{1}{2C_{\alpha}L(\Omega)}$ with $C_{\alpha}$ from Lemma
         \end{aligned}
     \end{equation}
     where $C_{\alpha}$ (which we now fix for the rest of the proof)
-    is two times the maximum of all $C_{\alpha}$'s appearing in those lemmas.
-    Then for any $t_{1},t_{2}\in[-T_{0},T_{0}]$,
-    integrating \eqref{2.5} from $t_{2}$ to $t_{1}$ shows
+    is two times the maximum of all the $C_{\alpha}$'s appearing in those lemmas.
+    Integrating \eqref{2.5} between any $t_{1},t_{2}\in[-T_{0},T_{0}]$ yields
     \begin{equation}\label{2.6}
         \begin{aligned}
             &\norm{\Theta_{\eps}^{t_{0},t_{1}} - \Theta_{\eps'}^{t_{0},t_{1}}
@@ -1121,8 +1108,8 @@ Let $T_{0}\coloneqq \frac{1}{2C_{\alpha}L(\Omega)}$ with $C_{\alpha}$ from Lemma
             + C_{\alpha}\norm{\omega^{0}}_{L^{\infty}}\abs{t_{1} - t_{2}}\eps^{1-2\alpha}.
         \end{aligned}
     \end{equation}
-    In particular, taking $t_{0} = 0$, dividing by $\abs{t_{1} - t_{2}}$
-    and letting $t_{1}\to t_{2}^{\pm}$ shows
+    In particular, taking $t_{0} = 0$, dividing by $\abs{t_{1} - t_{2}}$,
+    and letting $t_{1}\to t_{2}^{\pm}$ shows that
     \begin{align*}
         \max\set{
             \partial_{t}^{+}\norm{\Psi_{\eps}^{t} - \Psi_{\eps'}^{t}}_{L^{\infty}},
@@ -1131,60 +1118,63 @@ Let $T_{0}\coloneqq \frac{1}{2C_{\alpha}L(\Omega)}$ with $C_{\alpha}$ from Lemma
         \leq 2C_{\alpha}M\norm{\Psi_{\eps}^{t} - \Psi_{\eps'}^{t}}_{L^{\infty}}
         + C_{\alpha}\norm{\omega^{0}}_{L^{\infty}}\eps^{1-2\alpha}
     \end{align*}
-    for each $t\in[-T_{0},T_{0}]$, so a Gr\"{o}nwall-type argument shows
+    for each $t\in[-T_{0},T_{0}]$, and then a Gr\"{o}nwall-type argument yields
     \[
         \norm{\Phi_{\eps}^{t} - \Phi_{\eps'}^{t}}_{L^{\infty}}
         = \norm{\Psi_{\eps}^{t} - \Psi_{\eps'}^{t}}_{L^{\infty}}
         \leq \frac{\norm{\omega^{0}}_{L^{\infty}}}{2M}
         (e^{2C_{\alpha}M\abs{t}} - 1)\eps^{1-2\alpha}.
     \]
-    Applying this inequality to \eqref{2.6} with $C_{\alpha}M$'s replaced by $2C_{\alpha}M$'s,
-    dividing by $\abs{t_{1} - t_{2}}$ and then sending $t_{1}\to t_{2}^{+}$ shows
-    \[
-        \partial_{t}^{+}\norm{\Theta_{\eps}^{t_{0},t} - \Theta_{\eps'}^{t_{0},t}}_{L^{\infty}}
-        \leq 2C_{\alpha}M\norm{\Theta_{\eps}^{t_{0},t} - \Theta_{\eps'}^{t_{0},t}}_{L^{\infty}}
+    Applying this inequality to \eqref{2.6}, 
+    %with $C_{\alpha}M$'s replaced by $2C_{\alpha}M$'s,
+    dividing by $\abs{t_{1} - t_{2}}$ and then sending $t_{1}\to t_{2}^{\pm}$ shows that
+    \begin{align*}
+       \max & \left\{ \partial_{t}^{+}\norm{\Theta_{\eps}^{t_{0},t} - \Theta_{\eps'}^{t_{0},t}}_{L^{\infty}},
+       -\partial_{t-}\norm{\Theta_{\eps}^{t_{0},t} - \Theta_{\eps'}^{t_{0},t}}_{L^{\infty}} \right\}
+        \\ & \qquad\qquad\qquad\qquad\qquad \leq C_{\alpha}M\norm{\Theta_{\eps}^{t_{0},t} - \Theta_{\eps'}^{t_{0},t}}_{L^{\infty}}
         + C_{\alpha}\norm{\omega^{0}}_{L^{\infty}}
-        e^{2C_{\alpha}Mt}\eps^{1-2\alpha}
-    \]
-    for $t\geq 0$, and we can also obtain a similar bound for
-    $-\partial_{t-}\norm{\Theta_{\eps}^{t_{0},t} - \Theta_{\eps'}^{t_{0},t}}_{L^{\infty}}$
-    and $t\leq 0$, so a Gr\"{o}nwall-type argument shows
+        e^{2C_{\alpha}M|t|}\eps^{1-2\alpha}
+    \end{align*}
+    for all $t\in[-T_0,T_0]$,
+%     $t\geq 0$, and we can obtain a similar bound for
+%    $-\partial_{t-}\norm{\Theta_{\eps}^{t_{0},t} - \Theta_{\eps'}^{t_{0},t}}_{L^{\infty}}$
+%    and $t\leq 0$, 
+    so a Gr\"{o}nwall-type argument yields
     \begin{equation*}
         \norm{\Theta_{\eps}^{t_{0},t} - \Theta_{\eps'}^{t_{0},t}}_{L^{\infty}}
-        \leq \frac{\norm{\omega^{0}}_{L^{\infty}}e^{2C_{\alpha}MT_{0}}\eps^{1-2\alpha}}{2M}
-        \left(e^{2C_{\alpha}M\abs{t - t_{0}}} - 1\right).
+        \leq \frac{\norm{\omega^{0}}_{L^{\infty}}e^{2C_{\alpha}MT_{0}}\eps^{1-2\alpha}}{M}
+        \left(e^{C_{\alpha}M\abs{t - t_{0}}} - 1\right).
     \end{equation*}
     Therefore, $\Theta_{\eps}^{t_{0},\,\cdot\,}$ converges uniformly
-    to some $\Theta^{t_{0},\,\cdot\,}\colon [-T_{0},T_{0}]\to C_{b}(\bbR^{2};\bbR^{2})$
-    as $\eps\to 0^{+}$. We let $\Psi^{t}\coloneqq\Theta^{0,t}$.
-
+    to some $\Theta^{t_{0},\,\cdot\,}\colon [-T_{0},T_{0}]\to BC(\bbR^{2};\bbR^{2})$
+    as $\eps\to 0$. 
+    
+    Let $\Psi^{t}\coloneqq\Theta^{0,t}$.
     Since $(\mathrm{Id} + \Theta_{\eps}^{t_{0},t_{1}})
-    \circ(\mathrm{Id}+\Theta_{\eps}^{t_{1},t_{0}}) = \mathrm{Id}$ holds for
-    all $t_{0},t_{1}\in[-T_{0},T_{0}]$ and $\eps>0$, sending $\eps\to 0^{+}$ shows
+    \circ(\mathrm{Id}+\Theta_{\eps}^{t_{1},t_{0}}) = \mathrm{Id}$  for
+    all $t_{0},t_{1}\in[-T_{0},T_{0}]$ and $\eps>0$, sending $\eps\to 0$ shows that
     $(\mathrm{Id} + \Theta^{t_{0},t_{1}})
-    \circ(\mathrm{Id} + \Theta^{t_{1},t_{0}}) = \mathrm{Id}$, so in particular
+    \circ(\mathrm{Id} + \Theta^{t_{1},t_{0}}) = \mathrm{Id}$.  In particular,
     $\Phi^{t}\coloneqq \mathrm{Id} + \Psi^{t}$ is a homeomorphism whose inverse is
     $\mathrm{Id} + \Theta^{t,0}$.
-    Also, Lemma~\ref{L2.5} and the definition of $C_{\alpha}$ show
+    Also, Lemma~\ref{L2.5} and the definition of $C_{\alpha}$ show that
     $\norm{\mathrm{Id} + \Theta_{\eps}^{t_{0},t}}_{\dot{C}^{0,1}}
     \leq e^{C_{\alpha}M\abs{t - t_{0}}}$ for all $t_{0},t\in[-T_{0},T_{0}]$ and $\eps>0$, thus
     $\max\set{\norm{\Phi^{t}}_{\dot{C}^{0,1}}, \norm{(\Phi^{t})^{-1}}_{\dot{C}^{0,1}}}
     \leq e^{C_{\alpha}M\abs{t}}$ holds for all $t\in[-T_{0},T_{0}]$.
-    By Fatou's lemma, we also have $L(\Phi_{*}^{t}\Omega)
-    \leq \liminf_{\eps\to 0^{+}}L(\Phi_{\eps*}^{t}\Omega) \leq M$ for each $t\in[-T_{0},T_{0}]$.
-    Furthermore, since each $\Phi_{\eps}^{t}$ is measure-preserving,
-    its uniform limit $\Phi^{t}$ is also measure-preserving, because
-    $\mathbbm{1}_{U}\circ\Phi_{\eps}^{t}$ converges pointwise to
-    $\mathbbm{1}_{U}\circ\Phi^{t}$ as $\eps\to 0^{+}$ for any open set $U\subseteq\bbR^{2}$.
+    By Fatou's lemma we also have $L(\Phi_{*}^{t}\Omega)
+    \leq \liminf_{\eps\to 0}L(\Phi_{\eps*}^{t}\Omega) \leq M$ for each $t\in[-T_{0},T_{0}]$.
+   And since each $\Phi_{\eps}^{t}$ is measure-preserving,
+    their uniform limit $\Phi^{t}$ is also such because for any open set $U\subseteq\bbR^{2}$ we have that
+    $\mathbbm{1}_{U}\circ\Phi_{\eps}^{t}\to \mathbbm{1}_{U}\circ\Phi^{t}$ pointwise as $\eps\to 0$ .
 
-    It remains to show that $\Phi^{t}$ satisfies \eqref{1.6}, or equivalently, that
-    with $\omega^{t}\coloneqq\omega^{0}\circ (\Phi^{t})^{-1}$,
+    It remains to show that $\Phi^{t}$ satisfies \eqref{1.6}, that is,     with $\omega^{t}\coloneqq\omega^{0}\circ (\Phi^{t})^{-1}$ we have
     \begin{equation}\label{2.7}
         \Phi^{t}(x) = x + \int_{0}^{t}
         u(\omega^{\tau};\Phi^{\tau}(x))\,d\tau
     \end{equation}
-    holds for each $t\in[-T_{0},T_{0}]$ and $x\in\bbR^{2}$.
-    Note that taking $t_{0} = 0$ and letting $\eps'\to 0^{+}$ in \eqref{2.5} yields
+for each $t\in[-T_{0},T_{0}]$ and $x\in\bbR^{2}$.
+    Taking $t_{0} = 0$ and letting $\eps'\to 0^{+}$ in \eqref{2.5} yields
     \begin{align*}
         \norm{u_{\eps}(\omega_{\eps}^{t})\circ \Phi_{\eps}^{t}
         - u(\omega^{t})\circ \Phi^{t}}_{L^{\infty}}
@@ -1197,7 +1187,7 @@ Let $T_{0}\coloneqq \frac{1}{2C_{\alpha}L(\Omega)}$ with $C_{\alpha}$ from Lemma
         u(\omega_{\eps}^{\tau};\Phi_{\eps}^{\tau}(x))\,d\tau
     \]
     converges to the right-hand side of \eqref{2.7}
-    when $\eps\to 0^{+}$, thus proving \eqref{1.6}.
+    as $\eps\to 0$.  This now proves \eqref{1.6}.
 \end{proof}
 
 \begin{proposition}\label{P2.9}
@@ -1208,14 +1198,14 @@ Let $T_{0}\coloneqq \frac{1}{2C_{\alpha}L(\Omega)}$ with $C_{\alpha}$ from Lemma
 \end{proposition}
 
 \begin{proof}
-    Define
+    Let
     \[
         M \coloneqq \sup_{t\in I}\max\left\{
             L(\Phi_{*}^{t}\Omega),
             L(\Pi_{*}^{t}\Omega)
         \right\}.
     \]
-    Then Lemmas \ref{L2.1} and \ref{L2.2} show
+    Then Lemmas \ref{L2.1} and \ref{L2.2} show that
     \begin{align*}
         \norm{u(\Phi_{*}^{t}\omega^{0})\circ \Phi^{t}
         - u(\Pi_{*}^{t}\omega^{0})\circ \Pi^{t}}_{L^{\infty}}
@@ -1224,7 +1214,7 @@ Let $T_{0}\coloneqq \frac{1}{2C_{\alpha}L(\Omega)}$ with $C_{\alpha}$ from Lemma
         + \norm{u(\Phi_{*}^{t}\omega^{0}) - u(\Pi_{*}^{t}\omega^{0})}_{L^{\infty}} \\
         &\leq C_{\alpha}M\norm{\Phi^{t} - \Pi^{t}}_{L^{\infty}}
     \end{align*}
-    for some $C_{\alpha}$, which together with continuity of
+    with some $C_{\alpha}$, which together with continuity of
     $\norm{\Phi^{t}-\Pi^{t}}_{L^{\infty}}$ in $t$ shows
     \[
         \max\set{
@@ -1233,10 +1223,10 @@ Let $T_{0}\coloneqq \frac{1}{2C_{\alpha}L(\Omega)}$ with $C_{\alpha}$ from Lemma
         }
         \leq C_{\alpha}M\norm{\Phi^{t} - \Pi^{t}}_{L^{\infty}}.
     \]
-    Therefore, a Gr\"{o}nwall-type argument proves the claim.
+  A Gr\"{o}nwall-type argument  finishes the proof.
 \end{proof}
 
-Combining Propositions \ref{P2.8} and \ref{P2.9} then shows Theorem~\ref{T1.2}.
+Combining Propositions \ref{P2.8} and \ref{P2.9} now concludes Theorem~\ref{T1.2}.
 
 
 \section{Proof of Theorem~\ref{T1.4}}\label{S3}
@@ -1269,7 +1259,7 @@ $\tilde{z}_{\eps}^{t,\lambda}\colon\bbT\to\bbR^{2}$ of $z_{\eps}^{t,\lambda}$, a
 let $\tilde{z}_{\eps}^{t+h,\lambda}\coloneqq
 \Phi_{\eps}^{t+h}\circ(\Phi_{\eps}^{t})^{-1}\circ\tilde{z}_{\eps}^{t,\lambda}$
 for each $h\in\bbR$. Then since \eqref{2.2} is globally well-posed
-in $C_{b}^{2}(\bbR^{2};\bbR^{2})$ (see the remark before Lemma~\ref{L2.5}),
+in $C_{b}^{2}(\bbR^{2};\bbR^{2})$ (see the paragraph before Lemma~\ref{L2.5}),
 it easily follows that $\tilde{z}_{\eps}^{t,\lambda}\in H^{2}(\bbT;\bbR^{2})$ and
 \begin{equation}\label{3.1}
     \tilde{z}_{\eps}^{t+h,\lambda}
