@@ -267,7 +267,7 @@ Here, $\mathcal{L}$ is meant to be the range of $\omega$ and
 $\Omega^{\lambda}$ each superlevel and sublevel set of $\omega^{+}$ and $\omega^{-}$,
 respectively, so that $\partial\Omega^{\lambda}$ is a level set of $\omega$
 and \eqref{1.3} is the layer cake representation of $\omega$.
-In this reason, we call a choice of $(\mathcal{L},\theta,\Omega)$, or simply $\Omega$,
+In this reason, we call a choice of $(\mathcal{L},\theta,\Omega)$, or simply $x\Omega$,
 a \emph{generalized layer cake representation} of $\omega$.
 
 It turns out that $\Omega^{\lambda}$'s being superlevel or sublevel sets of $\omega$
@@ -558,10 +558,9 @@ can change from one inequality to another, but they always only depend  on $\alp
         \leq \int_{\mathcal{L}}\frac{C_{\alpha}}
         {d(x,\partial\Omega^{\lambda})^{2\alpha}}d|\theta|(\lambda).
     \end{align*}
-   This proves the first claim, and the second follows by
-    taking 
-    %the supremum over $x\in\bbR^{2}$ and letting 
-    $\eps\to 0^{+}$.
+   This proves the first and second claims, and the third follows by taking 
+   %the supremum over $x\in\bbR^{2}$ and letting 
+   $\eps\to 0^{+}$.
 \end{proof}
 
 \begin{lemma}\label{L2.2}
@@ -835,14 +834,15 @@ with the initial data $\Theta_{\eps}^{t_{0},t_{1}}$ at time $t=t_{1}$ shows that
  for all $t\in\bbR$. Letting $t:=t_{0}$ shows that
 $(\mathrm{Id} + \Theta_{\eps}^{t_{1},t_{0}})
 \circ(\mathrm{Id} + \Theta_{\eps}^{t_{0},t_{1}}) = \mathrm{Id}$,
-so we conclude that each $\mathrm{Id} + \Theta_{\eps}^{t_{0},t}$
-is a homeomorphism.  Then so is  $\Phi_{\eps}^{t} = \mathrm{Id} + \Theta_{\eps}^{0,t}$, and so $\omega_{\eps}^{t}\in L^1(\bbR^2)$.
+so we conclude that each $\mathrm{Id} + \Theta_{\eps}^{t_{0},t}$ is a homeomorphism.
+Then so is $\Phi_{\eps}^{t} = \mathrm{Id} + \Theta_{\eps}^{0,t}$.
+%and so $\omega_{\eps}^{t}\in L^1(\bbR^2)$.
 
 Letting $BC^{1}(\bbR^{2};\bbR^{2})$ be the space of bounded $C^{1}$ functions from $\bbR^{2}$ to $\bbR^{2}$ with bounded first derivatives, we see that for any $F\in BC^{1}(\bbR^{2};\bbR^{2})$ and $x,h\in\bbR^{2}$ we have
 \begin{align*}
     D(u_{\eps}(\omega_{\eps}^{t})\circ(\mathrm{Id} + F))(x)h
     = \int_{\bbR^{2}}D(\nabla^{\perp}K_{\eps})(x + F(x) - y)(h + DF(x)h)
-    \,\omega_{\eps}^{t}(y)\, dy.
+    \,d\omega_{\eps}^{t}(y).
 \end{align*}
 Therefore
 $F\mapsto u_{\eps}(\omega_{\eps}^{t})\circ(\mathrm{Id} + F)$
@@ -904,11 +904,27 @@ $L_{\tht}(\Phi_{\eps*}^{t}\Omega)$.
 \end{lemma}
 
 \begin{proof}
-Letting $x':=x + \Theta_{\eps}^{t_{0},t_{2}}(x)$, we see that 
-\[
-\Theta_{\eps}^{t_{0},t_{1}}(x) = x' + \Theta_{\eps}^{t_{2},t_{1}}(x')-x=\Theta_{\eps}^{t_{2},t_{1}}(x') + \Theta_{\eps}^{t_{0},t_{2}}(x).
-\]
-So with $y':=y + \Theta_{\eps}^{t_{0},t_{2}}(y)$, the left-hand side of \eqref{2.101} is just $|\Theta_{\eps}^{t_{2},t_{1}}(x')-\Theta_{\eps}^{t_{2},t_{1}}(y')|$, while the last factor is $|x'-y'|$.  The result now follows from the definition of $\Theta_{\eps}^{t_{2},t}$.
+    Change of variables  yields
+    \[
+        \norm{D^{k}(u_{\eps}(\omega_{\eps}^{t_{1}}))
+        - D^{k}(u_{\eps}(\omega_{\eps}^{t_{2}}))}_{L^{\infty}}
+        \leq \norm{D^{k+1}(\nabla^{\perp}K_{\eps})}_{L^{\infty}}
+        \norm{\omega^{0}}_{L^{1}}
+        \norm{\Phi_{\eps}^{t_{1}} - \Phi_{\eps}^{t_{2}}}_{L^{\infty}}
+    \]
+    for any $(k,t_{1},t_{2})\in\bbZ_{\geq 0}\times\bbR^{2}$.  This shows
+    the first claim, and in particular that $\norm{u_{\eps}(\omega_{\eps}^{t})}_{\dot{C}^{0,1}}$
+    is continuous in $t$. 
+
+    Next, letting $x':=x + \Theta_{\eps}^{t_{0},t_{2}}(x)$, we see that
+    \[
+        \Theta_{\eps}^{t_{0},t_{1}}(x) = x' + \Theta_{\eps}^{t_{2},t_{1}}(x') - x
+        = \Theta_{\eps}^{t_{2},t_{1}}(x') + \Theta_{\eps}^{t_{0},t_{2}}(x).
+    \]
+    So with $y':=y + \Theta_{\eps}^{t_{0},t_{2}}(y)$, the left-hand side of \eqref{2.101}
+    is just $|\Theta_{\eps}^{t_{2},t_{1}}(x')-\Theta_{\eps}^{t_{2},t_{1}}(y')|$,
+    while the last factor is $|x'-y'|$. The result now follows from the definition of
+    $\Theta_{\eps}^{t_{2},t}$.
 %
 %    We first note that the change of variables formula yields
 %    \[
@@ -1174,10 +1190,10 @@ Let $T_{0}\coloneqq \frac{1}{2C_{\alpha}L_{\tht}(\Omega)}$ with $C_{\alpha}$ fro
     It remains to show that $\Phi^{t}$ satisfies \eqref{1.6}, that is,
     with $\omega^{t}\coloneqq\omega^{0}\circ (\Phi^{t})^{-1}$ we have
     \begin{equation}\label{2.7}
-        \Phi^{t}(x) = x + \int_{0}^{t}
-        u(\omega^{\tau};\Phi^{\tau}(x))\,d\tau
+        \Phi^{t} = \mathrm{Id} + \int_{0}^{t}
+        u(\omega^{\tau})\circ\Phi^{\tau}\,d\tau
     \end{equation}
-    for each $t\in[-T_{0},T_{0}]$ and $x\in\bbR^{2}$.
+    for each $t\in[-T_{0},T_{0}]$.
     Taking $t_{0} = 0$ and letting $\eps'\to 0^{+}$ in \eqref{2.5} yields
     \begin{align*}
         \norm{u_{\eps}(\omega_{\eps}^{t})\circ \Phi_{\eps}^{t}
@@ -1187,11 +1203,11 @@ Let $T_{0}\coloneqq \frac{1}{2C_{\alpha}L_{\tht}(\Omega)}$ with $C_{\alpha}$ fro
     \end{align*}
     which shows that the right-hand side of
     \[
-        \Phi_{\eps}^{t}(x) = x + \int_{0}^{t}
-        u(\omega_{\eps}^{\tau};\Phi_{\eps}^{\tau}(x))\,d\tau
+        \Phi_{\eps}^{t} = \mathrm{Id} + \int_{0}^{t}
+        u(\omega_{\eps}^{\tau})\circ \Phi_{\eps}^{\tau}\,d\tau
     \]
     converges to the right-hand side of \eqref{2.7}
-    as $\eps\to 0$.  This now proves \eqref{1.6}.
+    as $\eps\to 0$. This now proves \eqref{1.6}.
 \end{proof}
 
 \begin{proposition}\label{P2.9}
