@@ -267,8 +267,12 @@ Here, $\mathcal{L}$ is meant to be the range of $\omega$ and
 $\Omega^{\lambda}$ each superlevel and sublevel set of $\omega^{+}$ and $\omega^{-}$,
 respectively, so that $\partial\Omega^{\lambda}$ is a level set of $\omega$
 and \eqref{1.3} is the layer cake representation of $\omega$.
-In this reason, we call a choice of $(\mathcal{L},\theta,\Omega)$, or simply $x\Omega$,
-a \emph{generalized layer cake representation} of $\omega$.
+In this reason, we call a choice of $(\Omega,\theta)$, or simply $\Omega$,
+a \emph{generalized layer cake representation} of $\omega$.\smallskip
+
+\textit{Remark}. The measurable space $\mathcal{L}$ is implicit from $\Omega$ and $\theta$,
+so we will suppress it in the notation. From now on, $\mathcal{L}$ always
+denotes the measurable space on which $\Omega$ and $\theta$ are defined.\smallskip
 
 It turns out that $\Omega^{\lambda}$'s being superlevel or sublevel sets of $\omega$
 is not strictly necessary for the well-posedness theory we develop.
@@ -389,7 +393,7 @@ Now we state our first main result.
 
 \begin{theorem}\label{T1.2}
     Let $\omega^{0}\in L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$ admit
-    a generalized layer cake representation $(\mathcal{L},\theta,\Omega)$ such that
+    a generalized layer cake representation $(\Omega,\theta)$ such that
     $L_{\tht}(\Omega)<\infty$. Then there is a unique maximal Lagrangian solution
     $\omega\colon I\to L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$ to
     \eqref{1.1}--\eqref{1.2} with initial data $\omega^{0}$ on some open interval $I\ni 0$, 
@@ -414,7 +418,7 @@ and $\Delta(\,\cdot\,,\,\cdot\,)$).
 
 \begin{definition}
     Let $\omega\in L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$.
-    Then a generalized layer cake representation $(\mathcal{L},\theta,\Omega)$
+    Then a generalized layer cake representation $(\Omega,\theta)$
     of $\omega$ is said to be \emph{composed of simple closed curves} if for each
     $\lambda\in\mathcal{L}$, $\Omega^{\lambda}$ is a bounded open set and
     $\partial\Omega^{\lambda} = \operatorname{im}(z^{\lambda})$
@@ -457,7 +461,7 @@ Next we state our second main result.
 
 \begin{theorem}\label{T1.4}
     Let $\omega^{0}\in L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$ admit a
-    generalized layer cake representation $(\mathcal{L},\theta,\Omega)$
+    generalized layer cake representation $(\Omega,\theta)$
     composed of simple closed curves such that $L_{\tht}(\Omega), Q(\Omega), R_{\tht}(\Omega) < \infty$.
     Let $\omega\colon I\to L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$ be
     the Lagrangian solution to \eqref{1.1}--\eqref{1.2}
@@ -500,7 +504,7 @@ for all $k\in\bbZ_{\geq 0}$.
 \section{Proof of Theorem~\ref{T1.2}}
 
 We start with some estimates on the velocity field $u(\omega)$
-in terms of $L_{\tht}(\Omega)$, where $(\mathcal{L},\theta,\Omega)$ is
+in terms of $L_{\tht}(\Omega)$, where $(\Omega,\theta)$ is
 a generalized layer cake representation of $\omega$.
 %Unless specified otherwise, 
 All constants $C_{\alpha}$ below
@@ -509,7 +513,7 @@ can change from one inequality to another, but they always only depend  on $\alp
 \begin{lemma}\label{L2.1}
     There is $C_{\alpha}$ such that for any
     $\omega\in L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$
-    with a generalized layer cake representation $(\mathcal{L},\theta,\Omega)$, and for any
+    with a generalized layer cake representation $(\Omega,\theta)$, and for any
     $\eps>0$ and $x\in\bbR^{2}$, we have
     \[
         \abs{D(u_{\eps}(\omega))(x)} \leq
@@ -566,7 +570,7 @@ can change from one inequality to another, but they always only depend  on $\alp
 \begin{lemma}\label{L2.2}
     There is $C_{\alpha}$ such that for any
     $\omega\in L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$
-    with a generalized layer cake representation $(\mathcal{L},\theta,\Omega)$ and any
+    with a generalized layer cake representation $(\Omega,\theta)$ and any
     measure-preserving homeomorphisms\ $\Phi_{1},\Phi_{2}\colon\bbR^{2}\to\bbR^{2}$,
     \[
         \norm{u(\Phi_{1*}\omega) - u(\Phi_{2*}\omega)}_{L^{\infty}} \leq
@@ -754,7 +758,7 @@ And clearly
 
 Now, fix any initial data $\omega^{0}\in L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$
 admitting a generalized layer cake representation
-$(\mathcal{L},\theta,\Omega)$ with $L_{\tht}(\Omega) < \infty$.
+$(\Omega,\theta)$ with $L_{\tht}(\Omega) < \infty$.
 Fix any $\eps>0$ and consider the ODE
 \begin{equation}\label{2.1}
  %   \left\{
@@ -855,8 +859,12 @@ But since for any $F\in BC^{1}(\bbR^{2};\bbR^{2})$ we have
     \norm{\mathrm{Id} + DF}_{L^{\infty}},
 \]
 a Gr\"{o}nwall-type argument shows that the $C^{1}$ norm of any solution to \eqref{2.2}
-can grow no faster than exponentially.  Therefore \eqref{2.2} is even globally well-posed in $BC^{1}(\bbR^{2};\bbR^{2})$, and so $\Theta_{\eps}^{t_{0},t}\in BC^{1}(\bbR^{2};\bbR^{2})$
-for all $t\in\bbR$.  This and $\nabla \cdot u_{\eps}(\omega_{\eps}^{t}) \equiv 0$ now show that the map  $\mathrm{Id} + \Theta_{\eps}^{t_{0},t}$ is measure-preserving. Then $\omega_{\eps}^{t}=\omega^{0}\circ(\Phi_{\eps}^{t})^{-1}\in L^1(\bbR^2)\cap L^\infty(\bbR^2)$ and  $(\mathcal{L},\theta,\Phi_{\eps*}^{t}\Omega)$ is its generalized layer cake representation.
+can grow no faster than exponentially.  Therefore \eqref{2.2} is even globally well-posed in
+$BC^{1}(\bbR^{2};\bbR^{2})$, and so $\Theta_{\eps}^{t_{0},t}\in BC^{1}(\bbR^{2};\bbR^{2})$
+for all $t\in\bbR$.  This and $\nabla \cdot u_{\eps}(\omega_{\eps}^{t}) \equiv 0$
+now show that the map $\mathrm{Id} + \Theta_{\eps}^{t_{0},t}$ is measure-preserving.
+Then $\omega_{\eps}^{t}=\omega^{0}\circ(\Phi_{\eps}^{t})^{-1}\in L^1(\bbR^2)\cap L^\infty(\bbR^2)$
+and  $\Phi_{\eps*}^{t}\Omega$ is its generalized layer cake representation.
 %\smallskip
 
 %\textit{Remark}. 
@@ -866,10 +874,10 @@ for each $F\in BC^{2}(\bbR^{2};\bbR^{2})$ and $x,h_{1},h_{2}\in\bbR^{2}$ we have
 \begin{align*}
     &D^{2}(u_{\eps}(\omega_{\eps}^{t})\circ(\mathrm{Id} + F))(x)(h_{1},h_{2})
     \\&\quad\quad = \int_{\bbR^{2}}D^{2}(\nabla^{\perp}K_{\eps})
-    (x + F(x) - y)(h_{1} + DF(x)h_{1}, h_{2} + DF(x)h_{2})\,d\omega_{\eps}^{t}(y)
+    (x + F(x) - y)(h_{1} + DF(x)h_{1}, h_{2} + DF(x)h_{2})\,\omega_{\eps}^{t}(y)\,dy
     \\&\quad\quad\quad\quad\quad
     + \int_{\bbR^{2}}D(\nabla^{\perp}K_{\eps})(x + F(x) - y)
-    \left(D^{2}F(x)(h_{1}, h_{2})\right) d\omega_{\eps}^{t}(y)
+    \left(D^{2}F(x)(h_{1}, h_{2})\right)\omega_{\eps}^{t}(y)\,dy
 \end{align*}
 and
 \begin{align*}
@@ -877,7 +885,8 @@ and
     &\leq \norm{D^{2}(\nabla^{\perp}K_{\eps})}_{L^{\infty}} \norm{\omega^{0}}_{L^{1}}
     \norm{\mathrm{Id} + DF}_{L^{\infty}}^{2}
     \\&\quad\quad\quad
-    + \norm{D(\nabla^{\perp}K_{\eps})}_{L^{\infty}} \norm{\omega^{0}}_{L^{1}} \norm{D^{2}F}_{L^{\infty}}.
+    + \norm{D(\nabla^{\perp}K_{\eps})}_{L^{\infty}} \norm{\omega^{0}}_{L^{1}}
+    \norm{D^{2}F}_{L^{\infty}}.
 \end{align*}
 Another Gr\"{o}nwall-type argument and the time-exponential bound on the $C^{1}$ norms of solutions to \eqref{2.2} 
 now shows that \eqref{2.2} is globally well-posed in $BC^{2}(\bbR^{2};\bbR^{2})$, which we will use  in Section~\ref{S3}.
@@ -1206,7 +1215,7 @@ Let $T_{0}\coloneqq \frac{1}{2C_{\alpha}L_{\tht}(\Omega)}$ with $C_{\alpha}$ fro
         \Phi_{\eps}^{t} = \mathrm{Id} + \int_{0}^{t}
         u(\omega_{\eps}^{\tau})\circ \Phi_{\eps}^{\tau}\,d\tau
     \]
-    converges to the right-hand side of \eqref{2.7}
+    converges uniformly to the right-hand side of \eqref{2.7}
     as $\eps\to 0$. This now proves \eqref{1.6}.
 \end{proof}
 
@@ -1252,7 +1261,7 @@ Combining Propositions \ref{P2.8} and \ref{P2.9} now concludes Theorem~\ref{T1.2
 \section{Proof of Theorem~\ref{T1.4}}\label{S3}
 
 Suppose that the initial data $\omega^{0}\in L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$
-admits a generalized layer cake representation $(\mathcal{L},\theta,\Omega)$
+admits a generalized layer cake representation $(\Omega,\theta)$
 composed of simple closed curves such that $L_{\tht}(\Omega), Q(\Omega), R_{\tht}(\Omega) < \infty$.
 For each $\lambda\in\mathcal{L}$, let $z^{0,\lambda}\in\operatorname{PSC}(\bbR^{2})$ be
 such that $\partial\Omega^{\lambda} = \operatorname{im}(z^{0,\lambda})$.
@@ -1593,7 +1602,7 @@ To estimate the right-hand side of \eqref{3.2}, we need the following lemmas.
 
 \begin{lemma}\label{L3.6}
     For any $\omega\in L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$ with
-    a generalized layer cake representation $(\mathcal{L},\theta,\Omega)$
+    a generalized layer cake representation $(\Omega,\theta)$
     such that $L_{\tht}(\Omega)<\infty$, $\eps>0$ and $x,h_{1},h_{2}\in\bbR^{2}$,
     \begin{align*}
         D^{2}(u_{\eps}(\omega))(x)(h_{1},h_{2})
@@ -2321,7 +2330,7 @@ that is better than the usual superlevel/sublevel sets?}
 
 \begin{proposition}
     For any $\omega\colon\bbR^{2}\to\bbR$ and a generalized layer cake representation
-    $(\mathcal{L},\theta,\Omega)$ of $\omega$,
+    $(\Omega,\theta)$ of $\omega$,
     \[
         \norm{\omega}_{\dot{C}^{0,2\alpha}} \leq L_{\tht}(\Omega)
     \]
@@ -2370,7 +2379,7 @@ that is better than the usual superlevel/sublevel sets?}
         \colon
         \omega(x) < \lambda}.
     \]
-    Then $(\mathcal{L},\theta,\Omega)$ is a generalized layer cake representation of $\omega$
+    Then $(\Omega,\theta)$ is a generalized layer cake representation of $\omega$
     satisfying $L_{\tht}(\Omega) < \infty$.
 \end{proposition}
 
@@ -2380,7 +2389,7 @@ that is better than the usual superlevel/sublevel sets?}
 
 \begin{proposition}
     There exist $\omega\colon\bbR^{2}\to\bbR$ and
-    a generalized layer cake representation $(\mathcal{L},\theta,\Omega)$ of $\omega$
+    a generalized layer cake representation $(\Omega,\theta)$ of $\omega$
     such that $L_{\tht}(\Omega)<\infty$ and
     \[
         \min\left\{\delta^{2\alpha},1\right\}
@@ -2507,7 +2516,7 @@ preprint.
 \begin{lemma}
     For any $\omega^{0}\in L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$
     and a generalized layer cake representation
-    $(\mathcal{L},\theta,\Omega)$ of $\omega^{0}$,
+    $(\Omega,\theta)$ of $\omega^{0}$,
     $L_{\tht}(\Omega) \leq 2^{2\alpha}\hat{L}(\Omega)$ holds.
 \end{lemma}
 
