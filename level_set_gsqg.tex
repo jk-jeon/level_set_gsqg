@@ -263,25 +263,28 @@ $\theta$ is a $\sigma$-finite signed measure on $\mathcal{L}$, $\Omega$ is a set
 the product $\sigma$-algebra of $\bbR^{2}\times\mathcal{L}$,
 and $\Omega^{\lambda}\subseteq\bbR^{2}$ is the $\lambda$-section of $\Omega$
 for each $\lambda\in\mathcal{L}$.
-Here, $\mathcal{L}$ is meant to be the range of $\omega$ and
-$\Omega^{\lambda}$ each superlevel and sublevel set of $\omega^{+}$ and $\omega^{-}$,
-respectively, so that $\partial\Omega^{\lambda}$ is a level set of $\omega$
-and \eqref{1.3} is the layer cake representation of $\omega$.
-In this reason, we call a choice of $(\Omega,\theta)$, or simply $\Omega$,
+
+A natural choice of $(\Omega,\theta)$ is that each $\Omega^{\lambda}$
+is a super-level set of $\omega^{+}$ and $\omega^{-}$, and
+$\theta^{+}$, $\theta^{-}$ are respectively the uniform measures on
+$\left(0,\norm{\omega^{+}}_{L^{\infty}}\right]$ and
+$\left[-\norm{\omega^{-}}_{L^{\infty}},0\right)$, so that \eqref{1.3}
+is the standard layer cake representation.
+In this reason, we call the pair $(\Omega,\theta)$, or simply $\Omega$,
 a \emph{generalized layer cake representation} of $\omega$.\smallskip
 
 \textit{Remark}. The measurable space $\mathcal{L}$ is implicit from $\Omega$ and $\theta$,
 so we will suppress it in the notation. From now on, $\mathcal{L}$ always
 denotes the measurable space on which $\Omega$ and $\theta$ are defined.\smallskip
 
-It turns out that $\Omega^{\lambda}$'s being superlevel or sublevel sets of $\omega$
-is not strictly necessary for the well-posedness theory we develop.
+It turns out that each $\Omega^{\lambda}$ being a super-level set of $\omega$
+is not necessary for the well-posedness theory we develop.
 Furthermore, this abstract setting allows a simple setup for
 studying $H^{2}$ regularity of level sets, which our second result is mainly about,
 that encompasses situations where some level sets of $\omega$
 may consist of multiple (or even infinitely many) disjoint curves.
 In these reasons, we state and prove our well-posedness result in terms of
-an arbitrarily given generalized layer cake representation, rather than
+an arbitrary generalized layer cake representation, rather than
 the standard layer cake representation.
 
 In addition to merely having a decomposition \eqref{1.3},
@@ -322,9 +325,9 @@ $u(\omega)$ shows that the most general condition on $\omega$
 \begin{equation}\label{1.5}
     \int_{0}^{1}\frac{\min\set{\rho(\delta),1}}{\delta^{1+2\alpha}}\,d\delta < \infty.
 \end{equation}
-It can be shown that \eqref{1.5} in fact implies \eqref{1.4} when
-$\Omega^{\lambda}$'s are chosen to be superlevel sets of $\omega^{+}$ and
-sublevel sets of $\omega^{-}$. Since \eqref{1.5} does not hold for
+It can be shown that \eqref{1.5} in fact implies \eqref{1.4} when $(\Omega,\theta)$
+is the standard layer cake representation.
+Since \eqref{1.5} does not hold for
 $\rho(\delta) = \min\set{\delta^{2\alpha},1}$, we see that \eqref{1.4}
 is strictly more general than any assumption on the modulus of continuity of $\omega$
 from which Lipschitz continuity of $u(\omega)$ is guaranteed.
@@ -454,8 +457,8 @@ $\norm{a\gamma}_{\dot{H}^{2}}^{2} = \frac{1}{a}\norm{\gamma}_{\dot{H}^{2}}^{2}$
 while $\ell(a\gamma) = a\ell(\gamma)$.)
 The condition $R_{\tht}(\Omega)<\infty$ on the other hand controls how densely
 $z^{\lambda}$'s of \emph{different scales} can be packed together.
-More specifically, it prevents too many small level sets to be placed
-near a large level set. Interpreting $z^{\lambda}$'s as level sets of $\omega$,
+More specifically, it prevents too many small $z^{\lambda}$'s to be placed
+near a large $z^{\lambda}$. Interpreting $z^{\lambda}$'s as level sets of $\omega$,
 this in effect rules out too sharp ``pinched tops/bottoms''.
 (More elaboration of why this is needed?)
 
@@ -2006,8 +2009,8 @@ $\norm{\omega_{N}^{0}}_{\dot{C}^{0,2\alpha}}$ is uniformly bounded),
 but our assumptions on $\Omega$ alone do not seem to imply the $L^{1}$ convergence.
 Note that if $\Omega^{\lambda}$'s for $\lambda$'s in the positive part of $\theta$
 are disjoint from those for $\lambda$'s in the negative part of $\theta$,
-in particular if $\Omega^{\lambda}$'s are the suprelevel sets
-and sublevel sets of $(\omega^{0})^{+}$ and $(\omega^{0})^{-}$, respectively,
+in particular if $\Omega^{\lambda}$'s are the super-level sets
+of $(\omega^{0})^{+}$ and $(\omega^{0})^{-}$,
 then $L^{1}$ convergence does follow. However, we are allowing
 these ``positive level sets'' and ``negative level sets'' to sit on top of each other,
 possibly creating ``ripples'' of the graph of $\omega^{0}$.
@@ -2341,7 +2344,7 @@ Now it remains to prove Lemma~\ref{L3.8}.
 \section{Regularity of Functions with $L_{\tht}(\Omega)<\infty$}
 
 {\color{red}Is it ever possible to have a generalized layer cake representation
-that is better than the usual superlevel/sublevel sets?}
+that is better than the usual super-level sets?}
 
 \begin{proposition}
     For any $\omega\colon\bbR^{2}\to\bbR$ and a generalized layer cake representation
