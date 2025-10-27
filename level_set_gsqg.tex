@@ -267,8 +267,8 @@ for each $\lambda\in\mathcal{L}$.
 A natural choice of $(\Omega,\theta)$ is that each $\Omega^{\lambda}$
 is a super-level set of $\omega^{+}$ and $\omega^{-}$, and
 $\theta^{+}$, $\theta^{-}$ are respectively the uniform measures on
-$\left(0,\norm{\omega^{+}}_{L^{\infty}}\right]$ and
-$\left[-\norm{\omega^{-}}_{L^{\infty}},0\right)$, so that \eqref{1.3}
+$\left(0,\sup\omega\right]$ and
+$\left[\inf\omega,0\right)$, so that \eqref{1.3}
 is the standard layer cake representation.
 In this reason, we call the pair $(\Omega,\theta)$, or simply $\Omega$,
 a \emph{generalized layer cake representation} of $\omega$.\smallskip
@@ -2379,8 +2379,8 @@ that is better than the usual super-level sets?}
     whose modulus of continuity $\rho$ satisfies
     $\int_{0}^{1}\frac{\min\set{\rho(\delta),1}}{\delta^{1+2\alpha}}\,d\delta < \infty$.
     Let $\mathcal{L}\coloneqq \left[
-        -\norm{\omega^{-}}_{L^{\infty}},
-        \norm{\omega^{+}}_{L^{\infty}}
+        \inf\omega,
+        \sup\omega
     \right]$, $\theta$ the signed measure on $\mathcal{L}$ given as
     \[
         \theta(A) \coloneqq \int_{A}\operatorname{sgn}(\lambda)\,d\lambda,
@@ -2388,12 +2388,12 @@ that is better than the usual super-level sets?}
     and
     \[
         \Omega\coloneqq \set{(x,\lambda)\in
-        \bbR^{2}\times\left(0,\norm{\omega^{+}}_{L^{\infty}}\right]
+        \bbR^{2}\times\left(0,\sup\omega\right]
         \colon
         \omega(x) > \lambda}
         \cup
         \set{(x,\lambda)\in
-        \bbR^{2}\times\left[-\norm{\omega^{-}}_{L^{\infty}},0\right)
+        \bbR^{2}\times\left[\inf\omega,0\right)
         \colon
         \omega(x) < \lambda}.
     \]
