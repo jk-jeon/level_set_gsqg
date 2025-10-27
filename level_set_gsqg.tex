@@ -394,11 +394,13 @@ Now we state our first main result.
 \begin{theorem}\label{T1.2}
     Let $\omega^{0}\in L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$ admit
     a generalized layer cake representation $(\Omega,\theta)$ such that
-    $L_{\tht}(\Omega)<\infty$. Then there is a unique maximal Lagrangian solution
-    $\omega\colon I\to L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$ to
-    \eqref{1.1}--\eqref{1.2} with initial data $\omega^{0}$ on some open interval $I\ni 0$, 
-    and the associated flow map $\Phi\in C\left(I;C(\bbR^{2};\bbR^{2})\right)$ satisfies
+    $L_{\tht}(\Omega)<\infty$. Then there is a Lagrangian solution
+    $\omega\colon I\to L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$ to \eqref{1.1}--\eqref{1.2}
+    on some open interval $I\ni 0$, which we choose to be maximal possible,
+    with initial data $\omega^{0}$ and
+    the associated flow map $\Phi\in C\left(I;C(\bbR^{2};\bbR^{2})\right)$ such that
     $\sup_{t\in J}L_{\tht}(\Phi_{*}^{t}\Omega) < \infty$ for any compact interval $J\subseteq I$.
+    Such a solution is unique and independent of the choice of $(\Omega,\theta)$.
     Also, $\sup_{t\in J}\max\set{\norm{\Phi^{t}}_{\dot{C}^{0,1}},
     \norm{(\Phi^{t})^{-1}}_{\dot{C}^{0,1}}}<\infty$
     holds for all compact interval $J\subseteq I$.
@@ -569,19 +571,24 @@ can change from one inequality to another, but they always only depend  on $\alp
 
 \begin{lemma}\label{L2.2}
     There is $C_{\alpha}$ such that for any
-    $\omega\in L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$
-    with a generalized layer cake representation $(\Omega,\theta)$ and any
-    measure-preserving homeomorphisms\ $\Phi_{1},\Phi_{2}\colon\bbR^{2}\to\bbR^{2}$,
+    $\omega\in L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$ with
+    generalized layer cake representations
+    $(\Omega_{i},\theta_{i})$ and any measure-preserving homeomorphisms
+    $\Phi_{i}\colon\bbR^{2}\to\bbR^{2}$, $i=1,2$,
     \[
         \norm{u(\Phi_{1*}\omega) - u(\Phi_{2*}\omega)}_{L^{\infty}} \leq
-        C_{\alpha} \left(L_{\tht}(\Phi_{1*}\Omega) + L_{\tht}(\Phi_{2*}\Omega)\right)
+        C_{\alpha} \left(
+            L_{\theta_{1}}(\Phi_{1*}\Omega_{1}) + L_{\theta_{2}}(\Phi_{2*}\Omega_{2})
+        \right)
         \norm{\Phi_{1} - \Phi_{2}}_{L^{\infty}}.
     \]
 \end{lemma}
 
 \begin{proof}
-    Let $d\coloneqq\norm{\Phi_{1} - \Phi_{2}}_{L^{\infty}}$ and
-    $\omega_{i}\coloneqq \omega\circ\Phi_{i}^{-1}$ for $i=1,2$, and fix any $x\in\bbR^{2}$.  Then $u(\Phi_{1*}\omega;x) - u(\Phi_{2*}\omega;x)$ is the sum of the integrals
+    Let $d\coloneqq\norm{\Phi_{1} - \Phi_{2}}_{L^{\infty}}$,
+    $\mathcal{L}_{i}$ the measurable space associated to $(\Omega_{i},\theta_{i})$ and
+    $\omega_{i}\coloneqq \omega\circ\Phi_{i}^{-1}$ for $i=1,2$, and fix any $x\in\bbR^{2}$.
+    Then $u(\Phi_{1*}\omega;x) - u(\Phi_{2*}\omega;x)$ is the sum of the integrals
     \begin{align*}
         I_{1} &\coloneqq \int_{\abs{x - y}\leq 2d}
         \nabla^{\perp}K(x - y)(\omega_{1}(y) - \omega_{2}(y))\,dy, \\
@@ -601,24 +608,26 @@ Since
     \[
         I_{3} \coloneqq \int_{\abs{x - y} \leq 2d}
         \frac{\abs{\omega_{1}(y) - \omega_{1}(x)}}{\abs{x - y}^{1 + 2\alpha}}\,dy
-        \leq \int_{\mathcal{L}}\int_{\abs{x - y}\leq 2d}
-        \frac{\abs{\mathbbm{1}_{\Phi_{1}(\Omega^{\lambda})}(y)
-        - \mathbbm{1}_{\Phi_{1}(\Omega^{\lambda})}(x)}}
-        {\abs{x - y}^{1+2\alpha}}\,dy\,d|\theta|(\lambda)
+        \leq \int_{\mathcal{L}_{1}}\int_{\abs{x - y}\leq 2d}
+        \frac{\abs{\mathbbm{1}_{\Phi_{1}(\Omega_{1}^{\lambda})}(y)
+        - \mathbbm{1}_{\Phi_{1}(\Omega_{1}^{\lambda})}(x)}}
+        {\abs{x - y}^{1+2\alpha}}\,dy\,d|\theta_{1}|(\lambda)
     \]
     and (as in the proof of Lemma~\ref{L2.1})
-    we have $\abs{x - y} \geq d(x,\partial\Phi_{1}(\Omega^{\lambda}))$
+    we have $\abs{x - y} \geq d(x,\partial\Phi_{1}(\Omega_{1}^{\lambda}))$
     whenever the  last integrand  is nonzero,
     we see that
     \begin{align*}
-        I_{3} &\leq \int_{\mathcal{L}}\int_{\abs{x - y}\leq 2d}
-        \frac{1}{\abs{x - y}\, d(x,\partial\Phi_{1}(\Omega^{\lambda}))^{2\alpha}}
-        \,dy\,d|\theta|(\lambda)
-        \leq 4\pi L_{\tht}(\Phi_{1*}\Omega)d.
+        I_{3} &\leq \int_{\mathcal{L}_{1}}\int_{\abs{x - y}\leq 2d}
+        \frac{1}{\abs{x - y}\, d(x,\partial\Phi_{1}(\Omega_{1}^{\lambda}))^{2\alpha}}
+        \,dy\,d|\theta_{1}|(\lambda)
+        \leq 4\pi L_{\theta_{1}}(\Phi_{1*}\Omega_{1})d.
     \end{align*}
     The same argument for $\omega_{2}$ in place of $\omega_{1}$ now yields
     \begin{equation} \label{2.100}
-        \abs{I_{1}}\leq C_{\alpha}(L_{\tht}(\Phi_{1*}\Omega) + L_{\tht}(\Phi_{2*}\Omega))\, d.
+        \abs{I_{1}}\leq C_{\alpha}\left(
+            L_{\theta_{1}}(\Phi_{1*}\Omega_{1}) + L_{\theta_{2}}(\Phi_{2*}\Omega_{2})
+        \right)d.
     \end{equation}
 
     \textbf{Estimate for $I_{2}$.} For each $R>2d$ let
@@ -672,22 +681,22 @@ Since
         \leq \frac{C_{\alpha}d}{\abs{x - \Phi_{1}(y)}^{2 + 2\alpha}}.
     \]
     The change of variables formula now yields
-    \[
-        \abs{I_{4}} \leq \int_{\abs{x - y} > 2d}
+    \begin{align*}
+        \abs{I_{4}} &\leq \int_{\abs{x - y} > 2d}
         \frac{C_{\alpha}d\abs{\omega_{1}(y) - \omega_{1}(x)}}
-        {\abs{x - y}^{2 + 2\alpha}}\,dy
-        \leq \int_{\mathcal{L}}\int_{\abs{x - y} > 2d}
-        \frac{C_{\alpha}d\abs{\mathbbm{1}_{\Phi_{1}(\Omega^{\lambda})}(y)
-        - \mathbbm{1}_{\Phi_{1}(\Omega^{\lambda})}(x)}}
-        {\abs{x - y}^{2 + 2\alpha}}\,dy\,d|\theta|(\lambda).
-    \]
-    Again, $\abs{x - y} \geq d(x,\partial\Phi_{1}(\Omega^{\lambda}))$
+        {\abs{x - y}^{2 + 2\alpha}}\,dy \\
+        &\leq \int_{\mathcal{L}_{1}}\int_{\abs{x - y} > 2d}
+        \frac{C_{\alpha}d\abs{\mathbbm{1}_{\Phi_{1}(\Omega_{1}^{\lambda})}(y)
+        - \mathbbm{1}_{\Phi_{1}(\Omega_{1}^{\lambda})}(x)}}
+        {\abs{x - y}^{2 + 2\alpha}}\,dy\,d|\theta_{1}|(\lambda).
+    \end{align*}
+    Again, $\abs{x - y} \geq d(x,\partial\Phi_{1}(\Omega_{1}^{\lambda}))$
     holds whenever the last integrand  is nonzero, so
     \begin{align*}
-        \abs{I_{4}} &\leq \int_{\mathcal{L}}
-        \int_{\abs{x - y}\geq d(x,\partial\Phi_{1}(\Omega^{\lambda}))}
-        \frac{C_{\alpha}d}{\abs{x - y}^{2+2\alpha}}\,dy\,d|\theta|(\lambda)
-        \leq C_{\alpha}L_{\tht}(\Phi_{1*}\Omega)d.
+        \abs{I_{4}} &\leq \int_{\mathcal{L}_{1}}
+        \int_{\abs{x - y}\geq d(x,\partial\Phi_{1}(\Omega_{1}^{\lambda}))}
+        \frac{C_{\alpha}d}{\abs{x - y}^{2+2\alpha}}\,dy\,d|\theta_{1}|(\lambda)
+        \leq C_{\alpha}L_{\theta_{1}}(\Phi_{1*}\Omega_{1})d.
     \end{align*}
 
     For $I_{5}$, note that for any $y$ in the domain of integration we have
@@ -700,7 +709,7 @@ Since
         \frac{C_{\alpha}\abs{\omega_{1}(y) - \omega_{1}(x)}}{\abs{x - y}^{1 + 2\alpha}}\,dy,
     \]
     so the same argument as in the estimate for $I_{3}$
-    shows $\abs{I_{5}} \leq C_{\alpha}L_{\tht}(\Phi_{1*}\Omega)d$.
+    shows $\abs{I_{5}} \leq C_{\alpha}L_{\theta_{1}}(\Phi_{1*}\Omega_{1})d$.
 And clearly
     \[
         \abs{I_{6}} \leq \int_{\abs{x - \Phi_{1}(y)} \leq 2d}
@@ -709,7 +718,7 @@ And clearly
         = \int_{\abs{x - y}\leq 2d}\frac{C_{\alpha}\abs{\omega_{1}(y) - \omega_{1}(x)}}
         {\abs{x - y}^{1+2\alpha}}\,dy,
     \]
-    so again $\abs{I_{6}} \leq C_{\alpha}L_{\tht}(\Phi_{1*}\Omega)d$.
+    so again $\abs{I_{6}} \leq C_{\alpha}L_{\theta_{1}}(\Phi_{1*}\Omega_{1})d$.
     % in the same way    as in the estimate of $I_{3}$.
 
     To estimate $I_{7}$, note that for any $y$ in the domain of integration we have
@@ -730,7 +739,8 @@ And clearly
     In the same way we also obtain $|I_{8}|\le \frac{C_{\alpha}\norm{\omega}_{L^{\infty}}d}{R^{2\alpha}}$.
     
     Collecting the above estimates and letting $R\to\infty$, we see that
-    $\abs{I_{2}} \leq C_{\alpha}L_{\tht}(\Phi_{1*}\Omega)d$.  This and \eqref{2.100} now hold uniformly in $x\in\bbR^{2}$, finishing the proof.
+    $\abs{I_{2}} \leq C_{\alpha}L_{\theta_{1}}(\Phi_{1*}\Omega_{1})d$.
+    This and \eqref{2.100} now hold uniformly in $x\in\bbR^{2}$, finishing the proof.
 \end{proof}
 
 \begin{lemma}\label{L2.3}
@@ -1220,42 +1230,47 @@ Let $T_{0}\coloneqq \frac{1}{2C_{\alpha}L_{\tht}(\Omega)}$ with $C_{\alpha}$ fro
 \end{proof}
 
 \begin{proposition}\label{P2.9}
-    Let $I$ be a compact interval containing $0$ and
-    $\Phi,\Pi\in C\left(I;C(\bbR^{2};\bbR^{2})\right)$ be solutions to \eqref{1.6} such that
-    $\sup_{t\in I}\max\set{L_{\tht}(\Phi_{*}^{t}\Omega),L_{\tht}(\Pi_{*}^{t}\Omega)}<\infty$.
-    Then $\Phi = \Pi$.
+    Let $(\Omega_{1},\theta_{1})$, $(\Omega_{2},\theta_{2})$ be
+    generalized layer cake representations of $\omega^{0}$ and
+    $\Phi_{1},\Phi_{2}\in C\left(I;C(\bbR^{2};\bbR^{2})\right)$ be solutions to \eqref{1.6}
+    on a compact interval $I\ni 0$ such that
+    each $\Phi_{i}^{t}$ is a measure-preserving homeomorphism and
+    $\sup_{t\in I}\max_{i=1,2}L_{\theta_{i}}(\Phi_{i*}^{t}\Omega_{i}) <\infty$.
+    Then $\Phi_{1} = \Phi_{2}$.
 \end{proposition}
 
 \begin{proof}
     Let
     \[
-        M \coloneqq \sup_{t\in I}\max\left\{
-            L_{\tht}(\Phi_{*}^{t}\Omega),
-            L_{\tht}(\Pi_{*}^{t}\Omega)
-        \right\}.
+        M \coloneqq \sup_{t\in I}\max_{i=1,2}L_{\theta_{i}}(\Phi_{i*}^{t}\Omega_{i}).
     \]
     Then Lemmas \ref{L2.1} and \ref{L2.2} show that
     \begin{align*}
-        \norm{u(\Phi_{*}^{t}\omega^{0})\circ \Phi^{t}
-        - u(\Pi_{*}^{t}\omega^{0})\circ \Pi^{t}}_{L^{\infty}}
-        &\leq \norm{u(\Phi_{*}^{t}\omega^{0})}_{\dot{C}^{0,1}}
-        \norm{\Phi^{t} - \Pi^{t}}_{L^{\infty}}
-        + \norm{u(\Phi_{*}^{t}\omega^{0}) - u(\Pi_{*}^{t}\omega^{0})}_{L^{\infty}} \\
-        &\leq C_{\alpha}M\norm{\Phi^{t} - \Pi^{t}}_{L^{\infty}}
+        \norm{u(\Phi_{1*}^{t}\omega^{0})\circ \Phi_{1}^{t}
+        - u(\Phi_{2*}^{t}\omega^{0})\circ \Phi_{2}^{t}}_{L^{\infty}}
+        &\leq \norm{u(\Phi_{1*}^{t}\omega^{0})}_{\dot{C}^{0,1}}
+        \norm{\Phi_{1}^{t} - \Phi_{2}^{t}}_{L^{\infty}}
+        + \norm{u(\Phi_{1*}^{t}\omega^{0}) - u(\Phi_{2*}^{t}\omega^{0})}_{L^{\infty}} \\
+        &\leq C_{\alpha}M\norm{\Phi_{1}^{t} - \Phi_{2}^{t}}_{L^{\infty}}
     \end{align*}
     with some $C_{\alpha}$, which together with continuity of
-    $\norm{\Phi^{t}-\Pi^{t}}_{L^{\infty}}$ in $t$ shows
+    $\norm{\Phi_{1}^{t}-\Phi_{2}^{t}}_{L^{\infty}}$ in $t$ shows
     \[
         \max\set{
-            \partial_{t}^{+}\norm{\Phi^{t} - \Pi^{t}}_{L^{\infty}},
-            -\partial_{t-}\norm{\Phi^{t} - \Pi^{t}}_{L^{\infty}}
+            \partial_{t}^{+}\norm{\Phi_{1}^{t} - \Phi_{2}^{t}}_{L^{\infty}},
+            -\partial_{t-}\norm{\Phi_{1}^{t} - \Phi_{2}^{t}}_{L^{\infty}}
         }
-        \leq C_{\alpha}M\norm{\Phi^{t} - \Pi^{t}}_{L^{\infty}}.
+        \leq C_{\alpha}M\norm{\Phi_{1}^{t} - \Phi_{2}^{t}}_{L^{\infty}}.
     \]
   A Gr\"{o}nwall-type argument  finishes the proof.
 \end{proof}
 
-Combining Propositions \ref{P2.8} and \ref{P2.9} now concludes Theorem~\ref{T1.2}.
+Combining Propositions \ref{P2.8} and \ref{P2.9} now shows all claims of Theorem~\ref{T1.2},
+except that the time spans of maximal solutions for
+different generalized layer cake representations of $\omega^{0}$ must coincide to each other.
+This remaining claim then follows from \eqref{1.7} and that
+$\sup_{t\in J}\norm{(\Phi^{t})^{-1}}_{\dot{C}^{0,1}} < \infty$
+for any compact subinterval $J$ of any of the two time spans.
 
 
 \section{Proof of Theorem~\ref{T1.4}}\label{S3}
