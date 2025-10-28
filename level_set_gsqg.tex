@@ -2012,7 +2012,7 @@ are disjoint from those for $\lambda$'s in the negative part of $\theta$,
 in particular if $\Omega^{\lambda}$'s are the super-level sets
 of $(\omega^{0})^{+}$ and $(\omega^{0})^{-}$,
 then $L^{1}$ convergence does follow. However, we are allowing
-these ``positive level sets'' and ``negative level sets'' to sit on top of each other,
+these ``positive super-level sets'' and ``negative super-level sets'' to sit on top of each other,
 possibly creating ``ripples'' of the graph of $\omega^{0}$.
 
 Even though we do not have the $L^{1}$ convergence, we can still show that
@@ -2149,41 +2149,55 @@ Now it remains to prove Lemma~\ref{L3.8}.
         \mathbbm{1}_{\Omega^{\lambda}}(x')\,d\theta(\lambda)
     \]
     is a generalized layer cake representation of $\omega^{0} - \omega_{N}^{0}$,
-    Lemma~\ref{L2.1}, \eqref{1.7} and \eqref{3.16} show
+    Lemma~\ref{L2.1}, the last inequality of \eqref{1.7} without the supremum,
+    \eqref{3.15} and $L_{\theta}(\Omega)<\infty$ show
     \begin{align*}
         \abs{D\left(u_{\eps}\left(
-            \Phi_{\eps,N*}^{t}(\omega_{N}^{0} - \omega^{0})
-        \right)\right)(\Phi_{\eps,N}^{t}(x'))}
+            \Phi_{\eps,N*}^{t'}(\omega_{N}^{0} - \omega^{0})
+        \right)\right)(\Phi_{\eps,N}^{t'}(x'))}
         &\leq C_{\alpha}\int_{\mathcal{L}\setminus\mathcal{L}_{N}}
         \frac{d|\theta|(\lambda)}
-        {d(\Phi_{\eps,N}^{t}(x'), \Phi_{\eps,N}^{t}(\partial\Omega^{\lambda}))^{2\alpha}} \\
-        &\leq C_{\alpha}\norm{(\Phi_{\eps,N}^{t})^{-1}}_{\dot{C}^{0,1}}^{2\alpha}
+        {d(\Phi_{\eps,N}^{t'}(x'), \Phi_{\eps,N}^{t'}(\partial\Omega^{\lambda}))^{2\alpha}} \\
+        &\leq C_{\alpha}\norm{(\Phi_{\eps,N}^{t'})^{-1}}_{\dot{C}^{0,1}}^{2\alpha}
         \int_{\mathcal{L}\setminus\mathcal{L}_{N}}
         \frac{d|\theta|(\lambda)}
         {d(x',\partial\Omega^{\lambda})^{2\alpha}} \to 0
     \end{align*}
-    as $N\to\infty$ for each $x'\in\bbR^{2}$. On the other hand,
-    Lemma~\ref{L3.6}, \eqref{1.7} and \eqref{3.15} show
+    uniformly in $t'\in[-T_{0},T_{0}]$ as $N\to\infty$ for each $x'\in\bbR^{2}$.
+    (Note that that we do not know if the convergence is uniform in $x'$.)
+    On the other hand, Lemma~\ref{L3.6}, \eqref{1.7} and \eqref{3.15} show
+    for any $t'\in[-T_{0},T_{0}]$,
     \begin{align*}
         \norm{D\left(D\left(u_{\eps}\left(
-            \Phi_{\eps,N*}^{t}(\omega_{N}^{0} - \omega^{0})
-        \right)\right)\circ \Phi_{\eps,N}^{t}\right)}_{L^{\infty}}
+            \Phi_{\eps,N*}^{t'}(\omega_{N}^{0} - \omega^{0})
+        \right)\right)\circ \Phi_{\eps,N}^{t'}\right)}_{L^{\infty}}
         &\leq \norm{D^{2}\left(u_{\eps}\left(
-            \Phi_{\eps,N*}^{t}(\omega_{N}^{0} - \omega^{0})
-        \right)\right)}_{L^{\infty}}\norm{D\Phi_{\eps,N}^{t}}_{L^{\infty}} \\
-        &\leq \frac{C_{\alpha}}{\eps}\norm{\Phi_{\eps,N}^{t}}_{\dot{C}^{0,1}}
+            \Phi_{\eps,N*}^{t'}(\omega_{N}^{0} - \omega^{0})
+        \right)\right)}_{L^{\infty}}\norm{D\Phi_{\eps,N}^{t'}}_{L^{\infty}} \\
+        &\leq \frac{C_{\alpha}}{\eps}\norm{\Phi_{\eps,N}^{t'}}_{\dot{C}^{0,1}}
         \sup_{x'\in\bbR^{2}}\int_{\mathcal{L}\setminus\mathcal{L}_{N}}
-        \frac{d|\theta|(\lambda)}{d(x',\Phi_{\eps,N}^{t}(\partial\Omega^{\lambda}))^{2\alpha}} \\
-        &\leq \frac{C_{\alpha}}{\eps}\norm{\Phi_{\eps,N}^{t}}_{\dot{C}^{0,1}}
-        \norm{(\Phi_{\eps,N}^{t})^{-1}}_{\dot{C}^{0,1}}^{2\alpha}L_{\tht}(\Omega) \\
+        \frac{d|\theta|(\lambda)}{d(x',\Phi_{\eps,N}^{t'}(\partial\Omega^{\lambda}))^{2\alpha}} \\
+        &\leq \frac{C_{\alpha}}{\eps}\norm{\Phi_{\eps,N}^{t'}}_{\dot{C}^{0,1}}
+        \norm{(\Phi_{\eps,N}^{t'})^{-1}}_{\dot{C}^{0,1}}^{2\alpha}L_{\tht}(\Omega) \\
         &\leq \frac{C_{\alpha}}{\eps}L_{\tht}(\Omega).
     \end{align*}
-    Therefore, Arze\`{a}-Ascoli theorem shows that there is $N_{0}\in\bbN$
-    (depending on $\delta$ but not on $t$ and $x$) such that
-    $\norm{\left.D\left(u_{\eps}\left(
-        \Phi_{\eps,N*}^{t}(\omega_{N}^{0} - \omega^{0})
-    \right)\right) \circ \Phi_{\eps,N}^{t}\right|_{B_{R_{\delta}}(x_{0})}}_{L^{\infty}}
-    \leq \delta$
+    Therefore, Arzel\`{a}-Ascoli theorem applied to the collection
+    \[
+        \set{x'\mapsto \left(
+            t'\mapsto D\left(u_{\eps}\left(
+                \Phi_{\eps,N*}^{t'}(\omega_{N}^{0} - \omega^{0})
+            \right)\right)(\Phi_{\eps,N}^{t'}(x'))
+        \right)}_{N\in\bbN}
+    \]
+    shows that there is $N_{0}\in\bbN$ (depending on $\delta$) such that
+    \[
+        \sup_{x'\in B_{R_{\delta}}(x_{0})}
+        \sup_{t'\in[-T_{0},T_{0}]}
+        D\left(u_{\eps}\left(
+            \Phi_{\eps,N*}^{t'}(\omega_{N}^{0} - \omega^{0})
+        \right)\right)(\Phi_{\eps,N}^{t'}(x'))
+        \leq \delta
+    \]
     whenever $N\geq N_{0}$.
     Then for such $N$, \eqref{3.15} shows
     \begin{align*}
