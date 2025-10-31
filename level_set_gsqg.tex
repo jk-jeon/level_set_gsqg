@@ -1331,20 +1331,8 @@ Then the argument in \cite[Lemma~4.1]{JeoZlaTouching} also applies here, and we 
         \left(\partial_{s}^{2}u_{\eps}^{t,\lambda}(s) \cdot \mathbf{N}^{t,\lambda}(s)\right)ds.
     \end{aligned}
 \end{equation}
-We can similarly compute the time derivative of $\ell^{t,\lambda}$.
 
-\begin{lemma}\label{L3.1}
-    For any $(t,\lambda)\in\bbR\times\mathcal{L}$ we have
-    \[
-        \partial_{t}\ell^{t,\lambda}
-        = \int_{\ell^{t,\lambda}\bbT}
-        \partial_{s}u_{\eps}^{t,\lambda}(s)\cdot\mathbf{T}^{t,\lambda}(s)\,ds.
-    \]
-\end{lemma}
-
-\begin{proof}
-
-Fix 
+In the proof of this we fix
 %any $(t,\lambda)\in\bbR\times\mathcal{L}$ and 
 some constant-speed parametrization
 $\tilde{z}_{\eps}^{t,\lambda}\colon\bbT\to\bbR^{2}$ of $z_{\eps}^{t,\lambda}$, and for each $h\in\bbR$
@@ -1357,13 +1345,24 @@ it easily follows that $\tilde{z}_{\eps}^{t,\lambda}\in H^{2}(\bbT;\bbR^{2})$ an
     = \tilde{z}_{\eps}^{t,\lambda} + \int_{t}^{t+h}u_{\eps}(\omega_{\eps}^{\tau})
     \circ \tilde{z}_{\eps}^{\tau,\lambda}\,d\tau
 \end{equation}
-holds for all $h\in\bbR$ (in $H^{2}(\bbT;\bbR^{2})$).
+holds for all $h\in\bbR$ (in $H^{2}(\bbT;\bbR^{2})$).  This is also used to evaluate the time derivative of $\ell^{t,\lambda}$.
+
+\begin{lemma}\label{L3.1}
+    For any $(t,\lambda)\in\bbR\times\mathcal{L}$ we have
+    \[
+        \partial_{t}\ell^{t,\lambda}
+        = \int_{\ell^{t,\lambda}\bbT}
+        \partial_{s}u_{\eps}^{t,\lambda}(s)\cdot\mathbf{T}^{t,\lambda}(s)\,ds.
+    \]
+\end{lemma}
+
+\begin{proof}
 %%and the integral is taken with respect to the norm of $H^{2}(\bbT;\bbR^{2})$.
 %    Let $(t,\lambda)\in\bbR\times\mathcal{L}$, fix a constant-speed parametrization
 %    $\tilde{z}^{t,\lambda}\colon\bbT\to\bbR^{2}$ of $z^{t,\lambda}$
 %    and define $\tilde{z}^{\tau,\lambda}$ for each $\tau\in\bbR$ as in \eqref{3.1}.
     Since $\abs{\partial_{\xi}\tilde{z}_{\eps}^{t,\lambda}(\xi)}
-    = \ell^{t,\lambda}> 0$, for any $(h,\xi)\in\bbR\times\bbT$ we get
+    = \ell^{t,\lambda}> 0$ for $\tilde{z}_{\eps}^{t,\lambda}$ as above, for any $(h,\xi)\in\bbR\times\bbT$ we get
     %, \eqref{3.1} shows
     \begin{equation*}
         \begin{aligned}
