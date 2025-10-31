@@ -397,17 +397,13 @@ Now we state our first main result.
 \begin{theorem}\label{T1.2}
     Let $\omega^{0}\in L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$ admit
     a generalized layer cake representation $(\Omega,\theta)$ such that
-    $L_{\tht}(\Omega)<\infty$. Then there is a Lagrangian solution
+    $L_{\tht}(\Omega)<\infty$. Then there is an open interval $I\ni 0$ and a Lagrangian solution
     $\omega\colon I\to L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$ to \eqref{1.1}--\eqref{1.2}
-    on some open interval $I\ni 0$, which we choose to be maximal possible,
     with initial data $\omega^{0}$ and
     the associated flow map $\Phi\in C\left(I;C(\bbR^{2};\bbR^{2})\right)$ such that
     $\sup_{t\in J}L_{\tht}(\Phi_{*}^{t}\Omega) < \infty$ for any compact interval $J\subseteq I$.
-    Such a solution is unique and independent of the choice of $(\Omega,\theta)$.
-    Also, $\sup_{t\in J}\max\set{\norm{\Phi^{t}}_{\dot{C}^{0,1}},
-    \norm{(\Phi^{t})^{-1}}_{\dot{C}^{0,1}}}<\infty$
-    holds for all compact interval $J\subseteq I$.
-    Furthermore, if $T$ is an endpoint of $I$, then either $T$ is infinite or
+    This solution is unique and independent of the choice of $(\Omega,\theta)$, and for any compact interval $J\subseteq I$ we have  $\sup_{t\in J}\max\set{\norm{\Phi^{t}}_{\dot{C}^{0,1}},    \norm{(\Phi^{t})^{-1}}_{\dot{C}^{0,1}}}<\infty$.
+  If we let $I$ be the maximal interval as above and  $T$ is an endpoint of $I$, then either $|T|=\infty$  or
     $\lim_{t\to T}L_{\tht}(\Phi_{*}^{t}\Omega) = \infty$.
 \end{theorem}
 
@@ -577,7 +573,7 @@ can change from one inequality to another, but they always only depend  on $\alp
     $\omega\in L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$ with
     generalized layer cake representations
     $(\Omega_{i},\theta_{i})$ and any measure-preserving homeomorphisms
-    $\Phi_{i}\colon\bbR^{2}\to\bbR^{2}$, $i=1,2$,
+    $\Phi_{i}\colon\bbR^{2}\to\bbR^{2}$ ($i=1,2$),
     \[
         \norm{u(\Phi_{1*}\omega) - u(\Phi_{2*}\omega)}_{L^{\infty}} \leq
         C_{\alpha} \left(
@@ -588,10 +584,9 @@ can change from one inequality to another, but they always only depend  on $\alp
 \end{lemma}
 
 \begin{proof}
-    Let $d\coloneqq\norm{\Phi_{1} - \Phi_{2}}_{L^{\infty}}$,
-    $\mathcal{L}_{i}$ the measurable space associated to $(\Omega_{i},\theta_{i})$ and
-    $\omega_{i}\coloneqq \omega\circ\Phi_{i}^{-1}$ for $i=1,2$, and fix any $x\in\bbR^{2}$.
-    Then $u(\Phi_{1*}\omega;x) - u(\Phi_{2*}\omega;x)$ is the sum of the integrals
+    Let    $\mathcal{L}_{i}$ the measurable space associated to $(\Omega_{i},\theta_{i})$ and
+    $\omega_{i}\coloneqq \omega\circ\Phi_{i}^{-1}$ for $i=1,2$.  Let $d\coloneqq\norm{\Phi_{1} - \Phi_{2}}_{L^{\infty}}$ and fix any $x\in\bbR^{2}$.
+    Then $u(\Phi_{1*}\omega;x) - u(\Phi_{2*}\omega;x)$ is the sum of
     \begin{align*}
         I_{1} &\coloneqq \int_{\abs{x - y}\leq 2d}
         \nabla^{\perp}K(x - y)(\omega_{1}(y) - \omega_{2}(y))\,dy, \\
@@ -1236,9 +1231,8 @@ Let $T_{0}\coloneqq \frac{1}{2C_{\alpha}L_{\tht}(\Omega)}$ with $C_{\alpha}$ fro
     Let $(\Omega_{1},\theta_{1})$, $(\Omega_{2},\theta_{2})$ be
     generalized layer cake representations of $\omega^{0}$ and
     $\Phi_{1},\Phi_{2}\in C\left(I;C(\bbR^{2};\bbR^{2})\right)$ be solutions to \eqref{1.6}
-    on a compact interval $I\ni 0$ such that
-    each $\Phi_{i}^{t}$ is a measure-preserving homeomorphism and
-    $\sup_{t\in I}\max_{i=1,2}L_{\theta_{i}}(\Phi_{i*}^{t}\Omega_{i}) <\infty$.
+    on a compact interval $I\ni 0$ that are  both measure-preserving homeomorphisms and
+    $\sup_{t\in I}\max_{i\in\{1,2\}}L_{\theta_{i}}(\Phi_{i*}^{t}\Omega_{i}) <\infty$.
     Then $\Phi_{1} = \Phi_{2}$.
 \end{proposition}
 
@@ -1257,7 +1251,7 @@ Let $T_{0}\coloneqq \frac{1}{2C_{\alpha}L_{\tht}(\Omega)}$ with $C_{\alpha}$ fro
         &\leq C_{\alpha}M\norm{\Phi_{1}^{t} - \Phi_{2}^{t}}_{L^{\infty}}
     \end{align*}
     with some $C_{\alpha}$, which together with continuity of
-    $\norm{\Phi_{1}^{t}-\Phi_{2}^{t}}_{L^{\infty}}$ in $t$ shows
+    $\norm{\Phi_{1}^{t}-\Phi_{2}^{t}}_{L^{\infty}}$ in $t$ yields
     \[
         \max\set{
             \partial_{t}^{+}\norm{\Phi_{1}^{t} - \Phi_{2}^{t}}_{L^{\infty}},
@@ -1268,16 +1262,17 @@ Let $T_{0}\coloneqq \frac{1}{2C_{\alpha}L_{\tht}(\Omega)}$ with $C_{\alpha}$ fro
   A Gr\"{o}nwall-type argument  finishes the proof.
 \end{proof}
 
-Combining Propositions \ref{P2.8} and \ref{P2.9} now shows all claims of Theorem~\ref{T1.2},
-except that the time spans of maximal solutions for
-different generalized layer cake representations of $\omega^{0}$ must coincide to each other.
-This remaining claim then follows from \eqref{1.7} and that
-$\sup_{t\in J}\norm{(\Phi^{t})^{-1}}_{\dot{C}^{0,1}} < \infty$
-for any compact subinterval $J$ of any of the two time spans.
+Combining Propositions \ref{P2.8} and \ref{P2.9} with \eqref{1.7}, the latter showing that the time spans of maximal solutions for
+any two generalized layer cake representations of $\omega^{0}$ must coincide (recall that
+$\sup_{t\in J}\norm{(\Phi^{t})^{-1}}_{\dot{C}^{0,1}} < \infty$ for any compact interval $J\subseteq I$),
+now yields  Theorem~\ref{T1.2}.
+
 
 
 \section{Proof of Theorem~\ref{T1.4}}\label{S3}
 
+Again, all constants $C_{\alpha}$ below
+can change from one inequality to another, but they always only depend  on $\alpha$.
 Suppose that the initial data $\omega^{0}\in L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$
 admits a generalized layer cake representation $(\Omega,\theta)$
 composed of simple closed curves such that $L_{\tht}(\Omega), Q(\Omega), R_{\tht}(\Omega) < \infty$.
@@ -1285,38 +1280,21 @@ For each $\lambda\in\mathcal{L}$, let $z^{0,\lambda}\in\operatorname{PSC}(\bbR^{
 such that $\partial\Omega^{\lambda} = \operatorname{im}(z^{0,\lambda})$.
 
 Let $\omega\colon I\to L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$ be the
-Lagrangian solution to \eqref{1.1}--\eqref{1.2} with the initial data $\omega^{0}$
-and the associated flow map $\Phi\in C\left(I;C(\bbR^{2};\bbR^{2})\right)$
-provided by Theorem~\ref{T1.2}. Then since each $\Phi^{t}$ is a homeomorphism, let
-$z^{t,\lambda} \coloneqq \Phi^{t}\circ z^{0,\lambda}$
-(i.e., the equivalence class in $\operatorname{CC}(\bbR^{2})$
-of $\Phi^{t}\circ\tilde{z}^{0,\lambda}$ for any representative $\tilde{z}^{0,\lambda}$
-of $z^{0,\lambda}$) then $\Phi_{*}^{t}\Omega$ is clearly composed of simple closed curves.
-(Since $\set{z^{t,\lambda}}_{t\in I}$ is a connected subset of
-$\operatorname{CC}(\bbR^{2})$, \cite[Lemma~B.4]{JeoZlaTouching} shows that
-each $z^{t,\lambda}$ is positively oriented.)
+Lagrangian solution to \eqref{1.1}--\eqref{1.2} from Theorem~\ref{T1.2}, with  initial data $\omega^{0}$
+and  flow map $\Phi\in C\left(I;C(\bbR^{2};\bbR^{2})\right)$. Then since  $\Phi^{t}$ is a homeomorphism for each $t\in I$, 
+it follows that $\Phi_{*}^{t}\Omega$ is  composed of simple closed curves and we denote these  $z^{t,\lambda}:=\Phi^{t}\circ z^{0,\lambda} \in\operatorname{PSC}(\bbR^{2})$, where $\Phi^{t}\circ z^{0,\lambda}\in \operatorname{CC}(\bbR^{2})$ is the curve whose representative is $\Phi^{t}\circ\tilde{z}^{0,\lambda}$ whenever  $\tilde{z}^{0,\lambda}$ is a representative of $z^{0,\lambda}$ (since $\set{z^{t,\lambda}}_{t\in I}$ is clearly a connected subset of $\operatorname{CC}(\bbR^{2})$,  \cite[Lemma~B.4]{JeoZlaTouching} shows that each $z^{t,\lambda}$ is positively oriented).
+% $\Phi^{t}\circ z^{0,\lambda}$
+%(i.e., the equivalence class in $\operatorname{CC}(\bbR^{2})$
+%of $\Phi^{t}\circ\tilde{z}^{0,\lambda}$ for any representative $\tilde{z}^{0,\lambda}$
+%of $z^{0,\lambda}$) then .
+%(Since $\set{z^{t,\lambda}}_{t\in I}$ is a connected subset of
+%$\operatorname{CC}(\bbR^{2})$, \cite[Lemma~B.4]{JeoZlaTouching} shows that
+%each $z^{t,\lambda}$ is positively oriented.)
 
-Fix $\eps>0$ and recall $\Phi_{\eps}^{t}\coloneqq\mathrm{Id} + \Psi_{\eps}^{t}$
+Fix any $\eps>0$ and recall that $\Phi_{\eps}^{t}\coloneqq\mathrm{Id} + \Psi_{\eps}^{t}$,
 where $\Psi_{\eps}^{t}$ is the solution to \eqref{2.1}.
-Let $z_{\eps}^{t,\lambda} \coloneqq \Phi_{\eps}^{t}\circ z^{0,\lambda}$
-and $\omega_{\eps}^{t}\coloneqq\omega^{0}\circ(\Phi_{\eps}^{t})^{-1}$ for each
-$t\in\bbR$. For given $(t,\lambda)\in\bbR\times\mathcal{L}$,
-take any constant-speed parametrization
-$\tilde{z}_{\eps}^{t,\lambda}\colon\bbT\to\bbR^{2}$ of $z_{\eps}^{t,\lambda}$, and
-let $\tilde{z}_{\eps}^{t+h,\lambda}\coloneqq
-\Phi_{\eps}^{t+h}\circ(\Phi_{\eps}^{t})^{-1}\circ\tilde{z}_{\eps}^{t,\lambda}$
-for each $h\in\bbR$. Then since \eqref{2.2} is globally well-posed
-in $C_{b}^{2}(\bbR^{2};\bbR^{2})$ (see the paragraph before Lemma~\ref{L2.5}),
-it easily follows that $\tilde{z}_{\eps}^{t,\lambda}\in H^{2}(\bbT;\bbR^{2})$ and
-\begin{equation}\label{3.1}
-    \tilde{z}_{\eps}^{t+h,\lambda}
-    = \tilde{z}_{\eps}^{t,\lambda} + \int_{t}^{t+h}u_{\eps}(\omega_{\eps}^{\tau})
-    \circ \tilde{z}_{\eps}^{\tau,\lambda}\,d\tau
-\end{equation}
-holds for all $h\in\bbR$, where both sides are in $H^{2}(\bbT;\bbR^{2})$
-and the integral is taken with respect to the norm of $H^{2}(\bbT;\bbR^{2})$.
-
-For each $t\in\bbR$, define
+For each $(t,\lambda)\in\bbR\times\mathcal{L}$ let $z_{\eps}^{t,\lambda} \coloneqq \Phi_{\eps}^{t}\circ z^{0,\lambda}$
+and $\omega_{\eps}^{t}\coloneqq\omega^{0}\circ(\Phi_{\eps}^{t})^{-1}$, then fix any arclength parametrization of $z_{\eps}^{t,\lambda}$ (we denote it again $z_{\eps}^{t,\lambda}(\cdot)$) and for $s\in[0,\ell(z_{\eps}^{t,\lambda})]$ define (suppressing $\eps$ in most of this notation)
 \begin{itemize}
     \item $\ell^{t,\lambda}\coloneqq \ell(z_{\eps}^{t,\lambda})$,
 
@@ -1326,22 +1304,23 @@ For each $t\in\bbR$, define
 
     \item $\kappa^{t,\lambda}(s) \coloneqq
     \partial_{s}^{2}z_{\eps}^{t,\lambda}(s)\cdot \mathbf{N}^{t,\lambda}(s)$,
+    
+        \item $\Delta^{t,\lambda,\lambda'} \coloneqq
+    \Delta(z_{\eps}^{t,\lambda}, z_{\eps}^{t,\lambda'})$,
 
     \item $u_{\eps}^{t,\lambda}(s) \coloneqq
-    u_{\eps}(\omega_{\eps}^{t}; z_{\eps}^{t,\lambda}(s))$, and
-
-    \item $\Delta^{t,\lambda,\lambda'} \coloneqq
-    \Delta(z_{\eps}^{t,\lambda}, z_{\eps}^{t,\lambda'})$,
+    u_{\eps}(\omega_{\eps}^{t}; z_{\eps}^{t,\lambda}(s))$.
 \end{itemize}
-for an arbitrary arclength parametrization of $z_{\eps}^{t,\lambda}$, which we then fix.
-As noted in \cite[Section~4]{JeoZlaTouching}, we have
+Proposition \ref{P2.8} shows that $\lim_{\eps\to 0} z_\eps^{t,\lambda}= z^{t,\lambda}$ in $\operatorname{CC}(\bbR^{2})$, and
+as noted in \cite[Section~4]{JeoZlaTouching}, 
 \[
     \partial_{s}^{2}z_{\eps}^{t,\lambda}(s) = \partial_{s}\mathbf{T}^{t,\lambda}(s)
     = \kappa^{t,\lambda}(s)\mathbf{N}^{t,\lambda}(s)
     \qquad\textrm{and}\qquad
-    \partial_{s}\mathbf{N}^{t,\lambda}(s) = -\kappa^{t,\lambda}(s)\mathbf{T}^{t,\lambda}(s).
+    \partial_{s}\mathbf{N}^{t,\lambda}(s) = -\kappa^{t,\lambda}(s)\mathbf{T}^{t,\lambda}(s)
 \]
-Then a similar argument as in \cite[Lemma~4.1]{JeoZlaTouching} applies, so that
+holds as well.
+Then the argument in \cite[Lemma~4.1]{JeoZlaTouching} also applies here, and we obtain
 \begin{equation}\label{3.2}
     \begin{aligned}
         \partial_{t}\norm{z_{\eps}^{t,\lambda}}_{\dot{H}^{2}}^{2}
@@ -1352,10 +1331,10 @@ Then a similar argument as in \cite[Lemma~4.1]{JeoZlaTouching} applies, so that
         \left(\partial_{s}^{2}u_{\eps}^{t,\lambda}(s) \cdot \mathbf{N}^{t,\lambda}(s)\right)ds.
     \end{aligned}
 \end{equation}
-In a similar manner, we can derive the formula for the time derivative of $\ell^{t,\lambda}$.
+We can similarly compute the time derivative of $\ell^{t,\lambda}$.
 
 \begin{lemma}\label{L3.1}
-    For any $(t,\lambda)\in\bbR\times\mathcal{L}$,
+    For any $(t,\lambda)\in\bbR\times\mathcal{L}$ we have
     \[
         \partial_{t}\ell^{t,\lambda}
         = \int_{\ell^{t,\lambda}\bbT}
@@ -1364,107 +1343,124 @@ In a similar manner, we can derive the formula for the time derivative of $\ell^
 \end{lemma}
 
 \begin{proof}
-    Let $(t,\lambda)\in\bbR\times\mathcal{L}$, fix a constant-speed parametrization
-    $\tilde{z}^{t,\lambda}\colon\bbT\to\bbR^{2}$ of $z^{t,\lambda}$
-    and define $\tilde{z}^{\tau,\lambda}$ for each $\tau\in\bbR$ as in \eqref{3.1}.
+
+Fix 
+%any $(t,\lambda)\in\bbR\times\mathcal{L}$ and 
+some constant-speed parametrization
+$\tilde{z}_{\eps}^{t,\lambda}\colon\bbT\to\bbR^{2}$ of $z_{\eps}^{t,\lambda}$, and for each $h\in\bbR$
+let $\tilde{z}_{\eps}^{t+h,\lambda}\coloneqq
+\Phi_{\eps}^{t+h}\circ(\Phi_{\eps}^{t})^{-1}\circ\tilde{z}_{\eps}^{t,\lambda}$. Since \eqref{2.2} is globally well-posed
+in $BC^{2}(\bbR^{2};\bbR^{2})$ (see the paragraph before Lemma~\ref{L2.5}),
+it easily follows that $\tilde{z}_{\eps}^{t,\lambda}\in H^{2}(\bbT;\bbR^{2})$ and
+\begin{equation}\label{3.1}
+    \tilde{z}_{\eps}^{t+h,\lambda}
+    = \tilde{z}_{\eps}^{t,\lambda} + \int_{t}^{t+h}u_{\eps}(\omega_{\eps}^{\tau})
+    \circ \tilde{z}_{\eps}^{\tau,\lambda}\,d\tau
+\end{equation}
+holds for all $h\in\bbR$ (in $H^{2}(\bbT;\bbR^{2})$).
+%%and the integral is taken with respect to the norm of $H^{2}(\bbT;\bbR^{2})$.
+%    Let $(t,\lambda)\in\bbR\times\mathcal{L}$, fix a constant-speed parametrization
+%    $\tilde{z}^{t,\lambda}\colon\bbT\to\bbR^{2}$ of $z^{t,\lambda}$
+%    and define $\tilde{z}^{\tau,\lambda}$ for each $\tau\in\bbR$ as in \eqref{3.1}.
     Since $\abs{\partial_{\xi}\tilde{z}_{\eps}^{t,\lambda}(\xi)}
-    = \ell(z^{t,\lambda})^{-1} \neq 0$, for any $(h,\xi)\in\bbR\times\bbT$, \eqref{3.1} shows
+    = \ell^{t,\lambda}> 0$, for any $(h,\xi)\in\bbR\times\bbT$ we get
+    %, \eqref{3.1} shows
     \begin{equation*}
         \begin{aligned}
             &\abs{\partial_{\xi}\tilde{z}_{\eps}^{t+h,\lambda}(\xi)}
             - \abs{\partial_{\xi}\tilde{z}_{\eps}^{t,\lambda}(\xi)}
             \\&\quad\quad\quad
-            = \frac{2\int_{t}^{t+h}\partial_{\xi}u_{\eps}(\omega_{\eps}^{\tau};
+            = \frac{2\int_{t}^{t+h} \frac d{d\xi} u_{\eps}(\omega_{\eps}^{\tau};
             \tilde{z}_{\eps}^{\tau,\lambda}(\xi))
             \cdot \partial_{\xi}\tilde{z}_{\eps}^{t,\lambda}(\xi)\,d\tau}
             {\abs{\partial_{\xi}\tilde{z}_{\eps}^{t+h,\lambda}(\xi)}
             + \abs{\partial_{\xi}\tilde{z}_{\eps}^{t,\lambda}(\xi)}}
-            + \frac{\abs{\int_{t}^{t+h}\partial_{\xi}u_{\eps}(\omega_{\eps}^{\tau};
+            + \frac{\abs{\int_{t}^{t+h} \frac d{d\xi} u_{\eps}(\omega_{\eps}^{\tau};
             \tilde{z}_{\eps}^{\tau,\lambda}(\xi))\,d\tau}^{2}}
             {\abs{\partial_{\xi}\tilde{z}_{\eps}^{t+h,\lambda}(\xi)}
             + \abs{\partial_{\xi}\tilde{z}_{\eps}^{t,\lambda}(\xi)}}.
         \end{aligned}
     \end{equation*}
     Since $\norm{D(u_{\eps}(\omega_{\eps}^{\tau}))}_{L^{\infty}}$ is continuous in $\tau$
-    by Lemma~\ref{L2.5}, integrating over $\xi$, dividing by $h$
-    and then letting $h\to 0$ shows
+    by Lemma~\ref{L2.5}, integrating in $\xi$, dividing by $h$,
+    and then letting $h\to 0$ shows that
     \[
         \partial_{t}\ell^{t,\lambda}
         = \int_{\bbT}
-        \partial_{\xi}u_{\eps}(\omega_{\eps}^{t};\tilde{z}_{\eps}^{t,\lambda}(\xi))
+        \frac d{d\xi} u_{\eps}(\omega_{\eps}^{t};\tilde{z}_{\eps}^{t,\lambda}(\xi))
         \cdot \frac{\partial_{\xi}\tilde{z}_{\eps}^{t,\lambda}(\xi)}
         {\abs{\partial_{\xi}\tilde{z}_{\eps}^{t,\lambda}(\xi)}}\,d\xi.
     \]
-    Then the claim follows by change of variables.
+    The claim now follows by a change of variables.
 \end{proof}
 
 \begin{corollary}\label{C3.2}
-    With $C_{\alpha}$ from Lemma~\ref{L2.1}, for any $(t,\lambda)\in I\times\mathcal{L}$,
+    With $C_{\alpha}$ from Lemma~\ref{L2.1}, for any $(t,\lambda)\in I\times\mathcal{L}$ and all small enough $h\in\bbR$ we have
     \[
         e^{-3C_{\alpha}L_{\tht}(\Phi_{*}^{t}\Omega)\abs{h}}\ell(z^{t,\lambda})
         \leq \ell(z^{t+h,\lambda}) \leq
-        e^{3C_{\alpha}L_{\tht}(\Phi_{*}^{t}\Omega)\abs{h}}\ell(z^{t,\lambda})
+        e^{3C_{\alpha}L_{\tht}(\Phi_{*}^{t}\Omega)\abs{h}}\ell(z^{t,\lambda}).
     \]
-    holds for any small enough $h\in\bbR$.
+%    holds for any small enough $h\in\bbR$.
 \end{corollary}
 
 \begin{proof}
-    Lemmas \ref{L2.1}, \ref{L3.1} and Corollary~\ref{C2.7} show
+    Lemmas \ref{L2.1}, \ref{L3.1} and Corollary~\ref{C2.7} show that for any  $\abs{t}\leq\frac{1}{2C_{\alpha}L_{\tht}(\Omega)}$ we have 
     \begin{equation}\label{3.3}
-        \abs{\partial_{t}\ell(z_{\eps}^{t,\lambda})}
+        \abs{\partial_{t}\ell^{t,\lambda}}
         \leq \norm{u_{\eps}(\omega_{\eps}^{t})}_{\dot{C}^{0,1}}
-        \ell(z_{\eps}^{t,\lambda})
-        \leq 2C_{\alpha}L_{\tht}(\Omega)\ell(z_{\eps}^{t,\lambda})
+        \ell^{t,\lambda}
+        \leq 2C_{\alpha}L_{\tht}(\Omega)\ell^{t,\lambda}
     \end{equation}
-    for any $t\in\bbR$ with $\abs{t}\leq\frac{1}{2C_{\alpha}L_{\tht}(\Omega)}$
-    (such $t$ must be in $I$ by maximality of $I$).
+    (such $t$ must be in $I$ because $I$ is maximal).
     Since $\ell\colon\operatorname{CC}(\bbR^{2})\to[0,\infty]$ is lower semicontinuous
-    (need proof?) and $z_{\eps}^{t,\lambda} \to z^{t,\lambda}$
-    in $\operatorname{CC}(\bbR^{2})$ as $\eps\to 0^{+}$, a Gr\"{o}nwall-type argument shows that
+    (by definition) and $\lim_{\eps\to 0} z_\eps^{t,\lambda}= z^{t,\lambda}$ in $\operatorname{CC}(\bbR^{2})$, a Gr\"{o}nwall-type argument shows that
     \begin{equation}\label{3.4}
         \ell(z^{t,\lambda}) \leq e^{2C_{\alpha}L_{\tht}(\Omega)\abs{t}}\ell(z^{0,\lambda})
     \end{equation}
-    holds for such $t$.
+    holds when $\abs{t}\leq\frac{1}{2C_{\alpha}L_{\tht}(\Omega)}$.
 
-    For any $t_{0}\in I$ with $\abs{t_{0}}\leq\frac{1}{4C_{\alpha}L_{\tht}(\Omega)}$,
-    considering $\omega^{t_{0}}$ as the initial condition to \eqref{1.1}--\eqref{1.2}
-    at $t = t_{0}$ and then repeating the proof of \eqref{3.4} shows that \eqref{3.4}
-    continues to hold with $(z^{t_{0},\lambda},\Phi_{*}^{t_{0}}\Omega,\abs{t - t_{0}})$
-    in place of $(z^{0,\lambda},\Omega,\abs{t})$,
-    for $t\in I$ with $\abs{t - t_{0}}\leq\frac{1}{2C_{\alpha}L_{\tht}(\Phi_{*}^{t_{0}}\Omega)}$.
-    Even though we do not yet know if \eqref{3.1} continues to hold in $H^{2}(\bbT;\bbR^{2})$,
-    since $\Phi^{t_{0}}$ is Lipschitz, all involved curves are rectifiable and
-    \eqref{3.1} holds at least in $C^{0,1}(\bbT;\bbR^{2})$, and that is enough
-    for further arguments.
-
+    Next fix any $t_{0}\in I$ with $\abs{t_{0}}\leq\frac{1}{4C_{\alpha}L_{\tht}(\Omega)}$.
+    Considering $\omega^{t_{0}}$ as the initial condition for \eqref{1.1}--\eqref{1.2}
+    at time $ t_{0}$ and then repeating the proof of \eqref{3.4} shows that 
+\[
+        \ell(z^{t,\lambda}) \leq e^{2C_{\alpha}L_\tht(\Phi_{*}^{t_{0}}\Omega)\abs{t - t_{0}}}\ell(z^{t_0,\lambda})
+\]
+ %   \eqref{3.4} holds with $(z^{t_{0},\lambda},L_\tht(\Phi_{*}^{t_{0}}\Omega)\abs{t - t_{0}})$
+  %  in place of $(z^{0,\lambda},L_\tht(\Omega)\abs{t})$
+    whenever $\abs{t - t_{0}}\leq\frac{1}{2C_{\alpha}L_{\tht}(\Phi_{*}^{t_{0}}\Omega)}$.
+    We do not yet know whether \eqref{3.1} holds in $H^{2}(\bbT;\bbR^{2})$ without all the $\eps$ because $\Phi^{t}$ is only Lipschitz,  but  all the involved curves are rectifiable and
+    \eqref{3.1} without $\eps$ does hold in $C^{0,1}(\bbT;\bbR^{2})$.
+    %, and that is enough  for further arguments.
     Since $L_{\tht}(\Phi_{*}^{t_{0}}\Omega) \leq \frac{4}{3}L_{\tht}(\Omega)$ by Corollary~\ref{C2.7},
-    we can substitute $0$ to $t$ which shows
+    we see that
+    %can substitute $0$ for $t$ which shows
     \[
-        \ell(z^{0,\lambda}) \leq e^{3C_{\alpha}L_{\tht}(\Omega)\abs{t_{0}}}\ell(z^{t_{0},\lambda}).
+        \ell(z^{0,\lambda}) \leq e^{3C_{\alpha}L_{\tht}(\Omega)\abs{t_{0}}}\ell(z^{t_{0},\lambda}),
     \]
-    Therefore,
+and so
     \[
         e^{-3C_{\alpha}L_{\tht}(\Omega)\abs{t}}\ell(z^{0,\lambda})
         \leq \ell(z^{t,\lambda}) \leq
         e^{3C_{\alpha}L_{\tht}(\Omega)\abs{t}}\ell(z^{0,\lambda})
     \]
-    holds for any $t\in\bbR$ with $\abs{t}\leq\frac{1}{4C_{\alpha}L_{\tht}(\Omega)}$.
-    Applying this inequality to $(\omega^{t},t)$ in place of $(\omega^{0},0)$
-    for $t\in I$ then shows the claim.
+    holds whenever $\abs{t}\leq\frac{1}{4C_{\alpha}L_{\tht}(\Omega)}$.
+    Applying this with $(\omega^t,t,h)$ in place of $(\omega^0,0,t)$,
+    for any $t\in I$, now shows the claim.
 \end{proof}
 
 \begin{proposition}\label{P3.3}
-    $R_{\tht}(\Phi_{*}^{t}\Omega)$ is continuous in $t$, so in particular
-    for any compact subinterval $J\subseteq I$,
+    $R_{\tht}(\Phi_{*}^{t}\Omega)$ is continuous in $t$.   In particular,
+    for any compact interval $J\subseteq I$ we have
     \[
         \sup_{t\in J}R_{\tht}(\Phi_{*}^{t}\Omega) < \infty.
     \]
 \end{proposition}
 
 \begin{proof}
-    Take any compact subinterval $J\subseteq I$ containing $0$.
+    Take any compact interval $J\subseteq I$ containing $0$.
     With $T_{0}$ as in Proposition~\ref{P2.8},
-    Lemmas~\ref{L2.1}, \ref{L2.5} and Corollary~\ref{C2.7} show
+    Lemmas~\ref{L2.1}, \ref{L2.5} and Corollary~\ref{C2.7} show that
     \begin{equation}\label{3.5}
         \abs{\Phi_{\eps}^{t_{1}}(x) - \Phi_{\eps}^{t_{1}}(y)
         - \Phi_{\eps}^{t_{2}}(x) + \Phi_{\eps}^{t_{2}}(y)}
@@ -1472,10 +1468,10 @@ In a similar manner, we can derive the formula for the time derivative of $\ell^
         \abs{\Phi_{\eps}^{t_{1}}(x) - \Phi_{\eps}^{t_{1}}(y)}
     \end{equation}
     for all $\eps>0$, $t_{1},t_{2}\in[-T_{0},T_{0}]$ and $x,y\in\bbR^{2}$.
-    Hence, letting $\eps\to 0^{+}$ shows that the above continues to hold
+    Hence, taking $\eps\to 0$ shows that \eqref{3.5} continues to hold
     with $\Phi$ in place of $\Phi_{\eps}$. Then applying the same argument
     to $(\omega^{t},t)$ in place of $(\omega^{0},0)$ shows that
-    each $t\in J$ admits a neighborhood such that
+    each $t\in J$ has a neighborhood such that
     \begin{equation}\label{3.6}
         \abs{\Phi^{t_{1}}(x) - \Phi^{t_{1}}(y)
         - \Phi^{t_{2}}(x) + \Phi^{t_{2}}(y)}
@@ -1484,16 +1480,16 @@ In a similar manner, we can derive the formula for the time derivative of $\ell^
     \end{equation}
     holds for any $t_{1},t_{2}\in J$ in that neighborhood, where
     \[
-        M\coloneqq \sup_{t\in J}L_{\tht}(\Phi_{t*}\Omega) < \infty.
+        M\coloneqq \sup_{t\in J}L_{\tht}(\Phi_{*}^t\Omega) < \infty.
     \]
-    By compactness, we then conclude that \eqref{3.6} in fact holds for
+ Since $J$ is an interval, it follows that \eqref{3.6} in fact holds for
     all $t_{1},t_{2}\in J$.
 
     Fix $t_{1},t_{2}\in J$, $\lambda,\lambda'\in\mathcal{L}$, and $\eta>0$.
     Then there are $x\in\operatorname{im}(z^{0,\lambda})$ and
     $y\in\operatorname{im}(z^{0,\lambda'})$ such that
     $\Delta(z^{t_{1},\lambda},z^{t_{1},\lambda'}) = \abs{\Phi^{t_{1}}(x) - \Phi^{t_{1}}(y)}$.
-    Then a similar argument as in \eqref{2.4} shows
+    A similar argument as in \eqref{2.4} now shows that
     \begin{align*}
         &\frac{1}{\left(
             \Delta(z^{t_{1},\lambda},z^{t_{1},\lambda'}) + \eta
@@ -1518,13 +1514,13 @@ In a similar manner, we can derive the formula for the time derivative of $\ell^
         \leq \frac{e^{2C_{\alpha}M\abs{t_{1} - t_{2}}}}
         {\Delta(z^{t_{2},\lambda},z^{t_{2},\lambda'})^{2\alpha}}.
     \end{equation}
-    Again by compactness, Corollary~\ref{C3.2} shows
+    Corollary~\ref{C3.2} yields
     \[
         e^{-3C_{\alpha}M\abs{t_{1} - t_{2}}}\ell(z^{t_{2},\lambda})
         \leq \ell(z^{t_{1},\lambda}) \leq
         e^{3C_{\alpha}M\abs{t_{1} - t_{2}}}\ell(z^{t_{2},\lambda})
     \]
-    for any $t_{1},t_{2}\in J$, thus we get
+    for any $t_{1},t_{2}\in J$ because $J$ is an interval, and so we get
     \begin{equation}\label{3.8}
         \frac{\ell(z^{t_{1},\lambda})^{1/2}}
         {\ell(z^{t_{1},\lambda'})^{1/2}\left(
@@ -1534,44 +1530,41 @@ In a similar manner, we can derive the formula for the time derivative of $\ell^
         {\ell(z^{t_{2},\lambda'})^{1/2}
         \Delta(z^{t_{2},\lambda},z^{t_{2},\lambda'})^{2\alpha}}.
     \end{equation}
-    Therefore, letting $\eta\to 0^{+}$, taking upper Lebesgue integral over $\lambda'$,
-    and then taking supremum over $\lambda$ shows
+    Letting $\eta\to 0^{+}$, taking the upper Lebesgue integral with respect to $\lambda'$,
+    and then taking the supremum over $\lambda\in\calL$ shows that
     \begin{equation}\label{3.9}
         R_{\tht}(\Phi_{*}^{t_{1}}\Omega)
         \leq e^{5C_{\alpha}M\abs{t_{1} - t_{2}}}R_{\tht}(\Phi_{*}^{t_{2}}\Omega).
     \end{equation}
-    Since $t_{1},t_{2}\in J$, the claim follows.
+    Since $t_{1},t_{2}\in J$ were arbitrary, the claim follows.
 \end{proof}
 
-Next, we show that $Q(\Phi_{*}^{t}\Omega) < \infty$ for $t$ small enough.
-Since the functional $\gamma\mapsto \ell(\gamma)\norm{\gamma}_{\dot{H}^{2}}^{2}$
-on $\operatorname{CC}(\bbR^{2})$ is lower semicontinuous,
+Next, we show that $Q(\Phi_{*}^{t}\Omega) < \infty$ for all small enough $t$.
+Since $ \ell(\cdot)$ and $\norm{\cdot}_{\dot{H}^{2}}$ are both lower semicontinuous on $\operatorname{CC}(\bbR^{2})$ (the latter by \cite[Corollary~B.3]{JeoZlaTouching}), so is $\ell(\cdot)\norm{\cdot}_{\dot{H}^{2}}^{2}$ and so
 it is enough to establish a uniform-in-$(\eps,\lambda)$ bound on
 $\ell(z_{\eps}^{t,\lambda})\norm{z_{\eps}^{t,\lambda}}_{\dot{H}^{2}}^{2}$.
 We do this by estimating the right-hand side of \eqref{3.2}
 in Lemma~\ref{L3.7} below. Since the resulting estimate will involve
-$R_{\tht}(\Phi_{\eps*}^{t}\Omega)$, we first state a relevant bound on it
-which we already have obtained in the proof of Proposition~\ref{P3.3}.
+$R_{\tht}(\Phi_{\eps*}^{t}\Omega)$, we first extend a bound on $R_{\tht}(\Phi_{*}^{t}\Omega)$ from the proof of Proposition~\ref{P3.3} to $\eps>0$.
 
 \begin{lemma}\label{L3.4}
-    $R_{\tht}(\Phi_{\eps*}^{t}\Omega)$ is continuous in $t$, and with
-    $C_{\alpha}$ from Lemma~\ref{L2.1} and $T_{0}$ from Proposition~\ref{P2.8},
+    $R_{\tht}(\Phi_{\eps*}^{t}\Omega)$ is continuous in $t$, and for any $t\in[-T_{0},T_{0}]$ we have
     \begin{equation}\label{3.10}
         R_{\tht}(\Phi_{\eps*}^{t}\Omega) \leq e^{4C_{\alpha}L_{\tht}(\Omega)\abs{t}}R_{\tht}(\Omega)
-        \leq 8R_{\tht}(\Omega)
+        \leq 8R_{\tht}(\Omega),
     \end{equation}
-    for any $t\in[-T_{0},T_{0}]$.
+  with    $C_{\alpha}$ from Lemma~\ref{L2.1} and $T_{0}$ from Proposition~\ref{P2.8}.
 \end{lemma}
 
 \begin{proof}
-    We have \eqref{3.3} for $t\in[-T_{0},T_{0}]$, so a Gr\"{o}nwall-type argument shows
+    We have \eqref{3.3} for $t\in[-T_{0},T_{0}]$, so a Gr\"{o}nwall-type argument shows that
     \[
         e^{-2C_{\alpha}L_{\tht}(\Omega)\abs{t_{1} - t_{2}}}\ell(z_{\eps}^{t_{2},\lambda})
         \leq \ell(z_{\eps}^{t_{1},\lambda}) \leq
         e^{2C_{\alpha}L_{\tht}(\Omega)\abs{t_{1} - t_{2}}}\ell(z_{\eps}^{t_{2},\lambda})
     \]
     for any $t_{1},t_{2}\in[-T_{0},T_{0}]$ and $\lambda\in\mathcal{L}$.
-    Also, since \eqref{3.5} holds, a similar argument as in \eqref{3.7} shows
+    Since \eqref{3.5} holds, a similar argument as in \eqref{3.7} shows
     \[
         \frac{1}{\left(
             \Delta(z_{\eps}^{t_{1},\lambda},z_{\eps}^{t_{1},\lambda'}) + \eta
@@ -1580,18 +1573,18 @@ which we already have obtained in the proof of Proposition~\ref{P3.3}.
         {\Delta(z_{\eps}^{t_{2},\lambda},z_{\eps}^{t_{2},\lambda'})^{2\alpha}}
     \]
     for any $t_{1},t_{2}\in[-T_{0},T_{0}]$, $\lambda,\lambda'\in\mathcal{L}$ and $\eta>0$.
-    Hence, we see that \eqref{3.8}, and thus \eqref{3.9} as well, continue to hold with
-    $(z_{\eps},4C_{\alpha}L_{\tht}(\Omega),\Phi_{\eps})$ in place of $(z,5C_{\alpha}M,\Phi)$,
-    which then shows all the claims.
-    (The second inequality of \eqref{3.10} follows by the definition of $T_{0}$
-    and the inequality $e^{2}\leq 8$.)
+    Hence we see that \eqref{3.8}, and thus also \eqref{3.9}, continue to hold with
+    $(z_{\eps},4C_{\alpha}L_{\tht}(\Omega),\Phi_{\eps})$ in place of $(z,5C_{\alpha}M,\Phi)$.
+    This now shows both claims 
+    (the second inequality in \eqref{3.10} follows by the definition of $T_{0}$
+    and $e^{2}\leq 8$).
 \end{proof}
 
-To estimate the right-hand side of \eqref{3.2}, we need the following lemmas.
+To estimate the right-hand side of \eqref{3.2}, we will use the following lemmas.
 
 \begin{lemma}\label{L3.5}
-    There is $C_{\alpha}$ such that for any $C^{1,\beta}$ closed curve
-    $\gamma\colon\ell\bbT\to\bbR^{2}$ parametrized by arclength and any $x\in\bbR^{2}$ we have
+    There is $C_{\alpha}$ such that for any $\beta\in(0,1]$, any $C^{1,\beta}$ closed curve
+    $\gamma\colon\ell\bbT\to\bbR^{2}$ parametrized by arclength, and any $x\in\bbR^{2}$ we have
     \[
         \int_{\ell\bbT}\frac{ds}{\abs{x - \gamma(s)}^{1+2\alpha}}
         \leq C_{\alpha}\frac{\ell\norm{\gamma}_{\dot{C}^{1,\beta}}^{1/\beta}}
@@ -1613,7 +1606,7 @@ To estimate the right-hand side of \eqref{3.2}, we need the following lemmas.
         &\leq \frac{\ell}{2d\Delta^{2\alpha}}
         + \frac{\ell}{2^{1-2\alpha}\alpha d\Delta^{2\alpha}}
         + \frac{\ell}{d\Delta^{2\alpha}}
-        = C_{\alpha}\frac{\ell\norm{\gamma}_{\dot{C}^{1,\beta}}^{-1/\beta}}
+        = C_{\alpha}\frac{\ell\norm{\gamma}_{\dot{C}^{1,\beta}}^{1/\beta}}
         {\Delta^{2\alpha}}.
     \end{align*}
 \end{proof}
@@ -1621,7 +1614,7 @@ To estimate the right-hand side of \eqref{3.2}, we need the following lemmas.
 \begin{lemma}\label{L3.6}
     For any $\omega\in L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$ with
     a generalized layer cake representation $(\Omega,\theta)$
-    such that $L_{\tht}(\Omega)<\infty$, $\eps>0$ and $x,h_{1},h_{2}\in\bbR^{2}$,
+    such that $L_{\tht}(\Omega)<\infty$, and for any $\eps>0$ and $x,h_{1},h_{2}\in\bbR^{2}$, we have
     \begin{align*}
         D^{2}(u_{\eps}(\omega))(x)(h_{1},h_{2})
         &= \int_{\mathcal{L}}\int_{\bbR^{2}}
@@ -1632,7 +1625,7 @@ To estimate the right-hand side of \eqref{3.2}, we need the following lemmas.
         D^{2}(\nabla^{\perp}K_{\eps})(x - y)(h_{1},h_{2})
         \,dy\,d\theta(\lambda).
     \end{align*}
-    Furthermore, there is $C_{\alpha}$ that depends only on $\alpha$ such that
+    Moreover, there is $C_{\alpha}$  such that
     \[
         \int_{\mathcal{L}}\int_{\bbR^{2}}
         \abs{D^{2}(\nabla^{\perp}K_{\eps})(x - y)}
@@ -1644,7 +1637,7 @@ To estimate the right-hand side of \eqref{3.2}, we need the following lemmas.
 \end{lemma}
 
 \begin{proof}
-    For each $x,h_{1},h_{2}\in\bbR^{2}$, oddness of $D^{2}(\nabla^{\perp}K_{\eps})$ shows
+    Oddness of $D^{2}(\nabla^{\perp}K_{\eps})$ shows that
     \begin{align*}
         D^{2}(u_{\eps}(\omega))(x)(h_{1},h_{2})
         &= \int_{\bbR^{2}}D^{2}(\nabla^{\perp}K_{\eps})(x - y)(h_{1},h_{2})
@@ -1654,36 +1647,37 @@ To estimate the right-hand side of \eqref{3.2}, we need the following lemmas.
         \left(\mathbbm{1}_{\Omega^{\lambda}}(y) - \mathbbm{1}_{\Omega^{\lambda}}(x)\right)
         d\theta(\lambda)\,dy.
     \end{align*}
-    Then proceeding as in Lemma~\ref{L2.1} with using the inequality
+    Then proceeding as in Lemma~\ref{L2.1} and using 
     $\abs{D^{2}(\nabla^{\perp}K_{\eps})(x - y)}
     \leq \frac{C_{\alpha}}{\eps\abs{x - y}^{2+2\alpha}}$
     in place of $\abs{D(\nabla^{\perp}K_{\eps})(x - y)}
-    \leq \frac{C_{\alpha}}{\abs{x - y}^{2+2\alpha}}$ shows the second claim.
-    Then Fubini's theorem shows the first equality of the first claim,
-    and the second equality follows by oddness of $D^{2}(\nabla^{\perp}K_{\eps})$.
+    \leq \frac{C_{\alpha}}{\abs{x - y}^{2+2\alpha}}$ proves the second claim.
+    Fubini's theorem now yields the first equality of the first claim,
+    and the second one follows by oddness of $D^{2}(\nabla^{\perp}K_{\eps})$.
 \end{proof}
 
 \begin{lemma}\label{L3.7}
-    There is $C_{\alpha}$ such that for each $(t,\lambda)\in\bbR\times\mathcal{L}$,
+    There is $C_{\alpha}$ such that for each $(t,\lambda)\in\bbR\times\mathcal{L}$ and $\eps>0$ we have
     \begin{equation}\label{3.11}
         \abs{\partial_{t}\norm{z_{\eps}^{t,\lambda}}_{\dot{H}^{2}}^{2}}
-        \leq C_{\alpha}(L_{\tht}(\Phi_{\eps*}^{t}\Omega) + R_{\tht}(\Phi_{\eps*}^{t}\Omega))
+        \leq C_{\alpha}(L_{\tht}(\Phi_{\eps*}^{t}\Omega) + R_{\tht}(\Phi_{\eps*}^{t}\Omega)) \,
         Q(\Phi_{\eps*}^{t}\Omega)\norm{z_{\eps}^{t,\lambda}}_{\dot{H}^{2}}^{2}
     \end{equation}
 \end{lemma}
 
 \begin{proof}
-    All constants $C_{\alpha}$ in this proof depend only on $\alpha$ and
-    can change from one inequality to another. With $z_{\eps}^{\lambda}(\cdot)$ being
-    the previously fixed arclength parametrization of $z_{\eps}^{\lambda}$, we have
+%    All constants $C_{\alpha}$ in this proof depend only on $\alpha$ and
+    %can change from one inequality to another. 
+    With $z_{\eps}^{t,\lambda}(\cdot)$ being
+    the previously fixed arclength parametrization of $z_{\eps}^{t,\lambda}$, we have
     \begin{align*}
         \partial_{s}^{2}u_{\eps}^{t,\lambda}(s)
         &= D^{2}(u_{\eps}(\omega_{\eps}^{t}))(z_{\eps}^{t,\lambda}(s))
         (\mathbf{T}^{t,\lambda}(s), \mathbf{T}^{t,\lambda}(s))
         + \kappa^{t,\lambda}(s)D(u_{\eps}(\omega_{\eps}^{t}))
-        (z_{\eps}^{t,\lambda}(s))(\mathbf{N}^{t,\lambda}(s)),
+        (z_{\eps}^{t,\lambda}(s))(\mathbf{N}^{t,\lambda}(s)).
     \end{align*}
-    so \eqref{3.2} shows
+    Hence \eqref{3.2} yields
     \begin{equation}\label{3.12}
         \begin{aligned}
             \partial_{t}\norm{z_{\eps}^{t,\lambda}}_{\dot{H}^{2}}^{2} &=
@@ -1703,20 +1697,19 @@ To estimate the right-hand side of \eqref{3.2}, we need the following lemmas.
             \right)ds.
         \end{aligned}
     \end{equation}
-    Clearly, Lemma~\ref{L2.1} shows the absolute value of the first integral is bounded by
+    Lemma~\ref{L2.1} shows that the absolute value of the first integral is bounded by
     \[
         5\norm{u_{\eps}(\omega_{\eps}^{t})}_{\dot{C}^{0,1}}
         \norm{z_{\eps}^{t,\lambda}}_{\dot{H}^{2}}^{2}
-        \leq 5C_{\alpha}L_{\tht}(\Phi_{\eps*}^{t}\Omega)\norm{z_{\eps}^{t,\lambda}}_{\dot{H}^{2}}^{2}
-        \leq 5C_{\alpha}L_{\tht}(\Phi_{\eps*}^{t}\Omega)
-        Q(\Phi_{\eps*}^{t}\Omega)\norm{z_{\eps}^{t,\lambda}}_{\dot{H}^{2}}^{2}
+        \leq C_{\alpha}L_{\tht}(\Phi_{\eps*}^{t}\Omega)\norm{z_{\eps}^{t,\lambda}}_{\dot{H}^{2}}^{2}
+        \leq C_{\alpha}L_{\tht}(\Phi_{\eps*}^{t}\Omega)
+        Q(\Phi_{\eps*}^{t}\Omega)\norm{z_{\eps}^{t,\lambda}}_{\dot{H}^{2}}^{2},
     \]
-    where the second inequality is because
-    $Q(\Phi_{\eps*}^{t}\Omega)\geq 4$ which follows from \cite[Lemma~A.1]{JeoZlaTouching}.
-    Hence, it remains to estimate the second integral, which we now denote as $G_{1}$.
-    From now on, we will suppress $t$ from the notation for sake of simplicity
-    because we will only work with the snapshot at $t$ of every involved
-    time-dependent quantity.
+    where the second inequality holds by
+    $Q(\Phi_{\eps*}^{t}\Omega)\geq 4$, which in turn follows from \cite[Lemma~A.1]{JeoZlaTouching}.
+    Hence, it remains to estimate the second integral, which we denote $G_{1}$.
+    We will suppress $t$ from the notation for the sake of simplicity
+    because  it will be fixed in the arguments below.
     
     Since $L_{\tht}(\Phi_{\eps*}\Omega)<\infty$, Lemma~\ref{L3.6} and Green's theorem show that
     \begin{align*}
@@ -1726,15 +1719,15 @@ To estimate the right-hand side of \eqref{3.2}, we need the following lemmas.
         (\mathbf{T}^{\lambda'}(s')\cdot \mathbf{N}^{\lambda}(s))
         \,ds'\,ds\,d\theta(\lambda').
     \end{align*}
-    Then using
+    From
     \[
         \mathbf{T}^{\lambda}(s) =
         (\mathbf{T}^{\lambda'}(s')\cdot\mathbf{T}^{\lambda}(s))\mathbf{T}^{\lambda'}(s')
         + (\mathbf{N}^{\lambda'}(s')\cdot\mathbf{T}^{\lambda}(s))\mathbf{N}^{\lambda'}(s')
     \]
     and $\mathbf{N}^{\lambda'}(s')\cdot\mathbf{T}^{\lambda}(s)
-    = -\mathbf{T}^{\lambda'}(s')\cdot\mathbf{N}^{\lambda}(s)$,
-    it follows that $\abs{G_{1}}$ is bounded by the sum of the terms
+    = -\mathbf{T}^{\lambda'}(s')\cdot\mathbf{N}^{\lambda}(s)$
+    it now follows that $\abs{G_{1}}$ is bounded by the sum of 
     \begin{align*}
         G_{2} &\coloneqq \overline{\int_{\mathcal{L}}}
         \bigg|\int_{\ell^{\lambda}\bbT\times\ell^{\lambda'}\bbT}
@@ -1751,9 +1744,9 @@ To estimate the right-hand side of \eqref{3.2}, we need the following lemmas.
         D^{2}K_{\eps}(z_{\eps}^{\lambda}(s) - z_{\eps}^{\lambda'}(s'))
         (\mathbf{T}^{\lambda}(s), \mathbf{N}^{\lambda'}(s'))
         (\mathbf{T}^{\lambda'}(s') \cdot \mathbf{N}^{\lambda}(s))^{2}
-        \,ds'\,ds\bigg|\,d|\theta|(\lambda')
+        \,ds'\,ds\bigg|\,d|\theta|(\lambda'),
     \end{align*}
-    which we now estimate separately.
+    which we estimate separately next.
 
     \textbf{Estimate for $G_{2}$.} Since
     \begin{align*}
@@ -1782,7 +1775,7 @@ To estimate the right-hand side of \eqref{3.2}, we need the following lemmas.
         {\abs{z_{\eps}^{\lambda}(s) - z_{\eps}^{\lambda'}(s')}^{1+2\alpha}}
         \,ds'\,ds\,d|\theta|(\lambda').
     \end{align*}
-    By Cauchy-Schwarz inequality, the inner integral
+    By the Schwarz inequality, the inner integral
     of the right-hand side is bounded by
     \begin{align*}
         \left(
@@ -1796,9 +1789,9 @@ To estimate the right-hand side of \eqref{3.2}, we need the following lemmas.
             \int_{\ell^{\lambda}\bbT}\frac{ds}
             {\abs{z_{\eps}^{\lambda}(s) - z_{\eps}^{\lambda'}(s')}^{1+2\alpha}}
             \,ds'
-        \right)^{1/2}
+        \right)^{1/2},
     \end{align*}
-    which, by Lemma~\ref{L3.5}, is bounded by
+    and Lemma~\ref{L3.5} with $\beta=\frac 12$ shows that this is bounded by
     \begin{align*}
         C_{\alpha}\left(
             \norm{z_{\eps}^{\lambda}}_{\dot{H}^{2}}^{2}
@@ -1810,21 +1803,21 @@ To estimate the right-hand side of \eqref{3.2}, we need the following lemmas.
             \frac{\ell^{\lambda}\norm{z_{\eps}^{\lambda}}_{\dot{H}^{2}}^{2}}
             {(\Delta^{\lambda,\lambda'})^{2\alpha}}
         \right)^{1/2}
-        = C_{\alpha}\norm{z_{\eps}^{\lambda}}_{\dot{H}^{2}}^{2} \cdot
-        \frac{\ell^{\lambda'}\norm{z_{\eps}^{\lambda'}}_{\dot{H}^{2}}^{2} \cdot
+        = C_{\alpha}\norm{z_{\eps}^{\lambda}}_{\dot{H}^{2}}^{2}
+        \frac{\ell^{\lambda'}\norm{z_{\eps}^{\lambda'}}_{\dot{H}^{2}}^{2} 
         (\ell^{\lambda})^{1/2}}
         {(\ell^{\lambda'})^{1/2}(\Delta^{\lambda,\lambda'})^{2\alpha}}.
     \end{align*}
-    Therefore, we obtain
+    Therefore
     \begin{align*}
         \abs{G_{2}} \leq C_{\alpha}R_{\tht}(\Phi_{\eps*}\Omega)
         Q(\Phi_{\eps*}\Omega)\norm{z_{\eps}^{\lambda}}_{\dot{H}^{2}}^{2}.
     \end{align*}
 
-    \textbf{Estimate for $G_{3}$.} We can assume $R_{\tht}(\Phi_{\eps*}\Omega)<\infty$
+    \textbf{Estimate for $G_{3}$.} We can assume $R_{\tht}(\Phi_{\eps*}\Omega)<\infty$,
     in which case $\Delta(z_{\eps}^{\lambda},z_{\eps}^{\lambda'}) > 0$
-    for $|\theta|$-almost every $\lambda'$, thus we can apply \cite[Lemma~A.4]{JeoZlaTouching}
-    to conclude
+    for $|\theta|$-almost all $\lambda'$.  Thus we can apply \cite[Lemma~A.4]{JeoZlaTouching}
+    to conclude that
     \begin{align*}
         G_{3} &\leq C_{\alpha}\overline{\int_{\mathcal{L}}}
         \int_{\ell^{\lambda}\bbT\times \ell^{\lambda'}\bbT}
@@ -1833,18 +1826,18 @@ To estimate the right-hand side of \eqref{3.2}, we need the following lemmas.
             + \mathcal{M}\kappa^{\lambda'}(s')
         \right)}
         {\abs{z_{\eps}^{\lambda}(s) - z_{\eps}^{\lambda'}(s')}^{1+2\alpha}}
-        \,ds'\,ds\,d|\theta|(\lambda')
+        \,ds'\,ds\,d|\theta|(\lambda'),
     \end{align*}
-    where $\mathcal{M}$ is the maximal operator defined in \cite[(A.2)]{JeoZlaTouching}.
-    Split the integrand into the sum of two terms with denominators
+    where $\mathcal{M}$ is the maximal operator from (A.2) in \cite{JeoZlaTouching}.
+    Let us split the integrand into the sum of two terms with numerators
     $\abs{\kappa^{\lambda}(s)}\mathcal{M}\kappa^{\lambda}(s)$ and
-    $\abs{\kappa^{\lambda}(s)}\mathcal{M}\kappa^{\lambda'}(s')$, respectively, then
-    by the maximal inequality (\cite[(A.3)]{JeoZlaTouching}), we can apply the same argument
-    as in the estimate for $G_{2}$ to bound the integral of the second term by
+    $\abs{\kappa^{\lambda}(s)}\mathcal{M}\kappa^{\lambda'}(s')$, respectively.  Then
+     the maximal inequality (see (A.3) in \cite{JeoZlaTouching}) shows that  the same argument
+    as in the estimate for $G_{2}$ bounds the integral of the second term by
     $C_{\alpha}R_{\tht}(\Phi_{\eps*}\Omega)Q(\Phi_{\eps*}\Omega)
     \norm{z_{\eps}^{\lambda}}_{\dot{H}^{2}}$.
-    For the first term, Lemma~\ref{L3.5}, Cauchy-Schwarz inequality and
-    the maximal inequality show
+    As for the first term, Lemma~\ref{L3.5} with $\beta=\frac 12$, Schwarz inequality, and
+    the maximal inequality show that
     \begin{align*}
         &\overline{\int_{\mathcal{L}}}
         \int_{\ell^{\lambda}\bbT\times \ell^{\lambda'}\bbT}
@@ -1868,11 +1861,10 @@ To estimate the right-hand side of \eqref{3.2}, we need the following lemmas.
         C_{\alpha}L_{\tht}(\Phi_{\eps*}\Omega)Q(\Phi_{\eps*}\Omega)
         \int_{\ell^{\lambda}\bbT}
         \abs{\kappa^{\lambda}(s)}\mathcal{M}\kappa^{\lambda}(s)\,ds
-        \leq C_{\alpha}L_{\tht}(\Phi_{\eps*}\Omega)Q(\Phi_{\eps*}\Omega)
+        \\&\quad\quad \leq C_{\alpha}L_{\tht}(\Phi_{\eps*}\Omega)Q(\Phi_{\eps*}\Omega)
         \norm{z_{\eps}^{\lambda}}_{\dot{H}^{2}}^{2},
     \end{align*}
-    where the reason why we have the plain integral rather than the upper Lebesgue integral
-    in the right-hand side of the second inequality is because
+    where  the regular (rather than upper) integral can be taken after the second inequality  because
     the integrand is jointly measurable in $(s,\lambda')$.
     Aggregating the estimates for $G_{2}$ and $G_{3}$ now yields the desired conclusion.
 \end{proof}
