@@ -296,12 +296,12 @@ we impose a regularity condition
 where $\abs{\theta}$ is the total variation of $\theta$. 
 %(This quantity also depends on $\mathcal L$ and $\tht$, but since these will be time-independent for any solution to \eqref{1.1}, we will suppress them in the notation.)
 Note that a standard measure theory argument shows joint measurability of
-\[
+\begin{equation}\label{1.100}
     d(x,\partial\Omega^{\lambda}) = \max\{
         d(x,\Omega^{\lambda}),
         d(x,\bbR^{2}\setminus\Omega^{\lambda})
     \}
-\]
+\end{equation}
 in $(x,\lambda)$, so $L_{\tht}(\Omega)$ is always well-defined
 (with the convention $\frac{1}{0} = \infty$ and $\infty\cdot 0 = 0$).
 The quantity $L_{\tht}(\Omega)$ arises in the context of estimating the growth of
@@ -1296,16 +1296,16 @@ where $\Psi_{\eps}^{t}$ is the solution to \eqref{2.1}.
 For each $(t,\lambda)\in\bbR\times\mathcal{L}$ let $z_{\eps}^{t,\lambda} \coloneqq \Phi_{\eps}^{t}\circ z^{0,\lambda}$
 and $\omega_{\eps}^{t}\coloneqq\omega^{0}\circ(\Phi_{\eps}^{t})^{-1}$, then fix any arclength parametrization of $z_{\eps}^{t,\lambda}$ (we denote it again $z_{\eps}^{t,\lambda}(\cdot)$) and for $s\in[0,\ell(z_{\eps}^{t,\lambda})]$ define (suppressing $\eps$ in most of this notation)
 \begin{itemize}
-    \item $\ell^{t,\lambda}\coloneqq \ell(z_{\eps}^{t,\lambda})$,
+    \item $\ell_{\eps}^{t,\lambda}\coloneqq \ell(z_{\eps}^{t,\lambda})$,
 
-    \item $\mathbf{T}^{t,\lambda}(s) \coloneqq \partial_{s}z_{\eps}^{t,\lambda}(s)$,
+    \item $\mathbf{T}_{\eps}^{t,\lambda}(s) \coloneqq \partial_{s}z_{\eps}^{t,\lambda}(s)$,
 
-    \item $\mathbf{N}^{t,\lambda}(s) \coloneqq \mathbf{T}^{t,\lambda}(s)^{\perp}$,
+    \item $\mathbf{N}_{\eps}^{t,\lambda}(s) \coloneqq \mathbf{T}^{t,\lambda}(s)^{\perp}$,
 
-    \item $\kappa^{t,\lambda}(s) \coloneqq
+    \item $\kappa_{\eps}^{t,\lambda}(s) \coloneqq
     \partial_{s}^{2}z_{\eps}^{t,\lambda}(s)\cdot \mathbf{N}^{t,\lambda}(s)$,
     
-        \item $\Delta^{t,\lambda,\lambda'} \coloneqq
+    \item $\Delta_{\eps}^{t,\lambda,\lambda'} \coloneqq
     \Delta(z_{\eps}^{t,\lambda}, z_{\eps}^{t,\lambda'})$,
 
     \item $u_{\eps}^{t,\lambda}(s) \coloneqq
@@ -1314,21 +1314,22 @@ and $\omega_{\eps}^{t}\coloneqq\omega^{0}\circ(\Phi_{\eps}^{t})^{-1}$, then fix 
 Proposition \ref{P2.8} shows that $\lim_{\eps\to 0} z_\eps^{t,\lambda}= z^{t,\lambda}$ in $\operatorname{CC}(\bbR^{2})$, and
 as noted in \cite[Section~4]{JeoZlaTouching}, 
 \[
-    \partial_{s}^{2}z_{\eps}^{t,\lambda}(s) = \partial_{s}\mathbf{T}^{t,\lambda}(s)
-    = \kappa^{t,\lambda}(s)\mathbf{N}^{t,\lambda}(s)
+    \partial_{s}^{2}z_{\eps}^{t,\lambda}(s) = \partial_{s}\mathbf{T}_{\eps}^{t,\lambda}(s)
+    = \kappa_{\eps}^{t,\lambda}(s)\mathbf{N}_{\eps}^{t,\lambda}(s)
     \qquad\textrm{and}\qquad
-    \partial_{s}\mathbf{N}^{t,\lambda}(s) = -\kappa^{t,\lambda}(s)\mathbf{T}^{t,\lambda}(s)
+    \partial_{s}\mathbf{N}_{\eps}^{t,\lambda}(s)
+    = -\kappa_{\eps}^{t,\lambda}(s)\mathbf{T}_{\eps}^{t,\lambda}(s)
 \]
 holds as well.
 Then the argument in \cite[Lemma~4.1]{JeoZlaTouching} also applies here, and we obtain
 \begin{equation}\label{3.2}
     \begin{aligned}
         \partial_{t}\norm{z_{\eps}^{t,\lambda}}_{\dot{H}^{2}}^{2}
-        &= -3\int_{\ell^{t,\lambda}\bbT}\kappa^{t,\lambda}(s)^{2}
-        \left(\partial_{s}u_{\eps}^{t,\lambda}(s) \cdot \mathbf{T}^{t,\lambda}(s)\right)ds
+        &= -3\int_{\ell_{\eps}^{t,\lambda}\bbT}\kappa_{\eps}^{t,\lambda}(s)^{2}
+        \left(\partial_{s}u_{\eps}^{t,\lambda}(s) \cdot \mathbf{T}_{\eps}^{t,\lambda}(s)\right)ds
         \\&\qquad\qquad        
-        + 2\int_{\ell^{t,\lambda}\bbT}\kappa^{t,\lambda}(s)
-        \left(\partial_{s}^{2}u_{\eps}^{t,\lambda}(s) \cdot \mathbf{N}^{t,\lambda}(s)\right)ds.
+        + 2\int_{\ell_{\eps}^{t,\lambda}\bbT}\kappa_{\eps}^{t,\lambda}(s)
+        \left(\partial_{s}^{2}u_{\eps}^{t,\lambda}(s) \cdot \mathbf{N}_{\eps}^{t,\lambda}(s)\right)ds.
     \end{aligned}
 \end{equation}
 
@@ -1345,14 +1346,15 @@ it easily follows that $\tilde{z}_{\eps}^{t,\lambda}\in H^{2}(\bbT;\bbR^{2})$ an
     = \tilde{z}_{\eps}^{t,\lambda} + \int_{t}^{t+h}u_{\eps}(\omega_{\eps}^{\tau})
     \circ \tilde{z}_{\eps}^{\tau,\lambda}\,d\tau
 \end{equation}
-holds for all $h\in\bbR$ (in $H^{2}(\bbT;\bbR^{2})$).  This is also used to evaluate the time derivative of $\ell^{t,\lambda}$.
+holds for all $h\in\bbR$ (in $H^{2}(\bbT;\bbR^{2})$).
+This is also used to evaluate the time derivative of $\ell_{\eps}^{t,\lambda}$.
 
 \begin{lemma}\label{L3.1}
     For any $(t,\lambda)\in\bbR\times\mathcal{L}$ we have
     \[
-        \partial_{t}\ell^{t,\lambda}
-        = \int_{\ell^{t,\lambda}\bbT}
-        \partial_{s}u_{\eps}^{t,\lambda}(s)\cdot\mathbf{T}^{t,\lambda}(s)\,ds.
+        \partial_{t}\ell_{\eps}^{t,\lambda}
+        = \int_{\ell_{\eps}^{t,\lambda}\bbT}
+        \partial_{s}u_{\eps}^{t,\lambda}(s)\cdot\mathbf{T}_{\eps}^{t,\lambda}(s)\,ds.
     \]
 \end{lemma}
 
@@ -1362,7 +1364,7 @@ holds for all $h\in\bbR$ (in $H^{2}(\bbT;\bbR^{2})$).  This is also used to eval
 %    $\tilde{z}^{t,\lambda}\colon\bbT\to\bbR^{2}$ of $z^{t,\lambda}$
 %    and define $\tilde{z}^{\tau,\lambda}$ for each $\tau\in\bbR$ as in \eqref{3.1}.
     Since $\abs{\partial_{\xi}\tilde{z}_{\eps}^{t,\lambda}(\xi)}
-    = \ell^{t,\lambda}> 0$ for $\tilde{z}_{\eps}^{t,\lambda}$ as above, for any $(h,\xi)\in\bbR\times\bbT$ we get
+    = \ell_{\eps}^{t,\lambda}> 0$ for $\tilde{z}_{\eps}^{t,\lambda}$ as above, for any $(h,\xi)\in\bbR\times\bbT$ we get
     %, \eqref{3.1} shows
     \begin{equation*}
         \begin{aligned}
@@ -1384,7 +1386,7 @@ holds for all $h\in\bbR$ (in $H^{2}(\bbT;\bbR^{2})$).  This is also used to eval
     by Lemma~\ref{L2.5}, integrating in $\xi$, dividing by $h$,
     and then letting $h\to 0$ shows that
     \[
-        \partial_{t}\ell^{t,\lambda}
+        \partial_{t}\ell_{\eps}^{t,\lambda}
         = \int_{\bbT}
         \frac d{d\xi} u_{\eps}(\omega_{\eps}^{t};\tilde{z}_{\eps}^{t,\lambda}(\xi))
         \cdot \frac{\partial_{\xi}\tilde{z}_{\eps}^{t,\lambda}(\xi)}
@@ -1406,10 +1408,10 @@ holds for all $h\in\bbR$ (in $H^{2}(\bbT;\bbR^{2})$).  This is also used to eval
 \begin{proof}
     Lemmas \ref{L2.1}, \ref{L3.1} and Corollary~\ref{C2.7} show that for any  $\abs{t}\leq\frac{1}{2C_{\alpha}L_{\tht}(\Omega)}$ we have 
     \begin{equation}\label{3.3}
-        \abs{\partial_{t}\ell^{t,\lambda}}
+        \abs{\partial_{t}\ell_{\eps}^{t,\lambda}}
         \leq \norm{u_{\eps}(\omega_{\eps}^{t})}_{\dot{C}^{0,1}}
-        \ell^{t,\lambda}
-        \leq 2C_{\alpha}L_{\tht}(\Omega)\ell^{t,\lambda}
+        \ell_{\eps}^{t,\lambda}
+        \leq 2C_{\alpha}L_{\tht}(\Omega)\ell_{\eps}^{t,\lambda}
     \end{equation}
     (such $t$ must be in $I$ because $I$ is maximal).
     Since $\ell\colon\operatorname{CC}(\bbR^{2})\to[0,\infty]$ is lower semicontinuous
@@ -1558,18 +1560,18 @@ $R_{\tht}(\Phi_{\eps*}^{t}\Omega)$, we first extend a bound on $R_{\tht}(\Phi_{*
 \begin{proof}
     We have \eqref{3.3} for $t\in[-T_{0},T_{0}]$, so a Gr\"{o}nwall-type argument shows that
     \[
-        e^{-2C_{\alpha}L_{\tht}(\Omega)\abs{t_{1} - t_{2}}}\ell(z_{\eps}^{t_{2},\lambda})
-        \leq \ell(z_{\eps}^{t_{1},\lambda}) \leq
-        e^{2C_{\alpha}L_{\tht}(\Omega)\abs{t_{1} - t_{2}}}\ell(z_{\eps}^{t_{2},\lambda})
+        e^{-2C_{\alpha}L_{\tht}(\Omega)\abs{t_{1} - t_{2}}}\ell_{\eps}^{t_{2},\lambda}
+        \leq \ell_{\eps}^{t_{1},\lambda} \leq
+        e^{2C_{\alpha}L_{\tht}(\Omega)\abs{t_{1} - t_{2}}}\ell_{\eps}^{t_{2},\lambda}
     \]
     for any $t_{1},t_{2}\in[-T_{0},T_{0}]$ and $\lambda\in\mathcal{L}$.
     Since \eqref{3.5} holds, a similar argument as in \eqref{3.7} shows
     \[
         \frac{1}{\left(
-            \Delta(z_{\eps}^{t_{1},\lambda},z_{\eps}^{t_{1},\lambda'}) + \eta
+            \Delta_{\eps}^{t_{1},\lambda,\lambda'} + \eta
         \right)^{2\alpha}}
         \leq \frac{e^{2C_{\alpha}L_{\tht}(\Omega)\abs{t_{1} - t_{2}}}}
-        {\Delta(z_{\eps}^{t_{2},\lambda},z_{\eps}^{t_{2},\lambda'})^{2\alpha}}
+        {(\Delta_{\eps}^{t_{2},\lambda,\lambda'})^{2\alpha}}
     \]
     for any $t_{1},t_{2}\in[-T_{0},T_{0}]$, $\lambda,\lambda'\in\mathcal{L}$ and $\eta>0$.
     Hence we see that \eqref{3.8}, and thus also \eqref{3.9}, continue to hold with
@@ -1672,27 +1674,27 @@ To estimate the right-hand side of \eqref{3.2}, we will use the following lemmas
     \begin{align*}
         \partial_{s}^{2}u_{\eps}^{t,\lambda}(s)
         &= D^{2}(u_{\eps}(\omega_{\eps}^{t}))(z_{\eps}^{t,\lambda}(s))
-        (\mathbf{T}^{t,\lambda}(s), \mathbf{T}^{t,\lambda}(s))
-        + \kappa^{t,\lambda}(s)D(u_{\eps}(\omega_{\eps}^{t}))
-        (z_{\eps}^{t,\lambda}(s))(\mathbf{N}^{t,\lambda}(s)).
+        (\mathbf{T}_{\eps}^{t,\lambda}(s), \mathbf{T}_{\eps}^{t,\lambda}(s))
+        + \kappa_{\eps}^{t,\lambda}(s)D(u_{\eps}(\omega_{\eps}^{t}))
+        (z_{\eps}^{t,\lambda}(s))(\mathbf{N}_{\eps}^{t,\lambda}(s)).
     \end{align*}
     Hence \eqref{3.2} yields
     \begin{equation}\label{3.12}
         \begin{aligned}
             \partial_{t}\norm{z_{\eps}^{t,\lambda}}_{\dot{H}^{2}}^{2} &=
-            \int_{\ell^{t,\lambda}\bbT}\kappa^{t,\lambda}(s)^{2}
+            \int_{\ell_{\eps}^{t,\lambda}\bbT}\kappa_{\eps}^{t,\lambda}(s)^{2}
             \left(
                 2D(u_{\eps}(\omega_{\eps}^{t}))(z_{\eps}^{t,\lambda}(s))
-                (\mathbf{N}^{t,\lambda}(s))
-                \cdot \mathbf{N}^{t,\lambda}(s)
-                - 3\,\partial_{s}u_{\eps}^{t,\lambda}(s)\cdot\mathbf{T}^{t,\lambda}(s)
+                (\mathbf{N}_{\eps}^{t,\lambda}(s))
+                \cdot \mathbf{N}_{\eps}^{t,\lambda}(s)
+                - 3\,\partial_{s}u_{\eps}^{t,\lambda}(s)\cdot\mathbf{T}_{\eps}^{t,\lambda}(s)
             \right)ds
             \\&\quad\quad
-            + 2\int_{\ell^{t,\lambda}\bbT}\kappa^{t,\lambda}(s)
+            + 2\int_{\ell_{\eps}^{t,\lambda}\bbT}\kappa_{\eps}^{t,\lambda}(s)
             \left(
                 D^{2}(u_{\eps}(\omega_{\eps}^{t}))(z_{\eps}^{t,\lambda}(s))
-                (\mathbf{T}^{t,\lambda}(s),\mathbf{T}^{t,\lambda}(s))
-                \cdot \mathbf{N}^{t,\lambda}(s)
+                (\mathbf{T}_{\eps}^{t,\lambda}(s),\mathbf{T}_{\eps}^{t,\lambda}(s))
+                \cdot \mathbf{N}_{\eps}^{t,\lambda}(s)
             \right)ds.
         \end{aligned}
     \end{equation}
@@ -1712,37 +1714,37 @@ To estimate the right-hand side of \eqref{3.2}, we will use the following lemmas
     
     Since $L_{\tht}(\Phi_{\eps*}\Omega)<\infty$, Lemma~\ref{L3.6} and Green's theorem show that
     \begin{align*}
-        G_{1} &= -\int_{\mathcal{L}}\int_{\ell^{\lambda}\bbT\times\ell^{\lambda'}\bbT}
-        \kappa^{\lambda}(s)D^{2}K_{\eps}(z_{\eps}^{\lambda}(s) - z_{\eps}^{\lambda'}(s'))
-        (\mathbf{T}^{\lambda}(s),\mathbf{T}^{\lambda}(s))
-        (\mathbf{T}^{\lambda'}(s')\cdot \mathbf{N}^{\lambda}(s))
+        G_{1} &= -\int_{\mathcal{L}}\int_{\ell_{\eps}^{\lambda}\bbT\times\ell_{\eps}^{\lambda'}\bbT}
+        \kappa_{\eps}^{\lambda}(s)D^{2}K_{\eps}(z_{\eps}^{\lambda}(s) - z_{\eps}^{\lambda'}(s'))
+        (\mathbf{T}_{\eps}^{\lambda}(s),\mathbf{T}_{\eps}^{\lambda}(s))
+        (\mathbf{T}_{\eps}^{\lambda'}(s')\cdot \mathbf{N}_{\eps}^{\lambda}(s))
         \,ds'\,ds\,d\theta(\lambda').
     \end{align*}
     From
     \[
-        \mathbf{T}^{\lambda}(s) =
-        (\mathbf{T}^{\lambda'}(s')\cdot\mathbf{T}^{\lambda}(s))\mathbf{T}^{\lambda'}(s')
-        + (\mathbf{N}^{\lambda'}(s')\cdot\mathbf{T}^{\lambda}(s))\mathbf{N}^{\lambda'}(s')
+        \mathbf{T}_{\eps}^{\lambda}(s) =
+        (\mathbf{T}_{\eps}^{\lambda'}(s')\cdot\mathbf{T}_{\eps}^{\lambda}(s))\mathbf{T}_{\eps}^{\lambda'}(s')
+        + (\mathbf{N}_{\eps}^{\lambda'}(s')\cdot\mathbf{T}_{\eps}^{\lambda}(s))\mathbf{N}_{\eps}^{\lambda'}(s')
     \]
-    and $\mathbf{N}^{\lambda'}(s')\cdot\mathbf{T}^{\lambda}(s)
-    = -\mathbf{T}^{\lambda'}(s')\cdot\mathbf{N}^{\lambda}(s)$
+    and $\mathbf{N}_{\eps}^{\lambda'}(s')\cdot\mathbf{T}_{\eps}^{\lambda}(s)
+    = -\mathbf{T}_{\eps}^{\lambda'}(s')\cdot\mathbf{N}_{\eps}^{\lambda}(s)$
     it now follows that $\abs{G_{1}}$ is bounded by the sum of 
     \begin{align*}
         G_{2} &\coloneqq \overline{\int_{\mathcal{L}}}
-        \bigg|\int_{\ell^{\lambda}\bbT\times\ell^{\lambda'}\bbT}
-        \kappa^{\lambda}(s)
+        \bigg|\int_{\ell_{\eps}^{\lambda}\bbT\times\ell_{\eps}^{\lambda'}\bbT}
+        \kappa_{\eps}^{\lambda}(s)
         D^{2}K_{\eps}(z_{\eps}^{\lambda}(s) - z_{\eps}^{\lambda'}(s'))
-        (\mathbf{T}^{\lambda}(s), \mathbf{T}^{\lambda'}(s'))
+        (\mathbf{T}_{\eps}^{\lambda}(s), \mathbf{T}_{\eps}^{\lambda'}(s'))
         \\&\qquad\qquad\qquad\qquad
-        (\mathbf{T}^{\lambda'}(s') \cdot \mathbf{N}^{\lambda}(s))
-        (\mathbf{T}^{\lambda'}(s') \cdot \mathbf{T}^{\lambda}(s))
+        (\mathbf{T}_{\eps}^{\lambda'}(s') \cdot \mathbf{N}_{\eps}^{\lambda}(s))
+        (\mathbf{T}_{\eps}^{\lambda'}(s') \cdot \mathbf{T}_{\eps}^{\lambda}(s))
         \,ds'\,ds\bigg|\,d|\theta|(\lambda'), \\
         G_{3} &\coloneqq \overline{\int_{\mathcal{L}}}
-        \bigg|\int_{\ell^{\lambda}\bbT\times\ell^{\lambda'}\bbT}
-        \kappa^{\lambda}(s)
+        \bigg|\int_{\ell_{\eps}^{\lambda}\bbT\times\ell_{\eps}^{\lambda'}\bbT}
+        \kappa_{\eps}^{\lambda}(s)
         D^{2}K_{\eps}(z_{\eps}^{\lambda}(s) - z_{\eps}^{\lambda'}(s'))
-        (\mathbf{T}^{\lambda}(s), \mathbf{N}^{\lambda'}(s'))
-        (\mathbf{T}^{\lambda'}(s') \cdot \mathbf{N}^{\lambda}(s))^{2}
+        (\mathbf{T}_{\eps}^{\lambda}(s), \mathbf{N}_{\eps}^{\lambda'}(s'))
+        (\mathbf{T}_{\eps}^{\lambda'}(s') \cdot \mathbf{N}_{\eps}^{\lambda}(s))^{2}
         \,ds'\,ds\bigg|\,d|\theta|(\lambda'),
     \end{align*}
     which we estimate separately next.
@@ -1750,27 +1752,27 @@ To estimate the right-hand side of \eqref{3.2}, we will use the following lemmas
     \textbf{Estimate for $G_{2}$.} Since
     \begin{align*}
         &\frac{\partial}{\partial s'}\left(
-            DK_{\eps}(z_{\eps}^{\lambda}(s) - z_{\eps}^{\lambda'}(s'))(\mathbf{T}^{\lambda}(s))
-            (\mathbf{T}^{\lambda'}(s') \cdot \mathbf{N}^{\lambda}(s))
-            (\mathbf{T}^{\lambda'}(s') \cdot \mathbf{T}^{\lambda}(s))
+            DK_{\eps}(z_{\eps}^{\lambda}(s) - z_{\eps}^{\lambda'}(s'))(\mathbf{T}_{\eps}^{\lambda}(s))
+            (\mathbf{T}_{\eps}^{\lambda'}(s') \cdot \mathbf{N}_{\eps}^{\lambda}(s))
+            (\mathbf{T}_{\eps}^{\lambda'}(s') \cdot \mathbf{T}_{\eps}^{\lambda}(s))
         \right)
         \\&\quad\quad
         = -D^{2}K_{\eps}(z_{\eps}^{\lambda}(s) - z_{\eps}^{\lambda'}(s'))
-        (\mathbf{T}^{\lambda}(s), \mathbf{T}^{\lambda'}(s'))
-        (\mathbf{T}^{\lambda'}(s') \cdot \mathbf{N}^{\lambda}(s))
-        (\mathbf{T}^{\lambda'}(s') \cdot \mathbf{T}^{\lambda}(s))
+        (\mathbf{T}_{\eps}^{\lambda}(s), \mathbf{T}_{\eps}^{\lambda'}(s'))
+        (\mathbf{T}_{\eps}^{\lambda'}(s') \cdot \mathbf{N}_{\eps}^{\lambda}(s))
+        (\mathbf{T}_{\eps}^{\lambda'}(s') \cdot \mathbf{T}_{\eps}^{\lambda}(s))
         \\&\quad\quad\quad\ 
-        + \kappa^{\lambda'}(s')DK_{\eps}(z_{\eps}^{\lambda}(s) - z_{\eps}^{\lambda'}(s'))
+        + \kappa_{\eps}^{\lambda'}(s')DK_{\eps}(z_{\eps}^{\lambda}(s) - z_{\eps}^{\lambda'}(s'))
         \left(
-            (\mathbf{T}^{\lambda'}(s') \cdot \mathbf{T}^{\lambda}(s))^{2}
-            - (\mathbf{T}^{\lambda'}(s') \cdot \mathbf{N}^{\lambda}(s))^{2}
+            (\mathbf{T}_{\eps}^{\lambda'}(s') \cdot \mathbf{T}_{\eps}^{\lambda}(s))^{2}
+            - (\mathbf{T}_{\eps}^{\lambda'}(s') \cdot \mathbf{N}_{\eps}^{\lambda}(s))^{2}
         \right),
     \end{align*}
     we see that
     \begin{align*}
        G_{2} \leq C_{\alpha}\overline{\int_{\mathcal{L}}}
-        \int_{\ell^{\lambda}\bbT\times\ell^{\lambda'}\bbT}
-        \frac{\abs{\kappa^{\lambda}(s)\kappa^{\lambda'}(s')}}
+        \int_{\ell_{\eps}^{\lambda}\bbT\times\ell_{\eps}^{\lambda'}\bbT}
+        \frac{\abs{\kappa_{\eps}^{\lambda}(s)\kappa_{\eps}^{\lambda'}(s')}}
         {\abs{z_{\eps}^{\lambda}(s) - z_{\eps}^{\lambda'}(s')}^{1+2\alpha}}
         \,ds'\,ds\,d|\theta|(\lambda').
     \end{align*}
@@ -1778,14 +1780,14 @@ To estimate the right-hand side of \eqref{3.2}, we will use the following lemmas
     of the right-hand side is bounded by
     \begin{align*}
         \left(
-            \int_{\ell^{\lambda}\bbT}\kappa^{\lambda}(s)^{2}
-            \int_{\ell^{\lambda'}\bbT}\frac{ds'}
+            \int_{\ell_{\eps}^{\lambda}\bbT}\kappa_{\eps}^{\lambda}(s)^{2}
+            \int_{\ell_{\eps}^{\lambda'}\bbT}\frac{ds'}
             {\abs{z_{\eps}^{\lambda}(s) - z_{\eps}^{\lambda'}(s')}^{1+2\alpha}}
             \,ds
         \right)^{1/2}
         \left(
-            \int_{\ell^{\lambda'}\bbT}\kappa^{\lambda'}(s')^{2}
-            \int_{\ell^{\lambda}\bbT}\frac{ds}
+            \int_{\ell_{\eps}^{\lambda'}\bbT}\kappa_{\eps}^{\lambda'}(s')^{2}
+            \int_{\ell_{\eps}^{\lambda}\bbT}\frac{ds}
             {\abs{z_{\eps}^{\lambda}(s) - z_{\eps}^{\lambda'}(s')}^{1+2\alpha}}
             \,ds'
         \right)^{1/2},
@@ -1794,18 +1796,18 @@ To estimate the right-hand side of \eqref{3.2}, we will use the following lemmas
     \begin{align*}
         C_{\alpha}\left(
             \norm{z_{\eps}^{\lambda}}_{\dot{H}^{2}}^{2}
-            \frac{\ell^{\lambda'}\norm{z_{\eps}^{\lambda'}}_{\dot{H}^{2}}^{2}}
-            {(\Delta^{\lambda,\lambda'})^{2\alpha}}
+            \frac{\ell_{\eps}^{\lambda'}\norm{z_{\eps}^{\lambda'}}_{\dot{H}^{2}}^{2}}
+            {(\Delta_{\eps}^{\lambda,\lambda'})^{2\alpha}}
         \right)^{1/2}
         \left(
             \norm{z_{\eps}^{\lambda'}}_{\dot{H}^{2}}^{2}
-            \frac{\ell^{\lambda}\norm{z_{\eps}^{\lambda}}_{\dot{H}^{2}}^{2}}
-            {(\Delta^{\lambda,\lambda'})^{2\alpha}}
+            \frac{\ell_{\eps}^{\lambda}\norm{z_{\eps}^{\lambda}}_{\dot{H}^{2}}^{2}}
+            {(\Delta_{\eps}^{\lambda,\lambda'})^{2\alpha}}
         \right)^{1/2}
         = C_{\alpha}\norm{z_{\eps}^{\lambda}}_{\dot{H}^{2}}^{2}
-        \frac{\ell^{\lambda'}\norm{z_{\eps}^{\lambda'}}_{\dot{H}^{2}}^{2} 
-        (\ell^{\lambda})^{1/2}}
-        {(\ell^{\lambda'})^{1/2}(\Delta^{\lambda,\lambda'})^{2\alpha}}.
+        \frac{\ell_{\eps}^{\lambda'}\norm{z_{\eps}^{\lambda'}}_{\dot{H}^{2}}^{2} 
+        (\ell_{\eps}^{\lambda})^{1/2}}
+        {(\ell_{\eps}^{\lambda'})^{1/2}(\Delta_{\eps}^{\lambda,\lambda'})^{2\alpha}}.
     \end{align*}
     Therefore
     \begin{align*}
@@ -1814,24 +1816,39 @@ To estimate the right-hand side of \eqref{3.2}, we will use the following lemmas
     \end{align*}
 
     \textbf{Estimate for $G_{3}$.} We can assume $R_{\tht}(\Phi_{\eps*}\Omega)<\infty$,
-    in which case $\Delta^{\lambda,\lambda'} > 0$
+    in which case $\Delta_{\eps}^{\lambda,\lambda'} > 0$
     for $|\theta|$-almost all $\lambda'$.  Thus we can apply \cite[Lemma~A.4]{JeoZlaTouching}
     to conclude that
-    \begin{align*}
-        G_{3} &\leq C_{\alpha}\overline{\int_{\mathcal{L}}}
-        \int_{\ell^{\lambda}\bbT\times \ell^{\lambda'}\bbT}
-        \frac{\abs{\kappa^{\lambda}(s)}\left(
-            \mathcal{M}\kappa^{\lambda}(s)
-            + \mathcal{M}\kappa^{\lambda'}(s')
+    \begin{equation}\label{3.100}
+        G_{3} \leq C_{\alpha}\overline{\int_{\mathcal{L}}}
+        \int_{\ell_{\eps}^{\lambda}\bbT\times \ell_{\eps}^{\lambda'}\bbT}
+        \frac{\abs{\kappa_{\eps}^{\lambda}(s)}\left(
+            \mathcal{M}\kappa_{\eps}^{\lambda}(s)
+            + \mathcal{M}\kappa_{\eps}^{\lambda'}(s')
         \right)}
         {\abs{z_{\eps}^{\lambda}(s) - z_{\eps}^{\lambda'}(s')}^{1+2\alpha}}
         \,ds'\,ds\,d|\theta|(\lambda'),
-    \end{align*}
-    where $\mathcal{M}$ is the maximal operator from (A.2) in \cite{JeoZlaTouching}.
-    Let us split the integrand into the sum of two terms with numerators
-    $\abs{\kappa^{\lambda}(s)}\mathcal{M}\kappa^{\lambda}(s)$ and
-    $\abs{\kappa^{\lambda}(s)}\mathcal{M}\kappa^{\lambda'}(s')$, respectively.  Then
-     the maximal inequality (see (A.3) in \cite{JeoZlaTouching}) shows that  the same argument
+    \end{equation}
+    where $\mathcal{M}$ is the maximal operator
+    \begin{equation*}
+        \mathcal{M}f(s)\coloneqq \max\set{
+            \sup_{h\in\left(0,\frac{\ell}{2}\right]}
+            \frac{1}{h}\int_{s}^{s+h}\abs{f(s')}\,ds',
+            \sup_{h\in\left(0,\frac{\ell}{2}\right]}
+            \frac{1}{h}\int_{s-h}^{s}\abs{f(s')}\,ds'
+        }
+    \end{equation*}
+    for $f\in L^{1}(\ell\bbT)$ and $\ell\in(0,\infty)$,
+    from (A.2) in \cite{JeoZlaTouching}.
+    Let us split the integrand of \eqref{3.100} into the sum of two terms with numerators
+    $\abs{\kappa_{\eps}^{\lambda}(s)}\mathcal{M}\kappa_{\eps}^{\lambda}(s)$ and
+    $\abs{\kappa_{\eps}^{\lambda}(s)}\mathcal{M}\kappa_{\eps}^{\lambda'}(s')$, respectively.  Then
+    the maximal inequality (see (A.3) in \cite{JeoZlaTouching})
+    \begin{equation*}
+        \norm{\mathcal{M}f}_{L^{2}} \leq C\norm{f}_{L^{2}}
+    \end{equation*}
+    for $f\in L^{2}(\ell\bbT)$ and $\ell\in(0,\infty)$
+    with a universal constant $C$ shows that  the same argument
     as in the estimate for $G_{2}$ bounds the integral of the second term by
     $C_{\alpha}R_{\tht}(\Phi_{\eps*}\Omega)Q(\Phi_{\eps*}\Omega)
     \norm{z_{\eps}^{\lambda}}_{\dot{H}^{2}}^{2}$.
@@ -1839,32 +1856,35 @@ To estimate the right-hand side of \eqref{3.2}, we will use the following lemmas
     the maximal inequality show that
     \begin{align*}
         &\overline{\int_{\mathcal{L}}}
-        \int_{\ell^{\lambda}\bbT\times \ell^{\lambda'}\bbT}
-        \frac{\abs{\kappa^{\lambda}(s)}\mathcal{M}\kappa^{\lambda}(s)}
+        \int_{\ell_{\eps}^{\lambda}\bbT\times \ell_{\eps}^{\lambda'}\bbT}
+        \frac{\abs{\kappa_{\eps}^{\lambda}(s)}\mathcal{M}\kappa_{\eps}^{\lambda}(s)}
         {\abs{z_{\eps}^{\lambda}(s) - z_{\eps}^{\lambda'}(s')}^{1+2\alpha}}
         \,ds'\,ds\,d|\theta|(\lambda')
         \\&\quad\quad \leq
         \overline{\int_{\mathcal{L}}}
-        \int_{\ell^{\lambda}\bbT}\abs{\kappa^{\lambda}(s)}\mathcal{M}\kappa^{\lambda}(s)
-        \frac{C_{\alpha}\ell^{\lambda'}\norm{z_{\eps}^{\lambda'}}_{\dot{H}^{2}}^{2}}
+        \int_{\ell_{\eps}^{\lambda}\bbT}\abs{\kappa_{\eps}^{\lambda}(s)}\mathcal{M}\kappa_{\eps}^{\lambda}(s)
+        \frac{C_{\alpha}\ell_{\eps}^{\lambda'}\norm{z_{\eps}^{\lambda'}}_{\dot{H}^{2}}^{2}}
         {d(z_{\eps}^{\lambda}(s), \operatorname{im}(z_{\eps}^{\lambda'}))^{2\alpha}}
         \,ds\,d|\theta|(\lambda')
         \\&\quad\quad \leq
         C_{\alpha}Q(\Phi_{\eps*}\Omega)
         \int_{\mathcal{L}}
-        \int_{\ell^{\lambda}\bbT}
-        \frac{\abs{\kappa^{\lambda}(s)}\mathcal{M}\kappa^{\lambda}(s)}
+        \int_{\ell_{\eps}^{\lambda}\bbT}
+        \frac{\abs{\kappa_{\eps}^{\lambda}(s)}\mathcal{M}\kappa_{\eps}^{\lambda}(s)}
         {d(z_{\eps}^{\lambda}(s), \operatorname{im}(z_{\eps}^{\lambda'}))^{2\alpha}}
         \,ds\,d|\theta|(\lambda')
         \\&\quad\quad \leq
         C_{\alpha}L_{\tht}(\Phi_{\eps*}\Omega)Q(\Phi_{\eps*}\Omega)
-        \int_{\ell^{\lambda}\bbT}
-        \abs{\kappa^{\lambda}(s)}\mathcal{M}\kappa^{\lambda}(s)\,ds
+        \int_{\ell_{\eps}^{\lambda}\bbT}
+        \abs{\kappa_{\eps}^{\lambda}(s)}\mathcal{M}\kappa_{\eps}^{\lambda}(s)\,ds
         \\&\quad\quad \leq C_{\alpha}L_{\tht}(\Phi_{\eps*}\Omega)Q(\Phi_{\eps*}\Omega)
         \norm{z_{\eps}^{\lambda}}_{\dot{H}^{2}}^{2},
     \end{align*}
     where  the regular (rather than upper) integral can be taken after the second inequality  because
-    the integrand is jointly measurable in $(s,\lambda')$.
+    the integrand is jointly measurable in $(s,\lambda')$
+    (recall from \eqref{1.100} that $d(x,\operatorname{im}(z_{\eps}^{\lambda'}))
+    = d(x,\Phi_{\eps}(\partial\Omega^{\lambda'}))$ is jointly measurable
+    in $(x,\lambda')$).
     Aggregating the estimates for $G_{2}$ and $G_{3}$ now yields the desired conclusion.
 \end{proof}
 
