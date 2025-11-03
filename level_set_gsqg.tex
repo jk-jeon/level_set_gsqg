@@ -1365,19 +1365,11 @@ it easily follows that $\tilde{z}_{\eps}^{t,\lambda}\in H^{2}(\bbT;\bbR^{2})$ an
     \circ \tilde{z}_{\eps}^{\tau,\lambda}\,d\tau
 \end{equation}
 holds for all $h\in\bbR$ (in $H^{2}(\bbT;\bbR^{2})$).
-This is also used to evaluate the time derivative of $\ell_{\eps}^{t,\lambda}$.
+%This is also used to evaluate the time derivative of $\ell_{\eps}^{t,\lambda}$.
 
-\smallskip
-\textit{Remark}. For some $t_{0}$, we will need to consider \eqref{3.1} with
-$\omega_{\eps}$ and $\tilde{z}_{\eps}$ resulting from replacing
-$z^{0}$ by $z^{t_{0}}$ and $\Psi_{\eps}^{t}$
-by the solution to \eqref{2.1} with $\omega^{0}$ replaced by $\omega^{t_{0}}$
-and with the initial time at $t = t_{0}$.
-With those, we do not yet know if \eqref{3.1} holds in $H^{2}(\bbT;\bbR^{2})$
-since we have not yet shown that each $z^{t_{0},\lambda}$ is an $H^{2}$ curve.
-Nevertheless, since $\Phi^{t_{0}}$ is Lipschitz, we can easily see that
-\eqref{3.1} still holds in $C^{0,1}(\bbT;\bbR^{2})$ in that setting and
-that is enough for us.
+\medskip
+\textit{Remark}. Below we will also consider the above setup with initial data being $(\omega^{t_0},z^{t_0})$ for some $t_0\in I$ instead of $(\omega^0,z^0)$.  Since we do not yet know whether the $z^{t_{0},\lambda}$ are $H^{2}$ curves when $t_0\neq 0$,  we cannot define $\kappa_{\eps}^{t,\lambda}$ for these initial data and also cannot yet claim \eqref{3.1} to hold in $H^{2}(\bbT;\bbR^{2})$.  However, since $\Phi^{t_{0}}$ is Lipschitz by Proposition \ref{P2.8}, so are the $z^{t_{0},\lambda}$ and then
+\eqref{3.1}  holds in $C^{0,1}(\bbT;\bbR^{2})$.  We will use this in the following results, up to Lemma \ref{L3.4}.
 
 \begin{lemma}\label{L3.1}
  With $C_{\alpha}$ from Lemma~\ref{L2.1}, for any $(t,\lambda)\in [-T_0,T_0]\times\mathcal{L}$ and $\eps>0$ we have
@@ -1451,8 +1443,7 @@ The result now follows from Lemma \ref{L2.1} and Corollary~\ref{C2.7}.
     \end{equation}
 
     Next fix any $t_{0}\in I$ with $\abs{t_{0}}\leq \frac {T_0}2$.
-    Repeating the proof of \eqref{3.4} with the setting described in
-    the remark after \eqref{3.2} shows that
+    Repeating the proof of \eqref{3.4} with $z^{t_0,\lambda}$ in place of $z^{0,\lambda}$ (recall  the remark after \eqref{3.1}) shows that
     %Considering $\omega^{t_{0}}$ as the initial condition for \eqref{1.1}--\eqref{1.2}
     %at time $ t_{0}$ and then repeating the proof of \eqref{3.4} shows that 
     \[
@@ -1501,8 +1492,8 @@ and so
     \end{equation}
     for all $\eps>0$, $t_{1},t_{2}\in[-T_{0},T_{0}]$ and $x,y\in\bbR^{2}$.
     Hence, taking $\eps\to 0$ shows that \eqref{3.5} continues to hold
-    with $\Phi$ in place of $\Phi_{\eps}$. Then by the remark after \eqref{3.1},
-    applying the same argument to $(\omega^{t},t)$ in place of $(\omega^{0},0)$ shows that
+    with $\Phi$ in place of $\Phi_{\eps}$. 
+    Applying the same argument with $\Phi_{*}^{t}\Omega$ in place of $\Omega$ (recall the remark after \eqref{3.1}), shows that
     each $t\in J$ has a neighborhood such that
     \begin{equation}\label{3.6}
         \abs{\Phi^{t_{1}}(x) - \Phi^{t_{1}}(y)
