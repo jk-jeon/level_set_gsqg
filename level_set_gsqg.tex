@@ -429,20 +429,37 @@ and $\Delta(\,\cdot\,,\,\cdot\,)$).
         Q(\Omega) \coloneqq \sup_{\lambda\in\mathcal{L}}
         \ell(z^{\lambda})\norm{z^{\lambda}}_{\dot{H}^{2}}^{2},\quad
         R_{\tht}(\Omega) \coloneqq \sup_{\lambda\in\mathcal{L}}
-        \ell(z^{\lambda})^{1/2}\overline{\int_{\mathcal{L}}}\frac{d|\theta|(\lambda')}
+        \ell(z^{\lambda})^{1/2}
+        %\overline{\int_{\mathcal{L}}}
+        \int_{\mathcal{L}}
+        \frac{d|\theta|(\lambda')}
         {\ell(z^{\lambda'})^{1/2}\Delta(z^{\lambda},z^{\lambda'})^{2\alpha}}.
     \end{equation*}
 \end{definition}
 
-Here, $\overline{\int_{\mathcal{L}}}f(\lambda)\,d|\theta|(\lambda)$
-for any function $f\colon\mathcal{L}\to[0,\infty]$ is the \emph{upper Lebesgue integral}
-of $f$; that is,
-\[
-    \overline{\int_{\mathcal{L}}}f(\lambda)\,d|\theta|(\lambda)
-    \coloneqq \inf_{g}\int_{\mathcal{L}}g(\lambda)\,d|\theta|(\lambda)
-\]
-where $g\colon\mathcal{L}\to[0,\infty]$ ranges over all
-measurable functions bounded below by $f$.
+\smallskip
+\textit{Remark}. Note that $\Delta(z^{\lambda},z^{\lambda'}) = \inf_{x\in\bbQ^{2}}\left(
+    d(x,\partial\Omega^{\lambda}) + d(x,\partial\Omega^{\lambda'})
+\right)$ is measurable in $\lambda'$ since $d(x,\partial\Omega^{\lambda'})$
+is jointly measurable in $(x,\lambda')$. On the other hand,
+since $\lambda'\mapsto\partial\Omega^{\lambda'}$ is measurable with respect to the
+topology on $\wp(\bbR^{2})$ given by the family of pseudometrics
+$(A,B)\mapsto |(A\,\triangle\,B)\cap K|$ for compact $K\subseteq\bbR^{2}$,
+lower semicontinuity of the perimeter functional (in the sense of Caccioppoli)
+with respect to this topology shows measurability of $\lambda'\mapsto\ell(z^{\lambda'})$;
+see e.g. \cite[Proposition 12.15]{MaggiGeoVarBook}.
+Hence, $R_{\theta}(\Omega)$ is well-defined.
+\smallskip
+
+% Here, $\overline{\int_{\mathcal{L}}}f(\lambda)\,d|\theta|(\lambda)$
+% for any function $f\colon\mathcal{L}\to[0,\infty]$ is the \emph{upper Lebesgue integral}
+% of $f$; that is,
+% \[
+%     \overline{\int_{\mathcal{L}}}f(\lambda)\,d|\theta|(\lambda)
+%     \coloneqq \inf_{g}\int_{\mathcal{L}}g(\lambda)\,d|\theta|(\lambda)
+% \]
+% where $g\colon\mathcal{L}\to[0,\infty]$ ranges over all
+% measurable functions bounded below by $f$.
 
 For our second result, we will impose in addition to $L_{\tht}(\Omega)<\infty$
 that $\Omega$ is composed of simple closed curves and
@@ -1529,7 +1546,7 @@ and so
         {\ell(z^{t_{2},\lambda'})^{1/2}
         \Delta(z^{t_{2},\lambda},z^{t_{2},\lambda'})^{2\alpha}}.
     \end{equation}
-    Letting $\eta\to 0^{+}$, taking the upper Lebesgue integral with respect to $\lambda'$,
+    Letting $\eta\to 0^{+}$, integrating with respect to $\lambda'$,
     and then taking the supremum over $\lambda\in\calL$ shows that
     \begin{equation}\label{3.9}
         R_{\tht}(\Phi_{*}^{t_{1}}\Omega)
@@ -1750,6 +1767,15 @@ in Lemma~\ref{L3.7} below.
         \,ds'\,ds\bigg|\,d|\theta|(\lambda'),
     \end{align*}
     which we estimate separately next.
+    Here, $\overline{\int_{\mathcal{L}}}f(\lambda')\,d|\theta|(\lambda')$
+    for any function $f\colon\mathcal{L}\to[0,\infty]$ is the \emph{upper Lebesgue integral}
+    of $f$; that is,
+    \[
+        \overline{\int_{\mathcal{L}}}f(\lambda')'\,d|\theta|(\lambda')
+        \coloneqq \inf_{g}\int_{\mathcal{L}}g(\lambda')\,d|\theta|(\lambda')
+    \]
+    where $g\colon\mathcal{L}\to[0,\infty]$ ranges over all
+    measurable functions bounded below by $f$.
 
     \textbf{Estimate for $G_{2}$.} Since
     \begin{align*}
@@ -2459,9 +2485,14 @@ J. Jeon and A. Zlato\v{s},
 \textit{Well-Posedness and Finite Time Singularity for Touching g-SQG Patches on the Plane},
 preprint.
 
+\bibitem{MaggiGeoVarBook}
+F. Maggi,
+\textit{Sets of Finite Perimeter and Geometric Variational Problems:
+An Introduction to Geometric Measure Theory},
+Cambridge University Press, Cambridge, 2012.
+
 
 \end{thebibliography}
-
 
 \end{document}
 
