@@ -1831,7 +1831,7 @@ in Lemma~\ref{L3.7} below.
         {\abs{z_{\eps}^{\lambda}(s) - z_{\eps}^{\lambda'}(s')}^{1+2\alpha}}
         \,ds'\,ds\,d|\theta|(\lambda'),
     \end{equation}
-    where $\mathcal{M}$ is the maximal operator
+    where $\mathcal{M}$ is the maximal operator given by
     \begin{equation*}
         \mathcal{M}f(s)\coloneqq \max\set{
             \sup_{h\in\left(0,\frac{\ell}{2}\right]}
@@ -1840,17 +1840,18 @@ in Lemma~\ref{L3.7} below.
             \frac{1}{h}\int_{s-h}^{s}\abs{f(s')}\,ds'
         }
     \end{equation*}
-    for $f\in L^{1}(\ell\bbT)$ and $\ell\in(0,\infty)$,
-    from (A.2) in \cite{JeoZlaTouching}.
-    Let us split the integrand of \eqref{3.100} into the sum of two terms with numerators
+    for $\ell\in(0,\infty)$ and $f\in L^{1}(\ell\bbT)$.
+%    from (A.2) in \cite{JeoZlaTouching}.
+    Let us split the integrand of \eqref{3.100} into the sum of terms with numerators
     $\abs{\kappa_{\eps}^{\lambda}(s)}\mathcal{M}\kappa_{\eps}^{\lambda}(s)$ and
-    $\abs{\kappa_{\eps}^{\lambda}(s)}\mathcal{M}\kappa_{\eps}^{\lambda'}(s')$, respectively.  Then
-    the maximal inequality (see (A.3) in \cite{JeoZlaTouching})
+    $\abs{\kappa_{\eps}^{\lambda}(s)}\mathcal{M}\kappa_{\eps}^{\lambda'}(s')$.  Then
+    the maximal inequality 
+    %(see (A.3) in \cite{JeoZlaTouching})
     \begin{equation*}
-        \norm{\mathcal{M}f}_{L^{2}} \leq C\norm{f}_{L^{2}}
+        \norm{\mathcal{M}f}_{L^{2}} \leq C\norm{f}_{L^{2}},
     \end{equation*}
-    for $f\in L^{2}(\ell\bbT)$ and $\ell\in(0,\infty)$
-    with a universal constant $C$ shows that  the same argument
+    which holds for all $\ell\in(0,\infty)$ and $f\in L^{2}(\ell\bbT)$
+    with some universal constant $C$, shows that  the same argument
     as in the estimate for $G_{2}$ bounds the integral of the second term by
     $C_{\alpha}R_{\tht}(\Phi_{\eps*}\Omega)Q(\Phi_{\eps*}\Omega)
     \norm{z_{\eps}^{\lambda}}_{\dot{H}^{2}}^{2}$.
