@@ -1369,7 +1369,7 @@ holds for all $h\in\bbR$ (in $H^{2}(\bbT;\bbR^{2})$).
 
 \medskip
 \textit{Remark}. Below we will also consider the above setup with initial data being $(\omega^{t_0},z^{t_0})$ for some $t_0\in I$ instead of $(\omega^0,z^0)$.  Since we do not yet know whether the $z^{t_{0},\lambda}$ are $H^{2}$ curves when $t_0\neq 0$,  we cannot define $\kappa_{\eps}^{t,\lambda}$ for these initial data and also cannot yet claim \eqref{3.1} to hold in $H^{2}(\bbT;\bbR^{2})$.  However, since $\Phi^{t_{0}}$ is Lipschitz by Proposition \ref{P2.8}, so are the $z^{t_{0},\lambda}$ and then
-\eqref{3.1}  holds in $C^{0,1}(\bbT;\bbR^{2})$.  We will use this in the following results, up to Lemma \ref{L3.4}.
+\eqref{3.1}  holds in $C^{0,1}(\bbT;\bbR^{2})$.  We will use this in the following results, up to Proposition~\ref{P3.3}.
 
 \begin{lemma}\label{L3.1}
  With $C_{\alpha}$ from Lemma~\ref{L2.1}, for any $(t,\lambda)\in [-T_0,T_0]\times\mathcal{L}$ and $\eps>0$ we have
@@ -1425,7 +1425,7 @@ holds for all $h\in\bbR$ (in $H^{2}(\bbT;\bbR^{2})$).
 The result now follows from Lemma \ref{L2.1} and Corollary~\ref{C2.7}.
 \end{proof}
 
-\begin{corollary}\label{C3.2}
+\begin{lemma}\label{L3.2}
     With $C_{\alpha}$ from Lemma~\ref{L2.1}, for any $(t,\lambda)\in I\times\mathcal{L}$ and all small enough $h\in\bbR$ we have
     \[
         e^{-3C_{\alpha}L_{\tht}(\Phi_{*}^{t}\Omega)\abs{h}}\ell(z^{t,\lambda})
@@ -1433,7 +1433,7 @@ The result now follows from Lemma \ref{L2.1} and Corollary~\ref{C2.7}.
         e^{3C_{\alpha}L_{\tht}(\Phi_{*}^{t}\Omega)\abs{h}}\ell(z^{t,\lambda}).
     \]
 %    holds for any small enough $h\in\bbR$.
-\end{corollary}
+\end{lemma}
 
 \begin{proof}
    Since $\ell\colon\operatorname{CC}(\bbR^{2})\to[0,\infty]$ is lower semicontinuous
@@ -1537,7 +1537,7 @@ and so
         \leq \frac{e^{2C_{\alpha}M\abs{t_{1} - t_{2}}}}
         {\Delta(z^{t_{2},\lambda},z^{t_{2},\lambda'})^{2\alpha}}.
     \end{equation}
-    Corollary~\ref{C3.2} yields
+    Lemma~\ref{L3.2} yields
     \[
         e^{-3C_{\alpha}M\abs{t_{1} - t_{2}}}\ell(z^{t_{2},\lambda})
         \leq \ell(z^{t_{1},\lambda}) \leq
