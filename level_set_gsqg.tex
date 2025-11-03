@@ -1072,9 +1072,10 @@ From Lemma~\ref{L2.1}, Proposition~\ref{P2.6}, and  a Gr\"{o}nwall-type argument
 %    follows from the first claim and a Gr\"{o}nwall-type argument.
 %\end{proof}
 
-Let $T_{0}\coloneqq \frac{1}{2C_{\alpha}L_{\tht}(\Omega)}$ with $C_{\alpha}$ from Lemma~\ref{L2.1}.
+
 
 \begin{proposition}\label{P2.8}
+Let $T_{0}\coloneqq \frac{1}{2C_{\alpha}L_{\tht}(\Omega)}$, with $C_{\alpha}$ from Lemma~\ref{L2.1}.
     There is $\Psi:=\lim_{\eps\to 0} \Psi_{\eps}\in C\left([-T_{0},T_{0}];BC(\bbR^{2};\bbR^{2})\right)$,
 %    converges uniformly to some $\Psi\in C\left([-T_{0},T_{0}];C_{b}(\bbR^{2};\bbR^{2})\right)$.
     and $\Phi^{t}\coloneqq\mathrm{Id} + \Psi^{t}$
@@ -1281,8 +1282,7 @@ such that $\partial\Omega^{\lambda} = \operatorname{im}(z^{0,\lambda})$.
 
 Let $\omega\colon I\to L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$ be the
 Lagrangian solution to \eqref{1.1}--\eqref{1.2} from Theorem~\ref{T1.2}, with  initial data $\omega^{0}$
-and  flow map $\Phi\in C\left(I;C(\bbR^{2};\bbR^{2})\right)$. Then since  $\Phi^{t}$ is a homeomorphism for each $t\in I$, 
-it follows that $\Phi_{*}^{t}\Omega$ is  composed of simple closed curves and we denote these  $z^{t,\lambda}:=\Phi^{t}\circ z^{0,\lambda} \in\operatorname{PSC}(\bbR^{2})$, where $\Phi^{t}\circ z^{0,\lambda}\in \operatorname{CC}(\bbR^{2})$ is the curve whose representative is $\Phi^{t}\circ\tilde{z}^{0,\lambda}$ whenever  $\tilde{z}^{0,\lambda}$ is a representative of $z^{0,\lambda}$ (since $\set{z^{t,\lambda}}_{t\in I}$ is clearly a connected subset of $\operatorname{CC}(\bbR^{2})$,  \cite[Lemma~B.4]{JeoZlaTouching} shows that each $z^{t,\lambda}$ is positively oriented).
+and  flow map $\Phi\in C\left(I;C(\bbR^{2};\bbR^{2})\right)$, and consider $T_{0}\coloneqq \frac{1}{2C_{\alpha}L_{\tht}(\Omega)}$ as in Proposition \ref{P2.8} (note that $[-T_0,T_0]\subseteq I$ because $I$ is maximal). Then since  $\Phi^{t}$ is a homeomorphism for each $t\in I$,  it follows that $\Phi_{*}^{t}\Omega$ is  composed of simple closed curves and we denote these  $z^{t,\lambda}:=\Phi^{t}\circ z^{0,\lambda} \in\operatorname{PSC}(\bbR^{2})$, where $\Phi^{t}\circ z^{0,\lambda}\in \operatorname{CC}(\bbR^{2})$ is the curve whose representative is $\Phi^{t}\circ\tilde{z}^{0,\lambda}$ whenever  $\tilde{z}^{0,\lambda}$ is a representative of $z^{0,\lambda}$ (since $\set{z^{t,\lambda}}_{t\in I}$ is clearly a connected subset of $\operatorname{CC}(\bbR^{2})$,  \cite[Lemma~B.4]{JeoZlaTouching} shows that each $z^{t,\lambda}$ is positively oriented).
 % $\Phi^{t}\circ z^{0,\lambda}$
 %(i.e., the equivalence class in $\operatorname{CC}(\bbR^{2})$
 %of $\Phi^{t}\circ\tilde{z}^{0,\lambda}$ for any representative $\tilde{z}^{0,\lambda}$
@@ -1294,8 +1294,7 @@ it follows that $\Phi_{*}^{t}\Omega$ is  composed of simple closed curves and we
 Fix any $\eps>0$ and recall that $\Phi_{\eps}^{t}\coloneqq\mathrm{Id} + \Psi_{\eps}^{t}$,
 where $\Psi_{\eps}^{t}$ is the solution to \eqref{2.1}.
 For each $(t,\lambda)\in\bbR\times\mathcal{L}$ let $z_{\eps}^{t,\lambda} \coloneqq \Phi_{\eps}^{t}\circ z^{0,\lambda}$
-and $\omega_{\eps}^{t}\coloneqq\omega^{0}\circ(\Phi_{\eps}^{t})^{-1}$, then fix any arclength parametrization of $z_{\eps}^{t,\lambda}$ (we denote it again $z_{\eps}^{t,\lambda}(\cdot)$) and for $s\in[0,\ell(z_{\eps}^{t,\lambda})]$ define (suppressing $\eps$ in most of this notation)
-\begin{itemize}
+and $\omega_{\eps}^{t}\coloneqq\omega^{0}\circ(\Phi_{\eps}^{t})^{-1}$, then fix any arclength parametrization of $z_{\eps}^{t,\lambda}$ (we denote it again $z_{\eps}^{t,\lambda}(\cdot)$) and for $s\in[0,\ell(z_{\eps}^{t,\lambda})]$ define\begin{itemize}
     \item $\ell_{\eps}^{t,\lambda}\coloneqq \ell(z_{\eps}^{t,\lambda})$,
 
     \item $\mathbf{T}_{\eps}^{t,\lambda}(s) \coloneqq \partial_{s}z_{\eps}^{t,\lambda}(s)$,
@@ -1350,12 +1349,12 @@ holds for all $h\in\bbR$ (in $H^{2}(\bbT;\bbR^{2})$).
 This is also used to evaluate the time derivative of $\ell_{\eps}^{t,\lambda}$.
 
 \begin{lemma}\label{L3.1}
-    For any $(t,\lambda)\in\bbR\times\mathcal{L}$ we have
-    \[
-        \partial_{t}\ell_{\eps}^{t,\lambda}
-        = \int_{\ell_{\eps}^{t,\lambda}\bbT}
-        \partial_{s}u_{\eps}^{t,\lambda}(s)\cdot\mathbf{T}_{\eps}^{t,\lambda}(s)\,ds.
-    \]
+ With $C_{\alpha}$ from Lemma~\ref{L2.1}, for any $(t,\lambda)\in [-T_0,T_0]\times\mathcal{L}$ and $\eps>0$ we have
+     \begin{equation}\label{3.3}
+        \abs{\partial_{t}\ell_{\eps}^{t,\lambda}}
+%        \leq \norm{u_{\eps}(\omega_{\eps}^{t})}_{\dot{C}^{0,1}}       \ell_{\eps}^{t,\lambda}
+        \leq 2C_{\alpha}L_{\tht}(\Omega)\ell_{\eps}^{t,\lambda}
+    \end{equation}
 \end{lemma}
 
 \begin{proof}
@@ -1363,8 +1362,8 @@ This is also used to evaluate the time derivative of $\ell_{\eps}^{t,\lambda}$.
 %    Let $(t,\lambda)\in\bbR\times\mathcal{L}$, fix a constant-speed parametrization
 %    $\tilde{z}^{t,\lambda}\colon\bbT\to\bbR^{2}$ of $z^{t,\lambda}$
 %    and define $\tilde{z}^{\tau,\lambda}$ for each $\tau\in\bbR$ as in \eqref{3.1}.
-    Since $\abs{\partial_{\xi}\tilde{z}_{\eps}^{t,\lambda}(\xi)}
-    = \ell_{\eps}^{t,\lambda}> 0$ for $\tilde{z}_{\eps}^{t,\lambda}$ as above, for any $(h,\xi)\in\bbR\times\bbT$ we get
+   With $\tilde{z}_{\eps}^{t,\lambda}$ as above, we have $\abs{\partial_{\xi}\tilde{z}_{\eps}^{t,\lambda}(\xi)}
+    = \ell_{\eps}^{t,\lambda}> 0$ for any $(t,\lambda)\in\bbR\times\mathcal{L}$.  Then for any $(h,\xi)\in\bbR\times\bbT$ we get
     %, \eqref{3.1} shows
     \begin{equation*}
         \begin{aligned}
@@ -1390,9 +1389,17 @@ This is also used to evaluate the time derivative of $\ell_{\eps}^{t,\lambda}$.
         = \int_{\bbT}
         \frac d{d\xi} u_{\eps}(\omega_{\eps}^{t};\tilde{z}_{\eps}^{t,\lambda}(\xi))
         \cdot \frac{\partial_{\xi}\tilde{z}_{\eps}^{t,\lambda}(\xi)}
-        {\abs{\partial_{\xi}\tilde{z}_{\eps}^{t,\lambda}(\xi)}}\,d\xi.
+        {\abs{\partial_{\xi}\tilde{z}_{\eps}^{t,\lambda}(\xi)}}\,d\xi         = \int_{\ell_{\eps}^{t,\lambda}\bbT}
+        \partial_{s}u_{\eps}^{t,\lambda}(s)\cdot\mathbf{T}_{\eps}^{t,\lambda}(s)\,ds.
     \]
-    The claim now follows by a change of variables.
+%        For any $(t,\lambda)\in\bbR\times\mathcal{L}$ we have
+%    \[
+%        \partial_{t}\ell_{\eps}^{t,\lambda}
+%        = \int_{\ell_{\eps}^{t,\lambda}\bbT}
+%        \partial_{s}u_{\eps}^{t,\lambda}(s)\cdot\mathbf{T}_{\eps}^{t,\lambda}(s)\,ds.
+%    \]
+%where we used a change of variables at the end.  
+The result now follows from Lemma \ref{L2.1} and Corollary~\ref{C2.7}.
 \end{proof}
 
 \begin{corollary}\label{C3.2}
@@ -1406,22 +1413,13 @@ This is also used to evaluate the time derivative of $\ell_{\eps}^{t,\lambda}$.
 \end{corollary}
 
 \begin{proof}
-    Lemmas \ref{L2.1}, \ref{L3.1} and Corollary~\ref{C2.7} show that for any  $\abs{t}\leq\frac{1}{2C_{\alpha}L_{\tht}(\Omega)}$ we have 
-    \begin{equation}\label{3.3}
-        \abs{\partial_{t}\ell_{\eps}^{t,\lambda}}
-        \leq \norm{u_{\eps}(\omega_{\eps}^{t})}_{\dot{C}^{0,1}}
-        \ell_{\eps}^{t,\lambda}
-        \leq 2C_{\alpha}L_{\tht}(\Omega)\ell_{\eps}^{t,\lambda}
-    \end{equation}
-    (such $t$ must be in $I$ because $I$ is maximal).
-    Since $\ell\colon\operatorname{CC}(\bbR^{2})\to[0,\infty]$ is lower semicontinuous
-    (by definition) and $\lim_{\eps\to 0} z_\eps^{t,\lambda}= z^{t,\lambda}$ in $\operatorname{CC}(\bbR^{2})$, a Gr\"{o}nwall-type argument shows that
+   Since $\ell\colon\operatorname{CC}(\bbR^{2})\to[0,\infty]$ is lower semicontinuous
+    (by definition) and $\lim_{\eps\to 0} z_\eps^{t,\lambda}= z^{t,\lambda}$ in $\operatorname{CC}(\bbR^{2})$, a Gr\"{o}nwall-type argument applied to \eqref{3.3} shows that for $\abs{t}\leq T_0$ we have
     \begin{equation}\label{3.4}
-        \ell(z^{t,\lambda}) \leq e^{2C_{\alpha}L_{\tht}(\Omega)\abs{t}}\ell(z^{0,\lambda})
+        \ell(z^{t,\lambda}) \leq e^{2C_{\alpha}L_{\tht}(\Omega)\abs{t}}\ell(z^{0,\lambda}).
     \end{equation}
-    holds when $\abs{t}\leq\frac{1}{2C_{\alpha}L_{\tht}(\Omega)}$.
 
-    Next fix any $t_{0}\in I$ with $\abs{t_{0}}\leq\frac{1}{4C_{\alpha}L_{\tht}(\Omega)}$.
+    Next fix any $t_{0}\in I$ with $\abs{t_{0}}\leq \frac {T_0}2$.
     Considering $\omega^{t_{0}}$ as the initial condition for \eqref{1.1}--\eqref{1.2}
     at time $ t_{0}$ and then repeating the proof of \eqref{3.4} shows that 
 \[
@@ -1445,7 +1443,7 @@ and so
         \leq \ell(z^{t,\lambda}) \leq
         e^{3C_{\alpha}L_{\tht}(\Omega)\abs{t}}\ell(z^{0,\lambda})
     \]
-    holds whenever $\abs{t}\leq\frac{1}{4C_{\alpha}L_{\tht}(\Omega)}$.
+    holds whenever $\abs{t}\leq \frac {T_0}2$.
     Applying this with $(\omega^t,t,h)$ in place of $(\omega^0,0,t)$,
     for any $t\in I$, now shows the claim.
 \end{proof}
@@ -1460,7 +1458,7 @@ and so
 
 \begin{proof}
     Take any compact interval $J\subseteq I$ containing $0$.
-    With $T_{0}$ as in Proposition~\ref{P2.8},
+%    With $T_{0}$ as in Proposition~\ref{P2.8},
     Lemmas~\ref{L2.1}, \ref{L2.5} and Corollary~\ref{C2.7} show that
     \begin{equation}\label{3.5}
         \abs{\Phi_{\eps}^{t_{1}}(x) - \Phi_{\eps}^{t_{1}}(y)
@@ -1540,21 +1538,17 @@ and so
     Since $t_{1},t_{2}\in J$ were arbitrary, the claim follows.
 \end{proof}
 
-Next, we show that $Q(\Phi_{*}^{t}\Omega) < \infty$ for all small enough $t$.
-Since $ \ell(\cdot)$ and $\norm{\cdot}_{\dot{H}^{2}}$ are both lower semicontinuous on $\operatorname{CC}(\bbR^{2})$ (the latter by \cite[Corollary~B.3]{JeoZlaTouching}), so is $\ell(\cdot)\norm{\cdot}_{\dot{H}^{2}}^{2}$ and so
-it is enough to establish a uniform-in-$(\eps,\lambda)$ bound on
-$\ell(z_{\eps}^{t,\lambda})\norm{z_{\eps}^{t,\lambda}}_{\dot{H}^{2}}^{2}$.
-We do this by estimating the right-hand side of \eqref{3.2}
-in Lemma~\ref{L3.7} below. Since the resulting estimate will involve
-$R_{\tht}(\Phi_{\eps*}^{t}\Omega)$, we first extend a bound on $R_{\tht}(\Phi_{*}^{t}\Omega)$ from the proof of Proposition~\ref{P3.3} to $\eps>0$.
+Our proof that $Q(\Phi_{*}^{t}\Omega) < \infty$ for all small enough $t$ will use the following
+extension to $R_{\tht}(\Phi_{\eps*}^{t}\Omega)$ of the bound on $R_{\tht}(\Phi_{*}^{t}\Omega)$ from the last proof.
+% of Proposition~\ref{P3.3} to $\eps>0$.
 
 \begin{lemma}\label{L3.4}
-    $R_{\tht}(\Phi_{\eps*}^{t}\Omega)$ is continuous in $t$, and for any $t\in[-T_{0},T_{0}]$ we have
+    $R_{\tht}(\Phi_{\eps*}^{t}\Omega)$ is continuous in $t$ for each $\eps>0$, and
     \begin{equation}\label{3.10}
         R_{\tht}(\Phi_{\eps*}^{t}\Omega) \leq e^{4C_{\alpha}L_{\tht}(\Omega)\abs{t}}R_{\tht}(\Omega)
-        \leq 8R_{\tht}(\Omega),
+        \leq 8R_{\tht}(\Omega)
     \end{equation}
-  with    $C_{\alpha}$ from Lemma~\ref{L2.1} and $T_{0}$ from Proposition~\ref{P2.8}.
+holds for any $t\in[-T_{0},T_{0}]$,  with    $C_{\alpha}$ from Lemma~\ref{L2.1}.
 \end{lemma}
 
 \begin{proof}
@@ -1581,7 +1575,15 @@ $R_{\tht}(\Phi_{\eps*}^{t}\Omega)$, we first extend a bound on $R_{\tht}(\Phi_{*
     and $e^{2}\leq 8$).
 \end{proof}
 
-To estimate the right-hand side of \eqref{3.2}, we will use the following lemmas.
+We now turn to showing that $Q(\Phi_{*}^{t}\Omega) < \infty$ for all small enough $t$.
+Since $ \ell(\cdot)$ and $\norm{\cdot}_{\dot{H}^{2}}$ are both lower semicontinuous on $\operatorname{CC}(\bbR^{2})$ (the latter by \cite[Corollary~B.3]{JeoZlaTouching}), so is $\ell(\cdot)\norm{\cdot}_{\dot{H}^{2}}^{2}$.  Therefore
+it is enough to establish a uniform-in-$(\eps,\lambda)$ bound on
+$\ell(z_{\eps}^{t,\lambda})\norm{z_{\eps}^{t,\lambda}}_{\dot{H}^{2}}^{2}$.
+We do this by estimating the right-hand side of \eqref{3.2}
+in Lemma~\ref{L3.7} below.
+%, via the following lemmas. 
+
+
 
 \begin{lemma}\label{L3.5}
     There is $C_{\alpha}$ such that for any $\beta\in(0,1]$, any $C^{1,\beta}$ closed curve
