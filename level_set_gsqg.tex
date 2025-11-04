@@ -1739,31 +1739,29 @@ in Lemma~\ref{L3.7} below.
     because  it will be fixed in the arguments below.
     
     Since $L_{\tht}(\Phi_{\eps*}\Omega)<\infty$, Lemma~\ref{L3.6},
-    Fubini's theorem and Green's theorem show that
+    Fubini's theorem, and Green's theorem show that
     \begin{align*}
         G_{1} &=
-        \int_{\ell_{\eps}^{\lambda}\bbT}\int_{\mathcal{L}}\int_{\bbR^{2}}
+        \int_{\ell_{\eps}^{\lambda}\bbT}\int_{\mathcal{L}}\int_{\Phi_{\eps}(\Omega^{\lambda'})}
         \kappa_{\eps}^{\lambda}(s)\mathbf{N}_{\eps}^{\lambda}(s) \cdot
         D^{2}(\nabla^{\perp}K_{\eps})(z_{\eps}^{\lambda}(s) - y)
         (\mathbf{T}_{\eps}^{\lambda}(s), \mathbf{T}_{\eps}^{\lambda}(s))
-        \mathbbm{1}_{\Phi_{\eps}(\Omega^{\lambda'})}(y)
+ %       \mathbbm{1}_{\Phi_{\eps}(\Omega^{\lambda'})}(y)
         \,dy\,d\theta(\lambda')\,ds\\
-        &= \int_{\mathcal{L}}\int_{\ell_{\eps}^{\lambda}\bbT}\int_{\bbR^{2}}
+        &= \int_{\mathcal{L}}\int_{\ell_{\eps}^{\lambda}\bbT}\int_{\Phi_{\eps}(\Omega^{\lambda'})}
         \kappa_{\eps}^{\lambda}(s)\mathbf{N}_{\eps}^{\lambda}(s) \cdot
         D^{2}(\nabla^{\perp}K_{\eps})(z_{\eps}^{\lambda}(s) - y)
         (\mathbf{T}_{\eps}^{\lambda}(s), \mathbf{T}_{\eps}^{\lambda}(s))
-        \mathbbm{1}_{\Phi_{\eps}(\Omega^{\lambda'})}(y)
+ %       \mathbbm{1}_{\Phi_{\eps}(\Omega^{\lambda'})}(y)
         \,dy\,ds\,d\theta(\lambda')\\
         &= -\int_{\mathcal{L}}\int_{\ell_{\eps}^{\lambda}\bbT\times\ell_{\eps}^{\lambda'}\bbT}
         \kappa_{\eps}^{\lambda}(s)D^{2}K_{\eps}(z_{\eps}^{\lambda}(s) - z_{\eps}^{\lambda'}(s'))
         (\mathbf{T}_{\eps}^{\lambda}(s),\mathbf{T}_{\eps}^{\lambda}(s))
         (\mathbf{T}_{\eps}^{\lambda'}(s')\cdot \mathbf{N}_{\eps}^{\lambda}(s))
-        \,ds'\,ds\,d\theta(\lambda').
+        \,ds\,ds'd\theta(\lambda').
     \end{align*}
-    (Note that we do not know joint measurability of the inner integrand
-    of the right-hand side in the last equality, because the parametrizations
-    $z_{\eps}^{\lambda'}(\cdot)$ are chosen arbitrarily and independently from each other;
-    we only know the measurability with respect to $\lambda'$ of the inner integral.)
+    Note that the last integrand is jointly measurable in $(s,s')$ but not necessarily in $(s,s',\lambda')$ because the parametrizations
+    $z_{\eps}^{\lambda'}(\cdot)$ are chosen independently from each other.
     From
     \[
         \mathbf{T}_{\eps}^{\lambda}(s) =
@@ -1782,14 +1780,14 @@ in Lemma~\ref{L3.7} below.
         \\&\qquad\qquad\qquad\qquad
         (\mathbf{T}_{\eps}^{\lambda'}(s') \cdot \mathbf{N}_{\eps}^{\lambda}(s))
         (\mathbf{T}_{\eps}^{\lambda'}(s') \cdot \mathbf{T}_{\eps}^{\lambda}(s))
-        \,ds'\,ds\bigg|\,d|\theta|(\lambda'), \\
+        \,ds\,ds'\bigg|\,d|\theta|(\lambda'), \\
         G_{3} &\coloneqq \overline{\int_{\mathcal{L}}}
         \bigg|\int_{\ell_{\eps}^{\lambda}\bbT\times\ell_{\eps}^{\lambda'}\bbT}
         \kappa_{\eps}^{\lambda}(s)
         D^{2}K_{\eps}(z_{\eps}^{\lambda}(s) - z_{\eps}^{\lambda'}(s'))
         (\mathbf{T}_{\eps}^{\lambda}(s), \mathbf{N}_{\eps}^{\lambda'}(s'))
         (\mathbf{T}_{\eps}^{\lambda'}(s') \cdot \mathbf{N}_{\eps}^{\lambda}(s))^{2}
-        \,ds'\,ds\bigg|\,d|\theta|(\lambda'),
+        \,ds\,ds'\bigg|\,d|\theta|(\lambda'),
     \end{align*}
     which we estimate separately next.
     Here $\overline{\int_{\mathcal{L}}}f(\lambda')\,d|\theta|(\lambda')$
@@ -1825,7 +1823,7 @@ in Lemma~\ref{L3.7} below.
         \int_{\ell_{\eps}^{\lambda}\bbT\times\ell_{\eps}^{\lambda'}\bbT}
         \frac{\abs{\kappa_{\eps}^{\lambda}(s)\kappa_{\eps}^{\lambda'}(s')}}
         {\abs{z_{\eps}^{\lambda}(s) - z_{\eps}^{\lambda'}(s')}^{1+2\alpha}}
-        \,ds'\,ds\,d|\theta|(\lambda').
+        \,ds\,ds'd|\theta|(\lambda').
     \end{align*}
     By the Schwarz inequality, the inner integral
     of the right-hand side is bounded by
@@ -1878,7 +1876,7 @@ in Lemma~\ref{L3.7} below.
             + \mathcal{M}\kappa_{\eps}^{\lambda'}(s')
         \right)}
         {\abs{z_{\eps}^{\lambda}(s) - z_{\eps}^{\lambda'}(s')}^{1+2\alpha}}
-        \,ds'\,ds\,d|\theta|(\lambda'),
+        \,ds\,ds'd|\theta|(\lambda'),
     \end{equation}
     where $\mathcal{M}$ is the maximal operator given by
     \begin{equation*}
@@ -1911,7 +1909,7 @@ in Lemma~\ref{L3.7} below.
         \int_{\ell_{\eps}^{\lambda}\bbT\times \ell_{\eps}^{\lambda'}\bbT}
         \frac{\abs{\kappa_{\eps}^{\lambda}(s)}\mathcal{M}\kappa_{\eps}^{\lambda}(s)}
         {\abs{z_{\eps}^{\lambda}(s) - z_{\eps}^{\lambda'}(s')}^{1+2\alpha}}
-        \,ds'\,ds\,d|\theta|(\lambda')
+        \,ds\,ds'd|\theta|(\lambda')
         \\&\quad\quad \leq
         \overline{\int_{\mathcal{L}}}
         \int_{\ell_{\eps}^{\lambda}\bbT}\abs{\kappa_{\eps}^{\lambda}(s)}\mathcal{M}\kappa_{\eps}^{\lambda}(s)
