@@ -1742,19 +1742,17 @@ in Lemma~\ref{L3.7} below.
     Fubini's theorem and Green's theorem show that
     \begin{align*}
         G_{1} &=
-        \int_{\ell_{\eps}^{t,\lambda}\bbT}\int_{\mathcal{L}}\int_{\bbR^{2}}
-        \kappa_{\eps}^{t,\lambda}(s)\mathbf{N}_{\eps}^{t,\lambda}(s) \cdot
-        D^{2}(\nabla^{\perp}K_{\eps})(z_{\eps}^{t,\lambda}(s) - y)
-        (\mathbf{T}_{\eps}^{t,\lambda}(s), \mathbf{T}_{\eps}^{t,\lambda}(s))
-        \\&\qquad\qquad\qquad\quad
-        \mathbbm{1}_{\Phi_{\eps}^{t}(\Omega^{\lambda'})}(y)
+        \int_{\ell_{\eps}^{\lambda}\bbT}\int_{\mathcal{L}}\int_{\bbR^{2}}
+        \kappa_{\eps}^{\lambda}(s)\mathbf{N}_{\eps}^{\lambda}(s) \cdot
+        D^{2}(\nabla^{\perp}K_{\eps})(z_{\eps}^{\lambda}(s) - y)
+        (\mathbf{T}_{\eps}^{\lambda}(s), \mathbf{T}_{\eps}^{\lambda}(s))
+        \mathbbm{1}_{\Phi_{\eps}(\Omega^{\lambda'})}(y)
         \,dy\,d\theta(\lambda')\,ds\\
-        &= \int_{\mathcal{L}}\int_{\ell_{\eps}^{t,\lambda}\bbT}\int_{\bbR^{2}}
-        \kappa_{\eps}^{t,\lambda}(s)\mathbf{N}_{\eps}^{t,\lambda}(s) \cdot
-        D^{2}(\nabla^{\perp}K_{\eps})(z_{\eps}^{t,\lambda}(s) - y)
-        (\mathbf{T}_{\eps}^{t,\lambda}(s), \mathbf{T}_{\eps}^{t,\lambda}(s))
-        \\&\qquad\qquad\qquad\quad
-        \mathbbm{1}_{\Phi_{\eps}^{t}(\Omega^{\lambda'})}(y)
+        &= \int_{\mathcal{L}}\int_{\ell_{\eps}^{\lambda}\bbT}\int_{\bbR^{2}}
+        \kappa_{\eps}^{\lambda}(s)\mathbf{N}_{\eps}^{\lambda}(s) \cdot
+        D^{2}(\nabla^{\perp}K_{\eps})(z_{\eps}^{\lambda}(s) - y)
+        (\mathbf{T}_{\eps}^{\lambda}(s), \mathbf{T}_{\eps}^{\lambda}(s))
+        \mathbbm{1}_{\Phi_{\eps}(\Omega^{\lambda'})}(y)
         \,dy\,ds\,d\theta(\lambda')\\
         &= -\int_{\mathcal{L}}\int_{\ell_{\eps}^{\lambda}\bbT\times\ell_{\eps}^{\lambda'}\bbT}
         \kappa_{\eps}^{\lambda}(s)D^{2}K_{\eps}(z_{\eps}^{\lambda}(s) - z_{\eps}^{\lambda'}(s'))
