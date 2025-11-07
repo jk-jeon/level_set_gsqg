@@ -191,8 +191,8 @@
 
 
 \begin{document}
-\title[Solutions to the g-SQG Equation with Regular Level Sets]
-{Well-Posedness of Solutions to the g-SQG Equation with Regular Level Sets}
+\title[Low Regularity Solutions to the g-SQG Equation with Regular Level Sets]
+{Well-Posedness for Low Regularity Solutions to the g-SQG Equation with Regular Level Sets}
 
 \author{Junekey Jeon and Andrej Zlato\v{s}}
 
@@ -260,7 +260,9 @@ admitting a decomposition of the form
 \end{equation}
 where $\mathcal{L}$ is a measurable space (whose $\sigma$-algebra is not explicitly written),
 $\theta$ is a $\sigma$-finite signed measure on $\mathcal{L}$, $\Omega$ is a set in
-the product $\sigma$-algebra of $\bbR^{2}\times\mathcal{L}$,
+the product $\sigma$-algebra of $\bbR^{2}\times\mathcal{L}$
+with finite measure (with respect to the Lebesgue measure and
+the total variation $|\theta|$ of $\theta$),
 and $\Omega^{\lambda}\subseteq\bbR^{2}$ is the $\lambda$-section of $\Omega$
 for each $\lambda\in\mathcal{L}$.
 
@@ -291,9 +293,9 @@ In addition to merely having a decomposition \eqref{1.3},
 we impose a regularity condition
 \begin{equation}\label{1.4}
     L_{\tht}(\Omega)\coloneqq \sup_{x\in\bbR^{2}}\int_{\mathcal{L}}
-    \frac{d|\theta|(\lambda)}{d(x,\partial\Omega^{\lambda})^{2\alpha}} < \infty
+    \frac{d|\theta|(\lambda)}{d(x,\partial\Omega^{\lambda})^{2\alpha}} < \infty.
 \end{equation}
-where $\abs{\theta}$ is the total variation of $\theta$. 
+%where $\abs{\theta}$ is the total variation of $\theta$.
 %(This quantity also depends on $\mathcal L$ and $\tht$, but since these will be time-independent for any solution to \eqref{1.1}, we will suppress them in the notation.)
 Note that a standard measure theory argument shows joint measurability of
 \begin{equation}\label{1.100}
@@ -2063,355 +2065,358 @@ for any $t$ with $\abs{t} < \frac{1}{C_{\alpha}(L_{\tht}(\Omega) + R_{\tht}(\Ome
 where the second inequality is because $Q(\Omega_{N}) \leq Q(\Omega)$.
 
 In order to turn \eqref{3.14} into a bound on $Q(\Phi_{*}^{t}\Omega)$,
-we need to know if $z_{\eps,N}$ converges to $z_{\eps}$ when $N\to\infty$.
-This indeed happens if $\omega_{N}^{0} \to \omega^{0}$ in $L^{1}$
-(which also implies the convergence in $L^{\infty}$ since
-$\norm{\omega_{N}^{0}}_{\dot{C}^{0,2\alpha}}$ is uniformly bounded),
-but our assumptions on $\Omega$ alone do not seem to imply the $L^{1}$ convergence.
-Note that if $\Omega^{\lambda}$'s for $\lambda$'s in the positive part of $\theta$
-are disjoint from those for $\lambda$'s in the negative part of $\theta$,
-in particular if $\Omega^{\lambda}$'s are the super-level sets
-of $(\omega^{0})^{+}$ and $(\omega^{0})^{-}$,
-then $L^{1}$ convergence does follow. However, we are allowing
-these ``positive super-level sets'' and ``negative super-level sets'' to sit on top of each other,
-possibly creating ``ripples'' of the graph of $\omega^{0}$.
+we now show that $z_{\eps,N}$ converges to $z_{\eps}$ when $N\to\infty$.
 
-Even though we do not have the $L^{1}$ convergence, we can still show that
-the difference between $z_{\eps,N}$ and $z_{\eps}$ is almost constant,
-although that constant may vary as $N$ varies, as the following lemma shows.
+% In order to turn \eqref{3.14} into a bound on $Q(\Phi_{*}^{t}\Omega)$,
+% we need to know if $z_{\eps,N}$ converges to $z_{\eps}$ when $N\to\infty$.
+% This indeed happens if $\omega_{N}^{0} \to \omega^{0}$ in $L^{1}$
+% (which also implies the convergence in $L^{\infty}$ since
+% $\norm{\omega_{N}^{0}}_{\dot{C}^{0,2\alpha}}$ is uniformly bounded),
+% but our assumptions on $\Omega$ alone do not seem to imply the $L^{1}$ convergence.
+% Note that if $\Omega^{\lambda}$'s for $\lambda$'s in the positive part of $\theta$
+% are disjoint from those for $\lambda$'s in the negative part of $\theta$,
+% in particular if $\Omega^{\lambda}$'s are the super-level sets
+% of $(\omega^{0})^{+}$ and $(\omega^{0})^{-}$,
+% then $L^{1}$ convergence does follow. However, we are allowing
+% these ``positive super-level sets'' and ``negative super-level sets'' to sit on top of each other,
+% possibly creating ``ripples'' of the graph of $\omega^{0}$.
 
-\begin{lemma}\label{L3.8}
-    Let $T_{0}$ be as in Proposition~\ref{P2.8}.
-    Then for any $R\geq 0$ and $x_{0}\in\bbR^{2}$,
-    \[
-        \lim_{N\to\infty}\sup_{t\in[-T_{0},T_{0}]}\norm{\left.\left(
-            \Phi_{\eps,N}^{t} - \Phi_{\eps}^{t}
-            - \Phi_{\eps,N}^{t}(x_{0}) + \Phi_{\eps}^{t}(x_{0})
-        \right)\right|_{B_{R}(x_{0})}}_{L^{\infty}} = 0.
-    \]
-\end{lemma}
+% Even though we do not have the $L^{1}$ convergence, we can still show that
+% the difference between $z_{\eps,N}$ and $z_{\eps}$ is almost constant,
+% although that constant may vary as $N$ varies, as the following lemma shows.
 
-Once this is shown, for each $\lambda\in\mathcal{L}$,
-we pick any constant-speed parametrization $\tilde{z}^{0,\lambda}\colon\bbT\to\bbR^{2}$
-of $z^{0,\lambda}$, then
-\begin{align*}
-    &\norm{\Phi_{\eps,N}^{t}\circ\tilde{z}^{0,\lambda}
-    - \Phi_{\eps}^{t}\circ\tilde{z}^{0,\lambda}
-    - \Phi_{\eps,N}^{t}\circ\tilde{z}^{0,\lambda}(0)
-    + \Phi_{\eps}^{t}\circ\tilde{z}^{0,\lambda}(0)}_{L^{\infty}}
-    \\&\quad\quad
-    \leq \norm{\left.\left(
-        \Phi_{\eps,N}^{t} - \Phi_{\eps}^{t}
-        - \Phi_{\eps,N}^{t}(\tilde{z}^{0,\lambda}(0))
-        + \Phi_{\eps}^{t}(\tilde{z}^{0,\lambda}(0))
-    \right)\right|_{B_{\ell(z^{0,\lambda})/2}(\tilde{z}^{0,\lambda}(0))}}_{L^{\infty}} \to 0
-\end{align*}
-as $N\to\infty$, for each $t\in\bbR$. This shows that
-$w_{\eps,N}^{t,\lambda}\coloneqq z_{\eps,N}^{t,\lambda}
-- \Phi_{\eps,N}^{t}\circ\tilde{z}^{0,\lambda}(0)
-+ \Phi_{\eps}^{t}\circ\tilde{z}^{0,\lambda}(0) \to z_{\eps}^{t,\lambda}$
-in $\operatorname{CC}(\bbR^{2})$ as $N\to\infty$.
-Since $w_{\eps,N}^{t,\lambda}$ is just a spatial translation of $z_{\eps,N}^{t,\lambda}$,
-we have $\ell(w_{\eps,N}^{t,\lambda}) = \ell(z_{\eps,N}^{t,\lambda})$
-and $\norm{w_{\eps,N}^{t,\lambda}}_{\dot{H}^{2}} = \norm{z_{\eps,N}^{t,\lambda}}_{\dot{H}^{2}}$,
-so the lower semicontinuity of the functional
-$\gamma\mapsto\ell(\gamma)\norm{\gamma}_{\dot{H}^{2}}^{2}$
-on $\operatorname{CC}(\bbR^{2})$ shows
-\begin{align*}
-    \ell(z_{\eps}^{t,\lambda})
-    \norm{z_{\eps}^{t,\lambda}}_{\dot{H}^{2}}^{2}
-    &\leq \liminf_{N\to\infty}\ell(w_{\eps,N}^{t,\lambda})
-    \norm{w_{\eps,N}^{t,\lambda}}_{\dot{H}^{2}}^{2}
-    = \liminf_{N\to\infty}\ell(z_{\eps,N}^{t,\lambda})
-    \norm{z_{\eps,N}^{t,\lambda}}_{\dot{H}^{2}}^{2} \\
-    &\leq \frac{Q(\Omega)}
-    {1 - C_{\alpha}(L_{\tht}(\Omega) + R_{\tht}(\Omega))Q(\Omega)\abs{t}}
-\end{align*}
-for any $t$ with $\abs{t} < \frac{1}{C_{\alpha}(L_{\tht}(\Omega) + R_{\tht}(\Omega))Q(\Omega)}$.
-Then, again by lower semicontinuity of
-$\gamma\mapsto\ell(\gamma)\norm{\gamma}_{\dot{H}^{2}}^{2}$,
-letting $\eps\to 0^{+}$ yields
-\[
-    \ell(z^{t,\lambda})
-    \norm{z^{t,\lambda}}_{\dot{H}^{2}}^{2} \leq \frac{Q(\Omega)}
-    {1 - C_{\alpha}(L_{\tht}(\Omega) + R_{\tht}(\Omega))Q(\Omega)\abs{t}},
-\]
-so taking supremum over $\lambda$ finally gives
-\[
-    Q(\Phi_{*}^{t}\Omega) \leq \frac{Q(\Omega)}
-    {1 - C_{\alpha}(L_{\tht}(\Omega) + R_{\tht}(\Omega))Q(\Omega)\abs{t}},
-\]
-from which Theorem~\ref{T1.4} follows.
+% \begin{lemma}\label{L3.8}
+%     Let $T_{0}$ be as in Proposition~\ref{P2.8}.
+%     Then for any $R\geq 0$ and $x_{0}\in\bbR^{2}$,
+%     \[
+%         \lim_{N\to\infty}\sup_{t\in[-T_{0},T_{0}]}\norm{\left.\left(
+%             \Phi_{\eps,N}^{t} - \Phi_{\eps}^{t}
+%             - \Phi_{\eps,N}^{t}(x_{0}) + \Phi_{\eps}^{t}(x_{0})
+%         \right)\right|_{B_{R}(x_{0})}}_{L^{\infty}} = 0.
+%     \]
+% \end{lemma}
 
-Now it remains to prove Lemma~\ref{L3.8}.
+% Once this is shown, for each $\lambda\in\mathcal{L}$,
+% we pick any constant-speed parametrization $\tilde{z}^{0,\lambda}\colon\bbT\to\bbR^{2}$
+% of $z^{0,\lambda}$, then
+% \begin{align*}
+%     &\norm{\Phi_{\eps,N}^{t}\circ\tilde{z}^{0,\lambda}
+%     - \Phi_{\eps}^{t}\circ\tilde{z}^{0,\lambda}
+%     - \Phi_{\eps,N}^{t}\circ\tilde{z}^{0,\lambda}(0)
+%     + \Phi_{\eps}^{t}\circ\tilde{z}^{0,\lambda}(0)}_{L^{\infty}}
+%     \\&\quad\quad
+%     \leq \norm{\left.\left(
+%         \Phi_{\eps,N}^{t} - \Phi_{\eps}^{t}
+%         - \Phi_{\eps,N}^{t}(\tilde{z}^{0,\lambda}(0))
+%         + \Phi_{\eps}^{t}(\tilde{z}^{0,\lambda}(0))
+%     \right)\right|_{B_{\ell(z^{0,\lambda})/2}(\tilde{z}^{0,\lambda}(0))}}_{L^{\infty}} \to 0
+% \end{align*}
+% as $N\to\infty$, for each $t\in\bbR$. This shows that
+% $w_{\eps,N}^{t,\lambda}\coloneqq z_{\eps,N}^{t,\lambda}
+% - \Phi_{\eps,N}^{t}\circ\tilde{z}^{0,\lambda}(0)
+% + \Phi_{\eps}^{t}\circ\tilde{z}^{0,\lambda}(0) \to z_{\eps}^{t,\lambda}$
+% in $\operatorname{CC}(\bbR^{2})$ as $N\to\infty$.
+% Since $w_{\eps,N}^{t,\lambda}$ is just a spatial translation of $z_{\eps,N}^{t,\lambda}$,
+% we have $\ell(w_{\eps,N}^{t,\lambda}) = \ell(z_{\eps,N}^{t,\lambda})$
+% and $\norm{w_{\eps,N}^{t,\lambda}}_{\dot{H}^{2}} = \norm{z_{\eps,N}^{t,\lambda}}_{\dot{H}^{2}}$,
+% so the lower semicontinuity of the functional
+% $\gamma\mapsto\ell(\gamma)\norm{\gamma}_{\dot{H}^{2}}^{2}$
+% on $\operatorname{CC}(\bbR^{2})$ shows
+% \begin{align*}
+%     \ell(z_{\eps}^{t,\lambda})
+%     \norm{z_{\eps}^{t,\lambda}}_{\dot{H}^{2}}^{2}
+%     &\leq \liminf_{N\to\infty}\ell(w_{\eps,N}^{t,\lambda})
+%     \norm{w_{\eps,N}^{t,\lambda}}_{\dot{H}^{2}}^{2}
+%     = \liminf_{N\to\infty}\ell(z_{\eps,N}^{t,\lambda})
+%     \norm{z_{\eps,N}^{t,\lambda}}_{\dot{H}^{2}}^{2} \\
+%     &\leq \frac{Q(\Omega)}
+%     {1 - C_{\alpha}(L_{\tht}(\Omega) + R_{\tht}(\Omega))Q(\Omega)\abs{t}}
+% \end{align*}
+% for any $t$ with $\abs{t} < \frac{1}{C_{\alpha}(L_{\tht}(\Omega) + R_{\tht}(\Omega))Q(\Omega)}$.
+% Then, again by lower semicontinuity of
+% $\gamma\mapsto\ell(\gamma)\norm{\gamma}_{\dot{H}^{2}}^{2}$,
+% letting $\eps\to 0^{+}$ yields
+% \[
+%     \ell(z^{t,\lambda})
+%     \norm{z^{t,\lambda}}_{\dot{H}^{2}}^{2} \leq \frac{Q(\Omega)}
+%     {1 - C_{\alpha}(L_{\tht}(\Omega) + R_{\tht}(\Omega))Q(\Omega)\abs{t}},
+% \]
+% so taking supremum over $\lambda$ finally gives
+% \[
+%     Q(\Phi_{*}^{t}\Omega) \leq \frac{Q(\Omega)}
+%     {1 - C_{\alpha}(L_{\tht}(\Omega) + R_{\tht}(\Omega))Q(\Omega)\abs{t}},
+% \]
+% from which Theorem~\ref{T1.4} follows.
 
-\begin{proof}[Proof of Lemma~\ref{L3.8}]
-    In this proof, all constants written as $C$ with subscripts can change
-    from one inequality to another, and they depend only on the indicated variables;
-    e.g., $C_{\alpha}$ depends only on $\alpha$ and $C_{\alpha,\eps}$ depends only on
-    $\alpha$ and $\eps$.
+% Now it remains to prove Lemma~\ref{L3.8}.
 
-    First, note that the inequality $L_{\tht}(\Omega_{N})\leq L_{\tht}(\Omega)$
-    and Proposition~\ref{P2.8} show
-    \begin{equation}\label{3.15}
-        \sup_{t\in[-T_{0},T_{0}]}\max\set{
-            \norm{\Phi_{\eps}^{t}}_{\dot{C}^{0,1}},
-            \norm{(\Phi_{\eps}^{t})^{-1}}_{\dot{C}^{0,1}},
-            \norm{\Phi_{\eps,N}^{t}}_{\dot{C}^{0,1}},
-            \norm{(\Phi_{\eps,N}^{t})^{-1}}_{\dot{C}^{0,1}}
-        } \leq 3.
-    \end{equation}
+% \begin{proof}[Proof of Lemma~\ref{L3.8}]
+%     In this proof, all constants written as $C$ with subscripts can change
+%     from one inequality to another, and they depend only on the indicated variables;
+%     e.g., $C_{\alpha}$ depends only on $\alpha$ and $C_{\alpha,\eps}$ depends only on
+%     $\alpha$ and $\eps$.
 
-    Let $\delta>0$ be given, then since $\omega^{0}\in L^{1}(\bbR^{2})$,
-    we can find $R_{\delta} \geq R$ such that
-    \begin{equation}\label{3.16}
-        \int_{\bbR^{2}\setminus B_{R_{\delta}}(x_{0})}\abs{\omega^{0}(y)}dy \leq \delta.
-    \end{equation}
-    For given $t\in[-T_{0},T_{0}]$ and $x\in B_{R_{\delta}}(x_{0})$ we can write
-    \begin{align*}
-        \partial_{t}\left(
-            D\Phi_{\eps,N}^{t}(x) - D\Phi_{\eps}^{t}(x)
-        \right)
-        &= D(u_{\eps}(\omega_{\eps,N}^{t}))(\Phi_{\eps,N}^{t}(x))D\Phi_{\eps,N}^{t}(x)
-        - D(u_{\eps}(\omega_{\eps}^{t}))(\Phi_{\eps}^{t}(x))D\Phi_{\eps}^{t}(x)
-    \end{align*}
-    as the sum of the terms
-    \begin{align*}
-        V_{1} &\coloneqq
-        D(u_{\eps}(\omega_{\eps,N}^{t}))(\Phi_{\eps,N}^{t}(x))
-        \left(D\Phi_{\eps,N}^{t}(x) - D\Phi_{\eps}^{t}(x)\right), \\
-        V_{2} &\coloneqq \left[
-            D(u_{\eps}(\Phi_{\eps,N*}^{t}\omega_{N}^{0}))
-            - D(u_{\eps}(\Phi_{\eps,N*}^{t}\omega^{0}))
-        \right](\Phi_{\eps,N}^{t}(x))D\Phi_{\eps}^{t}(x), \\
-        V_{3} &\coloneqq \left[
-            D(u_{\eps}(\Phi_{\eps,N*}^{t}\omega^{0}))(\Phi_{\eps,N}^{t}(x))
-            - D(u_{\eps}(\Phi_{\eps*}^{t}\omega^{0}))(\Phi_{\eps}^{t}(x))
-        \right]D\Phi_{\eps}^{t}(x),
-    \end{align*}
-    which we estimate separately.
+%     First, note that the inequality $L_{\tht}(\Omega_{N})\leq L_{\tht}(\Omega)$
+%     and Proposition~\ref{P2.8} show
+%     \begin{equation}\label{3.15}
+%         \sup_{t\in[-T_{0},T_{0}]}\max\set{
+%             \norm{\Phi_{\eps}^{t}}_{\dot{C}^{0,1}},
+%             \norm{(\Phi_{\eps}^{t})^{-1}}_{\dot{C}^{0,1}},
+%             \norm{\Phi_{\eps,N}^{t}}_{\dot{C}^{0,1}},
+%             \norm{(\Phi_{\eps,N}^{t})^{-1}}_{\dot{C}^{0,1}}
+%         } \leq 3.
+%     \end{equation}
 
-    \textbf{Estimate for $V_{1}$.} Clearly, Lemma~\ref{L2.1}, \eqref{1.7},
-    \eqref{3.15} and the inequality $L_{\tht}(\Omega_{N}) \leq L_{\tht}(\Omega)$ show
-    \begin{align*}
-        \abs{V_{1}} &\leq \norm{u_{\eps}(\omega_{\eps,N}^{t})}_{\dot{C}^{0,1}}
-        \abs{D\Phi_{\eps,N}^{t}(x) - D\Phi_{\eps}^{t}(x)}
-        \leq C_{\alpha}L_{\tht}(\Phi_{\eps,N*}^{t}\Omega_{N})
-        \abs{D\Phi_{\eps,N}^{t}(x) - D\Phi_{\eps}^{t}(x)} \\
-        &\leq C_{\alpha}L_{\tht}(\Omega)\norm{\left.\left(
-            D\Phi_{\eps,N}^{t} - D\Phi_{\eps}^{t}
-        \right)\right|_{B_{R_{\delta}}(x_{0})}}_{L^{\infty}}.
-    \end{align*}
+%     Let $\delta>0$ be given, then since $\omega^{0}\in L^{1}(\bbR^{2})$,
+%     we can find $R_{\delta} \geq R$ such that
+%     \begin{equation}\label{3.16}
+%         \int_{\bbR^{2}\setminus B_{R_{\delta}}(x_{0})}\abs{\omega^{0}(y)}dy \leq \delta.
+%     \end{equation}
+%     For given $t\in[-T_{0},T_{0}]$ and $x\in B_{R_{\delta}}(x_{0})$ we can write
+%     \begin{align*}
+%         \partial_{t}\left(
+%             D\Phi_{\eps,N}^{t}(x) - D\Phi_{\eps}^{t}(x)
+%         \right)
+%         &= D(u_{\eps}(\omega_{\eps,N}^{t}))(\Phi_{\eps,N}^{t}(x))D\Phi_{\eps,N}^{t}(x)
+%         - D(u_{\eps}(\omega_{\eps}^{t}))(\Phi_{\eps}^{t}(x))D\Phi_{\eps}^{t}(x)
+%     \end{align*}
+%     as the sum of the terms
+%     \begin{align*}
+%         V_{1} &\coloneqq
+%         D(u_{\eps}(\omega_{\eps,N}^{t}))(\Phi_{\eps,N}^{t}(x))
+%         \left(D\Phi_{\eps,N}^{t}(x) - D\Phi_{\eps}^{t}(x)\right), \\
+%         V_{2} &\coloneqq \left[
+%             D(u_{\eps}(\Phi_{\eps,N*}^{t}\omega_{N}^{0}))
+%             - D(u_{\eps}(\Phi_{\eps,N*}^{t}\omega^{0}))
+%         \right](\Phi_{\eps,N}^{t}(x))D\Phi_{\eps}^{t}(x), \\
+%         V_{3} &\coloneqq \left[
+%             D(u_{\eps}(\Phi_{\eps,N*}^{t}\omega^{0}))(\Phi_{\eps,N}^{t}(x))
+%             - D(u_{\eps}(\Phi_{\eps*}^{t}\omega^{0}))(\Phi_{\eps}^{t}(x))
+%         \right]D\Phi_{\eps}^{t}(x),
+%     \end{align*}
+%     which we estimate separately.
 
-    \textbf{Estimate for $V_{2}$.} Since
-    \[
-        (\omega^{0} - \omega_{N}^{0})(x')
-        = \int_{\mathcal{L}\setminus\mathcal{L}_{N}}
-        \mathbbm{1}_{\Omega^{\lambda}}(x')\,d\theta(\lambda)
-    \]
-    is a generalized layer cake representation of $\omega^{0} - \omega_{N}^{0}$,
-    Lemma~\ref{L2.1}, the last inequality of \eqref{1.7} without the supremum,
-    \eqref{3.15} and $L_{\theta}(\Omega)<\infty$ show
-    \begin{align*}
-        \abs{D\left(u_{\eps}\left(
-            \Phi_{\eps,N*}^{t'}(\omega_{N}^{0} - \omega^{0})
-        \right)\right)(\Phi_{\eps,N}^{t'}(x'))}
-        &\leq C_{\alpha}\int_{\mathcal{L}\setminus\mathcal{L}_{N}}
-        \frac{d|\theta|(\lambda)}
-        {d(\Phi_{\eps,N}^{t'}(x'), \Phi_{\eps,N}^{t'}(\partial\Omega^{\lambda}))^{2\alpha}} \\
-        &\leq C_{\alpha}\norm{(\Phi_{\eps,N}^{t'})^{-1}}_{\dot{C}^{0,1}}^{2\alpha}
-        \int_{\mathcal{L}\setminus\mathcal{L}_{N}}
-        \frac{d|\theta|(\lambda)}
-        {d(x',\partial\Omega^{\lambda})^{2\alpha}} \to 0
-    \end{align*}
-    uniformly in $t'\in[-T_{0},T_{0}]$ as $N\to\infty$ for each $x'\in\bbR^{2}$.
-    (Note that that we do not know if the convergence is uniform in $x'$.)
-    On the other hand, Lemma~\ref{L3.6}, \eqref{1.7} and \eqref{3.15} show
-    for any $t'\in[-T_{0},T_{0}]$,
-    \begin{align*}
-        \norm{D\left(D\left(u_{\eps}\left(
-            \Phi_{\eps,N*}^{t'}(\omega_{N}^{0} - \omega^{0})
-        \right)\right)\circ \Phi_{\eps,N}^{t'}\right)}_{L^{\infty}}
-        &\leq \norm{D^{2}\left(u_{\eps}\left(
-            \Phi_{\eps,N*}^{t'}(\omega_{N}^{0} - \omega^{0})
-        \right)\right)}_{L^{\infty}}\norm{D\Phi_{\eps,N}^{t'}}_{L^{\infty}} \\
-        &\leq \frac{C_{\alpha}}{\eps}\norm{\Phi_{\eps,N}^{t'}}_{\dot{C}^{0,1}}
-        \sup_{x'\in\bbR^{2}}\int_{\mathcal{L}\setminus\mathcal{L}_{N}}
-        \frac{d|\theta|(\lambda)}{d(x',\Phi_{\eps,N}^{t'}(\partial\Omega^{\lambda}))^{2\alpha}} \\
-        &\leq \frac{C_{\alpha}}{\eps}\norm{\Phi_{\eps,N}^{t'}}_{\dot{C}^{0,1}}
-        \norm{(\Phi_{\eps,N}^{t'})^{-1}}_{\dot{C}^{0,1}}^{2\alpha}L_{\tht}(\Omega) \\
-        &\leq \frac{C_{\alpha}}{\eps}L_{\tht}(\Omega).
-    \end{align*}
-    Therefore, Arzel\`{a}-Ascoli theorem applied to the collection
-    \[
-        \set{x'\mapsto \left(
-            t'\mapsto D\left(u_{\eps}\left(
-                \Phi_{\eps,N*}^{t'}(\omega_{N}^{0} - \omega^{0})
-            \right)\right)(\Phi_{\eps,N}^{t'}(x'))
-        \right)}_{N\in\bbN}
-    \]
-    shows that there is $N_{0}\in\bbN$ (depending on $\delta$) such that
-    \[
-        \sup_{x'\in B_{R_{\delta}}(x_{0})}
-        \sup_{t'\in[-T_{0},T_{0}]}
-        D\left(u_{\eps}\left(
-            \Phi_{\eps,N*}^{t'}(\omega_{N}^{0} - \omega^{0})
-        \right)\right)(\Phi_{\eps,N}^{t'}(x'))
-        \leq \delta
-    \]
-    whenever $N\geq N_{0}$.
-    Then for such $N$, \eqref{3.15} shows
-    \begin{align*}
-        \abs{V_{2}} &\leq \abs{D\left(u_{\eps}\left(
-            \Phi_{\eps,N*}^{t}(\omega_{N}^{0} - \omega^{0})
-        \right)\right)(\Phi_{\eps,N}^{t}(x))}
-        \abs{D\Phi_{\eps}^{t}(x)}
-        \leq 3\delta.
-    \end{align*}
+%     \textbf{Estimate for $V_{1}$.} Clearly, Lemma~\ref{L2.1}, \eqref{1.7},
+%     \eqref{3.15} and the inequality $L_{\tht}(\Omega_{N}) \leq L_{\tht}(\Omega)$ show
+%     \begin{align*}
+%         \abs{V_{1}} &\leq \norm{u_{\eps}(\omega_{\eps,N}^{t})}_{\dot{C}^{0,1}}
+%         \abs{D\Phi_{\eps,N}^{t}(x) - D\Phi_{\eps}^{t}(x)}
+%         \leq C_{\alpha}L_{\tht}(\Phi_{\eps,N*}^{t}\Omega_{N})
+%         \abs{D\Phi_{\eps,N}^{t}(x) - D\Phi_{\eps}^{t}(x)} \\
+%         &\leq C_{\alpha}L_{\tht}(\Omega)\norm{\left.\left(
+%             D\Phi_{\eps,N}^{t} - D\Phi_{\eps}^{t}
+%         \right)\right|_{B_{R_{\delta}}(x_{0})}}_{L^{\infty}}.
+%     \end{align*}
 
-    \textbf{Estimate of $V_{3}$.} Expanding the definition of $u_{\eps}$ gives
-    \begin{align*}
-        V_{3} = \int_{\bbR^{2}}\left(\left(
-            D(\nabla^{\perp}K_{\eps})
-            (\Phi_{\eps,N}^{t}(x) - \Phi_{\eps,N}^{t}(y))
-            - D(\nabla^{\perp}K_{\eps})
-            (\Phi_{\eps}^{t}(x) - \Phi_{\eps}^{t}(y))
-        \right)D\Phi_{\eps}^{t}(x)\right)
-        \omega^{0}(y)\,dy.
-    \end{align*}
-    By \eqref{3.16}, the integral over $\bbR^{2}\setminus B_{R_{\delta}}(x_{0})$ is bounded by
-    $2\norm{D(\nabla^{\perp}K_{\eps})}_{L^{\infty}}\norm{\Phi_{\eps}^{t}}_{\dot{C}^{0,1}}\delta$.
-    For $y\in B_{R_{\delta}}(x_{0})$, the fundamental theorem of calculus shows that
-    the integrand is bounded by
-    \begin{align*}
-        &\norm{\omega^{0}}_{L^{\infty}}\norm{\Phi_{\eps}^{t}}_{\dot{C}^{0,1}}
-        \int_{0}^{1}\abs{D^{2}(\nabla^{\perp}K_{\eps})
-        (\eta(\Phi_{\eps,N}^{t}(x) - \Phi_{\eps,N}^{t}(y))
-        + (1-\eta)(\Phi_{\eps}^{t}(x) - \Phi_{\eps}^{t}(y)))}d\eta
-        \\&\qquad\qquad\qquad\quad
-        \cdot\abs{\int_{0}^{1}\left(D\Phi_{\eps,N}^{t} - D\Phi_{\eps}^{t}\right)
-        (\eta x + (1-\eta)y)\,d\eta}\abs{x - y}.
-    \end{align*}
-    The second integral is bounded by
-    $\norm{\left.\left(D\Phi_{\eps,N}^{t}
-    - D\Phi_{\eps}^{t}\right)\right|_{B_{R_{\delta}}(x_{0})}}_{L^{\infty}}$, and
-    the first integral is bounded by
-    \begin{align*}
-        &\min\set{
-            \norm{D^{2}(\nabla^{\perp}K_{\eps})}_{L^{\infty}},
-            \frac{C_{\alpha}}
-            {\min\set{
-                \abs{\Phi_{\eps,N}^{t}(x) - \Phi_{\eps,N}^{t}(y)},
-                \abs{\Phi_{\eps}^{t}(x) - \Phi_{\eps}^{t}(y)}
-            }^{3+2\alpha}}
-        }
-        \\&\quad\quad
-        \leq \min\set{
-            \norm{D^{2}(\nabla^{\perp}K_{\eps})}_{L^{\infty}},
-            \max\set{
-                \norm{(\Phi_{\eps,N}^{t})^{-1}}_{\dot{C}^{0,1}},
-                \norm{(\Phi_{\eps}^{t})^{-1}}_{\dot{C}^{0,1}}
-            }^{3+2\alpha}
-            \frac{C_{\alpha}}{\abs{x - y}^{3+2\alpha}}
-        }.
-    \end{align*}
-    Therefore, \eqref{3.15} shows
-    \begin{align*}
-        \abs{V_{3}} &\leq
-        \norm{\omega^{0}}_{L^{\infty}}\norm{\Phi_{\eps}^{t}}_{\dot{C}^{0,1}}
-        \norm{\left.\left(D\Phi_{\eps,N}^{t}
-        - D\Phi_{\eps}^{t}\right)\right|_{B_{R_{\delta}}(x_{0})}}_{L^{\infty}}
-        \\&\quad\quad\quad\cdot
-        \bigg(
-            \norm{D^{2}(\nabla^{\perp}K_{\eps})}_{L^{\infty}}
-            \int_{\abs{x - y}\leq 1}\abs{x - y}\,dy
-            \\&\quad\quad\quad\quad\quad
-            + C_{\alpha}\max\set{
-                \norm{(\Phi_{\eps,N}^{t})^{-1}}_{\dot{C}^{0,1}},
-                \norm{(\Phi_{\eps}^{t})^{-1}}_{\dot{C}^{0,1}}
-            }^{3+2\alpha}
-            \int_{\abs{x - y} > 1}\frac{dy}{\abs{x - y}^{2+2\alpha}}
-        \bigg)
-        \\&\quad
-        + 2\norm{D(\nabla^{\perp}K_{\eps})}_{L^{\infty}}
-        \norm{\Phi_{\eps}^{t}}_{\dot{C}^{0,1}}\delta \\
-        &\leq C_{\alpha,\eps}\norm{\omega^{0}}_{L^{\infty}}
-        \norm{\left.\left(D\Phi_{\eps,N}^{t}
-        - D\Phi_{\eps}^{t}\right)\right|_{B_{R_{\delta}}(x_{0})}}_{L^{\infty}}
-        + C_{\alpha,\eps}\delta.
-    \end{align*}\smallskip
+%     \textbf{Estimate for $V_{2}$.} Since
+%     \[
+%         (\omega^{0} - \omega_{N}^{0})(x')
+%         = \int_{\mathcal{L}\setminus\mathcal{L}_{N}}
+%         \mathbbm{1}_{\Omega^{\lambda}}(x')\,d\theta(\lambda)
+%     \]
+%     is a generalized layer cake representation of $\omega^{0} - \omega_{N}^{0}$,
+%     Lemma~\ref{L2.1}, the last inequality of \eqref{1.7} without the supremum,
+%     \eqref{3.15} and $L_{\theta}(\Omega)<\infty$ show
+%     \begin{align*}
+%         \abs{D\left(u_{\eps}\left(
+%             \Phi_{\eps,N*}^{t'}(\omega_{N}^{0} - \omega^{0})
+%         \right)\right)(\Phi_{\eps,N}^{t'}(x'))}
+%         &\leq C_{\alpha}\int_{\mathcal{L}\setminus\mathcal{L}_{N}}
+%         \frac{d|\theta|(\lambda)}
+%         {d(\Phi_{\eps,N}^{t'}(x'), \Phi_{\eps,N}^{t'}(\partial\Omega^{\lambda}))^{2\alpha}} \\
+%         &\leq C_{\alpha}\norm{(\Phi_{\eps,N}^{t'})^{-1}}_{\dot{C}^{0,1}}^{2\alpha}
+%         \int_{\mathcal{L}\setminus\mathcal{L}_{N}}
+%         \frac{d|\theta|(\lambda)}
+%         {d(x',\partial\Omega^{\lambda})^{2\alpha}} \to 0
+%     \end{align*}
+%     uniformly in $t'\in[-T_{0},T_{0}]$ as $N\to\infty$ for each $x'\in\bbR^{2}$.
+%     (Note that that we do not know if the convergence is uniform in $x'$.)
+%     On the other hand, Lemma~\ref{L3.6}, \eqref{1.7} and \eqref{3.15} show
+%     for any $t'\in[-T_{0},T_{0}]$,
+%     \begin{align*}
+%         \norm{D\left(D\left(u_{\eps}\left(
+%             \Phi_{\eps,N*}^{t'}(\omega_{N}^{0} - \omega^{0})
+%         \right)\right)\circ \Phi_{\eps,N}^{t'}\right)}_{L^{\infty}}
+%         &\leq \norm{D^{2}\left(u_{\eps}\left(
+%             \Phi_{\eps,N*}^{t'}(\omega_{N}^{0} - \omega^{0})
+%         \right)\right)}_{L^{\infty}}\norm{D\Phi_{\eps,N}^{t'}}_{L^{\infty}} \\
+%         &\leq \frac{C_{\alpha}}{\eps}\norm{\Phi_{\eps,N}^{t'}}_{\dot{C}^{0,1}}
+%         \sup_{x'\in\bbR^{2}}\int_{\mathcal{L}\setminus\mathcal{L}_{N}}
+%         \frac{d|\theta|(\lambda)}{d(x',\Phi_{\eps,N}^{t'}(\partial\Omega^{\lambda}))^{2\alpha}} \\
+%         &\leq \frac{C_{\alpha}}{\eps}\norm{\Phi_{\eps,N}^{t'}}_{\dot{C}^{0,1}}
+%         \norm{(\Phi_{\eps,N}^{t'})^{-1}}_{\dot{C}^{0,1}}^{2\alpha}L_{\tht}(\Omega) \\
+%         &\leq \frac{C_{\alpha}}{\eps}L_{\tht}(\Omega).
+%     \end{align*}
+%     Therefore, Arzel\`{a}-Ascoli theorem applied to the collection
+%     \[
+%         \set{x'\mapsto \left(
+%             t'\mapsto D\left(u_{\eps}\left(
+%                 \Phi_{\eps,N*}^{t'}(\omega_{N}^{0} - \omega^{0})
+%             \right)\right)(\Phi_{\eps,N}^{t'}(x'))
+%         \right)}_{N\in\bbN}
+%     \]
+%     shows that there is $N_{0}\in\bbN$ (depending on $\delta$) such that
+%     \[
+%         \sup_{x'\in B_{R_{\delta}}(x_{0})}
+%         \sup_{t'\in[-T_{0},T_{0}]}
+%         D\left(u_{\eps}\left(
+%             \Phi_{\eps,N*}^{t'}(\omega_{N}^{0} - \omega^{0})
+%         \right)\right)(\Phi_{\eps,N}^{t'}(x'))
+%         \leq \delta
+%     \]
+%     whenever $N\geq N_{0}$.
+%     Then for such $N$, \eqref{3.15} shows
+%     \begin{align*}
+%         \abs{V_{2}} &\leq \abs{D\left(u_{\eps}\left(
+%             \Phi_{\eps,N*}^{t}(\omega_{N}^{0} - \omega^{0})
+%         \right)\right)(\Phi_{\eps,N}^{t}(x))}
+%         \abs{D\Phi_{\eps}^{t}(x)}
+%         \leq 3\delta.
+%     \end{align*}
 
-    Aggregating the estimates for $V_{1}$, $V_{2}$, $V_{3}$ now yields
-    \begin{align*}
-        \abs{\partial_{t}\left(
-            D\Phi_{\eps,N}^{t}(x) - D\Phi_{\eps}^{t}(x)
-        \right)} &\leq C_{\alpha,\eps,L_{\tht}(\Omega),\norm{\omega^{0}}_{L^{\infty}}}
-        \norm{\left.\left(D\Phi_{\eps,N}^{t}
-        - D\Phi_{\eps}^{t}\right)\right|_{B_{R_{\delta}}(x_{0})}}_{L^{\infty}}
-        + C_{\alpha,\eps}\delta
-    \end{align*}
-    for all $t\in[-T_{0},T_{0}]$, $x\in B_{R_{\delta}}(x_{0})$ and $N\geq N_{0}$.
-    Then for any $t+h\in[-T_{0},T_{0}]$, we have
-    \begin{align*}
-        \abs{\left(
-            D\Phi_{\eps,N}^{t+h}(x) - D\Phi_{\eps}^{t+h}(x)
-        \right)}
-        &\leq \abs{\left(
-            D\Phi_{\eps,N}^{t}(x) - D\Phi_{\eps}^{t}(x)
-        \right)}
-        \\&\quad\quad
-        + C_{\alpha,\eps,L_{\tht}(\Omega),\norm{\omega^{0}}_{L^{\infty}}}\int_{t}^{t+h}
-        \norm{\left.\left(D\Phi_{\eps,N}^{\tau}
-        - D\Phi_{\eps}^{\tau}\right)\right|_{B_{R_{\delta}}(x_{0})}}_{L^{\infty}}
-        d\tau
-        \\&\quad\quad
-        + C_{\alpha,\eps}\delta\abs{h}.
-    \end{align*}
-    Since $D\Phi_{\eps}^{t}$ and $D\Phi_{\eps,N}^{t}$ are continuous in $t$,
-    taking supremum over $x\in B_{R_{\delta}}(x_{0})$,
-    dividing by $\abs{h}$ and sending $h \to 0$ shows
-    \begin{align*}
-        &\max\set{
-            \partial_{t}^{+}\norm{\left.\left(D\Phi_{\eps,N}^{t}
-            - D\Phi_{\eps}^{t}\right)\right|_{B_{R_{\delta}}(x_{0})}}_{L^{\infty}},
-            -\partial_{t-}\norm{\left.\left(D\Phi_{\eps,N}^{t}
-            - D\Phi_{\eps}^{t}\right)\right|_{B_{R_{\delta}}(x_{0})}}_{L^{\infty}}
-        }
-        \\&\quad\quad\leq
-        C_{\alpha,\eps,L_{\tht}(\Omega),\norm{\omega^{0}}_{L^{\infty}}}
-        \norm{\left.\left(D\Phi_{\eps,N}^{t}
-        - D\Phi_{\eps}^{t}\right)\right|_{B_{R_{\delta}}(x_{0})}}_{L^{\infty}}
-        + C_{\alpha,\eps}\delta,
-    \end{align*}
-    thus a Gr\"{o}nwall-type argument shows
-    \[
-        \norm{\left.\left(D\Phi_{\eps,N}^{t}
-        - D\Phi_{\eps}^{t}\right)\right|_{B_{R_{\delta}}(x_{0})}}_{L^{\infty}}
-        \leq \frac{\exp(C_{\alpha,\eps,L_{\tht}(\Omega),\norm{\omega^{0}}_{L^{\infty}}}\abs{t}) - 1}
-        {C_{\alpha,\eps,L_{\tht}(\Omega),\norm{\omega^{0}}_{L^{\infty}}}}
-        C_{\alpha,\eps}\delta
-    \]
-    since $D\Phi_{\eps,N}^{0} = D\Phi_{\eps}^{0} = \mathrm{Id}$.
+%     \textbf{Estimate of $V_{3}$.} Expanding the definition of $u_{\eps}$ gives
+%     \begin{align*}
+%         V_{3} = \int_{\bbR^{2}}\left(\left(
+%             D(\nabla^{\perp}K_{\eps})
+%             (\Phi_{\eps,N}^{t}(x) - \Phi_{\eps,N}^{t}(y))
+%             - D(\nabla^{\perp}K_{\eps})
+%             (\Phi_{\eps}^{t}(x) - \Phi_{\eps}^{t}(y))
+%         \right)D\Phi_{\eps}^{t}(x)\right)
+%         \omega^{0}(y)\,dy.
+%     \end{align*}
+%     By \eqref{3.16}, the integral over $\bbR^{2}\setminus B_{R_{\delta}}(x_{0})$ is bounded by
+%     $2\norm{D(\nabla^{\perp}K_{\eps})}_{L^{\infty}}\norm{\Phi_{\eps}^{t}}_{\dot{C}^{0,1}}\delta$.
+%     For $y\in B_{R_{\delta}}(x_{0})$, the fundamental theorem of calculus shows that
+%     the integrand is bounded by
+%     \begin{align*}
+%         &\norm{\omega^{0}}_{L^{\infty}}\norm{\Phi_{\eps}^{t}}_{\dot{C}^{0,1}}
+%         \int_{0}^{1}\abs{D^{2}(\nabla^{\perp}K_{\eps})
+%         (\eta(\Phi_{\eps,N}^{t}(x) - \Phi_{\eps,N}^{t}(y))
+%         + (1-\eta)(\Phi_{\eps}^{t}(x) - \Phi_{\eps}^{t}(y)))}d\eta
+%         \\&\qquad\qquad\qquad\quad
+%         \cdot\abs{\int_{0}^{1}\left(D\Phi_{\eps,N}^{t} - D\Phi_{\eps}^{t}\right)
+%         (\eta x + (1-\eta)y)\,d\eta}\abs{x - y}.
+%     \end{align*}
+%     The second integral is bounded by
+%     $\norm{\left.\left(D\Phi_{\eps,N}^{t}
+%     - D\Phi_{\eps}^{t}\right)\right|_{B_{R_{\delta}}(x_{0})}}_{L^{\infty}}$, and
+%     the first integral is bounded by
+%     \begin{align*}
+%         &\min\set{
+%             \norm{D^{2}(\nabla^{\perp}K_{\eps})}_{L^{\infty}},
+%             \frac{C_{\alpha}}
+%             {\min\set{
+%                 \abs{\Phi_{\eps,N}^{t}(x) - \Phi_{\eps,N}^{t}(y)},
+%                 \abs{\Phi_{\eps}^{t}(x) - \Phi_{\eps}^{t}(y)}
+%             }^{3+2\alpha}}
+%         }
+%         \\&\quad\quad
+%         \leq \min\set{
+%             \norm{D^{2}(\nabla^{\perp}K_{\eps})}_{L^{\infty}},
+%             \max\set{
+%                 \norm{(\Phi_{\eps,N}^{t})^{-1}}_{\dot{C}^{0,1}},
+%                 \norm{(\Phi_{\eps}^{t})^{-1}}_{\dot{C}^{0,1}}
+%             }^{3+2\alpha}
+%             \frac{C_{\alpha}}{\abs{x - y}^{3+2\alpha}}
+%         }.
+%     \end{align*}
+%     Therefore, \eqref{3.15} shows
+%     \begin{align*}
+%         \abs{V_{3}} &\leq
+%         \norm{\omega^{0}}_{L^{\infty}}\norm{\Phi_{\eps}^{t}}_{\dot{C}^{0,1}}
+%         \norm{\left.\left(D\Phi_{\eps,N}^{t}
+%         - D\Phi_{\eps}^{t}\right)\right|_{B_{R_{\delta}}(x_{0})}}_{L^{\infty}}
+%         \\&\quad\quad\quad\cdot
+%         \bigg(
+%             \norm{D^{2}(\nabla^{\perp}K_{\eps})}_{L^{\infty}}
+%             \int_{\abs{x - y}\leq 1}\abs{x - y}\,dy
+%             \\&\quad\quad\quad\quad\quad
+%             + C_{\alpha}\max\set{
+%                 \norm{(\Phi_{\eps,N}^{t})^{-1}}_{\dot{C}^{0,1}},
+%                 \norm{(\Phi_{\eps}^{t})^{-1}}_{\dot{C}^{0,1}}
+%             }^{3+2\alpha}
+%             \int_{\abs{x - y} > 1}\frac{dy}{\abs{x - y}^{2+2\alpha}}
+%         \bigg)
+%         \\&\quad
+%         + 2\norm{D(\nabla^{\perp}K_{\eps})}_{L^{\infty}}
+%         \norm{\Phi_{\eps}^{t}}_{\dot{C}^{0,1}}\delta \\
+%         &\leq C_{\alpha,\eps}\norm{\omega^{0}}_{L^{\infty}}
+%         \norm{\left.\left(D\Phi_{\eps,N}^{t}
+%         - D\Phi_{\eps}^{t}\right)\right|_{B_{R_{\delta}}(x_{0})}}_{L^{\infty}}
+%         + C_{\alpha,\eps}\delta.
+%     \end{align*}\smallskip
 
-    Therefore, for any $t\in[-T_{0},T_{0}]$, 
-    $x\in B_{R}(x_{0}) \subseteq B_{R_{\delta}}(x_{0})$ and $N\geq N_{0}$,
-    \begin{align*}
-        \abs{\Phi_{\eps,N}^{t}(x) - \Phi_{\eps}^{t}(x)
-        - \Phi_{\eps,N}^{t}(x_{0}) + \Phi_{\eps}^{t}(x_{0})}
-        &\leq \frac{\exp(C_{\alpha,\eps,L_{\tht}(\Omega),\norm{\omega^{0}}_{L^{\infty}}}T_{0}) - 1}
-        {C_{\alpha,\eps,L_{\tht}(\Omega),\norm{\omega^{0}}_{L^{\infty}}}}
-        RC_{\alpha,\eps}\delta,
-    \end{align*}
-    thus
-    \[
-        \limsup_{N\to\infty}\sup_{t\in[-T_{0},T_{0}]}\norm{\left.\left(
-            \Phi_{\eps,N}^{t} - \Phi_{\eps}^{t}
-            - \Phi_{\eps,N}^{t}(x_{0}) + \Phi_{\eps}^{t}(x_{0})
-        \right)\right|_{B_{R}(x_{0})}}_{L^{\infty}}
-        \leq C_{\alpha,\eps,L_{\tht}(\Omega),\norm{\omega^{0}}_{L^{\infty}}}R\delta,
-    \]
-    and since $\delta>0$ is arbitrary, the claim follows.
-\end{proof}
+%     Aggregating the estimates for $V_{1}$, $V_{2}$, $V_{3}$ now yields
+%     \begin{align*}
+%         \abs{\partial_{t}\left(
+%             D\Phi_{\eps,N}^{t}(x) - D\Phi_{\eps}^{t}(x)
+%         \right)} &\leq C_{\alpha,\eps,L_{\tht}(\Omega),\norm{\omega^{0}}_{L^{\infty}}}
+%         \norm{\left.\left(D\Phi_{\eps,N}^{t}
+%         - D\Phi_{\eps}^{t}\right)\right|_{B_{R_{\delta}}(x_{0})}}_{L^{\infty}}
+%         + C_{\alpha,\eps}\delta
+%     \end{align*}
+%     for all $t\in[-T_{0},T_{0}]$, $x\in B_{R_{\delta}}(x_{0})$ and $N\geq N_{0}$.
+%     Then for any $t+h\in[-T_{0},T_{0}]$, we have
+%     \begin{align*}
+%         \abs{\left(
+%             D\Phi_{\eps,N}^{t+h}(x) - D\Phi_{\eps}^{t+h}(x)
+%         \right)}
+%         &\leq \abs{\left(
+%             D\Phi_{\eps,N}^{t}(x) - D\Phi_{\eps}^{t}(x)
+%         \right)}
+%         \\&\quad\quad
+%         + C_{\alpha,\eps,L_{\tht}(\Omega),\norm{\omega^{0}}_{L^{\infty}}}\int_{t}^{t+h}
+%         \norm{\left.\left(D\Phi_{\eps,N}^{\tau}
+%         - D\Phi_{\eps}^{\tau}\right)\right|_{B_{R_{\delta}}(x_{0})}}_{L^{\infty}}
+%         d\tau
+%         \\&\quad\quad
+%         + C_{\alpha,\eps}\delta\abs{h}.
+%     \end{align*}
+%     Since $D\Phi_{\eps}^{t}$ and $D\Phi_{\eps,N}^{t}$ are continuous in $t$,
+%     taking supremum over $x\in B_{R_{\delta}}(x_{0})$,
+%     dividing by $\abs{h}$ and sending $h \to 0$ shows
+%     \begin{align*}
+%         &\max\set{
+%             \partial_{t}^{+}\norm{\left.\left(D\Phi_{\eps,N}^{t}
+%             - D\Phi_{\eps}^{t}\right)\right|_{B_{R_{\delta}}(x_{0})}}_{L^{\infty}},
+%             -\partial_{t-}\norm{\left.\left(D\Phi_{\eps,N}^{t}
+%             - D\Phi_{\eps}^{t}\right)\right|_{B_{R_{\delta}}(x_{0})}}_{L^{\infty}}
+%         }
+%         \\&\quad\quad\leq
+%         C_{\alpha,\eps,L_{\tht}(\Omega),\norm{\omega^{0}}_{L^{\infty}}}
+%         \norm{\left.\left(D\Phi_{\eps,N}^{t}
+%         - D\Phi_{\eps}^{t}\right)\right|_{B_{R_{\delta}}(x_{0})}}_{L^{\infty}}
+%         + C_{\alpha,\eps}\delta,
+%     \end{align*}
+%     thus a Gr\"{o}nwall-type argument shows
+%     \[
+%         \norm{\left.\left(D\Phi_{\eps,N}^{t}
+%         - D\Phi_{\eps}^{t}\right)\right|_{B_{R_{\delta}}(x_{0})}}_{L^{\infty}}
+%         \leq \frac{\exp(C_{\alpha,\eps,L_{\tht}(\Omega),\norm{\omega^{0}}_{L^{\infty}}}\abs{t}) - 1}
+%         {C_{\alpha,\eps,L_{\tht}(\Omega),\norm{\omega^{0}}_{L^{\infty}}}}
+%         C_{\alpha,\eps}\delta
+%     \]
+%     since $D\Phi_{\eps,N}^{0} = D\Phi_{\eps}^{0} = \mathrm{Id}$.
+
+%     Therefore, for any $t\in[-T_{0},T_{0}]$, 
+%     $x\in B_{R}(x_{0}) \subseteq B_{R_{\delta}}(x_{0})$ and $N\geq N_{0}$,
+%     \begin{align*}
+%         \abs{\Phi_{\eps,N}^{t}(x) - \Phi_{\eps}^{t}(x)
+%         - \Phi_{\eps,N}^{t}(x_{0}) + \Phi_{\eps}^{t}(x_{0})}
+%         &\leq \frac{\exp(C_{\alpha,\eps,L_{\tht}(\Omega),\norm{\omega^{0}}_{L^{\infty}}}T_{0}) - 1}
+%         {C_{\alpha,\eps,L_{\tht}(\Omega),\norm{\omega^{0}}_{L^{\infty}}}}
+%         RC_{\alpha,\eps}\delta,
+%     \end{align*}
+%     thus
+%     \[
+%         \limsup_{N\to\infty}\sup_{t\in[-T_{0},T_{0}]}\norm{\left.\left(
+%             \Phi_{\eps,N}^{t} - \Phi_{\eps}^{t}
+%             - \Phi_{\eps,N}^{t}(x_{0}) + \Phi_{\eps}^{t}(x_{0})
+%         \right)\right|_{B_{R}(x_{0})}}_{L^{\infty}}
+%         \leq C_{\alpha,\eps,L_{\tht}(\Omega),\norm{\omega^{0}}_{L^{\infty}}}R\delta,
+%     \]
+%     and since $\delta>0$ is arbitrary, the claim follows.
+% \end{proof}
 
 
 \appendix
