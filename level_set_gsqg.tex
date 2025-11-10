@@ -362,6 +362,9 @@ the following notion of solutions to \eqref{1.1}--\eqref{1.2}.
     We call $\Phi$ the \emph{flow map} associdated to $\omega$.
 \end{definition}
 
+Here the notation ``$C$'' refers to the space of \emph{all} continuous functions,
+not necessarily bounded.\smallskip
+
 \textit{Remark}. It is easy to show that any Lagrangian solution $\omega$ is
 a weak solution to \eqref{1.1}--\eqref{1.2} in the sense that
 \[
@@ -369,7 +372,7 @@ a weak solution to \eqref{1.1}--\eqref{1.2} in the sense that
     = \int_{\bbR^{2}}\left(u(\omega^{t};x)\cdot\nabla\varphi(x)\right)
     \omega^{t}(x)\,dx
 \]
-holds for all $\varphi\in C^{1}(\bbR^{2})$.\bigskip
+holds for all $\varphi\in C_{c}^{1}(\bbR^{2})$.\bigskip
 
 Given a measure-preserving homeomorphism
 $\Phi\colon\bbR^{2}\to\bbR^{2}$, it can be easily seen that
@@ -497,8 +500,8 @@ from Theorem~\ref{T1.2}.
     for each compact interval    $J\subseteq I'$.  Let $I'$ be the maximal such interval.  If $T$ is its endpoint that is not an endpoint of $I$, then 
     $\lim_{t\to T} Q(\Phi_{*}^{t}\Omega) = \infty$.
     
-  (iii) If $\alpha\in(0, \frac 16]$, then $I'=I$ and  for any endpoint $T$  of $I$ we have either $|T|=\infty$  or
-    $\lim_{t\to T} Q(\Phi_{*}^{t}\Omega) = \infty$.
+  (iii) If $\alpha\in(0, \frac 16]$ and $T$ is a common endpoint of $I$ and $I'$,
+  then either $|T|=\infty$ or $\limsup_{t\to T} Q(\Phi_{*}^{t}\Omega) = \infty$.
 \end{theorem}
 
 Consider some smooth even $\chi\colon\bbR\to\bbR$
@@ -2019,7 +2022,7 @@ for any $\gamma\in\operatorname{CC}(\bbR^{2})$
     \ell(z_{\eps,N}^{t,\lambda})^{1/2}\norm{z_{\eps,N}^{t,\lambda}}_{\dot{H}^{2}} \\
     &\leq \left(
         5\norm{D(\nabla^{\perp}K_{\eps})}_{L^{\infty}}
-        + 2C_{\alpha}L_{\tht}(\Omega) N \norm{D^{2}(\nabla^{\perp}K_{\eps})}_{L^{\infty}}
+        + C_{\alpha}L_{\tht}(\Omega) N \norm{D^{2}(\nabla^{\perp}K_{\eps})}_{L^{\infty}}
     \right) \norm{\omega_{N}^{0}}_{L^{1}}
     \norm{z_{\eps,N}^{t,\lambda}}_{\dot{H}^{2}}^{2}
 \end{align*}
@@ -2155,7 +2158,7 @@ Since $\mathcal{L} = \bigcup_{N=1}^{\infty}\mathcal{L}_{N}$,
 Lemma~\ref{L3.8} shows that $\lim_{N\to\infty}z_{\eps,N}^{t,\lambda}= z_{\eps}^{t,\lambda}$ in  $\operatorname{CC}(\bbR^{2})$
 for any $\eps>0$ and $(t,\lambda)\in(-T_{1},T_{1})\times\mathcal{L}$.
 Lower semi-continuity of $\ell(\cdot)$ and $\norm{\cdot}_{\dot{H}^{2}}$ on $\operatorname{CC}(\bbR^{2})$
-(the latter by \cite[Corollary~B.3]{JeoZlaTouching}) shows that
+(the latter by \cite[Corollary~B.3]{JeoZlaTouching}) and \eqref{3.14} show that
 \[
     \ell(z_{\eps}^{t,\lambda})\norm{z_{\eps}^{t,\lambda}}_{\dot{H}^{2}}^{2}
     \leq \frac{Q(\Omega)}{1 - C_{\alpha}(L_{\theta}(\Omega) + R_{\theta}(\Omega))Q(\Omega)\abs{t}}
