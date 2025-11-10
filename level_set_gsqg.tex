@@ -402,10 +402,9 @@ Now we state our first main result.
     $L_{\tht}(\Omega)<\infty$. Then there is an open interval $I\ni 0$ and a Lagrangian solution
     $\omega\colon I\to L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$ to \eqref{1.1}--\eqref{1.2}
     with initial data $\omega^{0}$ and
-    the associated flow map $\Phi\in C\left(I;C(\bbR^{2};\bbR^{2})\right)$ such that
-    $\sup_{t\in J}L_{\tht}(\Phi_{*}^{t}\Omega) < \infty$ for any compact interval $J\subseteq I$.
-    This solution is unique and independent of the choice of $(\Omega,\theta)$, and for any compact interval $J\subseteq I$ we have  $\sup_{t\in J}\max\set{\norm{\Phi^{t}}_{\dot{C}^{0,1}},    \norm{(\Phi^{t})^{-1}}_{\dot{C}^{0,1}}}<\infty$.
-  If we let $I$ be the maximal interval as above and  $T$ is an endpoint of $I$, then either $|T|=\infty$  or
+    the associated flow map $\Phi\in C_{\rm loc}\left(I;C(\bbR^{2};\bbR^{2})\right)$ such that
+    $\sup_{t\in J}L_{\tht}(\Phi_{*}^{t}\Omega) < \infty$ for any compact interval $J\subseteq I$.  Let $I$ be the maximal such interval.
+    Then the solution $\omega$ is unique and independent of the choice of $(\Omega,\theta)$, for any compact interval $J\subseteq I$ we have  $\sup_{t\in J}\max\set{\norm{\Phi^{t}}_{\dot{C}^{0,1}},    \norm{(\Phi^{t})^{-1}}_{\dot{C}^{0,1}}}<\infty$, and for any endpoint $T$  of $I$ we have either $|T|=\infty$  or
     $\lim_{t\to T}L_{\tht}(\Phi_{*}^{t}\Omega) = \infty$.
 \end{theorem}
 
@@ -428,14 +427,14 @@ and $\Delta(\,\cdot\,,\,\cdot\,)$).
     for some $z^{\lambda}\in\operatorname{PSC}(\bbR^{2})$.
     In this case, we define
     \begin{equation*}
-        Q(\Omega) \coloneqq \sup_{\lambda\in\mathcal{L}}
-        \ell(z^{\lambda})\norm{z^{\lambda}}_{\dot{H}^{2}}^{2},\quad
         R_{\tht}(\Omega) \coloneqq \sup_{\lambda\in\mathcal{L}}
         \ell(z^{\lambda})^{1/2}
         %\overline{\int_{\mathcal{L}}}
         \int_{\mathcal{L}}
         \frac{d|\theta|(\lambda')}
-        {\ell(z^{\lambda'})^{1/2}\Delta(z^{\lambda},z^{\lambda'})^{2\alpha}}.
+        {\ell(z^{\lambda'})^{1/2}\Delta(z^{\lambda},z^{\lambda'})^{2\alpha}} \qquad\text{and}\qquad
+                Q(\Omega) \coloneqq \sup_{\lambda\in\mathcal{L}}
+        \ell(z^{\lambda})\norm{z^{\lambda}}_{\dot{H}^{2}}^{2}.
     \end{equation*}
 \end{definition}
 
@@ -447,9 +446,9 @@ is jointly measurable in $(x,\lambda')$. On the other hand,
 since $\lambda'\mapsto\partial\Omega^{\lambda'}$ is measurable with respect to the
 topology on $\wp(\bbR^{2})$ given by the family of pseudometrics
 $(A,B)\mapsto |(A\,\triangle\,B)\cap K|$ for compact $K\subseteq\bbR^{2}$,
-lower semicontinuity of the perimeter functional (in the sense of Caccioppoli)
+lower semi-continuity of the perimeter functional (in the sense of Caccioppoli)
 with respect to this topology shows measurability of $\lambda'\mapsto\ell(z^{\lambda'})$;
-see \cite[Proposition 3.38]{AFPBV} for lower semicontinuity, and see
+see \cite[Proposition 3.38]{AFPBV} for lower semi-continuity, and see
 \cite[Proposition 3.62]{AFPBV} and \cite[Theorem I]{CaffaRivi} for that
 $\ell(z^{\lambda'})$ equals the perimeter of $\Omega^{\lambda'}$.
 Hence, $R_{\theta}(\Omega)$ is well-defined.
@@ -484,19 +483,22 @@ Next we state our second main result.
 \begin{theorem}\label{T1.4}
     Let $\omega^{0}\in L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$ admit a
     generalized layer cake representation $(\Omega,\theta)$
-    composed of simple closed curves such that $L_{\tht}(\Omega), Q(\Omega), R_{\tht}(\Omega) < \infty$.
-    Let $\omega\colon I\to L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$ be
-    the Lagrangian solution to \eqref{1.1}--\eqref{1.2}
+    composed of simple closed curves such that $L_{\tht}(\Omega),  R_{\tht}(\Omega), Q(\Omega) < \infty$, and let $\omega\colon I\to L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$ be
+    the corresponding Lagrangian solution to \eqref{1.1}--\eqref{1.2}
 %    with the initial data $\omega^{0}$ and the associated flow map
 %    $\Phi\in C\left(I;C(\bbR^{2};\bbR^{2})\right)$ provided by 
 from Theorem~\ref{T1.2}.
-    Then $\Phi_{*}^{t}\Omega$ is composed of simple closed curves for each $t\in I$,
+
+(i)    Then $\Phi_{*}^{t}\Omega$ is composed of simple closed curves for each $t\in I$, and
     $\sup_{t\in J}R_{\tht}(\Phi_{*}^{t}\Omega) < \infty$ for each compact interval
-    $J\subseteq I$, and the set
-    \[
-        \set{t\in I \colon Q(\Phi_{*}^{t}\Omega) < \infty}
-    \]
-    is  open.
+    $J\subseteq I$. 
+    
+    (ii) There is an open interval $I'\subseteq I$ containing 0 such that  $\sup_{t\in J}  Q(\Phi_{*}^{t}\Omega) < \infty$
+    for each compact interval    $J\subseteq I'$.  Let $I'$ be the maximal such interval.  If $T$ is its endpoint that is not an endpoint of $I$, then 
+    $\lim_{t\to T} Q(\Phi_{*}^{t}\Omega) = \infty$.
+    
+  (iii) If $\alpha\in(0, \frac 16]$, then $I'=I$ and  for any endpoint $T$  of $I$ we have either $|T|=\infty$  or
+    $\lim_{t\to T} Q(\Phi_{*}^{t}\Omega) = \infty$.
 \end{theorem}
 
 Consider some smooth even $\chi\colon\bbR\to\bbR$
@@ -1295,15 +1297,16 @@ now yields  Theorem~\ref{T1.2}.
 
 Again, all constants $C_{\alpha}$ below
 can change from one inequality to another, but they always only depend  on $\alpha$.
-Suppose that the initial data $\omega^{0}\in L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$
-admits a generalized layer cake representation $(\Omega,\theta)$
-composed of simple closed curves such that $L_{\tht}(\Omega), Q(\Omega), R_{\tht}(\Omega) < \infty$.
-For each $\lambda\in\mathcal{L}$, let $z^{0,\lambda}\in\operatorname{PSC}(\bbR^{2})$ be
+Fix any $\omega^{0}$ satisfying the hypotheses and
+%Suppose that the initial data $\omega^{0}\in L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$
+%admits a generalized layer cake representation $(\Omega,\theta)$
+%composed of simple closed curves such that $L_{\tht}(\Omega), Q(\Omega), R_{\tht}(\Omega) < \infty$.
+for each $\lambda\in\mathcal{L}$, let $z^{0,\lambda}\in\operatorname{PSC}(\bbR^{2})$ be
 such that $\partial\Omega^{\lambda} = \operatorname{im}(z^{0,\lambda})$.
 
 Let $\omega\colon I\to L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$ be the
 Lagrangian solution to \eqref{1.1}--\eqref{1.2} from Theorem~\ref{T1.2}, with  initial data $\omega^{0}$
-and  flow map $\Phi\in C\left(I;C(\bbR^{2};\bbR^{2})\right)$, and consider $T_{0}\coloneqq \frac{1}{2C_{\alpha}L_{\tht}(\Omega)}$ as in Proposition \ref{P2.8} (note that $[-T_0,T_0]\subseteq I$ because $I$ is maximal). Then since  $\Phi^{t}$ is a homeomorphism for each $t\in I$,  it follows that $\Phi_{*}^{t}\Omega$ is  composed of simple closed curves and we denote these  $z^{t,\lambda}:=\Phi^{t}\circ z^{0,\lambda} \in\operatorname{PSC}(\bbR^{2})$, where $\Phi^{t}\circ z^{0,\lambda}\in \operatorname{CC}(\bbR^{2})$ is the curve whose representative is $\Phi^{t}\circ\tilde{z}^{0,\lambda}$ whenever  $\tilde{z}^{0,\lambda}$ is a representative of $z^{0,\lambda}$ (since $\set{z^{t,\lambda}}_{t\in I}$ is clearly a connected subset of $\operatorname{CC}(\bbR^{2})$,  \cite[Lemma~B.4]{JeoZlaTouching} shows that each $z^{t,\lambda}$ is positively oriented).
+and  flow map $\Phi\in C\left(I;C(\bbR^{2};\bbR^{2})\right)$, and consider $T_{0}\coloneqq \frac{1}{2C_{\alpha}L_{\tht}(\Omega)}$ as in Proposition \ref{P2.8} (note that $[-T_0,T_0]\subseteq I$ because $I$ is maximal). Then since  $\Phi^{t}$ is a homeomorphism for each $t\in I$,  it follows that $\Phi_{*}^{t}\Omega$ is  composed of simple closed curves (this proves the first claim in Theorem \ref{T1.4}(i)). We denote these  $z^{t,\lambda}:=\Phi^{t}\circ z^{0,\lambda} \in\operatorname{PSC}(\bbR^{2})$, where $\Phi^{t}\circ z^{0,\lambda}\in \operatorname{CC}(\bbR^{2})$ is the curve whose representative is $\Phi^{t}\circ\tilde{z}^{0,\lambda}$ whenever  $\tilde{z}^{0,\lambda}$ is a representative of $z^{0,\lambda}$ (since $\set{z^{t,\lambda}}_{t\in I}$ is clearly a connected subset of $\operatorname{CC}(\bbR^{2})$,  \cite[Lemma~B.4]{JeoZlaTouching} shows that each $z^{t,\lambda}$ is positively oriented).
 % $\Phi^{t}\circ z^{0,\lambda}$
 %(i.e., the equivalence class in $\operatorname{CC}(\bbR^{2})$
 %of $\Phi^{t}\circ\tilde{z}^{0,\lambda}$ for any representative $\tilde{z}^{0,\lambda}$
@@ -1438,7 +1441,7 @@ The result now follows from Lemma \ref{L2.1} and Corollary~\ref{C2.7}.
 \end{lemma}
 
 \begin{proof}
-   Since $\ell\colon\operatorname{CC}(\bbR^{2})\to[0,\infty]$ is lower semicontinuous
+   Since $\ell\colon\operatorname{CC}(\bbR^{2})\to[0,\infty]$ is lower semi-continuous
     (by definition) and $\lim_{\eps\to 0} z_\eps^{t,\lambda}= z^{t,\lambda}$ in $\operatorname{CC}(\bbR^{2})$, a Gr\"{o}nwall-type argument applied to \eqref{3.3} shows that for $\abs{t}\leq T_0$ we have
     \begin{equation}\label{3.4}
         \ell(z^{t,\lambda}) \leq e^{2C_{\alpha}L_{\tht}(\Omega)\abs{t}}\ell(z^{0,\lambda}).
@@ -1564,7 +1567,7 @@ and so
     Since $t_{1},t_{2}\in J$ were arbitrary, the claim follows.
 \end{proof}
 
-Our proof that $Q(\Phi_{*}^{t}\Omega) < \infty$ for all small enough $t$ will use the following
+This proves the second claim in Theorem \ref{T1.4}(i). Our proof of Theorem \ref{T1.4}(ii) will use the following
 extension to $R_{\tht}(\Phi_{\eps*}^{t}\Omega)$ of the bound on $R_{\tht}(\Phi_{*}^{t}\Omega)$ from the last proof.
 % of Proposition~\ref{P3.3} to $\eps>0$.
 
@@ -1601,15 +1604,18 @@ holds for any $t\in[-T_{0},T_{0}]$,  with    $C_{\alpha}$ from Lemma~\ref{L2.1}.
     and $e^{2}\leq 8$).
 \end{proof}
 
-We now turn to showing that $Q(\Phi_{*}^{t}\Omega) < \infty$ for all small enough $t$.
-Since $\ell(\cdot)$ and $\norm{\cdot}_{\dot{H}^{2}}$ are both
-lower semicontinuous on $\operatorname{CC}(\bbR^{2})$
-(the latter by \cite[Corollary~B.3]{JeoZlaTouching}),
-so is $\ell(\cdot)\norm{\cdot}_{\dot{H}^{2}}^{2}$.  Therefore
-it is enough to establish a uniform-in-$(\eps,\lambda)$ bound on
-$\ell(z_{\eps}^{t,\lambda})\norm{z_{\eps}^{t,\lambda}}_{\dot{H}^{2}}^{2}$.
-We do this by estimating the right-hand side of \eqref{3.2}
-in Lemma~\ref{L3.7} below.
+We now turn to  Theorem \ref{T1.4}(ii),
+%showing that $Q(\Phi_{*}^{t}\Omega) < \infty$ for all small enough $t$.
+which we prove by using Lemma \ref{L3.1} and 
+%Since $\ell(\cdot)$ and $\norm{\cdot}_{\dot{H}^{2}}$ are both
+%lower semi-continuous on $\operatorname{CC}(\bbR^{2})$
+%(the latter by \cite[Corollary~B.3]{JeoZlaTouching}),
+%so is $\ell(\cdot)\norm{\cdot}_{\dot{H}^{2}}^{2}$.  Therefore
+%it is enough to establish a uniform-in-$(\eps,\lambda)$ bound on
+%$\ell(z_{\eps}^{t,\lambda})\norm{z_{\eps}^{t,\lambda}}_{\dot{H}^{2}}^{2}$ for all $t$ close to 0.
+%We do this 
+by estimating the right-hand side of \eqref{3.2}
+in lemmas  below.
 %, via the following lemmas. 
 
 
@@ -1714,19 +1720,19 @@ in Lemma~\ref{L3.7} below.
         \begin{aligned}
             \partial_{t}\norm{z_{\eps}^{t,\lambda}}_{\dot{H}^{2}}^{2} &=
             \int_{\ell_{\eps}^{t,\lambda}\bbT}\kappa_{\eps}^{t,\lambda}(s)^{2}
-            \left(
+            \left[
                 2D(u_{\eps}(\omega_{\eps}^{t}))(z_{\eps}^{t,\lambda}(s))
                 (\mathbf{N}_{\eps}^{t,\lambda}(s))
                 \cdot \mathbf{N}_{\eps}^{t,\lambda}(s)
                 - 3\,\partial_{s}u_{\eps}^{t,\lambda}(s)\cdot\mathbf{T}_{\eps}^{t,\lambda}(s)
-            \right)ds
+            \right] ds
             \\&\quad\quad
             + 2\int_{\ell_{\eps}^{t,\lambda}\bbT}\kappa_{\eps}^{t,\lambda}(s)
-            \left(
+            \left[
                 D^{2}(u_{\eps}(\omega_{\eps}^{t}))(z_{\eps}^{t,\lambda}(s))
                 (\mathbf{T}_{\eps}^{t,\lambda}(s),\mathbf{T}_{\eps}^{t,\lambda}(s))
                 \cdot \mathbf{N}_{\eps}^{t,\lambda}(s)
-            \right)ds.
+            \right] ds.
         \end{aligned}
     \end{equation}
     Lemma~\ref{L2.1} shows that the absolute value of the first integral is bounded by
@@ -1943,67 +1949,68 @@ in Lemma~\ref{L3.7} below.
     Aggregating the estimates for $G_{2}$ and $G_{3}$ now yields the desired conclusion.
 \end{proof}
 
-Lemmas \ref{L3.1} and \ref{L3.7} suggest that we may have an $\eps$-independent estimate
+Lemmas \ref{L3.1} and \ref{L3.7} suggest existence of an $\eps$-independent estimate
 \begin{equation}\label{3.13}
     \max\set{\partial_{t}^{+}Q(\Phi_{\eps*}^{t}\Omega),
     -\partial_{t-}Q(\Phi_{\eps*}^{t}\Omega)}
     \leq C_{\alpha}(L_{\tht}(\Phi_{\eps*}^{t}\Omega) + R_{\tht}(\Phi_{\eps*}^{t}\Omega))
-    Q(\Phi_{\eps*}^{t}\Omega)^{2}
+    Q(\Phi_{\eps*}^{t}\Omega)^{2},
 \end{equation}
-from which we can run a Gr\"{o}nwall-type argument. However,
-because of the factor $Q(\Phi_{\eps*}^{t}\Omega)$ in the right-hand side of \eqref{3.11},
-\eqref{3.13} follows from these Lemmas only if we know a priori that
-$Q(\Phi_{\eps*}^{t}\Omega)$ is upper semicontinuous (or locally bounded,
-which implies upper semicontinuity via \eqref{3.11}).
+so that a Gr\"{o}nwall-type argument can be used to show that $Q(\Phi_{*}^{t}\Omega)$ is finite for all $t$ near 0.  However, to apply such an argument, we first need to prove that $Q(\Phi_{\eps*}^{t}\Omega)$ is bounded on some ($\eps$-independent) time interval $(-t_0,t_0)$, even if the bound depends on $\eps$, or that $Q(\Phi_{\eps*}^{t}\Omega)$ is upper semi-continuous for each $\eps>0$.
+%because of the factor $Q(\Phi_{\eps*}^{t}\Omega)$ in the right-hand side of \eqref{3.11},
+%\eqref{3.13} follows from these Lemmas only if we know a priori that
+%$Q(\Phi_{\eps*}^{t}\Omega)$ is upper semi-continuous (or locally bounded,
+%which implies upper semi-continuity via \eqref{3.11}).
+For instance, \eqref{3.11} would become useless if $Q(\Phi_{\eps*}^{t}\Omega)=\infty$ for all small $\eps,|t|>0$, and none of the above a priori excludes this.
 
-One way to derive upper semicontinuity (or local boundedness) would be
-again through estimating the right-hand side of \eqref{3.2}
-in terms of $\norm{z_{\eps}^{t,\lambda}}_{\dot{H}^{2}}^{2}$.
-In contrast to \eqref{3.11}, such an estimate can depend on $\eps$
-while it must not have the factor $Q(\Phi_{\eps*}^{t}\Omega)$.
-However, the second integral of \eqref{3.12} contains only one factor of $\kappa^{t,\lambda}(s)$,
-so the trivial bound we obtain by estimating $D^{2}(u_{\eps}(\omega_{\eps}^{t}))$
-by its $L^{\infty}$ norm will contain the $L^{1}$ norm of $\kappa^{t,\lambda}$,
-and in order to replace it by the $L^{2}$ norm we have to introduce
-an additional factor of $(\ell^{t,\lambda})^{1/2}$.
-This means that unless we impose an upper on $\ell^{t,\lambda}$, the resulting estimate
-will not be enough for concluding upper semicontinuity (nor local boundedness),
-because it does not rule out the possibility that
-over an arbitrarily small time interval and for an arbitrarily large constant $M$,
-some $\ell^{t,\lambda}\norm{z_{\eps}^{t,\lambda}}_{\dot{H}^{2}}^{2}$ with very large
-$\ell^{t,\lambda}$ grows larger than $M$.
-Another way would be to estimate the $\dot{H}^{2}$ norm of
-$\Phi_{\eps}^{t}\circ\tilde{z}^{0,\lambda}$ where
-$\tilde{z}^{0,\lambda}\colon\bbT\to\bbR^{2}$ is a constant-speed parametrization
-of $z^{0,\lambda}$, but it runs into a similar issue.
+%One way to derive upper semi-continuity (or local boundedness) would be
+%again through estimating the right-hand side of \eqref{3.2}
+%in terms of $\norm{z_{\eps}^{t,\lambda}}_{\dot{H}^{2}}^{2}$.
+%In contrast to \eqref{3.11}, such an estimate can depend on $\eps$
+%while it must not have the factor $Q(\Phi_{\eps*}^{t}\Omega)$.
+%However, the second integral of \eqref{3.12} contains only one factor of $\kappa^{t,\lambda}(s)$,
+%so the trivial bound we obtain by estimating $D^{2}(u_{\eps}(\omega_{\eps}^{t}))$
+%by its $L^{\infty}$ norm will contain the $L^{1}$ norm of $\kappa^{t,\lambda}$,
+%and in order to replace it by the $L^{2}$ norm we have to introduce
+%an additional factor of $(\ell^{t,\lambda})^{1/2}$.
+%This means that unless we impose an upper on $\ell^{t,\lambda}$, the resulting estimate
+%will not be enough for concluding upper semi-continuity (nor local boundedness),
+%because it does not rule out the possibility that
+%over an arbitrarily small time interval and for an arbitrarily large constant $M$,
+%some $\ell^{t,\lambda}\norm{z_{\eps}^{t,\lambda}}_{\dot{H}^{2}}^{2}$ with very large
+%$\ell^{t,\lambda}$ grows larger than $M$.
+%Another way would be to estimate the $\dot{H}^{2}$ norm of
+%$\Phi_{\eps}^{t}\circ\tilde{z}^{0,\lambda}$ where
+%$\tilde{z}^{0,\lambda}\colon\bbT\to\bbR^{2}$ is a constant-speed parametrization
+%of $z^{0,\lambda}$, but it runs into a similar issue.
 
-To resolve this, we now introduce a sequence of approximations of $\omega_{\eps}^{t}$.
+It turns out that this problem can be overcome by estimating the second integral in \eqref{3.12} via the Schwarz inequality, provided 
+$\sup_{\lambda\in\mathcal{L}}    \ell(z^{0,\lambda})<\infty$ (using also Lemma \ref{L3.1}).  Moreover, we will now show that one can similarly deal with general $\omega^0$ considered in this section via a sequence of approximations satisfying this property.
 Take an increasing sequence $\set{\mathcal{L}_{N}'}_{N=1}^{\infty}$ of
 measurable subsets of $\mathcal{L}$ such that $|\theta|(\mathcal{L}_{N}')<\infty$
 for each $N\in\bbN$ and $\mathcal{L} = \bigcup_{N=1}^{\infty}\mathcal{L}_{N}'$.
-For each $N\in\bbN$, let
+For $\omega^0$ as above and any $N\in\bbN$, let
 \[
-    \mathcal{L}_{N}\coloneqq \set{\lambda\in\mathcal{L}_{N}'\colon
+    \mathcal{L}_{N}\,\coloneqq \set{\lambda\in\mathcal{L}_N'\colon
     \ell(z^{0,\lambda}) \leq N},\quad
     \Omega_{N}\coloneqq \Omega\cap(\bbR^{2}\times\mathcal{L}_{N}),\quad
     \omega_{N}^{0}(x)\coloneqq
     \int_{\mathcal{L}_{N}}\mathbbm{1}_{\Omega^{\lambda}}(x)\,d\theta(\lambda).
 \]
-Note that $\omega_{N}^{0} \in L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$ because
-$\norm{\omega_{N}^{0}}_{L^{\infty}} \leq |\theta|(\mathcal{L}_{N}') <\infty$ and
-also $\norm{\omega_{N}^{0}}_{L^{1}} \leq \frac{N^{2}}{4\pi}|\theta|(\mathcal{L}_{N}') < \infty$
-by the isoperimetric inequality. Clearly, $L_{\tht}(\Omega_{N}) \leq L_{\tht}(\Omega) < \infty$.
-
-Let $\Phi_{\eps,N}\in C\left(\bbR;C(\bbR^{2};\bbR^{2})\right)$ be the corresponding
-$\eps$-mollified flow map, i.e., the identity map plus the solution to \eqref{2.1}
+Then $\omega_{N}^{0} \in L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$ because
+$\norm{\omega_{N}^{0}}_{L^{\infty}} \leq |\theta|(\mathcal{L}_N')$ and
+ $\norm{\omega_{N}^{0}}_{L^{1}} \leq \frac{N^{2}}{4\pi}|\theta|(\mathcal{L}_N')$ (the latter
+by the isoperimetric inequality), and clearly also $L_{\tht}(\Omega_{N}) \leq L_{\tht}(\Omega)$.
+Let $\Phi_{\eps,N}\in C_{\rm loc}\left(\bbR;C(\bbR^{2};\bbR^{2})\right)$ be the corresponding
+$\eps$-mollified flow map, that is, the identity map plus the solution to \eqref{2.1}
 with $\omega_{N}^{0}$ in place of $\omega^{0}$.
 Let $z_{\eps,N}^{t,\lambda}\coloneqq \Phi_{\eps,N}^{t}\circ z^{0,\lambda}$
 and $\omega_{\eps,N}^{t} \coloneqq \omega_{N}^{0} \circ (\Phi_{\eps,N}^{t})^{-1}$.
 
-Then \eqref{3.12}, Cauchy-Schwarz inequality, the inequality
+Then \eqref{3.12}, the Schwarz inequality,
 $\ell(\gamma)\norm{\gamma}_{\dot{H}^{2}}^{2} \geq 4$
 for any $\gamma\in\operatorname{CC}(\bbR^{2})$
-(which follows by \cite[Lemma~A.1]{JeoZlaTouching}) and \eqref{1.8} show
+(see \cite[Lemma~A.1]{JeoZlaTouching}), Lemma \ref{L3.1}, and \eqref{1.8} show that
 \begin{align*}
     \abs{\partial_{t}\norm{z_{\eps,N}^{t,\lambda}}_{\dot{H}^{2}}^{2}}
     &\leq 5\norm{u_{\eps}(\omega_{\eps,N}^{t})}_{\dot{C}^{0,1}}
@@ -2012,32 +2019,33 @@ for any $\gamma\in\operatorname{CC}(\bbR^{2})$
     \ell(z_{\eps,N}^{t,\lambda})^{1/2}\norm{z_{\eps,N}^{t,\lambda}}_{\dot{H}^{2}} \\
     &\leq \left(
         5\norm{D(\nabla^{\perp}K_{\eps})}_{L^{\infty}}
-        + \norm{D^{2}(\nabla^{\perp}K_{\eps})}_{L^{\infty}}N
-    \right)\norm{\omega_{N}^{0}}_{L^{1}}
-    \norm{z_{\eps,N}^{t,\lambda}}_{\dot{H}^{2}}^{2},
+        + 2C_{\alpha}L_{\tht}(\Omega) N \norm{D^{2}(\nabla^{\perp}K_{\eps})}_{L^{\infty}}
+    \right) \norm{\omega_{N}^{0}}_{L^{1}}
+    \norm{z_{\eps,N}^{t,\lambda}}_{\dot{H}^{2}}^{2}
 \end{align*}
-which implies
+for $(t,\lambda)\in[-T_0,T_0] \times\mathcal{L}_{N}$.  This implies
 \[
     \norm{z_{\eps,N}^{t+h,\lambda}}_{\dot{H}^{2}}^{2}
     \leq e^{C\abs{h}}\norm{z_{\eps,N}^{t,\lambda}}_{\dot{H}^{2}}^{2}
 \]
-for each $(t,h,\lambda)\in\bbR^{2}\times\mathcal{L}_{N}$, for some constant
-$C$ that depends on ${\alpha,\eps,N,\norm{\omega_{N}^{0}}_{L^{1}}}$, but not on
-$\lambda\in\mathcal{L}_{N}$. Together with the inequality
-$\ell(z_{\eps,N}^{t+h,\lambda}) \leq e^{C\abs{h}}\ell(z_{\eps,N}^{t,\lambda})$
-for another $C$ that depends on ${\alpha,\eps,\norm{\omega_{N}^{0}}_{L^{1}}}$,
-which follows from \eqref{3.3} (with $(\omega_{\eps,N},z_{\eps,N})$
-in place of $(\omega_{\eps},z_{\eps})$) and \eqref{1.8}, this shows
+whenever $(t,t+h,\lambda)\in [-T_0,T_0]^2\times\mathcal{L}_{N}$, with some 
+$C$ depending  on $\alpha,\eps,N,\Omega,\tht$. This and Lemma \ref{L3.1} now yield
+%ogether with the inequality
+%$\ell(z_{\eps,N}^{t+h,\lambda}) \leq e^{C\abs{h}}\ell(z_{\eps,N}^{t,\lambda})$
+%for another $C$ that depends on ${\alpha,\eps,\norm{\omega_{N}^{0}}_{L^{1}}}$,
+%which follows from \eqref{3.3} (with $(\omega_{\eps,N},z_{\eps,N})$
+%in place of $(\omega_{\eps},z_{\eps})$) and \eqref{1.8}, this shows
 \[
-    Q(\Phi_{\eps,N*}^{t+h}\Omega) \leq e^{C\abs{h}}Q(\Phi_{\eps,N*}^{t}\Omega),
+    Q(\Phi_{\eps,N*}^{t+h}\Omega) \leq e^{C\abs{h}}Q(\Phi_{\eps,N*}^{t}\Omega)
 \]
-from which we conclude upper semicontinuity of $Q(\Phi_{\eps,N*}^{t}\Omega)$ in $t$.
+for the same $(t,h,\lambda)$, with a new $C$ depending again only on $\alpha,\eps,N,\Omega,\tht$, 
+from which we conclude the  $Q(\Phi_{\eps,N*}^{t}\Omega)$ is upper semi-continuous in $t\in[-T_0,T_0]$ for all $N,\eps$ (this then clearly extends to all $t\in\bbR$).
 
-From Lemmas \ref{L3.1}, \ref{L3.4}, \ref{L3.7}, Corollary~\ref{C2.7}, and \eqref{3.3} with
+Lemmas \ref{L3.1}, \ref{L3.4}, \ref{L3.7}, and Corollary~\ref{C2.7} with
 $(\omega_{\eps,N},\Omega_{N},z_{\eps,N},\Phi_{\eps,N})$ in place of
 $(\omega_{\eps},\Omega,z_{\eps}, \Phi_{\eps})$,
-and the inequalities $L_{\tht}(\Omega_{N})\leq L_{\tht}(\Omega)$,
-$R_{\tht}(\Omega_{N})\leq R_{\tht}(\Omega)$, and $Q(\Phi_{\eps,N*}^{t}\Omega) \geq 4$, we see that
+and inequalities $L_{\tht}(\Omega_{N})\leq L_{\tht}(\Omega)$,
+$R_{\tht}(\Omega_{N})\leq R_{\tht}(\Omega)$, and $Q(\Phi_{\eps,N*}^{t}\Omega) \geq 4$, show that
 \begin{align*}
     \ell(z_{\eps,N}^{t+h,\lambda})\norm{z_{\eps,N}^{t+h,\lambda}}_{\dot{H}^{2}}^{2}
     - Q(\Phi_{\eps,N*}^{t}\Omega)
@@ -2046,35 +2054,36 @@ $R_{\tht}(\Omega_{N})\leq R_{\tht}(\Omega)$, and $Q(\Phi_{\eps,N*}^{t}\Omega) \g
     &\leq C_{\alpha}\abs{\int_{t}^{t+h}
     (L_{\tht}(\Omega) + R_{\tht}(\Omega))Q(\Phi_{\eps,N*}^{\tau}\Omega)^{2}\,d\tau}
 \end{align*}
-holds for each $(t,t+h,\lambda)\in[-T_{0},T_{0}]^{2}\times\mathcal{L}_{N}$,
-for some $C_{\alpha}$ that depends only on $\alpha$.
-By upper semicontinuity of $Q(\Phi_{\eps,N*}^{t}\Omega)$,
-taking supremum over $\lambda\in\mathcal{L}_{N}$,
-dividing by $\abs{h}$ and then letting $h\to 0$ yields
+holds whenever $(t,t+h,\lambda)\in[-T_{0},T_{0}]^{2}\times\mathcal{L}_{N}$
+(with $C_{\alpha}$ depending only on $\alpha$, as always).
+Using upper semi-continuity of $Q(\Phi_{\eps,N*}^{t}\Omega)$ in $t$,
+taking the supremum over $\lambda\in\mathcal{L}_{N}$,
+dividing by $\abs{h}$, and letting $h\to 0$ now yields
 \[
     \max\set{
         \partial_{t}^{+}Q(\Phi_{\eps,N*}^{t}\Omega),
         -\partial_{t-}Q(\Phi_{\eps,N*}^{t}\Omega)
     } \leq C_{\alpha}(L_{\tht}(\Omega) + R_{\tht}(\Omega))Q(\Phi_{\eps,N*}^{t}\Omega)^{2},
 \]
-which we then use with a Gr\"{o}nwall-type argument to conclude
+so via a Gr\"{o}nwall-type argument we conclude that
 \begin{equation}\label{3.14}
     Q(\Phi_{\eps,N*}^{t}\Omega) \leq \frac{Q(\Omega_{N})}
     {1 - C_{\alpha}(L_{\tht}(\Omega) + R_{\tht}(\Omega))Q(\Omega_{N})\abs{t}}
     \leq \frac{Q(\Omega)}
     {1 - C_{\alpha}(L_{\tht}(\Omega) + R_{\tht}(\Omega))Q(\Omega)\abs{t}}
 \end{equation}
-for any $t$ with $\abs{t} < T_{1}\coloneqq
-\frac{1}{C_{\alpha}(L_{\tht}(\Omega) + R_{\tht}(\Omega))Q(\Omega)}$,
-where the second inequality is because $Q(\Omega_{N}) \leq Q(\Omega)$.
+whenever $\abs{t} < T_{1}\coloneqq
+\frac{1}{C_{\alpha}(L_{\tht}(\Omega) + R_{\tht}(\Omega))Q(\Omega)}$.
+%where the second inequality is because $Q(\Omega_{N}) \leq Q(\Omega)$.
+We let this $C_\alpha$ be no smaller than the one from Lemma \ref{L2.1} (which was used to define $T_0$), so that $T_1\in(0, T_0]$.
 
-In order to turn \eqref{3.14} into a bound on $Q(\Phi_{*}^{t}\Omega)$,
-we now show that $z_{\eps,N}$ converges to $z_{\eps}$ when $N\to\infty$.
+%We now show that $z_{\eps,N} \to z_{\eps}$ a $N\to\infty$, In order 
+The following result will allow us to turn \eqref{3.14} into a bound on $Q(\Phi_{*}^{t}\Omega)$.
 
 \begin{lemma}\label{L3.8}
-    Let $T_{0}$ be as in Proposition~\ref{P2.8}. Then
+   With $T_{1}$ as above, for each $\eps>0$ we have
     \[
-        \lim_{N\to\infty}\sup_{t\in[-T_{0},T_{0}]}\norm{
+        \lim_{N\to\infty}\sup_{t\in[-T_{1},T_{1}]}\norm{
             \Phi_{\eps,N}^{t} - \Phi_{\eps}^{t}
         }_{L^{\infty}} = 0.
     \]
@@ -2082,14 +2091,15 @@ we now show that $z_{\eps,N}$ converges to $z_{\eps}$ when $N\to\infty$.
 
 \begin{proof}
     Since $L_{\theta}(\Omega_{N}) \leq L_{\theta}(\Omega)$ for all $N$,
-    \eqref{1.7} and Proposition~\ref{P2.8} show
+ the last claim in Proposition~\ref{P2.8} and \eqref{1.7} show that
     \[
-        M\coloneqq \sup_{(t,N)\in[-T_{0},T_{0}]\times\bbN}
+        M\coloneqq \sup_{(t,N)\in[-T_{1},T_{1}]\times\bbN}
         \max\set{L_{\theta}(\Phi_{\eps,N*}^{t}\omega_{N}^{0}),
         L_{\theta}(\Phi_{\eps*}^{t}\omega_{N}^{0})}
-        \leq e^{2\alpha}L_{\theta}(\Omega_{N}) \leq 3L_{\theta}(\Omega).
+        \leq e^{2\alpha}L_{\theta}(\Omega_{N}) 
+        \leq 3L_{\theta}(\Omega).
     \]
-    Then for any $t\in[-T_{0},T_{0}]$, Lemmas \ref{L2.1} and \ref{L2.2} show that
+    Then  Lemmas \ref{L2.1} and \ref{L2.2} show for any $t\in[-T_{1},T_{1}]$ that
     \begin{equation}\label{3.150}\begin{aligned}
         &\norm{u_{\eps}(\Phi_{\eps,N*}^{t}\omega_{N}^{0})\circ\Phi_{\eps,N}^{t}
         - u_{\eps}(\Phi_{\eps*}^{t}\omega^{0})\circ\Phi_{\eps}^{t}}_{L^{\infty}}
@@ -2098,7 +2108,7 @@ we now show that $z_{\eps,N}$ converges to $z_{\eps}$ when $N\to\infty$.
         \norm{\Phi_{\eps,N}^{t} - \Phi_{\eps}^{t}}_{L^{\infty}}
         + \norm{u_{\eps}(\Phi_{\eps,N*}^{t}\omega_{N}^{0})
         - u_{\eps}(\Phi_{\eps*}^{t}\omega_{N}^{0})}_{L^{\infty}}
-        \\&\quad\quad\quad\quad
+        \\&\qquad\qquad\qquad\qquad
         + \norm{u_{\eps}(\Phi_{\eps*}^{t}\omega_{N}^{0})
         - u_{\eps}(\Phi_{\eps*}^{t}\omega^{0})}_{L^{\infty}}
         \\&\quad\quad
@@ -2106,10 +2116,10 @@ we now show that $z_{\eps,N}$ converges to $z_{\eps}$ when $N\to\infty$.
         + \norm{u_{\eps}(\Phi_{\eps*}^{t}\omega_{N}^{0})
         - u_{\eps}(\Phi_{\eps*}^{t}\omega^{0})}_{L^{\infty}}
     \end{aligned}\end{equation}
-    for some $C_{\alpha}$.
-    Since $\Omega$ is of finite measure (with respect to the Lebesgue measure on $\bbR^{2}$
-    and $\abs{\theta}$), we clearly have $\omega_{N}^{0} \to \omega^{0}$ in $L^{1}$.
-    Therefore, for any $\eta>0$, there is $N_{0}\in\bbN$ independent of $t$ such that
+    for some $C_{\alpha}$.  We see that $\omega_{N}^{0} \to \omega^{0}$ in $L^{1}$ because
+ $\Omega\subseteq \bbR^{2}\times\mathcal L$ has finite measure (with the Lebesgue measure on $\bbR^{2}$
+    and $\abs{\theta}$ on $\mathcal L$).
+    So for any $\eta>0$ there is $t$-independent $N_{\eta}\in\bbN$  such that for all $N\geq N_{\eta}$ we have
     \begin{align*}
         \norm{u_{\eps}(\Phi_{\eps*}^{t}\omega_{N}^{0})
         - u_{\eps}(\Phi_{\eps*}^{t}\omega^{0})}_{L^{\infty}}
@@ -2117,18 +2127,19 @@ we now show that $z_{\eps,N}$ converges to $z_{\eps}$ when $N\to\infty$.
         \nabla^{\perp}K_{\eps}(x - \Phi_{\eps}^{t}(y))
         \left(\omega_{N}^{0}(y) - \omega^{0}(y)\right)dy} \\
         &\leq \norm{\nabla^{\perp}K_{\eps}}_{L^{\infty}}
-        \norm{\omega_{N}^{0} - \omega^{0}}_{L^{1}} \leq \eta
+        \norm{\omega_{N}^{0} - \omega^{0}}_{L^{1}} \leq \eta.
     \end{align*}
-    holds whenever $N\geq N_{0}$. Fix such $N$, then since
+     Since
     $\norm{\Phi_{\eps,N}^{t}-\Phi_{\eps}^{t}}_{L^{\infty}}$
     is continuous in $t$, \eqref{3.150} yields
     \[
         \max\set{
             \partial_{t}^{+}\norm{\Phi_{\eps,N}^{t} - \Phi_{\eps}^{t}}_{L^{\infty}},
             -\partial_{t-}\norm{\Phi_{\eps,N}^{t} - \Phi_{\eps}^{t}}_{L^{\infty}},
-        } \leq C_{\alpha}M\norm{\Phi_{\eps,N}^{t} - \Phi_{\eps}^{t}}_{L^{\infty}} + \eta.
+        } \leq C_{\alpha}M\norm{\Phi_{\eps,N}^{t} - \Phi_{\eps}^{t}}_{L^{\infty}} + \eta
     \]
-    Hence, a Gr\"{o}nwall-type argument shows
+    for all $t\in[-T_{1},T_{1}]$ and  $N\ge N_\eta$.
+    Hence, a Gr\"{o}nwall-type argument shows that
     \[
         \norm{\Phi_{\eps,N}^{t} - \Phi_{\eps}^{t}}_{L^{\infty}}
         \leq \begin{cases}
@@ -2137,29 +2148,29 @@ we now show that $z_{\eps,N}$ converges to $z_{\eps}$ when $N\to\infty$.
             \eta\abs{t} & \textrm{if $M=0$}
         \end{cases}
     \]
-    for any $t\in[-T_{0},T_{0}]$, from which the claim follows.
+    for all such $(t,N)$, from which the claim follows.
 \end{proof}
 
 Since $\mathcal{L} = \bigcup_{N=1}^{\infty}\mathcal{L}_{N}$,
-Lemma~\ref{L3.8} shows $z_{\eps,N}^{t,\lambda}\to z_{\eps}^{t,\lambda}$ as $N\to\infty$
-for any $(t,\lambda)\in[-T_{0},T_{0}]\times\mathcal{L}$.
-By lower semicontinuity of $\ell(\cdot)$ and $\norm{\cdot}_{\dot{H}^{2}}$
-(see the paragraph before Lemma~\ref{L3.5}), this and \eqref{3.14} together show that
+Lemma~\ref{L3.8} shows that $\lim_{N\to\infty}z_{\eps,N}^{t,\lambda}= z_{\eps}^{t,\lambda}$ in  $\operatorname{CC}(\bbR^{2})$
+for any $\eps>0$ and $(t,\lambda)\in(-T_{1},T_{1})\times\mathcal{L}$.
+Lower semi-continuity of $\ell(\cdot)$ and $\norm{\cdot}_{\dot{H}^{2}}$ on $\operatorname{CC}(\bbR^{2})$
+(the latter by \cite[Corollary~B.3]{JeoZlaTouching}) shows that
 \[
     \ell(z_{\eps}^{t,\lambda})\norm{z_{\eps}^{t,\lambda}}_{\dot{H}^{2}}^{2}
     \leq \frac{Q(\Omega)}{1 - C_{\alpha}(L_{\theta}(\Omega) + R_{\theta}(\Omega))Q(\Omega)\abs{t}}
 \]
-for any $(t,\lambda)\in[-T_{1},T_{1}]\times\mathcal{L}$
-(recall $T_{1}\coloneqq \frac{1}{C_{\alpha}(L_{\tht}(\Omega) + R_{\tht}(\Omega))Q(\Omega)}$
-and $T_{1}\leq T_{0}$ since $Q(\Omega)\geq 4$).
-Then again by lower semicontinuity, letting $\eps\to 0^{+}$ shows that
-the same inequality holds with $z^{t,\lambda}$ in place of $z_{\eps}^{t,\lambda}$,
-so taking the supremum over $\lambda$ finally establishes
+holds for these $(\eps,t,\lambda)$.
+%\in[-T_{1},T_{1}]\times\mathcal{L}$.
+%(recall $T_{1}\coloneqq \frac{1}{C_{\alpha}(L_{\tht}(\Omega) + R_{\tht}(\Omega))Q(\Omega)}$
+%and $T_{1}\leq T_{0}$ since $Q(\Omega)\geq 4$).
+After taking $\eps\to 0$ and using the same lower semi-continuity again, we obtain the same bound with $z^{t,\lambda}$ in place of $z_{\eps}^{t,\lambda}$.  It follows that
+%Taking the supremum over $\lambda$ finally establishes
 \[
     Q(\Phi_{*}^{t}\Omega)
     \leq \frac{Q(\Omega)}{1 - C_{\alpha}(L_{\theta}(\Omega) + R_{\theta}(\Omega))Q(\Omega)\abs{t}}
 \]
-for $t\in[-T_{1},T_{1}]$. This completes the proof of Theorem~\ref{T1.4}.
+for all $t\in(-T_{1},T_{1})$.  Since $L_{\theta}(\Phi^t_*\Omega)$ and  $R_{\theta}(\Phi^t_*\Omega)$ are bounded on compact subsets of $I$, an analogous bound holds for all $t$ near any $\tau\in I$ with $Q(\Phi^\tau_*\Omega)<\infty$ (with $(\Phi^\tau_*\Omega,|t-\tau|)$ in place of $(\Omega,|t|)$).  This proves Theorem~\ref{T1.4}(ii).
 
 
 
@@ -2215,7 +2226,7 @@ for $t\in[-T_{1},T_{1}]$. This completes the proof of Theorem~\ref{T1.4}.
 % Since $w_{\eps,N}^{t,\lambda}$ is just a spatial translation of $z_{\eps,N}^{t,\lambda}$,
 % we have $\ell(w_{\eps,N}^{t,\lambda}) = \ell(z_{\eps,N}^{t,\lambda})$
 % and $\norm{w_{\eps,N}^{t,\lambda}}_{\dot{H}^{2}} = \norm{z_{\eps,N}^{t,\lambda}}_{\dot{H}^{2}}$,
-% so the lower semicontinuity of the functional
+% so the lower semi-continuity of the functional
 % $\gamma\mapsto\ell(\gamma)\norm{\gamma}_{\dot{H}^{2}}^{2}$
 % on $\operatorname{CC}(\bbR^{2})$ shows
 % \begin{align*}
@@ -2229,7 +2240,7 @@ for $t\in[-T_{1},T_{1}]$. This completes the proof of Theorem~\ref{T1.4}.
 %     {1 - C_{\alpha}(L_{\tht}(\Omega) + R_{\tht}(\Omega))Q(\Omega)\abs{t}}
 % \end{align*}
 % for any $t$ with $\abs{t} < \frac{1}{C_{\alpha}(L_{\tht}(\Omega) + R_{\tht}(\Omega))Q(\Omega)}$.
-% Then, again by lower semicontinuity of
+% Then, again by lower semi-continuity of
 % $\gamma\mapsto\ell(\gamma)\norm{\gamma}_{\dot{H}^{2}}^{2}$,
 % letting $\eps\to 0^{+}$ yields
 % \[
