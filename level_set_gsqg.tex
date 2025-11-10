@@ -2036,38 +2036,38 @@ $C$ depending  on $\alpha,\eps,N,\Omega,\tht$. This and Lemma \ref{L3.1} now yie
 %which follows from \eqref{3.3} (with $(\omega_{\eps,N},z_{\eps,N})$
 %in place of $(\omega_{\eps},z_{\eps})$) and \eqref{1.8}, this shows
 \[
-    Q(\Phi_{\eps,N*}^{t+h}\Omega) \leq e^{C\abs{h}}Q(\Phi_{\eps,N*}^{t}\Omega)
+    Q(\Phi_{\eps,N*}^{t+h}\Omega_{N}) \leq e^{C\abs{h}}Q(\Phi_{\eps,N*}^{t}\Omega_{N})
 \]
 for the same $(t,h,\lambda)$, with a new $C$ depending again only on $\alpha,\eps,N,\Omega,\tht$, 
-from which we conclude the  $Q(\Phi_{\eps,N*}^{t}\Omega)$ is upper semi-continuous in $t\in[-T_0,T_0]$ for all $N,\eps$ (this then clearly extends to all $t\in\bbR$).
+from which we conclude the  $Q(\Phi_{\eps,N*}^{t}\Omega_{N})$ is upper semi-continuous in $t\in[-T_0,T_0]$ for all $N,\eps$ (this then clearly extends to all $t\in\bbR$).
 
 Lemmas \ref{L3.1}, \ref{L3.4}, \ref{L3.7}, and Corollary~\ref{C2.7} with
 $(\omega_{\eps,N},\Omega_{N},z_{\eps,N},\Phi_{\eps,N})$ in place of
 $(\omega_{\eps},\Omega,z_{\eps}, \Phi_{\eps})$,
 and inequalities $L_{\tht}(\Omega_{N})\leq L_{\tht}(\Omega)$,
-$R_{\tht}(\Omega_{N})\leq R_{\tht}(\Omega)$, and $Q(\Phi_{\eps,N*}^{t}\Omega) \geq 4$, show that
+$R_{\tht}(\Omega_{N})\leq R_{\tht}(\Omega)$, and $Q(\Phi_{\eps,N*}^{t}\Omega_{N}) \geq 4$, show that
 \begin{align*}
     \ell(z_{\eps,N}^{t+h,\lambda})\norm{z_{\eps,N}^{t+h,\lambda}}_{\dot{H}^{2}}^{2}
-    - Q(\Phi_{\eps,N*}^{t}\Omega)
+    - Q(\Phi_{\eps,N*}^{t}\Omega_{N})
     &\leq \ell(z_{\eps,N}^{t+h,\lambda})\norm{z_{\eps,N}^{t+h,\lambda}}_{\dot{H}^{2}}^{2}
     - \ell(z_{\eps,N}^{t,\lambda})\norm{z_{\eps,N}^{t,\lambda}}_{\dot{H}^{2}}^{2} \\
     &\leq C_{\alpha}\abs{\int_{t}^{t+h}
-    (L_{\tht}(\Omega) + R_{\tht}(\Omega))Q(\Phi_{\eps,N*}^{\tau}\Omega)^{2}\,d\tau}
+    (L_{\tht}(\Omega) + R_{\tht}(\Omega))Q(\Phi_{\eps,N*}^{\tau}\Omega_{N})^{2}\,d\tau}
 \end{align*}
 holds whenever $(t,t+h,\lambda)\in[-T_{0},T_{0}]^{2}\times\mathcal{L}_{N}$
 (with $C_{\alpha}$ depending only on $\alpha$, as always).
-Using upper semi-continuity of $Q(\Phi_{\eps,N*}^{t}\Omega)$ in $t$,
+Using upper semi-continuity of $Q(\Phi_{\eps,N*}^{t}\Omega_{N})$ in $t$,
 taking the supremum over $\lambda\in\mathcal{L}_{N}$,
 dividing by $\abs{h}$, and letting $h\to 0$ now yields
 \[
     \max\set{
-        \partial_{t}^{+}Q(\Phi_{\eps,N*}^{t}\Omega),
-        -\partial_{t-}Q(\Phi_{\eps,N*}^{t}\Omega)
-    } \leq C_{\alpha}(L_{\tht}(\Omega) + R_{\tht}(\Omega))Q(\Phi_{\eps,N*}^{t}\Omega)^{2},
+        \partial_{t}^{+}Q(\Phi_{\eps,N*}^{t}\Omega_{N}),
+        -\partial_{t-}Q(\Phi_{\eps,N*}^{t}\Omega_{N})
+    } \leq C_{\alpha}(L_{\tht}(\Omega) + R_{\tht}(\Omega))Q(\Phi_{\eps,N*}^{t}\Omega_{N})^{2},
 \]
 so via a Gr\"{o}nwall-type argument we conclude that
 \begin{equation}\label{3.14}
-    Q(\Phi_{\eps,N*}^{t}\Omega) \leq \frac{Q(\Omega_{N})}
+    Q(\Phi_{\eps,N*}^{t}\Omega_{N}) \leq \frac{Q(\Omega_{N})}
     {1 - C_{\alpha}(L_{\tht}(\Omega) + R_{\tht}(\Omega))Q(\Omega_{N})\abs{t}}
     \leq \frac{Q(\Omega)}
     {1 - C_{\alpha}(L_{\tht}(\Omega) + R_{\tht}(\Omega))Q(\Omega)\abs{t}}
