@@ -502,7 +502,7 @@ We are now ready to state our general well-posedness result.
     Assume that $\theta^{0}\in L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$ admits
     a generalized layer cake representation $(\Theta,\mu)$ with
     $L_{\mu}(\Theta)<\infty$. Then there is an open interval $I\ni 0$ and a Lagrangian solution
-    $\theta$ to \eqref{1.1}--\eqref{1.2} on $I$    with initial data $\theta^{0}$ and
+    $\theta$ to \eqref{1.1}--\eqref{1.2}  on $I$    with $\alpha\in(0,\frac 12)$, initial data $\theta^{0}$, and
     the associated flow map $\Phi\in C\left(I;C(\bbR^{2};\bbR^{2})\right)$ such that
     $\sup_{t\in J}L_{\mu}(\Phi_{*}^{t}\Theta) < \infty$ for any compact interval $J\subseteq I$.  Let $I$ be the maximal such interval.
     Then the solution $\theta$ is unique and independent of the choice of $(\Theta,\mu)$, for any compact interval $J\subseteq I$ we have  $\sup_{t\in J}\max\set{\norm{\Phi^{t}}_{\dot{C}^{0,1}},    \norm{(\Phi^{t})^{-1}}_{\dot{C}^{0,1}}}<\infty$, and for any endpoint $T$  of $I$ we have either $|T|=\infty$  or
@@ -528,7 +528,7 @@ $\phi \colon\bbT\to\bbT$ (and $\bbT$ is $[0,1]$ with 0 and 1 identified).  Any $
   We then also denote by $\norm{{\gamma}}_{\dot{H}^{2}}:= \norm{{\tilde \gamma}}_{\dot{H}^{2}(\ell(\gamma)\bbT)}$ the  $L^2$ norm of the curvature of $\gamma$ (if it is finite, then $\gamma$ is an {\it $H^2$ curve}).
            Finally, we let $\Delta(\gamma_1,\gamma_2):=d(\operatorname{im}(\gamma_1), \operatorname{im}(\gamma_2))$ for any $\gamma_1,\gamma_2\in\operatorname{CC}(\bbR^{2})$ (with $d$ the distance of sets),
 %$ \coloneqq    \min_{\xi_1,\xi_2\in\bbT}\abs{\tilde{\gamma}_1(\xi_1) - \tilde{\gamma}_2(\xi_2)}$,
- and let $\operatorname{PSC}(\bbR^{2})\subseteq \operatorname{CC}(\bbR^{2})$ be the set of all positively oriented simple closed curves    in $\bbR^{2}$.  All these definitions appear in \cite{JeoZla2}.
+ and let $\operatorname{PSC}(\bbR^{2})\subseteq \operatorname{CC}(\bbR^{2})$ be the set of all positively oriented simple closed curves    in $\bbR^{2}$.  All these definitions appear in \cite{JeoZlaTouching}.
         
      We can now define the quantities relevant to studying solutions with $H^2$ level sets.
         
@@ -590,10 +590,10 @@ in effect rules out bumps with ``too sharp'' tops or bottoms.
 We can now finally state our  main result.
 
 \begin{theorem}\label{T1.4}
-    Assume that $\theta^{0}\in L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$ admits a
+    Let $\theta^{0}\in L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$ admit a
     generalized layer cake representation $(\Theta,\mu)$
     composed of simple closed curves such that $L_{\mu}(\Theta),  R_{\mu}(\Theta), Q(\Theta) < \infty$, and let $\theta\colon I\to L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$ be
-    the  Lagrangian solution to \eqref{1.1}--\eqref{1.2}
+    the  Lagrangian solution to \eqref{1.1}--\eqref{1.2} with $\alpha\in(0,\frac 12)$
 %    with the initial data $\theta^{0}$ and the associated flow map
 %    $\Phi\in C\left(I;C(\bbR^{2};\bbR^{2})\right)$ provided by 
 from Theorem~\ref{T1.2}.
@@ -603,10 +603,12 @@ from Theorem~\ref{T1.2}.
     $J\subseteq I$. 
     
     (ii) There is an open interval $I'\subseteq I$ containing 0 such that  $\sup_{t\in J}  Q(\Phi_{*}^{t}\Theta) < \infty$
-    for each compact interval    $J\subseteq I'$.  Let $I'$ be the maximal such interval.  If $T$ is its endpoint that is not an endpoint of $I$, then 
+    for each compact interval    $J\subseteq I'$.  Let $I'$ be the maximal such interval.  If $T$ is its endpoint,
+    % that is not an endpoint of $I$, then
+    then either  $|T|=\infty$ or $\lim_{t\to T} L_\mu(\Phi_{*}^{t}\Theta) = \infty$ or
     $\lim_{t\to T} Q(\Phi_{*}^{t}\Theta) = \infty$.
     
-  (iii) If $\alpha\in(0, \frac 16]$ and $T$ is a common endpoint of $I$ and $I'$,
+  (iii) If $\alpha\in(0, \frac 16]$ and $T$ is an endpoint of  $I'$,
   then either $|T|=\infty$ or $\limsup_{t\to T} Q(\Phi_{*}^{t}\Theta) = \infty$.
 \end{theorem}
 
@@ -1457,13 +1459,13 @@ such that $\partial\Theta^{\lambda} = \operatorname{im}(z^{0,\lambda})$.
 
 Let $\theta\colon I\to L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$ be the
 Lagrangian solution to \eqref{1.1}--\eqref{1.2} from Theorem~\ref{T1.2}, with  initial data $\theta^{0}$
-and  flow map $\Phi\in C\left(I;C(\bbR^{2};\bbR^{2})\right)$, and consider $T_{0}\coloneqq \frac{1}{2C_{\alpha}L_{\mu}(\Theta)}$ as in Proposition \ref{P2.8} (note that $[-T_0,T_0]\subseteq I$ because $I$ is maximal). Then since  $\Phi^{t}$ is a homeomorphism for each $t\in I$,  it follows that $\Phi_{*}^{t}\Theta$ is  composed of simple closed curves (this proves the first claim in Theorem \ref{T1.4}(i)). We denote these  $z^{t,\lambda}:=\Phi^{t}\circ z^{0,\lambda} \in\operatorname{PSC}(\bbR^{2})$, where $\Phi^{t}\circ z^{0,\lambda}\in \operatorname{CC}(\bbR^{2})$ is the curve whose representative is $\Phi^{t}\circ\tilde{z}^{0,\lambda}$ whenever  $\tilde{z}^{0,\lambda}$ is a representative of $z^{0,\lambda}$ (since $\set{z^{t,\lambda}}_{t\in I}$ is clearly a connected subset of $\operatorname{CC}(\bbR^{2})$,  \cite[Lemma~B.4]{JeoZla2} shows that each $z^{t,\lambda}$ is positively oriented).
+and  flow map $\Phi\in C\left(I;C(\bbR^{2};\bbR^{2})\right)$, and consider $T_{0}\coloneqq \frac{1}{2C_{\alpha}L_{\mu}(\Theta)}$ as in Proposition \ref{P2.8} (note that $[-T_0,T_0]\subseteq I$ because $I$ is maximal). Then since  $\Phi^{t}$ is a homeomorphism for each $t\in I$,  it follows that $\Phi_{*}^{t}\Theta$ is  composed of simple closed curves (this proves the first claim in Theorem \ref{T1.4}(i)). We denote these  $z^{t,\lambda}:=\Phi^{t}\circ z^{0,\lambda} \in\operatorname{PSC}(\bbR^{2})$, where $\Phi^{t}\circ z^{0,\lambda}\in \operatorname{CC}(\bbR^{2})$ is the curve whose representative is $\Phi^{t}\circ\tilde{z}^{0,\lambda}$ whenever  $\tilde{z}^{0,\lambda}$ is a representative of $z^{0,\lambda}$ (since $\set{z^{t,\lambda}}_{t\in I}$ is clearly a connected subset of $\operatorname{CC}(\bbR^{2})$,  \cite[Lemma~B.4]{JeoZlaTouching} shows that each $z^{t,\lambda}$ is positively oriented).
 % $\Phi^{t}\circ z^{0,\lambda}$
 %(i.e., the equivalence class in $\operatorname{CC}(\bbR^{2})$
 %of $\Phi^{t}\circ\tilde{z}^{0,\lambda}$ for any representative $\tilde{z}^{0,\lambda}$
 %of $z^{0,\lambda}$) then .
 %(Since $\set{z^{t,\lambda}}_{t\in I}$ is a connected subset of
-%$\operatorname{CC}(\bbR^{2})$, \cite[Lemma~B.4]{JeoZla2} shows that
+%$\operatorname{CC}(\bbR^{2})$, \cite[Lemma~B.4]{JeoZlaTouching} shows that
 %each $z^{t,\lambda}$ is positively oriented.)
 
 %Denote $(x_{1},x_{2})^{\perp}\coloneqq(-x_{2},x_{1})$,
@@ -1487,7 +1489,7 @@ and $\theta_{\eps}^{t}\coloneqq\theta^{0}\circ(\Phi_{\eps}^{t})^{-1}$, then fix 
     u_{\eps}(\theta_{\eps}^{t}; z_{\eps}^{t,\lambda}(s))$.
 \end{itemize}
 Proposition \ref{P2.8} shows that $\lim_{\eps\to 0} z_\eps^{t,\lambda}= z^{t,\lambda}$ in $\operatorname{CC}(\bbR^{2})$, and
-as noted in \cite[Section~4]{JeoZla2}, 
+as noted in \cite[Section~4]{JeoZlaTouching}, 
 \[
     \partial_{s}^{2}z_{\eps}^{t,\lambda}(s) = \partial_{s}\mathbf{T}_{\eps}^{t,\lambda}(s)
     = \kappa_{\eps}^{t,\lambda}(s)\mathbf{N}_{\eps}^{t,\lambda}(s)
@@ -1496,7 +1498,7 @@ as noted in \cite[Section~4]{JeoZla2},
     = -\kappa_{\eps}^{t,\lambda}(s)\mathbf{T}_{\eps}^{t,\lambda}(s)
 \]
 holds as well.
-Then the argument in \cite[Lemma~4.1]{JeoZla2} also applies here, and we obtain
+Then the argument in \cite[Lemma~4.1]{JeoZlaTouching} also applies here, and we obtain
 \begin{equation}\label{3.2}
     \begin{aligned}
         \partial_{t}\norm{z_{\eps}^{t,\lambda}}_{\dot{H}^{2}}^{2}
@@ -1761,7 +1763,7 @@ We now turn to  Theorem \ref{T1.4}(ii),
 which we prove by using Lemma \ref{L3.1} and 
 %Since $\ell(\cdot)$ and $\norm{\cdot}_{\dot{H}^{2}}$ are both
 %lower semi-continuous on $\operatorname{CC}(\bbR^{2})$
-%(the latter by \cite[Corollary~B.3]{JeoZla2}),
+%(the latter by \cite[Corollary~B.3]{JeoZlaTouching}),
 %so is $\ell(\cdot)\norm{\cdot}_{\dot{H}^{2}}^{2}$.  Therefore
 %it is enough to establish a uniform-in-$(\eps,\lambda)$ bound on
 %$\ell(z_{\eps}^{t,\lambda})\norm{z_{\eps}^{t,\lambda}}_{\dot{H}^{2}}^{2}$ for all $t$ close to 0.
@@ -1785,7 +1787,7 @@ in lemmas  below.
 \begin{proof}
     Let $d\coloneqq\frac{1}{4}\norm{\gamma}_{\dot{C}^{1,\beta}}^{-1/\beta}$
     and $\Delta\coloneqq d(x,\operatorname{im}(\gamma))$.
-    Then \cite[Lemma~A.2]{JeoZla2} shows that
+    Then \cite[Lemma~A.2]{JeoZlaTouching} shows that
     \begin{align*}
         \int_{\ell\bbT}\frac{ds}{\abs{x - \gamma(s)}^{1+2\alpha}}
         &\leq \frac{\ell}{4d}\left(
@@ -1896,7 +1898,7 @@ in lemmas  below.
         Q(\Phi_{\eps*}^{t}\Theta)\norm{z_{\eps}^{t,\lambda}}_{\dot{H}^{2}}^{2},
     \]
     where the second inequality holds by
-    $Q(\Phi_{\eps*}^{t}\Theta)\geq 4$, which in turn follows from \cite[Lemma~A.1]{JeoZla2}.
+    $Q(\Phi_{\eps*}^{t}\Theta)\geq 4$, which in turn follows from \cite[Lemma~A.1]{JeoZlaTouching}.
     Hence, it remains to estimate the second integral, which we denote $G_{1}$.
     We will suppress $t$ from the notation for the sake of simplicity
     because  it will be fixed in the arguments below.
@@ -2029,7 +2031,7 @@ in lemmas  below.
 
     \textbf{Estimate for $G_{3}$.} We can assume $R_{\mu}(\Phi_{\eps*}\Theta)<\infty$,
     in which case $\Delta_{\eps}^{\lambda,\lambda'} > 0$
-    for $|\mu|$-almost all $\lambda'$.  Thus we can apply \cite[Lemma~A.4]{JeoZla2}
+    for $|\mu|$-almost all $\lambda'$.  Thus we can apply \cite[Lemma~A.4]{JeoZlaTouching}
     to conclude that
     \begin{equation}\label{3.100}
         G_{3} \leq C_{\alpha}\overline{\int_{\mathcal{L}}}
@@ -2051,12 +2053,12 @@ in lemmas  below.
         }
     \end{equation*}
     for $\ell\in(0,\infty)$ and $f\in L^{1}(\ell\bbT)$.
-%    from (A.2) in \cite{JeoZla2}.
+%    from (A.2) in \cite{JeoZlaTouching}.
     Let us split the integrand of \eqref{3.100} into the sum of terms with numerators
     $\abs{\kappa_{\eps}^{\lambda}(s)}\mathcal{M}\kappa_{\eps}^{\lambda}(s)$ and
     $\abs{\kappa_{\eps}^{\lambda}(s)}\mathcal{M}\kappa_{\eps}^{\lambda'}(s')$.  Then
     the maximal inequality 
-    %(see (A.3) in \cite{JeoZla2})
+    %(see (A.3) in \cite{JeoZlaTouching})
     \begin{equation*}
         \norm{\mathcal{M}f}_{L^{2}} \leq C\norm{f}_{L^{2}},
     \end{equation*}
@@ -2162,7 +2164,7 @@ and $\theta_{\eps,N}^{t} \coloneqq \theta_{N}^{0} \circ (\Phi_{\eps,N}^{t})^{-1}
 Then \eqref{3.12}, the Schwarz inequality,
 $\ell(\gamma)\norm{\gamma}_{\dot{H}^{2}}^{2} \geq 4$
 for any $\gamma\in\operatorname{CC}(\bbR^{2})$
-(see \cite[Lemma~A.1]{JeoZla2}), Lemma \ref{L3.1}, and \eqref{1.8} show that
+(see \cite[Lemma~A.1]{JeoZlaTouching}), Lemma \ref{L3.1}, and \eqref{1.8} show that
 \begin{align*}
     \abs{\partial_{t}\norm{z_{\eps,N}^{t,\lambda}}_{\dot{H}^{2}}^{2}}
     &\leq 5\norm{u_{\eps}(\theta_{\eps,N}^{t})}_{\dot{C}^{0,1}}
@@ -2307,7 +2309,7 @@ Since $\mathcal{L} = \bigcup_{N=1}^{\infty}\mathcal{L}_{N}$,
 Lemma~\ref{L3.8} shows that $\lim_{N\to\infty}z_{\eps,N}^{t,\lambda}= z_{\eps}^{t,\lambda}$ in  $\operatorname{CC}(\bbR^{2})$
 for any $\eps>0$ and $(t,\lambda)\in(-T_{1},T_{1})\times\mathcal{L}$.
 Lower semi-continuity of $\ell(\cdot)$ and $\norm{\cdot}_{\dot{H}^{2}}$ on $\operatorname{CC}(\bbR^{2})$
-(the latter by \cite[Corollary~B.3]{JeoZla2}) and \eqref{3.14} show that
+(the latter by \cite[Corollary~B.3]{JeoZlaTouching}) and \eqref{3.14} show that
 \[
     \ell(z_{\eps}^{t,\lambda})\norm{z_{\eps}^{t,\lambda}}_{\dot{H}^{2}}^{2}
     \leq \frac{Q(\Theta)}{1 - C_{\alpha}(L_{\mu}(\Theta) + R_{\mu}(\Theta))Q(\Theta)\abs{t}}
@@ -2776,7 +2778,7 @@ L. A. Caffarelli and N. M. Rivi\`{e}re,
 \textit{On the Rectifiability of Domains with Finite Perimeter},
 Ann. Sc. Norm. Super. Pisa, Cl. Sci., IV. Ser. \textbf{3} (1976), 177--186.
 
-\bibitem{JeoZla2}
+\bibitem{JeoZlaTouching}
 J. Jeon and A. Zlato\v{s},
 \textit{Well-Posedness and Finite Time Singularity for Touching g-SQG Patches on the Plane},
 preprint.
