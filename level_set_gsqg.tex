@@ -566,17 +566,20 @@ $\phi \colon\bbT\to\bbT$ (and $\bbT$ is $[0,1]$ with 0 and 1 identified).  Any $
 \begin{definition}
     Let $(\Theta,\mu)$ be a generalized layer cake representation  $\theta\in L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$.  If for each
     $\lambda\in\mathcal{L}$ there is $z^{\lambda}\in\operatorname{PSC}(\bbR^{2})$  such that $\Theta^{\lambda}$ is a bounded open set with $\partial\Theta^{\lambda} = \operatorname{im}(z^{\lambda})$, then 
-   $(\Theta,\mu)$ (or just $\Theta)$ is \emph{composed of simple closed curves}, and we let
-    \begin{equation*}
+    $(\Theta,\mu)$ (or just $\Theta)$ is \emph{composed of simple closed curves}, and we let
+    \begin{equation*}\begin{gathered}
         R_{\mu}(\Theta) \coloneqq \sup_{\lambda\in\mathcal{L}}
         \ell(z^{\lambda})^{1/2}
         %\overline{\int_{\mathcal{L}}}
         \int_{\mathcal{L}}
         \frac{d|\mu|(\lambda')}
-        {\ell(z^{\lambda'})^{1/2}\Delta(z^{\lambda},z^{\lambda'})^{2\alpha}} \qquad\text{and}\qquad
-                Q(\Theta) \coloneqq \sup_{\lambda\in\mathcal{L}}
-        \ell(z^{\lambda})\norm{z^{\lambda}}_{\dot{H}^{2}}^{2}.
-    \end{equation*}
+        {\ell(z^{\lambda'})^{1/2}\Delta(z^{\lambda},z^{\lambda'})^{2\alpha}}, \qquad
+        Q(\Theta) \coloneqq \sup_{\lambda\in\mathcal{L}}
+        \ell(z^{\lambda})\norm{z^{\lambda}}_{\dot{H}^{2}}^{2},\\
+        \Sigma(\Theta) \coloneqq \inf_{\lambda\in\mathcal{L}}\abs{\Theta^{\lambda}},
+        \qquad\text{and}\qquad
+        \Lambda(\Theta) \coloneqq \sup_{\lambda\in\mathcal{L}}\ell(z^{\lambda}).
+    \end{gathered}\end{equation*}
 \end{definition}
 
 
@@ -646,7 +649,10 @@ from Theorem~\ref{T1.2}.
     then either  $|T|=\infty$ or $\lim_{t\to T} L_\mu(\Phi_{*}^{t}\Theta) = \infty$ or
     $\lim_{t\to T} Q(\Phi_{*}^{t}\Theta) = \infty$.
     
-  (iii) If $\alpha\in(0, \frac 16]$ and $T$ is an endpoint of  $I'$,
+  (iii) Suppose in addition that $\alpha\in\left(0,\frac{1}{6}\right]$,
+  $\norm{\mu}_{\mathrm{TV}}<\infty$, $\Sigma(\Theta)>0$ and $\Lambda(\Theta)<\infty$.
+  % If $\alpha\in(0, \frac 16]$ and $T$ is an endpoint of  $I'$,
+  If $T$ is an endpoint of $I'$,
   then either $|T|=\infty$ or $\limsup_{t\to T} Q(\Phi_{*}^{t}\Theta) = \infty$.
 \end{theorem}
 
@@ -1484,7 +1490,7 @@ now yields  Theorem~\ref{T1.2}.
 
 
 
-\section{Proof of Theorem~\ref{T1.4}}\label{S3}
+\section{Proof of Theorem~\ref{T1.4}(i)--(ii)}\label{S3}
 
 Again, all constants $C_{\alpha}$ below
 can change from one inequality to another, but they always only depend  on $\alpha$.
@@ -2716,6 +2722,104 @@ for all $t\in(-T_{1},T_{1})$.  Since $L_{\mu}(\Phi^t_*\Theta)$ and  $R_{\mu}(\Ph
 %     \]
 %     and since $\delta>0$ is arbitrary, the claim follows.
 % \end{proof}
+
+
+\section{Proof of Theorem~\ref{T1.4}(iii)}\label{S4}
+
+We now suppose $\alpha\in\left(0,\frac{1}{6}\right]$,
+$\norm{\mu}_{\mathrm{TV}}<\infty$, $\Sigma(\Theta)>0$ and $\Lambda(\Theta)<\infty$.
+Let $T$ be an endpoint of the interval $I'$
+(recall that $I'\subseteq I$ is the maximal open interval such that
+$\sup_{t\in J}Q(\Phi_{*}^{t}\Theta) < \infty$ holds for each compact interval $J\subseteq I'$),
+and assume $T$ is finite. We now suppose
+$\limsup_{t\to T}Q(\Phi_{*}^{t}\Theta) < \infty$ and draw a contradiction.
+
+Note that $Q(\Phi_{*}^{t}\Theta)$ is lower semi-continuous in $t$,
+because it is the supremum of lower semi-continuous functions
+$\ell(z^{t,\lambda})\norm{z^{t,\lambda}}_{\dot{H}^{2}}^{2}$ for $\lambda\in\mathcal{L}$
+(recall that $\ell(\cdot)$ and $\norm{\cdot}_{\dot{H}^{2}}$ are lower semi-continuous
+on $\operatorname{CC}(\bbR^{2})$, where the latter is by
+\cite[Corollary B.3]{JeoZla2}). Therefore, $Q(\Phi_{*}^{T}\Theta)<\infty$,
+so $T$ must be an endpoint of $I$ as well, because otherwise
+the definition of $I'$ and Theorem~\ref{T1.4}(ii)
+applied to the inital datum $\theta^{T}$ at the initial time $T$ yield a contradiction.
+Hence, it is enough to show that $\lim_{t\to T}L_{\mu}(\Phi_{*}^{t}\Theta) < \infty$,
+which contradicts to Theorem~\ref{T1.2}.
+
+We will now assume $T>0$ because the other case can be done in the same way.
+Then we have $\sup_{t\in[0,T)}Q(\Phi_{*}^{t}\Theta) < \infty$,
+so the isoperimetric inequality shows
+\[
+    M\coloneqq \sup_{t\in[0,T)}\sup_{\lambda\in\mathcal{L}}
+    \norm{z^{t,\lambda}}_{\dot{H}^{2}}^{2}
+    \leq \sup_{t\in[0,T)}\frac{Q(\Phi_{*}^{t}\Theta)}
+    {\inf_{\lambda\in\mathcal{L}}\ell(z^{t,\lambda})}
+    \leq \sup_{t\in[0,T)}\frac{Q(\Phi_{*}^{t}\Theta)}{2\sqrt{\pi}\Sigma(\Phi_{*}^{t}\Theta)}
+    = \sup_{t\in[0,T)}\frac{Q(\Phi_{*}^{t}\Theta)}{2\sqrt{\pi}\Sigma(\Theta)} < \infty.
+\]
+
+\begin{lemma}
+    \[
+        \ell(z^{t,\lambda}) \leq
+        \left(
+            \ell(z^{0,\lambda}) +
+            C_{\alpha}T\left(
+                \norm{\theta^{0}}_{L^{1}} + \norm{\theta^{0}}_{L^{\infty}}
+            \right)
+        \right)^{2}M.
+    \]
+\end{lemma}
+
+\begin{proof}
+    
+\end{proof}
+
+
+
+Fix any $\eps>0$. We continue to use the notations
+$\Phi_{\eps}^{t}$, $\theta_{\eps}^{t}$,
+$z_{\eps}^{t,\lambda}$, $\ell_{\eps}^{t,\lambda}$,
+$\mathbf{T}_{\eps}^{t,\lambda}(s)$, $\mathbf{N}_{\eps}^{t,\lambda}(s)$,
+and $u_{\eps}^{t,\lambda}(s)$ from Section~\ref{S3}
+(with the chosen arclength parametrization of $z_{\eps}^{t,\lambda}$).
+
+\begin{lemma}
+    \[
+        \norm{\partial_{s}u_{\eps}^{t,\lambda}}_{L^{\infty}}
+    \]
+\end{lemma}
+
+\begin{proof}
+    In this proof, we suppress $t$ from the notations for simplicity
+    since we will only work with quantities at a single time instance.
+    For any $s\in\ell_{\eps}^{\lambda}\bbT$, Fubini's theorem
+    (recall $\Theta$ is of finite measure) and Green's theorem show
+    \begin{align*}
+        \partial_{s}u_{\eps}^{\lambda}(s)
+        &= D\big(u_{\eps}(\theta_{\eps})\big)(z_{\eps}^{\lambda}(s))
+        (\mathbf{T}_{\eps}^{\lambda}(s)) \\
+        &= \int_{\bbR^{2}}D(\nabla^{\perp}K_{\eps})
+        (z_{\eps}^{\lambda}(s) - y)(\mathbf{T}_{\eps}^{\lambda}(s))
+        \theta_{\eps}(y)\,dy \\
+        &= \int_{\mathcal{L}}\int_{\Phi_{\eps}(\Theta^{\lambda'})}
+        D(\nabla^{\perp}K_{\eps})
+        (z_{\eps}^{\lambda}(s) - y)(\mathbf{T}_{\eps}^{\lambda}(s))\,dy\,d\mu(\lambda') \\
+        &= \int_{\mathcal{L}}\int_{\ell_{\eps}^{\lambda'}\bbT}
+        DK_{\eps}(z_{\eps}^{\lambda}(s) - z_{\eps}^{\lambda'}(s'))
+        (\mathbf{T}_{\eps}^{\lambda}(s))\mathbf{T}_{\eps}^{\lambda'}(s')\,ds'\,d\mu(\lambda').
+    \end{align*}
+    Then the proof of (2.3) in \cite{JeoZla2} (with $\beta=1/2$) applies and we obtain
+    that the integrand is bounded by
+    \[
+        \ell_{\eps}^{\lambda'}\max\set{
+            \norm{z_{\eps}^{\lambda}}_{\dot{H}^{2}},
+            \norm{z_{\eps}^{\lambda'}}_{\dot{H}^{2}}
+        }^{2+4\alpha}
+        \leq \ell_{\eps}^{\lambda'}\left(
+            \frac{Q(\Phi_{\eps*}\Theta)}{\Sigma(\Phi_{\eps*}\Theta)}
+        \right)^{1+2\alpha}.
+    \]
+\end{proof}
 
 
 %\appendix
