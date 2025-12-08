@@ -567,7 +567,8 @@ $\phi \colon\bbT\to\bbT$ (and $\bbT$ is $[0,1]$ with 0 and 1 identified).  Any $
     Let $(\Theta,\mu)$ be a generalized layer cake representation  $\theta\in L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$.  If for each
     $\lambda\in\mathcal{L}$ there is $z^{\lambda}\in\operatorname{PSC}(\bbR^{2})$  such that $\Theta^{\lambda}$ is a bounded open set with $\partial\Theta^{\lambda} = \operatorname{im}(z^{\lambda})$, then 
     $(\Theta,\mu)$ (or just $\Theta)$ is \emph{composed of simple closed curves}, and we let
-    \begin{equation*}\begin{gathered}
+    \begin{equation*}
+    %\begin{gathered}
         R_{\mu}(\Theta) \coloneqq \sup_{\lambda\in\mathcal{L}}
         \ell(z^{\lambda})^{1/2}
         %\overline{\int_{\mathcal{L}}}
@@ -575,11 +576,13 @@ $\phi \colon\bbT\to\bbT$ (and $\bbT$ is $[0,1]$ with 0 and 1 identified).  Any $
         \frac{d|\mu|(\lambda')}
         {\ell(z^{\lambda'})^{1/2}\Delta(z^{\lambda},z^{\lambda'})^{2\alpha}}, \qquad
         Q(\Theta) \coloneqq \sup_{\lambda\in\mathcal{L}}
-        \ell(z^{\lambda})\norm{z^{\lambda}}_{\dot{H}^{2}}^{2},\\
-        \Sigma(\Theta) \coloneqq \inf_{\lambda\in\mathcal{L}}\abs{\Theta^{\lambda}},
-        \qquad\text{and}\qquad
-        \Lambda(\Theta) \coloneqq \sup_{\lambda\in\mathcal{L}}\ell(z^{\lambda}).
-    \end{gathered}\end{equation*}
+        \ell(z^{\lambda})\norm{z^{\lambda}}_{\dot{H}^{2}}^{2}.
+%        \\
+%        \Sigma(\Theta) \coloneqq \inf_{\lambda\in\mathcal{L}}\abs{\Theta^{\lambda}},
+%        \qquad\text{and}\qquad
+%        \Lambda(\Theta) \coloneqq \sup_{\lambda\in\mathcal{L}}\ell(z^{\lambda}).
+%    \end{gathered}
+    \end{equation*}
 \end{definition}
 
 
@@ -645,17 +648,20 @@ from Theorem~\ref{T1.2}.
     $J\subseteq I$. 
     
     (ii) There is an open interval $I'\subseteq I$ containing 0 such that  $\sup_{t\in J}  Q(\Phi_{*}^{t}\Theta) < \infty$
-    for each compact interval    $J\subseteq I'$.  Let $I'$ be the maximal such interval.  If $T$ is its endpoint,
+    for each compact interval    $J\subseteq I'$.  Let $I'$ be the maximal such interval and $T$ its endpoint.
     % that is not an endpoint of $I$, then
-    then either  $|T|=\infty$ or $\lim_{t\to T} L_\mu(\Phi_{*}^{t}\Theta) = \infty$ or
+    Then either  $|T|=\infty$ or $\lim_{t\to T} L_\mu(\Phi_{*}^{t}\Theta) = \infty$ or
     $\lim_{t\to T} Q(\Phi_{*}^{t}\Theta) = \infty$.
     
-  (iii) Suppose in addition that $\alpha\in\left(0,\frac{1}{6}\right]$,
-  $\norm{\mu}_{\mathrm{TV}}<\infty$, $\Sigma(\Theta)>0$ and $\Lambda(\Theta)<\infty$.
+  (iii) If also $\alpha\in\left(0,\frac{1}{6}\right]$,
+  $|\mu|(\mathcal L)<\infty$,  $\inf_{\lambda\in\mathcal{L}}\abs{\Theta^{\lambda}}>0$, and 
+%$ \sup_{\lambda\in\mathcal{L}}\ell(z^{\lambda})<\infty$, 
+$\int_{\mathcal{L}}\ell(z^{t_{n},\lambda})\,d|\mu|(\lambda)<\infty$, then for
   % If $\alpha\in(0, \frac 16]$ and $T$ is an endpoint of  $I'$,
-  If $T$ is an endpoint of $I'$,
-  then either $|T|=\infty$ or $\limsup_{t\to T} Q(\Phi_{*}^{t}\Theta) = \infty$.
+  any endpoint $T$ of $I'$ we have either $|T|=\infty$ or $\limsup_{t\to T} Q(\Phi_{*}^{t}\Theta) = \infty$.
 \end{theorem}
+
+{\it Remark.}  (iii) means $H^2$ norms blow up...
 
 \vskip 3mm
 \noindent
@@ -2727,48 +2733,56 @@ for all $t\in(-T_{1},T_{1})$.  Since $L_{\mu}(\Phi^t_*\Theta)$ and  $R_{\mu}(\Ph
 
 \section{Proof of Theorem~\ref{T1.4}(iii)}\label{S4}
 
-We now suppose $\alpha\in\left(0,\frac{1}{6}\right]$,
-$\norm{\mu}_{\mathrm{TV}}<\infty$, $\Sigma(\Theta)>0$ and $\Lambda(\Theta)<\infty$.
-Let $T$ be an endpoint of the interval $I'$
-(recall that $I'\subseteq I$ is the maximal open interval such that
-$\sup_{t\in J}Q(\Phi_{*}^{t}\Theta) < \infty$ holds for each compact interval $J\subseteq I'$),
-and assume $T$ is finite. We now suppose
-$\limsup_{t\to T}Q(\Phi_{*}^{t}\Theta) < \infty$ and draw a contradiction.
-
-Note that $Q(\Phi_{*}^{t}\Theta)$ is lower semi-continuous in $t$,
-because it is the supremum of lower semi-continuous functions
-$\ell(z^{t,\lambda})\norm{z^{t,\lambda}}_{\dot{H}^{2}}^{2}$ for $\lambda\in\mathcal{L}$
-(recall that $\ell(\cdot)$ and $\norm{\cdot}_{\dot{H}^{2}}$ are lower semi-continuous
-on $\operatorname{CC}(\bbR^{2})$, where the latter is by
-\cite[Corollary B.3]{JeoZla2}). Therefore, $Q(\Phi_{*}^{T}\Theta)<\infty$,
-so $T$ must be an endpoint of $I$ as well, because otherwise
-the definition of $I'$ and Theorem~\ref{T1.4}(ii)
-applied to the inital datum $\theta^{T}$ at the initial time $T$ yield a contradiction.
-Hence, it is enough to show that $\lim_{t\to T}L_{\mu}(\Phi_{*}^{t}\Theta) < \infty$,
-which contradicts to Theorem~\ref{T1.2}.
-
-We will now assume $T>0$ because the other case can be done in the same way.
-Then we have $\sup_{t\in[0,T)}Q(\Phi_{*}^{t}\Theta) < \infty$,
-so the isoperimetric inequality shows
+Once again, all constants $C_{\alpha}$ below
+can change from one inequality to another, but they always only depend  on $\alpha$.
+Let 
 \[
+\Sigma(\Theta):= \inf_{\lambda\in\mathcal{L}}\abs{\Theta^{\lambda}}>0 \qquad\text{and}\qquad \Lambda(\Theta) \coloneqq \int_{\mathcal{L}}\ell(z^{t_{n},\lambda})\,d|\mu|(\lambda)<\infty.
+\]
+We now also assume that $\alpha\in\left(0,\frac{1}{6}\right]$,
+$|\mu|(\mathcal L)<\infty$, and  $T$ is an endpoint of the interval $I'$ with $|T|<\infty$
+ and $S:=\limsup_{t\to T}Q(\Phi_{*}^{t}\Theta) < \infty$.  We will then obtain a contradiction.
+ % (towards contradiction).
+
+Since $\ell(\cdot)$ and $\norm{\cdot}_{\dot{H}^{2}}$ are lower semi-continuous
+on $\operatorname{CC}(\bbR^{2})$ (see the last paragraph of Section~\ref{S3}),  $Q(\Phi_{*}^{t}\Theta)$ is lower semi-continuous in $t$.
+%because it is the supremum of lower semi-continuous functions
+%$\ell(z^{t,\lambda})\norm{z^{t,\lambda}}_{\dot{H}^{2}}^{2}$ for $\lambda\in\mathcal{L}$
+%(recall that $\ell(\cdot)$ and $\norm{\cdot}_{\dot{H}^{2}}$ are lower semi-continuous
+%on $\operatorname{CC}(\bbR^{2})$, where the latter is by
+%\cite[Corollary B.3]{JeoZla2}). 
+So if $T$ is not an endpoint of $I$, we obtain $Q(\Phi_{*}^{T}\Theta)<\infty$ and hence a contradiction with Theorems \ref{T1.2} and \ref{T1.4}(ii).  Therefore 
+ $T$ is an endpoint of $I$, and the desired contradiction will follow once we
+ % as well, because otherwise
+%the definition of $I'$ and Theorem~\ref{T1.4}(ii)
+%applied to the inital datum $\theta^{T}$ at the initial time $T$ yield a contradiction.
+show  $\limsup_{t\to T}L_{\mu}(\Phi_{*}^{t}\Theta) < \infty$.
+%which contradicts to Theorem~\ref{T1.2}.
+
+We can assume that $T>0$ without loss because the other case is identical.
+Then 
+%we have $\sup_{t\in[0,T)}Q(\Phi_{*}^{t}\Theta) < \infty$, so 
+the isoperimetric inequality and $\Phi^{t}$ being measure-preserving show that
+\begin{align*}
     M\coloneqq \sup_{t\in[0,T)}\sup_{\lambda\in\mathcal{L}}
     \norm{z^{t,\lambda}}_{\dot{H}^{2}}^{2}
-    \leq \sup_{t\in[0,T)}\frac{Q(\Phi_{*}^{t}\Theta)}
+    & \leq \sup_{t\in[0,T)}\frac{Q(\Phi_{*}^{t}\Theta)}
     {\inf_{\lambda\in\mathcal{L}}\ell(z^{t,\lambda})}
-    \leq \sup_{t\in[0,T)}\frac{Q(\Phi_{*}^{t}\Theta)}{2\sqrt{\pi}\Sigma(\Phi_{*}^{t}\Theta)}
-    = \sup_{t\in[0,T)}\frac{Q(\Phi_{*}^{t}\Theta)}{2\sqrt{\pi}\Sigma(\Theta)} < \infty.
-\]
-Note that the last equality is because each $\Phi^{t}$ is measure-preserving.
+     \leq \sup_{t\in[0,T)}\frac{Q(\Phi_{*}^{t}\Theta)}{2\sqrt{\pi}\Sigma(\Phi_{*}^{t}\Theta)^{1/2}}
+    \\ &    = \sup_{t\in[0,T)}\frac{Q(\Phi_{*}^{t}\Theta)}{2\sqrt{\pi}\Sigma(\Theta)^{1/2}} < \infty.
+\end{align*}
+%Note that the last equality is because each $\Phi^{t}$ is measure-preserving.
 
 \begin{lemma}\label{L4.1}
+For some $C_\alpha$ and all $(t,\lambda)\in [0,T)\times\mathcal L$ we have
     \begin{equation}\label{4.1}
         \ell(z^{t,\lambda}) \leq
-        \left(
+        S \left(
             \frac{\ell(z^{0,\lambda})}{2} +
             C_{\alpha}T\left(
                 \norm{\theta^{0}}_{L^{1}} + \norm{\theta^{0}}_{L^{\infty}}
             \right)
-        \right)^{2}M.
+        \right) .
     \end{equation}
 \end{lemma}
 
@@ -2777,27 +2791,30 @@ Note that the last equality is because each $\Phi^{t}$ is measure-preserving.
     rectifiable $\gamma\in\operatorname{CC}(\bbR^{2})$ we have
     \[
         \ell(\gamma) \leq \operatorname{diam}(\operatorname{im}(\gamma))^{2}
-        \norm{\gamma}_{\dot{H}^{2}}^{2}.
+        \norm{\gamma}_{\dot{H}^{2}}^{2} 
+        \le \operatorname{diam}(\operatorname{im}(\gamma))\, \ell(\gamma) \norm{\gamma}_{\dot{H}^{2}}^{2} .
     \]
-    Then it is enough to prove that for any $t\in[0,T)$,
+    Then it is enough to prove that for all $(t,\lambda)\in [0,T)\times\mathcal L$ we have
     \begin{equation}\label{4.2}
         \partial_{t}^{+}\operatorname{diam}(\operatorname{im}(z^{t,\lambda}))
-        \leq C_{\alpha}\left(\norm{\theta^{0}}_{L^{1}} + \norm{\theta^{0}}_{L^{\infty}}\right),
+        \leq C_{\alpha}\left(\norm{\theta^{0}}_{L^{1}} + \norm{\theta^{0}}_{L^{\infty}}\right)
     \end{equation}
-    because then \eqref{4.1} follows by a Gr\"{o}nwall-type argument
-    and the inequality $\operatorname{diam}(\operatorname{im}(\gamma)) \leq \ell(\gamma)/2$.
+    because then this and $\operatorname{diam}(\operatorname{im}(\gamma)) \leq \frac{\ell(\gamma)}2$
+    %, and  a Gr\"{o}nwall-type argument 
+    yield  \eqref{4.1}.
 
     Let $0\leq t\leq t+h<T$ and pick any $x,y\in\operatorname{im}(z^{0,\lambda})$
     such that $\abs{\Phi^{t+h}(x) - \Phi^{t+h}(y)}
-    = \operatorname{diam}(\operatorname{im}(z^{t+h,\lambda}))$. Then
-    \begin{equation}\label{4.3}\begin{aligned}
+    = \operatorname{diam}(\operatorname{im}(z^{t+h,\lambda}))$. Then clearly
+    \begin{equation*} %\label{4.3}
+    \begin{aligned}
         \operatorname{diam}(\operatorname{im}(z^{t+h,\lambda}))
         - \operatorname{diam}(\operatorname{im}(z^{t,\lambda}))
         &\leq \abs{\Phi^{t+h}(x) - \Phi^{t+h}(y)} - \abs{\Phi^{t}(x) - \Phi^{t}(y)} \\
-        &\leq \int_{t}^{t+h}\abs{u(\theta^{\tau};\Phi^{\tau}(x))}
-        + \abs{u(\theta^{\tau};\Phi^{\tau}(y))}d\tau.
-    \end{aligned}\end{equation}
-    For any $\tau\in[0,T)$, we know
+        &\leq \int_{t}^{t+h} \left(\abs{u(\theta^{\tau};\Phi^{\tau}(x))}
+        + \abs{u(\theta^{\tau};\Phi^{\tau}(y))} \right)d\tau,
+    \end{aligned}\end{equation*}
+    and for any $\tau\in[0,T)$ we have
     \begin{equation*}
         \norm{u(\theta^{\tau})}_{L^{\infty}}
         \leq C_{\alpha}\left(
@@ -2807,72 +2824,70 @@ Note that the last equality is because each $\Phi^{t}$ is measure-preserving.
             \norm{\theta^{0}}_{L^{1}} + \norm{\theta^{0}}_{L^{\infty}}
         \right)
     \end{equation*}
-    for some $C_{\alpha}$ since $\Phi^{\tau}$ is measure-preserving,
-    which together with \eqref{4.3} prove \eqref{4.2}.
+    for some $C_{\alpha}$ since $\Phi^{\tau}$ is measure-preserving.
+    This now indeed yields \eqref{4.2}.
 \end{proof}
 
-Fix $\eta>0$ and for each $\tilde{\Theta}\subseteq\bbR^{2}\times\mathcal{L}$
-in the product $\sigma$-algebra define
+For any $\eta>0$ and any $\tilde{\Theta}\subseteq\bbR^{2}\times\mathcal{L}$
+from the product $\sigma$-algebra define
 \[
     L_{\mu}^{\eta}(\tilde{\Theta}) \coloneqq
     \sup_{x\in\bbR^{2}}\int_{\mathcal{L}}\frac{d|\mu|(\lambda)}
     {\left(d(x,\partial\tilde{\Theta}^{\lambda}) + \eta\right)^{2\alpha}}.
 \]
-Then a similar proof as Proposition~\ref{P2.6} shows that
-$L_{\mu}^{\eta}(\Phi_{*}^{t}\Theta)$ is continuous in $t$.
-Note that $L_{\mu}^{\eta}(\tilde{\Theta}) \to L_{\mu}(\tilde{\Theta})$ as $\eta\to 0^{+}$,
-so it is enough to establish an $\eta$-independent upper bound of
+Then from $\Phi-{\rm Id}\in C\left([0,T);BC(\bbR^{2};\bbR^{2})\right)$ (see Proposition~\ref{P2.8}) we see that
+%a similar proof as in Proposition~\ref{P2.6} shows that
+$L_{\mu}^{\eta}(\Phi_{*}^{t}\Theta)$ is continuous in $t\in[0,T)$.
+Since $\lim_{\eta\to 0^{+}} L_{\mu}^{\eta}(\tilde{\Theta}) = L_{\mu}(\tilde{\Theta})$,
+ it will suffice to obtain the following $\eta$-independent upper bound on
 $L_{\mu}^{\eta}(\Phi_{*}^{t}\Theta)$.
 
 \begin{lemma}\label{L4.2}
-    There is $C_{\alpha}$ such that for any $t\in[0,T)$,
+    There is $C_{\alpha}$ such that for any $\eta>0$ and any $t\in[0,T)$ we have
     \begin{equation}\label{4.4}
         \partial_{t}^{+}L_{\mu}^{\eta}(\Phi_{*}^{t}\Theta)
-        \leq C_{\alpha}\norm{\mu}_{\mathrm{TV}}M^{2+2\alpha}\left(
-            \Lambda(\Theta) + T\left(
-                \norm{\theta^{0}}_{L^{1}} + \norm{\theta^{0}}_{L^{\infty}}
-            \right)
+        \leq C_{\alpha}SM^{1+2\alpha}\left(
+            \Lambda(\Theta) + T|\mu|(\mathcal L) \left(   \norm{\theta^{0}}_{L^{1}} +  \norm{\theta^{0}}_{L^{\infty}} \right)
         \right)
         L_{\mu}^{\eta}(\Phi_{*}^{t}\Theta).
     \end{equation}
 \end{lemma}
 
 \begin{proof}
-    Fix $t\in[0,T)$ and find a decreasing sequence $\seq{t_{n}}_{n=1}^{\infty}$
-    such that $t_{n}\to t$ and
-    \[
+    Fix $\eta>0$ and $t\in[0,T)$, and find a decreasing sequence $t_{n}\to t$ such that
+    \beq\lb{11.101}
         \partial_{t}^{+}L_{\mu}^{\eta}(\Phi_{*}^{t}\Theta)
         = \lim_{n\to\infty}\frac{L_{\mu}^{\eta}(\Phi_{*}^{t_{n}}\Theta)
         - L_{\mu}^{\eta}(\Phi_{*}^{t}\Theta)}{t_{n} - t}.
-    \]
-    Without loss, we can assume $t_{n}\leq t + \frac{1}{2C_{\alpha}L_{\mu}(\Phi_{*}^{t}\Theta)}$
+    \eeq
+    Without loss assume that $t_{1}\leq t + \frac{1}{2C_{\alpha}L_{\mu}(\Phi_{*}^{t}\Theta)}$
     with $C_{\alpha}$ from Lemma~\ref{L2.1}, so that
     \begin{equation}\label{4.5}
         L_{\mu}(\Phi_{*}^{\tau}\theta)\leq 2L_{\mu}(\Phi_{*}^{t}\Theta)
     \end{equation}
-    holds for all $\tau\in [t,t_{n}]$, by Proposition~\ref{P2.8}.
-    Fix $n\in\bbN$ and pick $x\in\bbR^{2}$ such that
-    \[
+    holds for all $\tau\in [t,t_{1}]$ by Proposition~\ref{P2.8}.
+    Fix any $n\in\bbN$ and pick $x\in\bbR^{2}$ such that
+    \beq\lb{11.100}
         L_{\mu}^{\eta}(\Phi_{*}^{t_{n}}\Theta)
         \leq \int_{\mathcal{L}}\frac{d|\mu|(\lambda)}
         {\left(
             d(\Phi^{t_{n}}(x), \operatorname{im}(z^{t_{n},\lambda})) + \eta
         \right)^{2\alpha}}
         + \frac{t_{n} - t}{n}.
-    \]
-    Then, fix $\lambda\in\mathcal{L}$ and pick
+    \eeq
+    Then fix any $\lambda\in\mathcal{L}$ and pick
     $y\in\operatorname{im}(z^{0,\lambda})$ such that
     \[
         d(\Phi^{t_{n}}(x), \operatorname{im}(z^{t_{n},\lambda}))
         = \abs{\Phi^{t_{n}}(x) - \Phi^{t_{n}}(y)}.
     \]
 
-    Now, for given $n\in\bbN$, $L_{\mu}^{\eta}(\Phi_{*}^{t_{n}}\Theta)
-    \leq L_{\mu}(\Phi_{*}^{t_{n}}\Theta) <\infty$ shows that
-    for $|\mu|$-almost every $\lambda$, we have
-    $\abs{\Phi^{t_{n}}(x) - \Phi^{t_{n}}(y)} > 0$,
-    that is, $x\neq y$. For such $\lambda$ and any $\eta>0$,
-    a similar argument as in \eqref{2.4} yields
+    Since $L_{\mu}^{\eta}(\Phi_{*}^{t_{n}}\Theta)
+    \leq L_{\mu}(\Phi_{*}^{t_{n}}\Theta) <\infty$,
+    for $|\mu|$-almost every $\lambda$ we have
+    $\abs{\Phi^{t_{n}}(x) - \Phi^{t_{n}}(y)} > 0$ and so
+ $x\neq y$. For any such $\lambda$,
+    an argument similar to \eqref{2.4} yields the first inequality in
     \begin{align*}
         &\frac{1}{\left(
             d(\Phi^{t_{n}}(x), \operatorname{im}(z^{t_{n},\lambda})) + \eta
@@ -2904,7 +2919,7 @@ $L_{\mu}^{\eta}(\Phi_{*}^{t}\Theta)$.
     We now write the right-hand side as the sum of the following terms
     which we estimate separately:
     \begin{align*}
-        P_{1} &\coloneqq \frac{\Phi^{t_{n}}(x) - \Phi^{t_{n}}(y)}
+        P_{1}^n &\coloneqq \frac{\Phi^{t_{n}}(x) - \Phi^{t_{n}}(y)}
         {\abs{\Phi^{t_{n}}(x) - \Phi^{t_{n}}(y)}}\cdot
         \frac{(t_{n} - t)\left(
             u(\theta^{t_{n}};\Phi^{t_{n}}(y))
@@ -2916,14 +2931,13 @@ $L_{\mu}^{\eta}(\Phi_{*}^{t}\Theta)$.
         \left(
             \abs{\Phi^{t}(x) - \Phi^{t}(y)} + \eta
         \right)^{2\alpha}}, \\
-        P_{2} &\coloneqq \left(
+        P_{2}^n &\coloneqq \left[
             \frac{\Phi^{t}(x) - \Phi^{t}(y)}
             {\abs{\Phi^{t}(x) - \Phi^{t}(y)}}
             - \frac{\Phi^{t_{n}}(x) - \Phi^{t_{n}}(y)}
             {\abs{\Phi^{t_{n}}(x) - \Phi^{t_{n}}(y)}}
-        \right)
-        \\&\qquad\qquad\qquad
-        \cdot \frac{(t_{n} - t)\left(
+        \right] \cdot
+         \frac{(t_{n} - t)\left(
             u(\theta^{t_{n}};\Phi^{t_{n}}(y))
             - u(\theta^{t_{n}};\Phi^{t_{n}}(x))
         \right)}
@@ -2933,16 +2947,16 @@ $L_{\mu}^{\eta}(\Phi_{*}^{t}\Theta)$.
         \left(
             \abs{\Phi^{t}(x) - \Phi^{t}(y)} + \eta
         \right)^{2\alpha}}, \\
-        P_{3} &\coloneqq
+        P_{3}^n &\coloneqq
         \frac{\Phi^{t}(x) - \Phi^{t}(y)}
         {\abs{\Phi^{t}(x) - \Phi^{t}(y)}} \cdot
         \frac{
             \int_{t}^{t_{n}}
-            u(\theta^{\tau};\Phi^{\tau}(y))
+            \left[ u(\theta^{\tau};\Phi^{\tau}(y))
             - u(\theta^{t_{n}};\Phi^{t_{n}}(y))
             - u(\theta^{\tau};\Phi^{\tau}(x))
             + u(\theta^{t_{n}};\Phi^{t_{n}}(x))
-            \,d\tau
+            \right] d\tau
         }{\left(
             \abs{\Phi^{t_{n}}(x) - \Phi^{t_{n}}(y)} + \eta
         \right)
@@ -2951,10 +2965,10 @@ $L_{\mu}^{\eta}(\Phi_{*}^{t}\Theta)$.
         \right)^{2\alpha}}.
     \end{align*}
 
-    \textbf{Estimate for $P_{1}$.} Since $\norm{\mu}_{\mathrm{TV}}<\infty$ and
+    \textbf{Estimate for $P_{1}^n$.} Since $|\mu|(\mathcal L)<\infty$ and
     $\nabla^{\perp}K(\Phi^{t_{n}}(y) - \,\cdot\,)
     - \nabla^{\perp}K(\Phi^{t_{n}}(x) - \,\cdot\,)$ is integrable,
-    Fubini's theorem and Green's theorem show
+    Fubini's theorem and Green's theorem show that
     \begin{align*}
         &u(\theta^{t_{n}};\Phi^{t_{n}}(y))
         - u(\theta^{t_{n}};\Phi^{t_{n}}(x)) \\
@@ -2974,15 +2988,13 @@ $L_{\mu}^{\eta}(\Phi_{*}^{t}\Theta)$.
     \end{align*}
     where $z^{t_{n},\lambda'}(\cdot)$ is an arbitrary arclength parametrization of
     $z^{t_{n},\lambda'}$.
-
-    By definition of $y$, $\Phi^{t_{n}}(x) - \Phi^{t_{n}}(y)$
-    is normal to $z^{t_{n},\lambda}$ at $\Phi^{t_{n}}(y)$.
-    Also, since $R_{\mu}(\Phi_{*}^{t_{n}}\Theta)<\infty$,
+    Moreover, the definition of $y$ shows that $\Phi^{t_{n}}(x) - \Phi^{t_{n}}(y)$
+    is normal to $z^{t_{n},\lambda}$ at $\Phi^{t_{n}}(y)$, and  from $R_{\mu}(\Phi_{*}^{t_{n}}\Theta)<\infty$
     we know that $\operatorname{im}(z^{t_{n},\lambda})
     \cap \operatorname{im}(z^{t_{n},\lambda'}) = \emptyset$ for
-    $\abs{\mu}$-almost every $\lambda'$. Therefore, for such $\lambda'$,
-    \cite[Lemma 2.7]{JeoZla2} (with $\beta\coloneqq 1/2$,
-    $\gamma_{1}\coloneqq z^{t_{n},\lambda}$, $\gamma_{2}\coloneqq z^{t_{n},\lambda'}$)
+    $\abs{\mu}$-almost every $\lambda'$. Then for each such $\lambda'$,
+    \cite[Lemma 2.7]{JeoZla2} (with $\beta\coloneqq \frac 12$ and
+    $(\gamma_{1},\gamma_{2})\coloneqq (z^{t_{n},\lambda}, z^{t_{n},\lambda'})$)
     and Lemma~\ref{L4.1} show that
     \begin{align*}
         &\abs{\left(
@@ -2995,26 +3007,21 @@ $L_{\mu}^{\eta}(\Phi_{*}^{t}\Theta)$.
         \abs{\Phi^{t_{n}}(y) - \Phi^{t_{n}}(x)}
         \int_{\mathcal{L}}\ell(z^{t_{n},\lambda'})\,d|\mu|(\lambda') \\
         &\qquad\quad \leq
-        C_{\alpha}\norm{\mu}_{\mathrm{TV}}M^{2+2\alpha}\left(
-            \Lambda(\Theta) + T\left(
-                \norm{\theta^{0}}_{L^{1}} + \norm{\theta^{0}}_{L^{\infty}}
-            \right)
+        C_{\alpha}SM^{1+2\alpha}\left(
+            \Lambda(\Theta) + T|\mu|(\mathcal L) \left(   \norm{\theta^{0}}_{L^{1}} +  \norm{\theta^{0}}_{L^{\infty}} \right)
         \right)
-        \abs{\Phi^{t_{n}}(y) - \Phi^{t_{n}}(x)}.
+        \abs{\Phi^{t_{n}}(y) - \Phi^{t_{n}}(x)}
     \end{align*}
-    This then yields
+    for some constant $C_\alpha$.  This then yields
     \begin{equation}\label{4.6}
-        \abs{P_{1}} \leq \frac{C_{\alpha}\norm{\mu}_{\mathrm{TV}}M^{2+2\alpha}\left(
-            \Lambda(\Theta) + T\left(
-                \norm{\theta^{0}}_{L^{1}} + \norm{\theta^{0}}_{L^{\infty}}
-            \right)
-        \right)(t_{n} - t)}
-        {\left(
-            d(\Phi^{t}(x), \operatorname{im}(z^{t,\lambda})) + \eta
-        \right)^{2\alpha}}.
+        \abs{P_{1}^n} \leq \frac{ C_{\alpha}SM^{1+2\alpha}\left(
+            \Lambda(\Theta) + T|\mu|(\mathcal L) \left(   \norm{\theta^{0}}_{L^{1}} +  \norm{\theta^{0}}_{L^{\infty}} \right)
+        \right)   }
+        {\left(            d(\Phi^{t}(x), \operatorname{im}(z^{t,\lambda})) + \eta
+        \right)^{2\alpha}}  (t_{n} - t) .
     \end{equation}
 
-    \textbf{Estimate for $P_{2}$.} By the same argument as in \eqref{3.6}, we have
+    \textbf{Estimate for $P_{2}^n$.} By the same argument as in \eqref{3.6} we have
     \[
         \abs{\Phi^{\tau}(x) - \Phi^{\tau}(y)
         - \Phi^{t_{n}}(x) + \Phi^{t_{n}}(y)}
@@ -3023,7 +3030,7 @@ $L_{\mu}^{\eta}(\Phi_{*}^{t}\Theta)$.
         \right)
         \abs{\Phi^{t_{n}}(x) - \Phi^{t_{n}}(y)}
     \]
-    for any $\tau\in[t,t_{n}]$. Therefore,
+    for any $\tau\in[t,t_{n}]$. Therefore
     \begin{align*}
         &\abs{\frac{\Phi^{t}(x) - \Phi^{t}(y)}
             {\abs{\Phi^{t}(x) - \Phi^{t}(y)}}
@@ -3031,37 +3038,37 @@ $L_{\mu}^{\eta}(\Phi_{*}^{t}\Theta)$.
             {\abs{\Phi^{t_{n}}(x) - \Phi^{t_{n}}(y)}}
         } \\
         &\qquad\leq
-        \abs{\Phi^{t}(x) - \Phi^{t}(y)}
+                \frac{\abs{\Phi^{t}(x) - \Phi^{t}(y)
+        - \Phi^{t_{n}}(x) + \Phi^{t_{n}}(y)}}
+        {\abs{\Phi^{t_{n}}(x) - \Phi^{t_{n}}(y)}} +
         \frac{\abs{\abs{\Phi^{t_{n}}(x) - \Phi^{t_{n}}(y)}
         - \abs{\Phi^{t}(x) - \Phi^{t}(y)}}}
-        {\abs{\Phi^{t}(x) - \Phi^{t}(y)}
-        \abs{\Phi^{t_{n}}(x) - \Phi^{t_{n}}(y)}}
-        \\&\qquad\qquad\qquad+
-        \frac{\abs{\Phi^{t}(x) - \Phi^{t}(y)
-        - \Phi^{t_{n}}(x) + \Phi^{t_{n}}(y)}}
-        {\abs{\Phi^{t_{n}}(x) - \Phi^{t_{n}}(y)}} \\
+        {        \abs{\Phi^{t_{n}}(x) - \Phi^{t_{n}}(y)}}
+\\
         &\qquad\leq
         2\left(
             e^{2C_{\alpha}L_{\mu}(\Phi_{*}^{t}\Theta)(t_{n}-\tau)} - 1
         \right),
     \end{align*}
-    which together with Lemma~\ref{L2.1} and \eqref{4.5} yield
-    \begin{equation}\label{4.7}\begin{aligned}
-        \abs{P_{2}} &\leq \frac{2\left(
+    which together with Lemma~\ref{L2.1} and \eqref{4.5} yields
+    \begin{equation}\label{4.7}
+    %\begin{aligned}
+        \abs{P_{2}^n} 
+%        &\leq \frac{2\left(
+%            e^{2C_{\alpha}L_{\mu}(\Phi_{*}^{t}\Theta)(t_{n}-t)} - 1
+%        \right)\norm{u(\theta^{t_{n}})}_{\dot{C}^{0,1}}}
+%        {\left(            d(\Phi^{t}(x), \operatorname{im}(z^{t,\lambda})) + \eta
+%        \right)^{2\alpha}} (t_{n} - t) \\
+        \leq \frac{C_{\alpha}\left(
             e^{2C_{\alpha}L_{\mu}(\Phi_{*}^{t}\Theta)(t_{n}-t)} - 1
-        \right)\norm{u(\theta^{t_{n}})}_{\dot{C}^{0,1}}(t_{n} - t)}
+        \right)  L_{\mu}(\Phi_{*}^{t}\Theta) }
         {\left(
             d(\Phi^{t}(x), \operatorname{im}(z^{t,\lambda})) + \eta
-        \right)^{2\alpha}} \\
-        &\leq \frac{C_{\alpha}L_{\mu}(\Phi_{*}^{t}\Theta)\left(
-            e^{2C_{\alpha}L_{\mu}(\Phi_{*}^{t}\Theta)(t_{n}-t)} - 1
-        \right)(t_{n} - t)}
-        {\left(
-            d(\Phi^{t}(x), \operatorname{im}(z^{t,\lambda})) + \eta
-        \right)^{2\alpha}}.
-    \end{aligned}\end{equation}
+        \right)^{2\alpha}} (t_{n} - t) .
+%    \end{aligned}
+\end{equation}
 
-    \textbf{Estimate for $P_{3}$.} By Lemma~\ref{L2.1}, Lemma~\ref{L2.2} and \eqref{4.5},
+    \textbf{Estimate for $P_{3}^n$.} By Lemma~\ref{L2.1}, Lemma~\ref{L2.2}, and \eqref{4.5} we have
     \begin{align*}
         &\int_{t}^{t_{n}}
         \abs{
@@ -3071,10 +3078,10 @@ $L_{\mu}^{\eta}(\Phi_{*}^{t}\Theta)$.
             + u(\theta^{t_{n}};\Phi^{t_{n}}(x))
         }d\tau \\
         &\qquad\qquad\leq
-        2\int_{t}^{t_{n}}
+        2\int_{t}^{t_{n}} \left(
+         \norm{u(\Phi_{*}^{\tau}\Theta) - u(\Phi_{*}^{t_{n}}\Theta)}_{L^{\infty}}  +
         \norm{u(\theta^{\tau})}_{\dot{C}^{0,1}}
-        \norm{\Phi^{\tau} - \Phi^{t_{n}}}_{L^{\infty}}
-        + \norm{u(\Phi_{*}^{\tau}\Theta) - u(\Phi_{*}^{t_{n}}\Theta)}_{L^{\infty}}
+        \norm{\Phi^{\tau} - \Phi^{t_{n}}}_{L^{\infty}} \right)
         d\tau \\
         &\qquad\qquad\leq
         C_{\alpha}L_{\mu}(\Phi_{*}^{t}\Theta)
@@ -3082,7 +3089,7 @@ $L_{\mu}^{\eta}(\Phi_{*}^{t}\Theta)$.
     \end{align*}
     so
     \begin{equation}\label{4.8}
-        \abs{P_{3}} \leq \frac{C_{\alpha}L_{\mu}(\Phi_{*}^{t}\Theta)
+        \abs{P_{3}^n} \leq \frac{C_{\alpha}L_{\mu}(\Phi_{*}^{t}\Theta)
         \int_{t}^{t_{n}}\norm{\Phi^{\tau} - \Phi^{t_{n}}}_{L^{\infty}}\,d\tau}
         {\eta\left(
             d(\Phi^{t}(x),\operatorname{im}(z^{t,\lambda})) + \eta
@@ -3090,33 +3097,28 @@ $L_{\mu}^{\eta}(\Phi_{*}^{t}\Theta)$.
     \end{equation}
     \smallskip
 
-    Therefore, aggregating \eqref{4.6}, \eqref{4.7} and \eqref{4.8},
-    integrating by $\lambda$, dividing by $t_{n} - t$ and then
-    letting $n\to\infty$ thus shows \eqref{4.4}.
+Estimates \eqref{4.7} and \eqref{4.8} show that $\lim_{n\to\infty} \frac{|P_j^n|}{t_n-t}=0$ uniformly in $\lambda\in\mathcal L$ for $j=2,3$, and then \eqref{11.101}, \eqref{11.100}, and  \eqref{4.6} yield \eqref{4.4}.
 \end{proof}
 
-Now, Lemma~\ref{L4.2} and a Gr\"{o}nwall-type argument prove for any $t\in[0,T)$,
+Lemma~\ref{L4.2} and a Gr\"{o}nwall-type argument now show
 \[
     L_{\mu}^{\eta}(\Phi_{*}^{t}\Theta)
     \leq e^{M_{1}T}L_{\mu}^{\eta}(\Theta)
     \leq e^{M_{1}T}L_{\mu}(\Theta)
 \]
-with
+for any $t\in[0,T)$, where
 \[
-    M_{1} \coloneqq C_{\alpha}\norm{\mu}_{\mathrm{TV}}M^{2+2\alpha}\left(
-        \Lambda(\Theta) + T\left(
-            \norm{\theta^{0}}_{L^{1}} + \norm{\theta^{0}}_{L^{\infty}}
+    M_{1} \coloneqq C_{\alpha}SM^{1+2\alpha}\left(
+            \Lambda(\Theta) + T|\mu|(\mathcal L) \left(   \norm{\theta^{0}}_{L^{1}} +  \norm{\theta^{0}}_{L^{\infty}} \right)
         \right)
-    \right)
 \]
-for $C_{\alpha}$ from Lemma~\ref{L4.2}. Therefore, letting $\eta\to 0^{+}$
-shows that
+and $C_{\alpha}$ is from Lemma~\ref{L4.2}. Letting $\eta\to 0$
+then yields
 \[
     \limsup_{t\to T}L_{\mu}(\Phi_{*}^{t}\Theta)
-    \leq e^{M_{1}T}L_{\mu}(\Theta) < \infty,
+    \leq e^{M_{1}T}L_{\mu}(\Theta) < \infty
 \]
-yielding a contradiction as desired.
-This finishes the proof of Theorem~\ref{T1.4}(iii).
+for any $t\in[0,T)$, which is the desired  contradiction and finishes the proof of Theorem~\ref{T1.4}(iii).
 
 
 %\appendix
