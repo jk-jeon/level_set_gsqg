@@ -583,6 +583,7 @@ $\phi \colon\bbT\to\bbT$ (and $\bbT$ is $[0,1]$ with 0 and 1 identified).  Any $
 %        \Lambda(\Theta) \coloneqq \sup_{\lambda\in\mathcal{L}}\ell(z^{\lambda}).
 %    \end{gathered}
     \end{equation*}
+    We also denote $\ell(\partial\Theta^{\lambda}):=\ell(z^{\lambda})$.
 \end{definition}
 
 
@@ -656,7 +657,7 @@ from Theorem~\ref{T1.2}.
   (iii) If also $\alpha\in\left(0,\frac{1}{6}\right]$,
   $|\mu|(\mathcal L)<\infty$,  $\inf_{\lambda\in\mathcal{L}}\abs{\Theta^{\lambda}}>0$, and 
 %$ \sup_{\lambda\in\mathcal{L}}\ell(z^{\lambda})<\infty$, 
-$\int_{\mathcal{L}}\ell(z^{t_{n},\lambda})\,d|\mu|(\lambda)<\infty$, then for
+$\int_{\mathcal{L}}\ell(\partial\Theta^\lambda)\,d|\mu|(\lambda)<\infty$, then for
   % If $\alpha\in(0, \frac 16]$ and $T$ is an endpoint of  $I'$,
   any endpoint $T$ of $I'$ we have either $|T|=\infty$ or $\limsup_{t\to T} Q(\Phi_{*}^{t}\Theta) = \infty$.
 \end{theorem}
@@ -2737,11 +2738,11 @@ Once again, all constants $C_{\alpha}$ below
 can change from one inequality to another, but they always only depend  on $\alpha$.
 Let 
 \[
-\Sigma(\Theta):= \inf_{\lambda\in\mathcal{L}}\abs{\Theta^{\lambda}}>0 \qquad\text{and}\qquad \Lambda(\Theta) \coloneqq \int_{\mathcal{L}}\ell(z^{t_{n},\lambda})\,d|\mu|(\lambda)<\infty.
+\Sigma(\Theta):= \inf_{\lambda\in\mathcal{L}}\abs{\Theta^{\lambda}}>0 \qquad\text{and}\qquad \Lambda(\Theta) \coloneqq \int_{\mathcal{L}}\ell(\partial\Theta^{\lambda})\,d|\mu|(\lambda)<\infty.
 \]
 We now also assume that $\alpha\in\left(0,\frac{1}{6}\right]$,
 $|\mu|(\mathcal L)<\infty$, and  $T$ is an endpoint of the interval $I'$ with $|T|<\infty$
- and $S:=\limsup_{t\to T}Q(\Phi_{*}^{t}\Theta) < \infty$.  We will then obtain a contradiction.
+ and $\limsup_{t\to T}Q(\Phi_{*}^{t}\Theta) < \infty$.  We let  $S:=\sup_{t\in[0,T)}Q(\Phi_{*}^{t}\Theta) < \infty$ and will then obtain a contradiction.
  % (towards contradiction).
 
 Since $\ell(\cdot)$ and $\norm{\cdot}_{\dot{H}^{2}}$ are lower semi-continuous
@@ -3116,9 +3117,9 @@ and $C_{\alpha}$ is from Lemma~\ref{L4.2}. Letting $\eta\to 0$
 then yields
 \[
     \limsup_{t\to T}L_{\mu}(\Phi_{*}^{t}\Theta)
-    \leq e^{M_{1}T}L_{\mu}(\Theta) < \infty
+    \leq e^{M_{1}T}L_{\mu}(\Theta) < \infty,
 \]
-for any $t\in[0,T)$, which is the desired  contradiction and finishes the proof of Theorem~\ref{T1.4}(iii).
+ which is the desired  contradiction and finishes the proof of Theorem~\ref{T1.4}(iii).
 
 
 %\appendix
