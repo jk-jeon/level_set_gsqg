@@ -18,7 +18,7 @@
 
 \usepackage[shortlabels]{enumitem}
 
-\usepackage{xcolor}
+\usepackage{xcolor, cite}
 
 % For figure
 \usepackage{tikz}
@@ -235,36 +235,42 @@ and
 %    \nabla^{\perp}K(x) = \frac{c_{\alpha}(x_2,-x_1)}{\abs{x}^{2+2\alpha}}.
 \]
 
-Note that since \eqref{1.1} is a transport PDE, it can be solved in low regularity spaces both weakly and in the Lagrangian (i.e., transport) sense.  The latter notion of solutions typically also guarantees the former, and we will employ it here, too (see Definition \ref{D.11.1} below).
+The g-SQG equation first appeared in physics and atmospheric science literature (see \cite{PHS, Smith}), with the first mathematical studies of it, including local regularity in sufficiently smooth spaces of functions, being undertaken in \cite{CCW,CIW}.
+Note that since \eqref{1.1} is a transport PDE, it can in principle also be solved in low regularity spaces in both weak \cite{Nguyen} and Lagrangian (i.e., transport) sense.  The latter notion of solutions typically also guarantees the former, and we will employ it here, too (see Definition \ref{D.11.1} below).
 
-While $u(\theta^t)$ is clearly a $(1-2\alpha)$-H\"{o}lder continuous vector field when $\theta^t\in L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$, this is not sufficient to obtain well-posedness for the PDE in $L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$.  However, if also $\theta^t\in C^{\beta}(\bbR^{2})$ for some $\beta>2\alpha$, then $u(\theta^t)$ is Lipschitz and this easily yields local well-posedness in $L^{1}(\bbR^{2})\cap  C^{\beta}(\bbR^{2})$ for any  $\beta>2\alpha$  \cite{}.  
+While $u(\theta^t)$ is clearly a $(1-2\alpha)$-H\"{o}lder continuous vector field when $\theta^t\in L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$, this is not sufficient to obtain well-posedness for the PDE in this space.
+%$L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$.  
+However, if also $\theta^t\in C^{\beta}(\bbR^{2})$ for some $\beta>2\alpha$, then $u(\theta^t)$ is Lipschitz and this easily yields local well-posedness in $L^{1}(\bbR^{2})\cap  C^{\beta}(\bbR^{2})$ for any  $\beta>2\alpha$  \cite{CJK}.  We note that recently, local well-posedness \cite{JKY, ZlaSQGsing} and finite time singularity formation \cite{ZlaSQGsing} were proved for \eqref{1.1} on the half-plane in appropriate spaces of continuous functions.
 
 On the other hand, \eqref{1.1}--\eqref{1.2} is also locally well-posed in the space of (spatially discontinuous) {\it patch solutions} of the form
 \[
 \tht^t =\sum_{n=1}^N \mu_n \mathbbm{1}_{\Theta_n^t}
 \]
-at any time $t$, with some constants $\mu_n\in\bbR\setminus\{0\}$ and bounded {\it patches} $\Theta_n^t\subseteq\bbR^2$ that are transported by the velocity $u(\theta)$, provided all the initial patch boundaries $\partial \Theta_n^0$ are disjoint and sufficiently smooth simple closed curves \cite{}.  The reason for this is that the dynamic of these solutions is fully determined by $u(\theta)$ restricted to the patch boundary curves, and as long as these are smooth enough at all times $t$, the same is true for the velocity restricted to them (because near each patch boundary, $\tht^t$ is constant in the tangential direction).
+at any time $t$, with some constants $\mu_n\in\bbR\setminus\{0\}$ and bounded {\it patches} $\Theta_n^t\subseteq\bbR^2$ that are transported by the velocity $u(\theta)$, provided all the initial patch boundaries $\partial \Theta_n^0$ are disjoint and sufficiently smooth simple closed curves \cite{Gancedo,GanPat}.  The reason for this is that the dynamic of these solutions is fully determined by $u(\theta)$ restricted to the patch boundary curves, and as long as these are smooth enough at all times $t$, the same is true for the velocity restricted to them (because near each patch boundary, $\tht^t$ is constant in the tangential direction).
+In addition, blow-up criteria \cite{JeoZla, KisLuo,GanStr} and ill-posedness results \cite{KisLuo2} were recently obtained for the g-SQG patch problem, along with local well-posedness and finite time singularity results on the half-plane \cite{KisYaoZla,         KRYZ,GanPat} and when some of the  patches are allowed to touch \cite{JeoZla2} (see below). 
 
-Since the patch boundaries are  also the boundaries of the level sets of patch solutions, this explanation suggests a natural question:  {\it Is there a local well-posedness theory for \eqref{1.1}--\eqref{1.2} in spaces of low regularity continuous solutions with sufficiently regular level sets?}  
 
-In our main result, Theorem \ref{T1.4} below, {\it  we answer this in the affirmative} in the space of functions whose level sets (or their boundaries) are  simple closed $H^2$  curves and they belong to $L^{1}(\bbR^{2})\cap C_\rho(\bbR^2)$ for some increasing continuous  $\rho:[0,\infty)\to[0,\infty)$ satisfying  $\rho(0)=0$ and 
+
+Since  patch boundaries are  also the boundaries of the level sets of patch solutions, the above explanation of existence of local regularity results for the g-SQG patch problem suggests a natural question:  {\it Is there a local well-posedness theory for \eqref{1.1}--\eqref{1.2} in spaces of low regularity continuous solutions with sufficiently regular level sets?}  
+
+In our main result, Theorem \ref{T1.4} below, {we answer this in the affirmative} in the space of functions whose level sets (or their boundaries) are  simple closed $H^2$  curves and they belong to $L^{1}(\bbR^{2})\cap C_\rho(\bbR^2)$ for some increasing continuous  $\rho:[0,\infty)\to[0,\infty)$ satisfying  $\rho(0)=0$ and 
 \beq\lb{11.5}
 \int_{0}^{1}\frac{\rho(s)}{s^{1+2\alpha}}\,ds < \infty.
 \eeq
   Here $f\in C_\rho(\bbR^2)$ whenever $f$ has modulus of continuity $a\rho$ for some $a>0$, where the latter means that $|f(x)-f(y)| \le a\rho(|x-y|)$ for all $x,y\in\bbR^2$. For instance, we can take $\rho(s):=s^{2\alpha} \max\{-\ln s,1\}^{-p}$ with $p>1$ and then $\bigcup_{\beta>2\alpha}C^\beta(\bbR^2)\subseteq C_\rho(\bbR^2)$.
 
 
-Note that since the solutions in Theorem \ref{T1.4} are essentially no better than functions from $L^{1}(\bbR^{2})\cap C^{2\alpha}(\bbR^2)$  at each fixed  time $t$, the corresponding velocities $u(\theta^t)$ are essentially no better than Lipschitz.  Nevertheless, the result implies that the non-linear dynamic still preserves $H^2$-regularity of level sets, which means that the velocities indeed have a higher degree of regularity when restricted to any of the infinitely many individual level sets...
+Note that since the solutions in Theorem \ref{T1.4} are essentially no better than functions from $L^{1}(\bbR^{2})\cap C^{2\alpha}(\bbR^2)$  at each fixed  time $t$, the corresponding velocities $u(\theta^t)$ are essentially no better than Lipschitz.  Nevertheless, the result implies that the non-linear dynamic still preserves $H^2$-regularity of level sets, which means that the velocities indeed have a higher degree of regularity when restricted to any of the (infinitely many) individual level sets of the solution.
 
-Moreover, when $\alpha\le \frac 16$, we also show that...
+Moreover, when $\alpha\le \frac 16$ and the initial datum satisfies appropriate hypotheses, we also show that the corresponding solution can be uniquely continued as long as  $H^2$-regularity of the level sets is preserved.  That is, any finite time singularity development must be accompanied by a loss of $H^2$-regularity of solution level sets, and in particular cannot be caused by a ``pile up'' or collision of level sets while these remain regular.
 
-The first step in the proof of Theorem \ref{T1.4} is showing that \eqref{1.1}--\eqref{1.2} is locally well-posed in $L^{1}(\bbR^{2})\cap C_\rho(\bbR^2)$ provided the modulus $\rho$ is as above, regardless of the geometry of the level sets of solutions.  This follows from Theorem \ref{T1.2} below, which is then also a marginal improvement of the abovementioned result from \cite{}.  
+The first step in the proof of Theorem \ref{T1.4} is showing that \eqref{1.1}--\eqref{1.2} is locally well-posed in $L^{1}(\bbR^{2})\cap C_\rho(\bbR^2)$ provided the modulus $\rho$ is as above, regardless of the geometry of the level sets of solutions.  This follows from Theorem \ref{T1.2} below, which is then also a marginal improvement of the abovementioned result from \cite{CJK}.  
 
-However, based on our discussion above, one might hope to have local well-posedness for solutions with significantly lower degree of regularity provided their level sets are sufficiently regular.  Nevertheless, this question remains open, the reason for which can be seen from the proofs in our recent work \cite{JeoZla2}.  In it we considered patch solutions for \eqref{1.1}--\eqref{1.2} with possibly touching $H^2$ patches and obtained local well-posedness as long as only exterior touches of patches $\Theta_n^t$ and $\Theta_{n'}^t$ with $\mu_n\mu_{n'}<0$ and interior touches of patches with $\mu_n\mu_{n'}>0$ are allowed.  In particular, one can consider arbitrary initial  configurations of $H^2$ patches satisfying $\Theta_1^0\subseteq \Theta_2^0\subseteq \dots \subseteq \Theta_N^0$  as long as all $\mu_n>0$, which can be used to approximate  (as $N\to\infty$) general, even discontinuous, functions whose each level set is a simple closed $H^2$ curve.  The problem is, however, that in \cite{JeoZla2} we were only able to control the rate of change of $\sum_{n=1}^N \mu_n\|\partial\Theta^t_n\|_{H^2}^2$ rather than of the individual $H^2$ norms, which only yields an $N$-dependent $H^2$ bound on each of them.  This is why we have to stay within $C^{2\alpha}(\bbR^2)$  for solutions taking infinitely many values, and in fact the velocities $u(\theta^t)$ of all solutions considered here will still be Lipschitz at any fixed time $t$ from their intervals of existence
+However, based on our discussion above, one might hope to have local well-posedness for solutions with significantly lower degree of regularity when only their level sets are sufficiently regular.  Nevertheless, this question remains open, the reason for which can be seen from the proofs in our recent work \cite{JeoZla2}.  In it we considered patch solutions for \eqref{1.1}--\eqref{1.2} with possibly touching $H^2$ patches and obtained local well-posedness as long as only exterior touches of patches $\Theta_n^t$ and $\Theta_{n'}^t$ with $\mu_n\mu_{n'}<0$ and interior touches of patches with $\mu_n\mu_{n'}>0$ are allowed.  In particular, one can consider arbitrary initial  configurations of $H^2$ patches satisfying $\Theta_1^0\subseteq \Theta_2^0\subseteq \dots \subseteq \Theta_N^0$  with all $\mu_n>0$, which can be used to approximate  (as $N\to\infty$) general, even discontinuous, functions whose each level set is a simple closed $H^2$ curve.  The problem is, however, that in \cite{JeoZla2} we were only able to control the rate of change of $\sum_{n=1}^N \mu_n\|\partial\Theta^t_n\|_{H^2}^2$ rather than of the individual $H^2$ norms in this sum, which only yields an $N$-dependent  bound on each $H^2$ norm.  This is why we have to stay within $C_\rho(\bbR^2)$  for solutions taking infinitely many values, and in fact the velocities $u(\theta^t)$ of all solutions considered here will be Lipschitz at any fixed time $t$ from their intervals of existence
 %, including in directions normal to the level sets of the solutions 
 (see Lemma \ref{L2.1} below).
 
-
+Let us now turn to the level-set view of the dynamic of \eqref{1.1}.
 To work directly with level sets of some $\theta\in L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$, one can use its {\it layer cake decomposition}
 \begin{equation}\label{11.4}
     \theta(x) = \int_{0}^{\sup \tht} \mathbbm{1}_{\{\tht> \lambda\}}(x)\,d\lambda - \int_{\inf\tht}^{0} \mathbbm{1}_{\{\tht< \lambda\}}(x)\,d\lambda.
@@ -279,7 +285,7 @@ $\Theta\subseteq \bbR^{2}\times\mathcal{L}$ be
 a set in the product $\sigma$-algebra
 (i.e., the $\sigma$-algebra generated by measurable rectangles) with finite measure
 %in the product $\sigma$-algebra of $\bbR^{2}\times\mathcal{L}$ 
-with respect to the product of the Lebesgue measure on $\bbR^2$ and the total variation $|\mu|$ of $\mu$ on $\mathcal{L}$.  Let $\Theta^{\lambda}:=\{x\in\bbR^2\,:\, (x,\lambda)\in\Theta \}$ be the $\lambda$-section of $\Theta$ for any $\lambda\in\mathcal{L}$.  If for each $x\in\bbR^2$ we have
+with respect to the product of the Lebesgue measure on $\bbR^2$ and the total variation $|\mu|$ of $\mu$ on $\mathcal{L}$.  For any $\lambda\in\mathcal{L}$, let  $\Theta^{\lambda}:=\{x\in\bbR^2\,:\, (x,\lambda)\in\Theta \}$ be the $\lambda$-section of $\Theta$.  If for each $x\in\bbR^2$ we have
 \begin{equation}\label{1.3}
     \theta(x) = \int_{\mathcal{L}}\mathbbm{1}_{\Theta^{\lambda}}(x)\,d\mu(\lambda),
 \end{equation}
@@ -292,7 +298,7 @@ a \emph{generalized layer cake representation} of $\theta$.
 \smallskip
 
 2. We require $\Theta$ to be in the product $\sigma$-algebra
-(instead of allowing it to be any set in the completion with respect to the product measure)
+(instead of allowing it to be any set in its completion with respect to the product measure)
 in order to ensure measurability of \eqref{1.100} below.
 This is general enough to cover the case of the layer cake decomposition,
 which can be seen by dyadically dividing the second component of
@@ -379,8 +385,7 @@ This, and the fact that our $u(\theta^t)$ will all be Lipschitz, makes the follo
 %    where the time derivative is one-sided at any end-point of $I$,
 \end{definition}
 
-{\it Remarks.}  1. Here $C(A;B)$ always refers to the space of all continuous $f:A\to B$, not just the bounded ones.  Although we may then  have $\|f\|_{L^\infty}=\infty$, it still makes sense to consider continuity of $\Phi$ in time with respect to the metric $d(f,g) \coloneqq \norm{f - g}_{L^{\infty}}$ on $C(\bbR^{2};\bbR^{2})$.
-\smallskip
+{\it Remarks.}  1. Here $C(A;B)$ will always refer to the space of all continuous $f:A\to B$, not just the bounded ones.  Although we may then  have $\|f\|_{L^\infty}=\infty$, it still makes sense to consider continuity of $\Phi$ in time with respect to the metric $d(f,g) \coloneqq \norm{f - g}_{L^{\infty}}$ on $C(\bbR^{2};\bbR^{2})$.\smallskip
 
 2.  We will call the above $\Phi$ the \emph{flow map} of $\theta$.  Since $\nabla^\perp$ in \eqref{1.2} implies that $\nabla\cdot u(\theta^{t})\equiv 0$, transport by $u$ preserves the Lebesgue measure and hence so must each $\Phi^t$.
     \smallskip
@@ -389,7 +394,7 @@ This, and the fact that our $u(\theta^t)$ will all be Lipschitz, makes the follo
 a weak solution in the sense that for all $\varphi\in C_{c}^{1}(\bbR^{2})$ and $t\in I$ we  have
 \[
     \frac{d}{dt}\int_{\bbR^{2}}\varphi(x)\,\theta^{t}(x)\,dx
-    = \int_{\bbR^{2}}\left(u(\theta^{t};x)\cdot\nabla\varphi(x)\right)
+    = \int_{\bbR^{2}}\left[u(\theta^{t};x)\cdot\nabla\varphi(x)\right]
     \theta^{t}(x)\,dx.
 \]
 \smallskip
@@ -444,8 +449,8 @@ is given by the layer cake decomposition of $\theta$ from \eqref{11.4}.
 % L_{\mu}(\Theta)\le 2\int_0^{\sup\tht^0-\inf\tht^0} \rho^{-1}(\lambda)^{-2\alpha} d\lambda
 %  = 2\int_0^{\rho^{-1}(\sup\tht^0-\inf\tht^0)} \frac{\rho'(s)}{s^{2\alpha}} ds <\infty.
 %\eeq
-Indeed, define $\kappa(\lambda)\coloneqq\inf\set{s\geq 0\colon \rho(s)\geq \lambda}$, then
-we have $\kappa^{-1}\left((a,b]\right) = (\rho(a),\rho(b)]$ for any $0\leq a<b$, so
+Indeed, with $\kappa(\lambda)\coloneqq\inf\set{s\geq 0\colon \rho(s)\geq \lambda}$
+we have $\kappa^{-1}\left((a,b]\right) = (\rho(a),\rho(b)]$ for any $0\leq a<b$, so a
 change of variables and subsequent integration by parts show that
 \begin{equation*}
     L_{\mu}(\Theta) \leq 2\int_{0}^{\sup\theta^{0} - \inf\theta^{0}}
@@ -468,7 +473,7 @@ On the other hand, for any $x,y\in\bbR^2$ we have
         \leq L_{\mu}(\Theta)\abs{x - y}^{2\alpha}
     \end{align*}
     because the first integrand is nonzero
-    only when $d(x,\partial\Theta^{\lambda})\le \abs{x - y} $, and so $\norm{\theta}_{\dot{C}^{0,2\alpha}} \leq L_{\mu}(\Theta)$ holds for any generalized layer cake representation $(\Theta,\mu)$ of $\theta$.  This all shows that \eqref{1.4} always implies $\theta\in C^{2\alpha}(\bbR^2)$, with the latter not guaranteeing Lipschitzness of $u(\theta)$, but it is also very close to being equivalent to $\theta\in C^{2\alpha}(\bbR^2)$.  (In fact, for any $a>0$,  the layer cake decomposition of  $a\sum_{n\ge 1}  {3^{1-2\alpha n}}  [1-3^n|x-(2^{1-n},0)|]_+$ satisfies \eqref{1.4} but all its moduli of continuity $\rho$ have $\rho(s)\ge as^{2\alpha}$ for all $s\in[0,1]$.)
+    only when $d(x,\partial\Theta^{\lambda})\le \abs{x - y} $, and so $\norm{\theta}_{\dot{C}^{0,2\alpha}} \leq L_{\mu}(\Theta)$ holds for any generalized layer cake representation $(\Theta,\mu)$ of $\theta$.  This all shows that \eqref{1.4} always implies $\theta\in C^{2\alpha}(\bbR^2)$ (with the latter not guaranteeing Lipschitzness of $u(\theta)$) but it is also very close to being equivalent to $\theta\in C^{2\alpha}(\bbR^2)$.  In fact, for any $a>0$,  the layer cake decomposition of  $a\sum_{n\ge 1}  {3^{1-2\alpha n}}  [1-3^n|x-(2^{1-n},0)|]_+$ satisfies \eqref{1.4} but all its moduli of continuity $\rho$ have $\rho(s)\ge as^{2\alpha}$ for all $s\in[0,1]$.
     
 
 
@@ -533,7 +538,7 @@ We are now ready to state our general well-posedness result.
     Assume that $\theta^{0}\in L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$ admits
     a generalized layer cake representation $(\Theta,\mu)$ with
     $L_{\mu}(\Theta)<\infty$. Then there is an open interval $I\ni 0$ and a Lagrangian solution
-    $\theta$ to \eqref{1.1}--\eqref{1.2}  on $I$    with $\alpha\in(0,\frac 12)$, initial data $\theta^{0}$, and
+    $\theta$ to \eqref{1.1}--\eqref{1.2}  on $I$    with $\alpha\in(0,\frac 12)$ and initial data $\theta^{0}$, with
     the associated flow map $\Phi\in C\left(I;C(\bbR^{2};\bbR^{2})\right)$ such that
     $\sup_{t\in J}L_{\mu}(\Phi_{*}^{t}\Theta) < \infty$ for any compact interval $J\subseteq I$.  Let $I$ be the maximal such interval.
     Then the solution $\theta$ is unique and independent of the choice of $(\Theta,\mu)$, for any compact interval $J\subseteq I$ we have  $\sup_{t\in J}\max\set{\norm{\Phi^{t}}_{\dot{C}^{0,1}},    \norm{(\Phi^{t})^{-1}}_{\dot{C}^{0,1}}}<\infty$, and for any endpoint $T$  of $I$ we have either $|T|=\infty$  or
@@ -545,7 +550,7 @@ We are now ready to state our general well-posedness result.
 the hypothesis is satisfied whenever $\theta^{0}\in L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$ has modulus of continuity $\rho$ satisfying \eqref{11.5}.
 \smallskip
 
-We next turn to our main result which in particular shows that if, in the setting of Theorem~\ref{T1.2}, each $\partial\Theta^{\lambda}$ is an $H^{2}$ curve
+We next turn to our main result, which in particular shows that if, in the setting of Theorem~\ref{T1.2}, each $\partial\Theta^{\lambda}$ is an $H^{2}$ curve
 and certain additional assumptions are satisfied, then  the solution from Theorem~\ref{T1.2} retains these properties on some open time interval $I'\ni 0$.
 To state it precisely, let $\operatorname{CC}(\bbR^{2})$ be the space of equivalence classes of planar closed curves from $C(\bbT;\bbR^2)$ with respect to the equivalence relation given by the {\it Fr\' echet pseudometric}  
 \[
@@ -574,7 +579,7 @@ $\phi \colon\bbT\to\bbT$ (and $\bbT$ is $[0,1]$ with 0 and 1 identified).  Any $
         %\overline{\int_{\mathcal{L}}}
         \int_{\mathcal{L}}
         \frac{d|\mu|(\lambda')}
-        {\ell(z^{\lambda'})^{1/2}\Delta(z^{\lambda},z^{\lambda'})^{2\alpha}}, \qquad
+        {\ell(z^{\lambda'})^{1/2}\Delta(z^{\lambda},z^{\lambda'})^{2\alpha}} \qquad\text{and}\qquad
         Q(\Theta) \coloneqq \sup_{\lambda\in\mathcal{L}}
         \ell(z^{\lambda})\norm{z^{\lambda}}_{\dot{H}^{2}}^{2}.
 %        \\
@@ -622,13 +627,13 @@ $\norm{a\gamma}_{\dot{H}^{2}}^{2} = \frac{1}{a}\norm{\gamma}_{\dot{H}^{2}}^{2}$
 and $\ell(a\gamma) = a\ell(\gamma)$.
 Hypothesis $R_{\mu}(\Theta)<\infty$ is a version of $L_{\mu}(\Theta)<\infty$ but with individual points $x$ replaced by whole curves $z^\lambda$, and it also controls how densely
 $z^{\lambda}$ of different scales can be packed together.
-More specifically, it prevents too many small curves $z^{\lambda'}$ to be close to some large $z^{\lambda}$. When $(\Theta,\mu)$ is given by the layer cake decomposition of some $\theta$, so the $z^{\lambda}$ are (the  boundaries of) the level sets of $\theta$, this assumption
+More specifically, it prevents too many ``small'' curves $z^{\lambda'}$ to be close to some ``large'' $z^{\lambda}$. When $(\Theta,\mu)$ is given by the layer cake decomposition of some $\theta$, so the $z^{\lambda}$ are (the  boundaries of) the level sets of $\theta$, this assumption
 in effect rules out bumps with ``too sharp'' tops or bottoms.
 For instance, if $(\Theta,\mu)$ is the layer cake decomposition of
 a radial bump $\theta(x)\coloneqq \left[1 - \abs{x}^{\beta}\right]_{+}$
 for some $\beta\in(0,1]$, then $R_{\mu}(\Theta)<\infty$ if and only if
 $\beta>\max\set{\frac{1}{2},2\alpha}$.
-On the contrary, if $\theta(x) \coloneqq \left[1 - \abs{x}\right]_{+}^{\beta}$ instead,
+On the other hand, if instead $\theta(x) \coloneqq \left[1 - \abs{x}\right]_{+}^{\beta}$,
 then $R_{\mu}(\Theta)<\infty$ if and only if $\beta>2\alpha$.
 Note that in both cases $L_{\mu}(\Theta)<\infty$ if and only if $\beta>2\alpha$.
 
@@ -655,14 +660,15 @@ from Theorem~\ref{T1.2}.
     $\lim_{t\to T} Q(\Phi_{*}^{t}\Theta) = \infty$.
     
   (iii) If also $\alpha\in\left(0,\frac{1}{6}\right]$,
-  $|\mu|(\mathcal L)<\infty$,  $\inf_{\lambda\in\mathcal{L}}\abs{\Theta^{\lambda}}>0$, and 
+  $|\mu|(\mathcal L)<\infty$, $\int_{\mathcal{L}}\ell(\partial\Theta^\lambda)\,d|\mu|(\lambda)<\infty$, and $\inf_{\lambda\in\mathcal{L}}\abs{\Theta^{\lambda}}>0$,
 %$ \sup_{\lambda\in\mathcal{L}}\ell(z^{\lambda})<\infty$, 
-$\int_{\mathcal{L}}\ell(\partial\Theta^\lambda)\,d|\mu|(\lambda)<\infty$, then for
+ then for
   % If $\alpha\in(0, \frac 16]$ and $T$ is an endpoint of  $I'$,
-  any endpoint $T$ of $I'$ we have either $|T|=\infty$ or $\limsup_{t\to T} Q(\Phi_{*}^{t}\Theta) = \infty$.
+  any endpoint $T$ of $I'$ from (ii) we have either $|T|=\infty$ or $\limsup_{t\to T} Q(\Phi_{*}^{t}\Theta) = \infty$.
 \end{theorem}
 
-{\it Remark.}  (iii) means $H^2$ norms blow up...
+{\it Remark.}  Note that the last hypothesis in (iii) excludes initial data that are bumps with rounded tops/bottoms (instead, the latter must be flat). As mentioned above,  this result means that any finite time singularity development for the corresponding solutions must be accompanied by a loss of $H^2$-regularity of  level sets, not just their collisions or pile ups.
+%, and in particular cannot be caused by a ``pile up'' or collision of level sets while these remain regular.
 
 \vskip 3mm
 \noindent
@@ -1170,7 +1176,7 @@ $L_{\mu}(\Phi_{\eps*}^{t}\Theta)$.
     is just $|\Gamma_{\eps}^{t_{2},t_{1}}(x')-\Gamma_{\eps}^{t_{2},t_{1}}(y')|$,
     while the last factor is $|x'-y'|$. The result now follows from the definition of
     $\Gamma_{\eps}^{t_{2},t}$.
-%
+    %
 %    We first note that the change of variables formula yields
 %    \[
 %        \norm{D^{k}(u_{\eps}(\theta_{\eps}^{t_{1}}))
@@ -1210,6 +1216,14 @@ $L_{\mu}(\Phi_{\eps*}^{t}\Theta)$.
 %    Then replacing $(\tau,t_{1})$ by $(\tau',\tau)$ in the above inequality
 %    and applying it to \eqref{2.3} shows the claim.
 \end{proof}
+
+    
+Next, recall that the \emph{upper-right} and  \emph{lower-left Dini derivatives} of $f:(a,b)\to\bbR$ are
+\[
+    \partial_{t}^{+}f(t)\coloneqq \limsup_{h\to 0^{+}}\frac{f(t+h) - f(t)}{h} \qquad\text{and}\qquad
+    \partial_{t-}f(t)\coloneqq \liminf_{h\to 0^{-}}\frac{f(t+h) - f(t)}{h}.
+\]    
+
 
 \begin{proposition}\label{P2.6}
     $L_{\mu}(\Phi_{\eps*}^{t}\Theta)$ is continuous in $t$ and
@@ -2759,20 +2773,8 @@ So if $T$ is not an endpoint of $I$, we obtain $Q(\Phi_{*}^{T}\Theta)<\infty$ an
 %applied to the inital datum $\theta^{T}$ at the initial time $T$ yield a contradiction.
 show  $\limsup_{t\to T}L_{\mu}(\Phi_{*}^{t}\Theta) < \infty$.
 %which contradicts to Theorem~\ref{T1.2}.
-
 We can assume that $T>0$ without loss because the other case is identical.
-Then 
-%we have $\sup_{t\in[0,T)}Q(\Phi_{*}^{t}\Theta) < \infty$, so 
-the isoperimetric inequality and $\Phi^{t}$ being measure-preserving show that
-\begin{align*}
-    M\coloneqq \sup_{t\in[0,T)}\sup_{\lambda\in\mathcal{L}}
-    \norm{z^{t,\lambda}}_{\dot{H}^{2}}^{2}
-    & \leq \sup_{t\in[0,T)}\frac{Q(\Phi_{*}^{t}\Theta)}
-    {\inf_{\lambda\in\mathcal{L}}\ell(z^{t,\lambda})}
-     \leq \sup_{t\in[0,T)}\frac{Q(\Phi_{*}^{t}\Theta)}{2\sqrt{\pi}\Sigma(\Phi_{*}^{t}\Theta)^{1/2}}
-    \\ &    = \sup_{t\in[0,T)}\frac{Q(\Phi_{*}^{t}\Theta)}{2\sqrt{\pi}\Sigma(\Theta)^{1/2}} < \infty.
-\end{align*}
-%Note that the last equality is because each $\Phi^{t}$ is measure-preserving.
+
 
 \begin{lemma}\label{L4.1}
 For some $C_\alpha$ and all $(t,\lambda)\in [0,T)\times\mathcal L$ we have
@@ -2829,6 +2831,18 @@ For some $C_\alpha$ and all $(t,\lambda)\in [0,T)\times\mathcal L$ we have
     This now indeed yields \eqref{4.2}.
 \end{proof}
 
+Next,
+%we have $\sup_{t\in[0,T)}Q(\Phi_{*}^{t}\Theta) < \infty$, so 
+the isoperimetric inequality and $\Phi^{t}$ being measure-preserving show that
+\begin{align*}
+    M\coloneqq \sup_{t\in[0,T)}\sup_{\lambda\in\mathcal{L}}
+    \norm{z^{t,\lambda}}_{\dot{H}^{2}}^{2}
+    & \leq \sup_{t\in[0,T)}\frac{Q(\Phi_{*}^{t}\Theta)}
+    {\inf_{\lambda\in\mathcal{L}}\ell(z^{t,\lambda})}
+     \leq \sup_{t\in[0,T)}\frac{Q(\Phi_{*}^{t}\Theta)}{2\sqrt{\pi}\,\Sigma(\Phi_{*}^{t}\Theta)^{1/2}}
+    \\ &    = \sup_{t\in[0,T)}\frac{Q(\Phi_{*}^{t}\Theta)}{2\sqrt{\pi}\,\Sigma(\Theta)^{1/2}} < \infty.
+\end{align*}
+%Note that the last equality is because each $\Phi^{t}$ is measure-preserving.
 For any $\eta>0$ and any $\tilde{\Theta}\subseteq\bbR^{2}\times\mathcal{L}$
 from the product $\sigma$-algebra define
 \[
@@ -3220,16 +3234,102 @@ L. A. Caffarelli and N. M. Rivi\`{e}re,
 \textit{On the Rectifiability of Domains with Finite Perimeter},
 Ann. Sc. Norm. Super. Pisa, Cl. Sci., IV. Ser. \textbf{3} (1976), 177--186.
 
+\bibitem{CCW}
+D. Chae, P. Constantin, and J. Wu,
+\it Inviscid models generalizing the two-dimensional Euler and the surface quasi-geostrophic equations,
+\rm Arch. Ration. Mech. Anal. {\bf 202} (2011), 35--62. 
+
+\bibitem{CJK}
+ Y.-P. Choi, J. Jung, and J. Kim, 
+ \it On well/ill-posedness for the generalized surface quasi-geostrophic equation in H\" older spaces,
+ \rm J. Differential Equations, to appear.
+
+\bibitem{CIW} 
+P.~Constantin, G.~Iyer, and  J.~Wu,
+\it Global regularity for a modified critical dissipative quasi-geostrophic equation,
+\rm Indiana Univ. Math. J. {\bf 57} (2008), 2681--2692.
+
+\bibitem{Gancedo}
+F. Gancedo,
+\textit{Existence for the $\alpha$-patch model and the QG sharp front in Sobolev spaces},
+Adv. Math. \textbf{217} (2008), 2569--2598.
+
+%\bibitem{GanNguPat}
+%F. Gancedo, H. Q. Nguyen and N. Patel,
+%\textit{Well-posedness for SQG sharp fronts with unbounded curvature},
+%preprint.
+
+\bibitem{GanPat}
+F. Gancedo and N. Patel,
+\textit{On the local existence and blow-up for generalized SQG patches},
+Ann. PDE \textbf{7} (2021),  Paper No. 4, 63 pp.
+
+\bibitem{GanStr}
+F. Gancedo and R. M. Strain,
+\textit{Absence of splash singularities for SQG sharp fronts and the Muskat problem},
+PNAS \textbf{111} (2014), 635--639.
+
+\bibitem{JeoZla}
+J. Jeon and A. Zlato\v{s},
+\textit{An improved regularity criterion and absence of splash-like singularities for g-SQG patches},
+Anal. PDE. \textbf{17} (2024), 1005--1018.
+
 \bibitem{JeoZla2}
 J. Jeon and A. Zlato\v{s},
-\textit{Well-Posedness and Finite Time Singularity for Touching g-SQG Patches on the Plane},
+\textit{Well-Posedness and finite time singularity for touching g-SQG patches on the plane},
 preprint.
+
+\bibitem{JKY}
+I. Jeong, J. Kim, and Y. Yao,
+{\it On well-posedness of $\alpha$-SQG equations in the half-plane},
+Trans. Amer. Math. Soc. {\bf 378} (2025) 421--446.
+
+\bibitem{KisLuo}
+A. Kiselev and X. Luo,
+\textit{On nonexistence of splash singularities for the $\alpha$-SQG patches},
+J. Nonlinear Sci. {\bf 33} (2023), Paper No. 37, 16 pp.
+
+\bibitem{KisLuo2}
+A. Kiselev and X. Luo,
+{\it The $\alpha$-SQG patch problem is illposed in $C^{2,\beta}$  and $W^{2,p}$}
+Comm. Pure Appl. Math. {\bf 78} (2025), 742--820.
+
+\bibitem{KRYZ}
+A. Kiselev, L. Ryzhik, Y. Yao and A. Zlato\v s, 
+\it Finite time singularity for the modified SQG patch equation, 
+\rm Ann. of Math. (2) {\bf 184} (2016), 909--948.
+
+\bibitem{KisYaoZla}
+A. Kiselev, Y. Yao, and A. Zlato\v{s},
+\textit{Local regularity for the modified SQG patch equation},
+Comm. Pure and Appl. Math. \textbf{70} (2017), 1253--1315.
 
 % \bibitem{MaggiGeoVarBook}
 % F. Maggi,
 % \textit{Sets of Finite Perimeter and Geometric Variational Problems:
 % An Introduction to Geometric Measure Theory},
 % Cambridge University Press, Cambridge, 2012.
+
+\bibitem{Nguyen} 
+H.Q. Nguyen,
+\it Global weak solutions for generalized SQG in bounded domains,
+\rm Anal. PDE {\bf 11} (2018), 1029--1047. 
+
+\bibitem{PHS}
+R.T. Pierrehumbert, I.M. Held, and K.L. Swanson,
+\it  Spectra of local and nonlocal two-dimensional turbulence,
+\rm  Chaos, Solitons Fractals {\bf 4} (1994), 1111--1116.
+
+
+\bibitem{Smith}
+K.S. Smith, G. Boccaletti, C.C. Henning, I. Marinov, C.Y. Tam, I.M. Held, and G.K. Vallis,
+\it Turbulent diffusion in the geostrophic inverse cascade,
+\rm J. Fluid Mech. {\bf 469} (2002), 13--48.
+
+\bibitem{ZlaSQGsing}
+A. Zlato\v{s},
+{\it Local regularity and finite time singularity for the generalized SQG equation on the half-plane,}
+Duke Math. J., to appear.
 
 
 \end{thebibliography}
