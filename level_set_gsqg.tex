@@ -203,7 +203,7 @@ j6jeon@ucsd.edu}
 
 
 \begin{abstract}
-    This is the abstract.
+We show that the generalized SQG equation is locally well-posed in spaces of low regularity solutions (essentially H\" older continuous with H\" older  exponents depending on the equation parameter $\alpha\in(0,\frac 12)$) that have $H^2$ level sets. Moreover, for $\alpha\le\frac 16$ and initial data satisfying additional hypotheses we show that the corresponding solutions can stop existing only when their level sets lose $H^2$-regularity, and hence not just due to level set collision or pile up.
 \end{abstract}
 
 \maketitle
@@ -588,7 +588,7 @@ $\phi \colon\bbT\to\bbT$ (and $\bbT$ is $[0,1]$ with 0 and 1 identified).  Any $
 %        \Lambda(\Theta) \coloneqq \sup_{\lambda\in\mathcal{L}}\ell(z^{\lambda}).
 %    \end{gathered}
     \end{equation*}
-    We also denote $\ell(\partial\Theta^{\lambda}):=\ell(z^{\lambda})$.
+    We also denote $\ell(\partial\Theta^{\lambda}):=\ell(z^{\lambda})$ and $\norm{\partial\Theta^{\lambda}}_{\dot{H}^{2}}:=\norm{z^{\lambda}}_{\dot{H}^{2}}$.
 \end{definition}
 
 
@@ -638,7 +638,7 @@ then $R_{\mu}(\Theta)<\infty$ if and only if $\beta>2\alpha$.
 Note that in both cases $L_{\mu}(\Theta)<\infty$ if and only if $\beta>2\alpha$.
 
 
-We can now finally state our  main result.
+We can now finally state our  main result. Its part (ii) proves well-posedness for low regularity solutions to \eqref{1.1} with $H^2$ level sets, while its part (iii) shows that for $\alpha\le\frac 16$ and initial conditions satisfying some additional hypotheses, the corresponding solutions can stop existing only when their level sets lose $H^2$-regularity, not just when they collide or pile up.
 
 \begin{theorem}\label{T1.4}
     Let $\theta^{0}\in L^{1}(\bbR^{2})\cap L^{\infty}(\bbR^{2})$ admit a
@@ -667,8 +667,12 @@ from Theorem~\ref{T1.2}.
   any endpoint $T$ of $I'$ from (ii) we have either $|T|=\infty$ or $\limsup_{t\to T} Q(\Phi_{*}^{t}\Theta) = \infty$.
 \end{theorem}
 
-{\it Remark.}  Note that the last hypothesis in (iii) excludes initial data that are bumps with rounded tops/bottoms (instead, the latter must be flat). As mentioned above,  this result means that any finite time singularity development for the corresponding solutions must be accompanied by a loss of $H^2$-regularity of  level sets, not just their collisions or pile ups.
-%, and in particular cannot be caused by a ``pile up'' or collision of level sets while these remain regular.
+{\it Remark.}  Note that the last hypothesis in (iii) excludes initial data that are bumps with rounded tops/bottoms (instead, the latter must be flat), and $\Phi^t$ being measure preserving then also implies  $\inf_{(t,\lambda)\in I'\times  \mathcal{L}} \operatorname{diam}(\Phi^{t}\Theta^\lambda)>0$.   When also $\sup_{\lambda\in \mathcal{L}} \operatorname{diam}(\Theta^\lambda)<\infty$, then \eqref{4.2} below shows that $\sup_{(t,\lambda)\in [0,T)\times \mathcal{L}}\operatorname{diam}(\Phi^{t}\Theta^{\lambda})<\infty$ when $T$ in (iii) is finite.  So in that case the claim of (iii) implies
+\[
+\limsup_{t\to T} \sup_{\lambda\in \mathcal{L}} \norm{\Phi^{t}(\partial\Theta^{\lambda})}_{\dot{H}^{2}}  = \infty
+\]
+(while the diameters of $\Phi^{t}\Theta^{\lambda}$ remain uniformly bounded above and below by positive constants), which means true loss of $H^2$-regularity of the level sets at time $T$.
+
 
 \vskip 3mm
 \noindent
